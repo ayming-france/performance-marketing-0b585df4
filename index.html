@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How we imagine performance marketing · Ayming France · 2026-06</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ayming-france.github.io/assets/engine/slides.css">
+  <style>
+    :root {
+      --ay-primary: #11a9e6;
+      --ay-accent: #0da4e8;
+      --ay-dark: #00456d;
+      --ay-success: #0ab38c;
+      --ay-warning: #f59e0b;
+      --ay-danger: #ef4444;
+      --ay-text: #0f172a;
+      --ay-gray: #6b7280;
+      --ay-light: #9ca3af;
+      --ay-bg-subtle: #eef2f6;
+      --ay-bg-light: #f8fafc;
+    }
+
+    /* Predictable sizing: no engine zoom, design at true size */
+    .slide-inner.insights { transform: none; max-width: 1180px; padding: 40px 56px; }
+    .slide-inner.insights.wide { max-width: 1560px; padding: 36px 28px; }
+    .slide-title.compact { margin-bottom: 28px; font-size: 34px; }
+    .slide-eyebrow {
+      text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+      font-weight: 700; color: var(--ay-primary); margin-bottom: 10px;
+    }
+    .slide-subtitle { font-size: 17px; color: var(--ay-gray); font-weight: 500; margin: 0 0 30px 0; line-height: 1.5; max-width: 880px; }
+    .footnote { font-size: 12px; color: var(--ay-light); margin-top: 18px; line-height: 1.55; max-width: 940px; }
+    .cover-credit { margin-top: 22px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.3px; opacity: 0.9; }
+    .deck-credit { position: fixed; bottom: 16px; left: 28px; font-size: 11px; font-weight: 700; color: var(--ay-light); letter-spacing: 0.3px; z-index: 90; pointer-events: none; }
+
+    /* ===== Mission / bridge (big centered quote) ===== */
+    .mission-quote { font-size: 40px; font-weight: 700; color: var(--ay-dark); line-height: 1.3; max-width: 1000px; margin: 0 auto; }
+    .mission-quote b { color: var(--ay-primary); }
+    .mission-sub { font-size: 18px; color: var(--ay-gray); font-weight: 500; margin-top: 28px; max-width: 760px; margin-left:auto; margin-right:auto; }
+
+    /* proposal quote slide (white bg, blue highlights) */
+    .qquote { font-size: 34px; font-weight: 700; line-height: 1.5; color: var(--ay-dark); max-width: 1040px; margin: 0 auto; }
+    .qquote b { color: var(--ay-primary); font-weight: 800; }
+
+    /* ===== SLIDE: socle (single horizontal flow, light cards, no filled panel) ===== */
+    .socle-flow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 8px auto 0; width: 100%; max-width: 1500px; }
+    .sx { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 16px 18px; text-align: left; }
+    .sx.cap { width: 244px; }
+    .sx.enr { width: 250px; }
+    .sx-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--ay-primary); margin-bottom: 10px; }
+    .sx-grp { font-size: 9.5px; text-transform: uppercase; letter-spacing: .8px; color: var(--ay-gray); font-weight: 700; margin: 11px 0 5px; }
+    .sx-grp.first { margin-top: 0; }
+    .sx-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip2 { font-size: 10.5px; background: #eff6ff; color: var(--ay-dark); border-radius: 6px; padding: 3px 8px; font-weight: 600; }
+    .sx-rule { padding: 7px 0; border-bottom: 1px solid #f1f5f9; }
+    .sx-rule:last-child { border-bottom: none; padding-bottom: 0; }
+    .sx-rule:first-of-type { padding-top: 0; }
+    .sx-rule b { display: block; font-size: 12.5px; color: var(--ay-dark); }
+    .sx-rule span { font-size: 10.5px; color: var(--ay-gray); line-height: 1.3; }
+    .sx-node { border: 1px solid #e5e7eb; border-radius: 11px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.05); padding: 16px 16px; font-weight: 800; color: var(--ay-dark); font-size: 14px; text-align: center; min-width: 96px; }
+    .sx-node small { display: block; font-weight: 600; font-size: 10px; color: var(--ay-gray); margin-top: 3px; }
+    .sx-sf { border: 1.5px dashed var(--ay-primary); border-radius: 13px; background: #f7fcff; padding: 18px 16px 13px; position: relative; }
+    .sx-sf-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .sx-sf-inner { display: flex; align-items: center; gap: 9px; }
+    .sx-person { border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); background: #fff; border-radius: 9px; padding: 9px 13px; font-weight: 800; color: var(--ay-primary); font-size: 14px; text-align: center; width: 124px; min-height: 86px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; }
+    .sx-person small { display: block; font-weight: 600; font-size: 10px; color: var(--ay-gray); margin-top: 3px; line-height: 1.25; }
+    .sx-arrow { font-size: 22px; color: var(--ay-light); font-weight: 700; flex: none; }
+    .sx-mini { font-size: 15px; color: var(--ay-light); font-weight: 700; }
+    /* enrichment: 3 boxes wrapped in the Salesforce-style dashed container */
+    .enr-wrap { display: flex; flex-direction: column; gap: 7px; width: 250px; padding-top: 18px; }
+    .eb { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.04); padding: 8px 11px; text-align: left; }
+    .eb b { display: block; font-size: 12px; color: var(--ay-dark); }
+    .eb span { font-size: 10px; color: var(--ay-gray); line-height: 1.3; }
+
+    /* ===== SLIDE: TCV problem (faults + distribution hero) ===== */
+    .faults { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 820px; margin: 0 auto 4px; width: 100%; }
+    .fault { background: #fff; border: 1px solid #fde2e2; border-left: 4px solid var(--ay-danger); border-radius: 12px; padding: 16px 20px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+    .fault .ft { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--ay-danger); margin-bottom: 6px; }
+    .fault .fb { font-size: 15px; color: var(--ay-text); font-weight: 500; line-height: 1.45; }
+    .fault .fb b { color: var(--ay-dark); font-weight: 800; }
+    /* three counts (TCV fails on 3 points) */
+    .counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100%; max-width: 1080px; margin: 10px auto 0; position: relative; }
+    .counts::before, .counts::after { content: ""; position: absolute; top: 12px; bottom: 12px; width: 1px; background: #e5e7eb; }
+    .counts::before { left: 33.333%; }
+    .counts::after { left: 66.667%; }
+    .count { padding: 4px 36px; text-align: left; }
+    .count:first-child { padding-left: 0; }
+    .count:last-child { padding-right: 0; }
+    .count .cnum-big { font-size: 92px; font-weight: 100; line-height: .82; letter-spacing: -4px; color: var(--ay-danger); margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+    .count .ct { font-size: 19px; font-weight: 800; color: var(--ay-dark); margin-bottom: 12px; line-height: 1.22; }
+    .count .cb { font-size: 13.5px; color: var(--ay-text); line-height: 1.55; }
+    .cycle-wrap { margin-top: 26px; width: 100%; max-width: 880px; margin-left:auto; margin-right:auto; }
+    .cycle-stats { display: flex; justify-content: center; gap: 56px; margin-bottom: 18px; }
+    .cs { text-align: center; }
+    .cs .csn { font-size: 46px; font-weight: 800; line-height: 1; color: var(--ay-dark); }
+    .cs .csn small { font-size: 18px; font-weight: 700; color: var(--ay-gray); }
+    .cs .csl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-gray); font-weight: 700; margin-top: 7px; }
+    .cs.hi .csn { color: var(--ay-primary); }
+    .cycle-bar { position: relative; height: 14px; border-radius: 8px; margin: 32px 6px 8px; background: linear-gradient(90deg,#0ab38c 0%,#11a9e6 22%,#f59e0b 55%,#ef4444 100%); }
+    .cmark { position: absolute; top: -7px; width: 2px; height: 28px; background: var(--ay-dark); transform: translateX(-1px); }
+    .cmark span { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; font-weight: 700; color: var(--ay-dark); }
+    .cmark.up span { bottom: 32px; }
+    .cmark.dn span { top: 32px; color: var(--ay-gray); }
+    .cycle-annot { font-size: 14px; font-style: italic; color: var(--ay-gray); text-align: center; margin-top: 44px; line-height: 1.5; }
+
+    /* ===== SLIDE: chain (pipeline nodes) ===== */
+    .chain-flow { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin-top: 18px; width: 100%; max-width: 1040px; margin-left:auto; margin-right:auto; }
+    .chain-node { flex: 0 0 auto; width: 132px; text-align: center; position: relative; z-index: 2; }
+    .chain-node .cn-num { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid var(--ay-primary); color: var(--ay-primary); font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-family: Georgia, serif; }
+    .chain-node .cn-name { font-size: 14px; font-weight: 800; color: var(--ay-dark); display: block; }
+    .chain-node .cn-sub { font-size: 11px; color: var(--ay-gray); margin-top: 3px; }
+    .chain-node.own .cn-num { background: linear-gradient(135deg,#11a9e6,#0ab38c); border: none; color: #fff; transform: scale(1.18); box-shadow: 0 6px 18px rgba(17,169,230,.35); }
+    .chain-node.own .cn-name { color: var(--ay-primary); }
+    .chain-node.later .cn-num { background: var(--ay-bg-light); border-color: var(--ay-light); color: var(--ay-light); border-style: dashed; }
+    .chain-node.later .cn-name { color: var(--ay-light); }
+    .chain-link { flex: 1; height: 2px; background: var(--ay-primary); margin-top: 25px; position: relative; }
+    .chain-link.dashed { background: repeating-linear-gradient(90deg,var(--ay-light) 0 5px,transparent 5px 11px); }
+    .chain-link::after { content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%); border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--ay-primary); }
+    .chain-link.dashed::after { border-left-color: var(--ay-light); }
+    /* coda: concluding statement under a thin rule (house idiom, NOT a box) */
+    .coda { margin: 38px auto 0; padding-top: 20px; border-top: 2px solid var(--ay-dark); max-width: 860px; font-size: 16px; line-height: 1.55; color: var(--ay-text); text-align: center; }
+    .coda b { color: var(--ay-dark); font-weight: 800; }
+    .coda em { color: var(--ay-primary); font-style: normal; font-weight: 800; }
+
+    /* slide: measurement chain (square boxes + ownership progress line) */
+    .relay { width: 100%; max-width: 1120px; margin: 0 auto; text-align: left; }
+    .relay-title { font-size: 40px; font-weight: 800; line-height: 1.16; margin: 0 0 42px; text-align: center; background: linear-gradient(90deg,#11a9e6,#0ab38c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .relay-row { display: flex; align-items: stretch; gap: 12px; width: 100%; margin: 0; }
+    .rbox { flex: 1; background: #f1f4f7; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 112px; }
+    .rbox .rt { font-weight: 800; color: var(--ay-dark); font-size: 16px; }
+    .rbox .rs { font-size: 11.5px; color: var(--ay-gray); margin-top: 6px; }
+    .rbox.own { background: var(--ay-primary); border-color: var(--ay-primary); }
+    .rbox.own .rt { color: #fff; }
+    .rbox.own .rs { color: rgba(255,255,255,.9); }
+    .rbox.later { background: #fff; border-style: dashed; border-color: #cbd5e1; }
+    .rbox.later .rt { color: var(--ay-light); }
+    .rbox.later .rs { color: var(--ay-light); }
+    .rarrow { display: flex; align-items: center; color: var(--ay-light); font-size: 20px; font-weight: 700; flex: none; }
+    .relay-zones { display: flex; gap: 14px; width: 100%; margin: 16px 0 0; }
+    .zmkt { flex: 4; }
+    .zsales { flex: 1; }
+    .zline { display: block; height: 3px; border-radius: 2px; background: var(--ay-primary); }
+    .zsales .zline { background: repeating-linear-gradient(90deg, #cbd5e1 0 6px, transparent 6px 12px); height: 2px; margin-top: .5px; }
+    .zlabel { display: block; margin-top: 11px; font-size: 11.5px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ay-dark); }
+    .zsales .zlabel { color: var(--ay-gray); text-align: right; }
+    .relay-foot { font-size: 15px; color: var(--ay-gray); line-height: 1.6; margin: 40px 0 0; max-width: 1000px; text-align: left; }
+    .relay-foot b { color: var(--ay-dark); font-weight: 800; }
+
+    /* slide: OKR (green objective + two blue key results) */
+    .okr { width: 100%; max-width: 1060px; margin: 0 auto; }
+    .okr-obj { background: #e7f7ef; border-radius: 14px; padding: 24px 30px; text-align: left; margin-bottom: 22px; }
+    .okr-obj .ol { font-size: 12.5px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 800; color: var(--ay-success); margin-bottom: 8px; }
+    .okr-obj .ot { font-size: 21px; font-weight: 700; color: var(--ay-dark); line-height: 1.42; }
+    .okr-krs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .kr { background: #eaf3fc; border-radius: 14px; padding: 22px 26px; text-align: left; }
+    .kr .kl { font-size: 12.5px; color: var(--ay-primary); font-weight: 600; margin-bottom: 8px; letter-spacing: .3px; }
+    .kr .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .kr .kh { font-size: 22px; font-weight: 800; color: var(--ay-dark); margin-bottom: 6px; line-height: 1.2; }
+    .kr .kdef { font-size: 14.5px; color: var(--ay-dark); font-weight: 600; margin-bottom: 4px; }
+    .kr .ks { font-size: 13.5px; color: var(--ay-gray); line-height: 1.5; }
+    .okr-foot { margin-top: 24px; padding-top: 18px; border-top: 1px solid #e5e7eb; font-size: 14px; color: var(--ay-gray); text-align: left; }
+    .okr-foot b { color: var(--ay-dark); }
+
+    /* small KR badge top-left of a diagram slide (links the diagram to its key result) */
+    .kr-badge { position: absolute; top: 52px; left: 80px; background: #eaf3fc; border-radius: 12px; padding: 14px 18px; max-width: 380px; text-align: left; z-index: 6; }
+    .kr-badge .kl { font-size: 11px; color: var(--ay-primary); font-weight: 600; margin-bottom: 5px; letter-spacing: .3px; }
+    .kr-badge .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: .8px; }
+    .kr-badge .kh { font-size: 16px; font-weight: 800; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.2; }
+    .kr-badge .ks { font-size: 12px; color: var(--ay-gray); line-height: 1.4; }
+
+    /* ===== SLIDE: two lenses (compare floor/ceiling) ===== */
+    .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; max-width: 960px; margin: 0 auto; }
+    .lens { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 26px 28px; box-shadow: 0 4px 16px rgba(0,0,0,.06); text-align: left; position: relative; }
+    .lens.floor { border-top: 5px solid var(--ay-primary); }
+    .lens.ceiling { border-top: 5px solid var(--ay-success); }
+    .lens .lu { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+    .lens.floor .lu { color: var(--ay-primary); }
+    .lens.ceiling .lu { color: var(--ay-success); }
+    .lens .lt { font-size: 24px; font-weight: 800; color: var(--ay-dark); margin-bottom: 14px; }
+    .lens .lb { font-size: 14.5px; color: var(--ay-text); line-height: 1.55; }
+    .lens .lb b { color: var(--ay-dark); }
+    .lens .lpurpose { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #e5e7eb; font-size: 13.5px; color: var(--ay-text); }
+    .lens .lpurpose b { font-weight: 800; }
+    .lens.floor .lpurpose b { color: var(--ay-primary); }
+    .lens.ceiling .lpurpose b { color: var(--ay-success); }
+    .lens .ltag { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; }
+    .lens.floor .ltag { background: #e0f4fe; color: var(--ay-dark); }
+    .lens.ceiling .ltag { background: #e6f8f2; color: #076b54; }
+
+    /* ===== SLIDE: architectures (two tracks + warning note) ===== */
+    .track { display: flex; align-items: center; gap: 9px; margin: 0 auto 14px; flex-wrap: wrap; justify-content: center; max-width: 1000px; }
+    .track-label { min-width: 120px; text-align: right; font-size: 13px; font-weight: 800; padding-right: 6px; }
+    .track-label small { display: block; font-size: 10px; font-weight: 600; color: var(--ay-light); text-transform: uppercase; letter-spacing: 1px; }
+    .track-label.s { color: var(--ay-primary); }
+    .track-label.i { color: var(--ay-success); }
+    .astep { border: 1px solid #e5e7eb; border-radius: 9px; padding: 10px 13px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.04); font-size: 12.5px; font-weight: 600; color: var(--ay-dark); }
+    .astep.end-s { border: 2px solid var(--ay-primary); color: var(--ay-primary); font-weight: 800; }
+    .astep.end-i { border: 2px solid var(--ay-success); color: #076b54; font-weight: 800; }
+    .aarrow { font-size: 16px; color: var(--ay-light); }
+    /* ===== SLIDE: campaign influence (fan-in, membership) ===== */
+    .infl { display: flex; align-items: center; justify-content: center; margin: 44px auto 0; max-width: 1120px; }
+    .infl-node { border-radius: 13px; padding: 18px 22px; text-align: center; flex: none; }
+    .infl-person { border: 2px solid var(--ay-primary); background: #f7fcff; color: var(--ay-primary); font-weight: 800; font-size: 17px; min-width: 156px; }
+    .infl-person small { display: block; font-weight: 600; font-size: 11px; color: var(--ay-gray); margin-top: 4px; }
+    .infl-camps { border: 1.5px dashed var(--ay-primary); border-radius: 14px; background: #f7fcff; padding: 18px 16px 14px; position: relative; flex: none; }
+    .infl-camps-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .infl-camp { background: #eef7fd; border: 1px solid #cfe4f5; border-radius: 8px; padding: 9px 18px; font-weight: 700; color: var(--ay-dark); font-size: 13.5px; text-align: center; }
+    .infl-camp + .infl-camp { margin-top: 8px; }
+    .infl-opp { background: var(--ay-primary); color: #fff; font-weight: 800; font-size: 17px; min-width: 156px; }
+    .infl-opp small { display: block; font-weight: 600; font-size: 11px; color: rgba(255,255,255,.88); margin-top: 4px; }
+    .infl-conn { display: flex; flex-direction: column; align-items: center; padding: 0 16px; flex: none; }
+    .infl-conn .cl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-gray); font-weight: 700; margin-bottom: 5px; white-space: nowrap; }
+    .infl-conn .ca { font-size: 24px; color: var(--ay-light); font-weight: 700; }
+    /* influence variant: opportunity containing the campaigns as its influence */
+    .infl-oppbox { background: var(--ay-primary); border-radius: 14px; padding: 18px 16px 14px; position: relative; flex: none; }
+    .infl-oppbox-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .infl-oppcap { background: rgba(255,255,255,.18); color: #fff; border-radius: 7px; padding: 7px 16px; font-weight: 700; font-size: 13px; text-align: center; }
+    .infl-oppcap + .infl-oppcap { margin-top: 7px; }
+    .infl-opptag { color: #fff; font-size: 11.5px; font-weight: 700; text-align: center; margin-top: 10px; opacity: .9; }
+    /* influence: coverage accumulates across the lifecycle — slide-7 white-card idiom */
+    .lc { display: flex; align-items: center; justify-content: center; margin: 0 auto; max-width: 1120px; }
+    .lc-card { background: #fff; border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 16px 18px; text-align: left; width: 214px; flex: none; }
+    .lc-card.wide { width: 252px; }
+    .lc-card .lch-t { font-size: 17px; font-weight: 800; color: var(--ay-dark); }
+    .lc-card .lch-s { font-size: 11px; color: var(--ay-gray); margin: 2px 0 12px; }
+    .lc-arrow { display: flex; flex-direction: column; align-items: center; padding: 0 14px; flex: none; }
+    .lc-arrow .al { font-size: 10.5px; color: var(--ay-gray); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; text-align: center; white-space: nowrap; }
+    .lc-arrow .aa { font-size: 22px; color: var(--ay-light); font-weight: 700; }
+
+    /* ===== SLIDE: pyramid ===== */
+    .pyramid { display: flex; flex-direction: column; align-items: center; gap: 9px; margin: 6px auto 0; width: 100%; max-width: 760px; }
+    .tier { border-radius: 12px; padding: 16px 24px; text-align: center; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+    .tier .tlvl { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+    .tier .tcontent { font-size: 13px; font-weight: 600; line-height: 1.5; margin-top: 5px; }
+    .tier.okr { width: 50%; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; }
+    .tier.okr .tlvl { opacity: .85; }
+    .tier.okr .tcontent { font-size: 14px; font-weight: 800; }
+    /* POC closing slide */
+    .poc { text-align: center; max-width: 880px; margin: 0 auto; }
+    .poc p { font-size: 18px; color: var(--ay-gray); line-height: 1.6; margin: 0 auto 34px; max-width: 760px; }
+    .poc-cta { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; padding: 14px 30px; border-radius: 30px; box-shadow: 0 6px 18px rgba(17,169,230,.3); }
+    .tier.kpi { width: 76%; background: #eaf6fc; color: var(--ay-dark); border: 1px solid #cfe9f7; }
+    .tier.kpi .tlvl { color: var(--ay-primary); }
+    .tier.met { width: 100%; background: #f6f8fa; color: var(--ay-text); border: 1px solid #e5e7eb; }
+    .tier.met .tlvl { color: var(--ay-gray); }
+    .tier b { font-weight: 800; }
+    .tchips { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-top: 9px; }
+    .tchip { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 7px; padding: 5px 11px; font-size: 12.5px; font-weight: 600; color: var(--ay-dark); }
+    .tier.kpi .tchip { border-color: #cfe9f7; }
+    .park { font-size: 13px; color: var(--ay-gray); margin-top: 22px; max-width: 760px; margin-left:auto; margin-right:auto; line-height: 1.55; font-style: italic; }
+    .park b { color: var(--ay-dark); font-style: normal; }
+
+    /* ===== SLIDE: CRM hygiene (giant stat) ===== */
+    .big-stat { font-size: 150px; font-weight: 800; line-height: .9; letter-spacing: -4px; background: linear-gradient(135deg,#11a9e6,#0ab38c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 4px 0 6px; }
+    .big-sub { font-size: 18px; font-weight: 600; color: var(--ay-dark); max-width: 820px; margin: 0 auto; line-height: 1.5; }
+    .big-sub b { color: var(--ay-primary); }
+
+    /* ===== SLIDE: horizon (checklist) ===== */
+    .horizon { list-style: none; margin: 6px auto 0; max-width: 840px; text-align: left; }
+    .horizon li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--ay-bg-subtle); font-size: 17px; color: var(--ay-text); line-height: 1.45; }
+    .horizon li:last-child { border-bottom: none; }
+    .horizon li b { color: var(--ay-dark); }
+    .horizon .hz-icon { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .horizon .hz-icon svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- Chapter Navigation -->
+  <nav class="chapter-nav">
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-header">
+      <div class="nav-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+      <span class="nav-subtitle">Performance marketing · June 2026</span>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opening</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Cover</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Our stance</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">The diagnosis</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>TCV fails</div>
+      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>The proposal</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">The framework</div>
+      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>The measurement chain</div>
+      <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>Objective &amp; key results</div>
+      <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>The foundation: where each lead comes from</div>
+      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Influence: lifecycle</div>
+      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Influence: buying committee</div>
+      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>The pyramid</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Honesty</div>
+      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>CRM hygiene</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>The horizon</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>First POC</div>
+    </div>
+  </nav>
+
+  <div class="slide-counter"><span class="current">1</span>/13</div>
+
+  <main class="presentation">
+
+    <!-- ========== 0 · COVER ========== -->
+    <section class="slide cover active" data-chapter="ouverture">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <h1 class="cover-title">Measuring<br>marketing's<br>contribution</h1>
+          <p class="cover-subtitle">A vision for steering the value we create, not the revenue no one generates alone.</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-06</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80" alt="Marketing analytics dashboard">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1 · OUR STANCE (conviction) ========== -->
+    <section class="slide" data-chapter="posture">
+      <div class="slide-inner insights">
+        <p class="mission-quote">Revenue is a <b>company-wide outcome</b>, so not a metric any <b>single team</b> owns.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 2 · TCV FAILS ON THREE COUNTS ========== -->
+    <section class="slide" data-chapter="constat">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">A revenue metric fails as a marketing KPI, on three counts</h1>
+
+        <div class="counts">
+          <div class="count c1">
+            <div class="cnum-big">01</div>
+            <div class="ct">Lagging, not Leading</div>
+            <div class="cb">A <i>lagging</i> indicator reports what has already happened. It can't be a KPI. By the time it moves, there's nothing left to steer.</div>
+          </div>
+          <div class="count c2">
+            <div class="cnum-big">02</div>
+            <div class="ct">The last leg, not ours</div>
+            <div class="cb">Sales run the final stretch and close on terms we don't set. You can't optimize an outcome you don't control.</div>
+          </div>
+          <div class="count c3">
+            <div class="cnum-big">03</div>
+            <div class="ct">Attribution, not contribution</div>
+            <div class="cb">When every team chases the same single revenue figure, it sparks a credit war instead of teamwork. What we really want is collaboration, not silos, by measuring each team on the stage it actually owns.</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 3 · THE PROPOSAL (quote) ========== -->
+    <section class="slide" data-chapter="constat">
+      <div class="slide-inner insights">
+        <p class="qquote">We need to measure marketing where it can improve the system: <b>own its stage</b>, <b>spot what drives it</b>, <b>make the whole pipeline better</b>.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 4 · THE MEASUREMENT CHAIN ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <div class="relay">
+        <h1 class="relay-title">Marketing acts on a system, not on an isolated number.</h1>
+
+        <div class="relay-row">
+          <div class="rbox"><div class="rt">Channels</div><div class="rs">volume, quality</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox"><div class="rt">Campaigns</div><div class="rs">touchpoints</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox"><div class="rt">Leads</div><div class="rs">lead &rarr; contact</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox own"><div class="rt">Pipeline</div><div class="rs">sourced · influenced</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox later"><div class="rt">Won deals</div><div class="rs">later · shared</div></div>
+        </div>
+
+        <div class="relay-zones">
+          <div class="zmkt"><span class="zline"></span><span class="zlabel">Marketing's measurable contribution</span></div>
+          <div class="zsales"><span class="zline"></span><span class="zlabel">Sales own the close</span></div>
+        </div>
+
+        <p class="relay-foot">The chain is a system. You don't improve the end result by targeting it directly. The last stage marketing steers is the <b>pipeline</b>. That's where our KPI must sit.</p>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 5 · OBJECTIVE & KEY RESULTS ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Marketing is accountable for the pipeline it generates, not the revenue it doesn't control</h1>
+        <div class="okr">
+          <div class="okr-obj">
+            <div class="ol">Objective</div>
+            <div class="ot">Grow marketing's contribution to pipeline, in service of revenue growth.</div>
+          </div>
+          <div class="okr-krs">
+            <div class="kr">
+              <div class="kl"><b>Key Result 1</b> · what we create</div>
+              <div class="kh">Marketing-sourced pipeline</div>
+              <div class="kdef">Marketing first-touch origin</div>
+              <div class="ks">in value (€ TCV) and number of opportunities</div>
+            </div>
+            <div class="kr">
+              <div class="kl"><b>Key Result 2</b> · what we touch</div>
+              <div class="kh">Marketing-influenced coverage</div>
+              <div class="kdef">Any marketing touchpoint, via Campaign Influence</div>
+              <div class="ks">% of pipeline with at least one marketing touch</div>
+            </div>
+          </div>
+          <div class="okr-foot">Measured from our first-party data: <b>UTM</b> for origin, <b>Campaign Influence</b> for coverage.</div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 6 · THE FOUNDATION: CHANNEL CAPTURE (proof of the sourced path) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Key Result 1</b> · what we create</div>
+        <div class="kh">Marketing-sourced pipeline</div>
+        <div class="ks">how we make it possible</div>
+      </div>
+      <div class="slide-inner insights wide">
+
+        <div class="socle-flow">
+          <div class="sx-node" style="border-top:4px solid var(--ay-primary);">Visitor<small>lands on a conversion point</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx cap">
+            <div class="sx-tag">Capture</div>
+            <div class="sx-grp first">UTM</div>
+            <div class="sx-chips"><span class="chip2">source</span><span class="chip2">medium</span><span class="chip2">campaign</span><span class="chip2">term</span><span class="chip2">content</span></div>
+            <div class="sx-grp">Ad data</div>
+            <div class="sx-chips"><span class="chip2">gclid</span><span class="chip2">msclkid</span><span class="chip2">fbclid</span><span class="chip2">li_fat_id</span></div>
+            <div class="sx-grp">User identity</div>
+            <div class="sx-chips"><span class="chip2">GA Client ID</span></div>
+          </div>
+
+          <div class="sx-arrow">&rarr;</div>
+
+          <div class="sx-sf enr-wrap">
+            <div class="sx-sf-label">Processing</div>
+            <div class="eb"><b>Store as first-party</b><span>our data, not a third-party cookie.</span></div>
+            <div class="eb"><b>Multi-page injection</b><span>the origin follows the visitor to the form.</span></div>
+            <div class="eb"><b>Recover the undeclared</b><span>source &amp; medium inferred from the referrer (LLM, organic, social).</span></div>
+            <div class="eb"><b>Normalize</b><span>cleaned and standardized values.</span></div>
+          </div>
+
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-node">Form<small>UTM captured</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-node">Pardot<small>first-touch set</small></div>
+          <div class="sx-arrow">&rarr;</div>
+
+          <div class="sx-person">Lead<small>origin + dynamic UTM</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-person">Contact<small>origin + dynamic UTM</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-person">Opportunity<small>marketing-sourced</small></div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 7 · INFLUENCE: LIFECYCLE (coverage accumulates) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Key Result 2</b> · what we touch</div>
+        <div class="kh">Marketing-influenced coverage</div>
+        <div class="ks">how it builds up</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="lc">
+          <div class="lc-card">
+            <div class="lch-t">Lead</div>
+            <div class="lch-s">2 campaigns</div>
+            <div class="sx-chips">
+              <span class="chip2">Trade show</span>
+              <span class="chip2">Whitepaper</span>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">conversion</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card">
+            <div class="lch-t">Contact</div>
+            <div class="lch-s">2 more</div>
+            <div class="sx-chips">
+              <span class="chip2">Conference</span>
+              <span class="chip2">Roundtable</span>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">contact role</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card wide">
+            <div class="lch-t">Opportunity</div>
+            <div class="lch-s">both phases combined</div>
+            <div class="sx-grp first">Influence campaigns</div>
+            <div class="sx-chips">
+              <span class="chip2">Trade show</span>
+              <span class="chip2">Whitepaper</span>
+              <span class="chip2">Conference</span>
+              <span class="chip2">Roundtable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 8 · INFLUENCE — BUYING COMMITTEE ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Key Result 2</b> · what we touch</div>
+        <div class="kh">Marketing-influenced coverage</div>
+        <div class="ks">across the buying committee</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="lc">
+          <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div class="lc-card">
+                <div class="lch-t">Lead</div>
+                <div class="lch-s">2 campaigns</div>
+                <div class="sx-chips">
+                  <span class="chip2">Trade show</span>
+                  <span class="chip2">Workshop</span>
+                </div>
+              </div>
+              <div class="lc-arrow"><span class="al">conversion</span><span class="aa">&rarr;</span></div>
+              <div class="lc-card">
+                <div class="lch-t">Contact #1</div>
+                <div class="lch-s">2 more</div>
+                <div class="sx-chips">
+                  <span class="chip2">Roundtable</span>
+                  <span class="chip2">Conference</span>
+                </div>
+              </div>
+            </div>
+            <div class="lc-card">
+              <div class="lch-t">Contact #2</div>
+              <div class="lch-s">its campaigns</div>
+              <div class="sx-chips">
+                <span class="chip2">Whitepaper</span>
+                <span class="chip2">Conference</span>
+              </div>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">contact roles</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card wide">
+            <div class="lch-t">Opportunity</div>
+            <div class="lch-s">aggregates campaigns from all roles</div>
+            <div class="sx-grp first">Influence campaigns</div>
+            <div class="sx-chips">
+              <span class="chip2">Trade show &middot; Champion</span>
+              <span class="chip2">Workshop &middot; Champion</span>
+              <span class="chip2">Roundtable &middot; Champion</span>
+              <span class="chip2">Conference &middot; Champion</span>
+              <span class="chip2">Whitepaper &middot; Decision-maker</span>
+              <span class="chip2">Conference &middot; Decision-maker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 9 · THE PYRAMID ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Our pyramid: a direction, indicators to steer it, levers to act on it</h1>
+
+        <div class="pyramid">
+          <div class="tier okr"><div class="tlvl">OKR</div><div class="tcontent">Marketing's contribution to pipeline: sourced (€/#) and influenced (%)</div></div>
+          <div class="tier kpi"><div class="tlvl">KPI</div><div class="tchips"><span class="tchip">MQL &rarr; opportunity conversion</span><span class="tchip">stage-by-stage conversion</span><span class="tchip">cost per qualified lead*</span><span class="tchip">CAC*</span><span class="tchip">LTV:CAC*</span><span class="tchip">pipeline velocity*</span></div></div>
+          <div class="tier met"><div class="tlvl">Metrics</div><div class="tchips"><span class="tchip">Page views</span><span class="tchip">session duration</span><span class="tchip">bounce rate</span><span class="tchip">impressions</span><span class="tchip">social interactions</span><span class="tchip">open rate</span><span class="tchip">CPC</span><span class="tchip">CTR</span><span class="tchip">ad spend</span><span class="tchip">webinar sign-ups</span><span class="tchip">downloads</span><span class="tchip">first meetings</span></div></div>
+        </div>
+
+        <p class="park">* Upcoming, once costs are consolidated and CRM hygiene is cleaned up.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 10 · CRM HYGIENE (giant stat) ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">A fifth of won deals never exist as pipeline</h1>
+        <div class="big-stat">20%</div>
+        <p class="big-sub">of won opportunities are opened <b>and</b> won on the same day. Invisible to any funnel metric: no origin, no touchpoints, no forecast signal.</p>
+        <p class="coda">The funnel only holds if opportunities are opened at the <em>entry</em>, not at signature. An enabling condition, co-piloted with sales ops. A company-wide forecast gap, <b>not a marketing problem</b>.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 11 · THE HORIZON ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Accountability put back where it can be steered</h1>
+
+        <ul class="horizon">
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>Marketing measured on what it steers: <b>the sourced pipeline</b>.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>We prove the <b>pipeline &rarr; revenue</b> correlation over time, as the data matures.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>Influence moves from coverage to <b>credit</b>, if and when a validated model is in place.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span><b>CAC / LTV:CAC</b> join the KPI layer once costs and retention are integrated.</span></li>
+        </ul>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 12 · FIRST POC ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">The setup is already at work: a first POC</h1>
+        <div class="poc">
+          <a class="poc-cta" href="https://datastudio.google.com/u/0/reporting/a36b2e8d-c1b4-4f46-9654-d73d584d7ec4/page/p_8t5fqicc2d" target="_blank" rel="noopener">View the report &rarr;</a>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+  </main>
+
+  <!-- Keyboard Hint -->
+  <div class="keyboard-hint">
+    <span><span class="key" id="key-prev">←</span><span class="key" id="key-next">→</span> Navigate</span>
+    <span><span class="key" id="key-fullscreen">F</span> Fullscreen</span>
+  </div>
+
+  <!-- Author credit -->
+  <div class="deck-credit">José J Encarnación Saiter | Marketing France · 2026-06</div>
+
+  <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+  <script>
+    (function () {
+      var cover = document.querySelector('.slide.cover');
+      var credit = document.querySelector('.deck-credit');
+      if (!cover || !credit) return;
+      var sync = function () {
+        credit.style.visibility = cover.classList.contains('active') ? 'hidden' : 'visible';
+      };
+      sync();
+      new MutationObserver(sync).observe(cover, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
+</body>
+</html>
