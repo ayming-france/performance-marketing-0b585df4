@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing de performance, où en sommes-nous · Ayming France · 2026-09</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ayming-france.github.io/assets/engine/slides.css">
+  <style>
+    :root {
+      --ay-primary: #11a9e6;
+      --ay-dark: #00456d;
+      --ay-warning: #f59e0b;
+      --ay-text: #0f172a;
+      --ay-gray: #6b7280;
+      --ay-light: #9ca3af;
+      --ay-line: #dbe3ea;
+      --ay-bg-subtle: #eef2f6;
+      --ay-bg-light: #f8fafc;
+    }
+    .slide-inner.insights { transform: none; max-width: 1180px; padding: 40px 56px; }
+    .slide-title.compact { margin-bottom: 30px; font-size: 32px; text-align: left; line-height: 1.2; align-self: stretch; width: 100%; }
+    .deck-credit { position: fixed; bottom: 60px; left: 28px; font-size: 11px; font-weight: 700; color: var(--ay-light); letter-spacing: 0.3px; z-index: 90; pointer-events: none; }
+    ul, ol, li, .scard, .roles, .lane, .note { text-align: left; }
+
+    /* ---------- Slide 1, the four-stage track ---------- */
+    .track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .track::before { content: ""; position: absolute; top: 23px; left: 12.5%; right: 12.5%; height: 3px;
+      background: linear-gradient(90deg, var(--ay-dark) 0%, var(--ay-dark) 33.3%, var(--ay-primary) 33.3%, var(--ay-primary) 66.7%, var(--ay-line) 66.7%); }
+    .stage { display: flex; flex-direction: column; align-items: center; padding: 0 14px; position: relative; }
+    .node { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px; color: #fff; background: var(--ay-dark); z-index: 1; }
+    .node.now { background: var(--ay-primary); box-shadow: 0 0 0 7px rgba(17,169,230,.18); }
+    .node.next { background: #fff; color: var(--ay-gray); border: 3px solid var(--ay-line); }
+    .when { margin-top: 12px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ay-gray); }
+    .stage.now .when { color: var(--ay-primary); }
+    .scard { margin-top: 10px; width: 100%; background: var(--ay-bg-light); border: 1px solid var(--ay-line); border-radius: 10px; padding: 16px 16px 14px; flex: 1; }
+    .stage.now .scard { background: #fff; border: 2px solid var(--ay-primary); padding: 15px 15px 13px; }
+    .scard h3 { font-size: 17px; font-weight: 800; color: var(--ay-dark); margin: 0 0 8px; line-height: 1.25; }
+    .scard p { font-size: 13.5px; line-height: 1.45; color: var(--ay-text); margin: 0; }
+    .scard .big { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--ay-line); }
+    .scard .big b { font-size: 34px; font-weight: 800; color: var(--ay-primary); line-height: 1; }
+    .scard .big span { font-size: 12.5px; color: var(--ay-gray); line-height: 1.3; }
+
+    .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; }
+    .role { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; line-height: 1.45; color: var(--ay-text); }
+    .role i { color: var(--ay-dark); flex: none; width: 22px; height: 22px; margin-top: 1px; }
+    .role b { color: var(--ay-dark); }
+
+
+    /* ---------- Slide 2, three dashboards ---------- */
+    .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; }
+    .board { background: var(--ay-bg-light); border-top: 5px solid var(--ay-dark); border-radius: 0 0 10px 10px; padding: 20px 22px; }
+    .board.mid { border-top-color: var(--ay-primary); }
+    .board.late { border-top-color: var(--ay-light); }
+    .b-tag { font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ay-dark); }
+    .board.mid .b-tag { color: var(--ay-primary); }
+    .board.late .b-tag { color: var(--ay-gray); }
+    .b-top h2 { font-size: 23px; font-weight: 800; color: var(--ay-dark); margin: 4px 0 8px; }
+    .b-q { font-size: 15px; font-style: italic; color: var(--ay-text); line-height: 1.4; margin: 0 0 12px; min-height: 42px; }
+    .b-row { border-top: 1px solid var(--ay-line); padding: 10px 0 4px; }
+    .b-lbl { display: block; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ay-gray); margin-bottom: 4px; }
+    .b-row p { font-size: 13.5px; line-height: 1.45; color: var(--ay-text); margin: 0; }
+    .b-row b { color: var(--ay-dark); }
+    .b-count { font-size: 13.5px; color: var(--ay-gray); margin: 0 0 6px !important; }
+    .b-count b { font-size: 22px; font-weight: 800; color: var(--ay-primary); margin-right: 4px; }
+    .b-list { list-style: none; padding: 0; margin: 0; text-align: left; }
+    .b-list li { font-size: 13px; line-height: 1.42; color: var(--ay-text); padding: 5px 0 5px 12px; border-left: 2px solid var(--ay-line); margin-bottom: 5px; }
+
+  </style>
+</head>
+<body>
+
+  <nav class="chapter-nav">
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-header">
+      <div class="nav-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+      <span class="nav-subtitle">Marketing de performance · Septembre 2026</span>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Avancement</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Du POC à la production</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Trois tableaux de bord</div>
+    </div>
+  </nav>
+
+  <div class="slide-counter"><span class="current">1</span>/2</div>
+
+  <main class="presentation">
+
+    <!-- ========== 0 · DU POC À LA PRODUCTION ========== -->
+    <section class="slide active" data-chapter="avancement">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Le POC est validé, la production doit maintenant le porter</h1>
+
+        <div class="track">
+          <div class="stage">
+            <div class="node"><i data-lucide="check"></i></div>
+            <div class="when">Fait</div>
+            <div class="scard">
+              <h3>POC livré</h3>
+              <p>J'ai construit une chaîne médaillon complète (bronze, silver, gold) dans le bac à sable Databricks, et les tableaux de bord Power BI qui la lisent.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="node"><i data-lucide="check"></i></div>
+            <div class="when">Fait · 23 juillet</div>
+            <div class="scard">
+              <h3>POC clôturé</h3>
+              <p>Pour éviter des KPI parallèles au référentiel (shadow KPI), l'équipe data a coupé la connexion entre le POC et Power BI. Un rapport publié ne lit plus que la gold de production.</p>
+            </div>
+          </div>
+          <div class="stage now">
+            <div class="node now">3</div>
+            <div class="when">En cours · depuis le 7 sept.</div>
+            <div class="scard">
+              <h3>Transfert en production</h3>
+              <p>La gold de production contient des définitions et des champs incorrects ou absents pour le marketing. Je les ai listés dans le registre des écarts, suivi en point hebdomadaire avec l'équipe data.</p>
+              <div class="big"><b>20</b><span>demandes ouvertes,<br>7 déjà livrées</span></div>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="node next">4</div>
+            <div class="when">Ensuite</div>
+            <div class="scard">
+              <h3>Rapports reconstruits</h3>
+              <p>Une fois les corrections en production, je reconstruis les rapports sur le modèle sémantique publié par l'équipe data, avec une seule définition partagée par tous.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 1 · TROIS TABLEAUX DE BORD ========== -->
+    <section class="slide" data-chapter="avancement">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Trois tableaux de bord, trois stades d'avancement</h1>
+
+        <div class="boards">
+          <div class="board adv">
+            <div class="b-top"><span class="b-tag">Prêt à démarrer</span><h2>SEO</h2></div>
+            <p class="b-q">Quelle visibilité organique nous amène des prospects ?</p>
+            <div class="b-row"><span class="b-lbl">Où en est-on</span><p>La production reprend la logique de mon pilote. Les données y sont depuis le 2 septembre et une première version du tableau de bord les lit déjà.</p></div>
+            <div class="b-row"><span class="b-lbl">Ce qui reste à faire</span>
+              <p class="b-count"><b>4</b> demandes au registre</p>
+              <ul class="b-list">
+                <li><b>Équipe data.</b> Définir une fois pour toutes les clics, les impressions, le taux de clic et la position moyenne dans son modèle.</li>
+              </ul></div>
+          </div>
+
+          <div class="board mid">
+            <div class="b-top"><span class="b-tag">À réconcilier</span><h2>Leads et opportunités</h2></div>
+            <p class="b-q">Combien de leads et de pipeline le marketing apporte-t-il, et par quel canal ?</p>
+            <div class="b-row"><span class="b-lbl">Où en est-on</span><p>Les données Salesforce de production ne sont pas celles de mon POC. Chaque définition est comparée à la nôtre avant de construire.</p></div>
+            <div class="b-row"><span class="b-lbl">Ce qui reste à faire</span>
+              <p class="b-count"><b>14</b> demandes au registre</p>
+              <ul class="b-list">
+                <li><b>L'origine des leads.</b> Les UTM de premier contact ne sont pas en gold, donc le canal qui a acquis un lead ne se lit pas, ni le pipeline à origine marketing qui en dépend.</li>
+                <li><b>Les comptages.</b> Un lead par ligne, MQL et SQL selon notre définition, l'affiliate qui sépare Ayming France et Ayming Digital.</li>
+                <li><b>Les campagnes.</b> Leur coût, la date d'inscription, l'influence, et l'accès à leurs tables.</li>
+                <li><b>Les opportunités.</b> La business line reprise du produit.</li>
+              </ul></div>
+          </div>
+
+          <div class="board late">
+            <div class="b-top"><span class="b-tag">Pas commencé</span><h2>Site web</h2></div>
+            <p class="b-q">Quels canaux amènent un trafic qui s'engage et convertit ?</p>
+            <div class="b-row"><span class="b-lbl">Où en est-on</span><p>Il n'est jamais passé par le POC. Ses données tournent toujours sur BigQuery, que je maintiens.</p></div>
+            <div class="b-row"><span class="b-lbl">Ce qui reste à faire</span>
+              <p class="b-count"><b>0</b> demande au registre, tout reste à lancer</p>
+              <ul class="b-list">
+                <li><b>Équipe data.</b> Faire entrer Google Analytics dans Databricks, via BigQuery, seule sortie possible de ces données.</li>
+                <li><b>À répartir.</b> Reconstruire la préparation des données d'événements, la partie la plus lourde de la migration.</li>
+              </ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+  </main>
+
+  <div class="keyboard-hint">
+    <span><span class="key" id="key-prev">←</span><span class="key" id="key-next">→</span> Naviguer</span>
+    <span><span class="key" id="key-fullscreen">F</span> Plein écran</span>
+  </div>
+
+  <div class="deck-credit">José J Encarnación Saiter | Marketing France · 2026-09</div>
+
+  <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
