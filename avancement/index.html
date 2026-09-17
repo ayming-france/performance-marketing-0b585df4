@@ -21,6 +21,7 @@
     .slide-inner.insights { transform: none; max-width: 1180px; padding: 40px 56px; }
     .slide-title.compact { margin-bottom: 30px; font-size: 32px; text-align: center; line-height: 1.2; align-self: stretch; width: 100%; }
     .deck-credit { position: fixed; bottom: 60px; left: 28px; font-size: 11px; font-weight: 700; color: var(--ay-light); letter-spacing: 0.3px; z-index: 90; pointer-events: none; }
+    .cover-credit { margin-top: 20px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.3px; opacity: 0.9; }
     ul, ol, li, .scard, .roles, .lane, .note { text-align: left; }
 
     /* ---------- Slide 1, the four-stage track ---------- */
@@ -78,18 +79,39 @@
       <span class="nav-subtitle">Marketing de performance · Septembre 2026</span>
     </div>
     <div class="nav-section">
+      <div class="nav-section-title">Vue d'ensemble</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Couverture</div>
+    </div>
+    <div class="nav-section">
       <div class="nav-section-title">Avancement</div>
-      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Du POC à la production</div>
-      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Trois tableaux de bord</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Du POC à la production</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>Trois tableaux de bord</div>
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/2</div>
+  <div class="slide-counter"><span class="current">1</span>/3</div>
 
   <main class="presentation">
 
-    <!-- ========== 0 · DU POC À LA PRODUCTION ========== -->
-    <section class="slide active" data-chapter="avancement">
+    <!-- ========== 0 · COUVERTURE ========== -->
+    <section class="slide cover active" data-chapter="cover">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo">
+            <img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming">
+          </div>
+          <h1 class="cover-title">Marketing<br>de performance</h1>
+          <p class="cover-subtitle">Où en sommes-nous<br>Septembre 2026</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 17 septembre 2026</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80" alt="Tableau de bord analytique marketing">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1 · DU POC À LA PRODUCTION ========== -->
+    <section class="slide" data-chapter="avancement">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Le POC est validé, la production doit maintenant le porter</h1>
 
@@ -133,7 +155,7 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
-    <!-- ========== 1 · TROIS TABLEAUX DE BORD ========== -->
+    <!-- ========== 2 · TROIS TABLEAUX DE BORD ========== -->
     <section class="slide" data-chapter="avancement">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Trois tableaux de bord, trois stades d'avancement</h1>
@@ -192,5 +214,18 @@
   <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script>lucide.createIcons();</script>
+  <script>
+    // Hide the global grey credit while the dark cover slide is active (cover has its own white credit)
+    (function () {
+      var cover = document.querySelector('.slide.cover');
+      var credit = document.querySelector('.deck-credit');
+      if (!cover || !credit) return;
+      var sync = function () {
+        credit.style.visibility = cover.classList.contains('active') ? 'hidden' : 'visible';
+      };
+      sync();
+      new MutationObserver(sync).observe(cover, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
 </body>
 </html>
