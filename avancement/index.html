@@ -24,10 +24,10 @@
     .cover-credit { margin-top: 20px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.3px; opacity: 0.9; }
     ul, ol, li, .scard, .roles, .lane, .note { text-align: left; }
 
-    /* ---------- Slide 1, the four-stage track ---------- */
-    .track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-    .track::before { content: ""; position: absolute; top: 23px; left: 12.5%; right: 12.5%; height: 3px;
-      background: linear-gradient(90deg, var(--ay-dark) 0%, var(--ay-dark) 33.3%, var(--ay-primary) 33.3%, var(--ay-primary) 66.7%, var(--ay-line) 66.7%); }
+    /* ---------- Slide 1, the five-stage track ---------- */
+    .track { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1fr 1fr; gap: 0; position: relative; }
+    .track::before { content: ""; position: absolute; top: 23px; left: 10%; right: 10%; height: 3px;
+      background: linear-gradient(90deg, var(--ay-dark) 0%, var(--ay-dark) 25%, var(--ay-primary) 25%, var(--ay-primary) 50%, var(--ay-line) 50%); }
     .stage { display: flex; flex-direction: column; align-items: center; padding: 0 14px; position: relative; }
     .node { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
       font-weight: 800; font-size: 18px; color: #fff; background: var(--ay-dark); z-index: 1; }
@@ -38,6 +38,7 @@
     .scard { margin-top: 10px; width: 100%; background: var(--ay-bg-light); border: 1px solid var(--ay-line); border-radius: 10px; padding: 16px 16px 14px; flex: 1; }
     .stage.now .scard { background: #fff; border: 2px solid var(--ay-primary); padding: 15px 15px 13px; }
     .scard h3 { font-size: 17px; font-weight: 800; color: var(--ay-dark); margin: 0 0 8px; line-height: 1.25; }
+    .stage.now .scard h3 { white-space: nowrap; }
     .scard p { font-size: 13.5px; line-height: 1.45; color: var(--ay-text); margin: 0; }
     .scard .big { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--ay-line); }
     .scard .big b { font-size: 34px; font-weight: 800; color: var(--ay-primary); line-height: 1; }
@@ -87,6 +88,7 @@
     .slide.active .stage:nth-child(2) > * { animation-delay: .5s; }
     .slide.active .stage:nth-child(3) > * { animation-delay: .75s; }
     .slide.active .stage:nth-child(4) > * { animation-delay: 1s; }
+    .slide.active .stage:nth-child(5) > * { animation-delay: 1.25s; }
     .slide.active .scard .big b { display: inline-block; animation: popIn .5s var(--ease-out) 1.2s both; }
 
     /* The stage in progress keeps pulsing: an expanding ring on the node, a soft glow on its card */
@@ -186,10 +188,18 @@
           </div>
           <div class="stage">
             <div class="node next">4</div>
-            <div class="when">Ensuite</div>
+            <div class="when">Fin octobre</div>
             <div class="scard">
               <h3>Rapports reconstruits</h3>
               <p>Une fois les corrections en production, reconstruction des rapports sur le modèle sémantique publié par l'équipe data, avec une seule définition partagée par tous.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="node next">5</div>
+            <div class="when">Fin décembre</div>
+            <div class="scard">
+              <h3>Déploiement dans les autres pays</h3>
+              <p>Déployer le modèle de marketing de performance dans les autres pays, en s'appuyant sur les fondations mises en production pour la France.</p>
             </div>
           </div>
         </div>
