@@ -70,6 +70,47 @@
     .b-list { list-style: none; padding: 0; margin: 0; text-align: left; }
     .b-list li { font-size: 13px; line-height: 1.42; color: var(--ay-text); padding: 5px 0 5px 12px; border-left: 2px solid var(--ay-line); margin-bottom: 5px; }
 
+    .boards-slide { padding-top: 0 !important; padding-bottom: 0 !important; }
+    .boards-slide .slide-title.compact { margin-bottom: 14px; }
+    .boards-slide .boards { width: 100%; }
+    .boards-slide .board { padding: 12px 18px; }
+    .boards-slide .b-top h2 { margin: 2px 0 4px; }
+    .boards-slide .b-row p { font-size: 13px; line-height: 1.4; }
+    .boards-slide .b-list li { font-size: 12.5px; line-height: 1.36; }
+    .boards-slide .b-q { min-height: 0; margin-bottom: 8px; }
+    .boards-slide .b-row { padding: 8px 0 2px; }
+    .boards-slide .b-list li { padding: 3px 0 3px 12px; margin-bottom: 3px; }
+
+    /* ---------- Slide 3, the campaign influence window ---------- */
+    .slide-inner.insights.tight { padding-top: 16px; padding-bottom: 12px; }
+    .belief { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 16px; text-align: left; width: 100%; }
+    .bcard { border-radius: 10px; padding: 12px 18px; background: var(--ay-bg-light); border: 1px solid var(--ay-line); }
+    .bcard.real { background: #fff; border: 2px solid var(--ay-primary); }
+    .bcard .b-lbl { margin-bottom: 6px; }
+    .bcard.real .b-lbl { color: var(--ay-primary); }
+    .bcard p { font-size: 14.5px; line-height: 1.45; color: var(--ay-text); margin: 0; }
+    .bcard b { color: var(--ay-dark); }
+    .fix { width: 100%; text-align: left; font-size: 15px; line-height: 1.45; color: var(--ay-text); margin: 0 0 12px; padding-left: 14px; border-left: 4px solid var(--ay-primary); }
+    .fix b { color: var(--ay-dark); }
+    .opts { width: 100%; border-collapse: separate; border-spacing: 0 8px; text-align: left; }
+    .opts th { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ay-gray); padding: 0 16px; text-align: left; }
+    .opts th.n, .opts td.n { text-align: right; }
+    .opts td { background: var(--ay-bg-light); padding: 8px 16px; font-size: 14px; color: var(--ay-text); vertical-align: middle; }
+    .opts td:first-child { border-radius: 10px 0 0 10px; border-left: 5px solid var(--ay-dark); width: 150px; }
+    .opts td:last-child { border-radius: 0 10px 10px 0; }
+    .opts .tag { display: block; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ay-dark); }
+    .opts .cut { font-size: 16px; font-weight: 800; color: var(--ay-dark); }
+    .opts td.n b { font-size: 24px; font-weight: 800; color: var(--ay-primary); }
+    .opts tr.ref td { background: #fff; color: var(--ay-gray); border-top: 1px dashed var(--ay-line); border-bottom: 1px dashed var(--ay-line); }
+    .opts tr.ref td:first-child { border-left-color: var(--ay-light); }
+    .opts tr.ref td:last-child { border-right: 1px dashed var(--ay-line); }
+    .opts tr.ref .tag, .opts tr.ref .cut { color: var(--ay-gray); }
+    .opts tr.ref td.n b { color: var(--ay-light); font-size: 20px; }
+    .ask { width: 100%; margin-top: 8px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 22px; align-items: start; text-align: left; }
+    .ask .q { background: var(--ay-dark); color: #fff; border-radius: 10px; padding: 14px 18px; font-size: 16px; font-weight: 700; line-height: 1.35; }
+    .ask .q small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 4px; }
+    .ask .note { font-size: 12px; line-height: 1.45; color: var(--ay-gray); margin: 0; }
+
     /* ---------- Animations, replayed each time a slide becomes active ---------- */
     @keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
     @keyframes drawLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -110,6 +151,14 @@
     .slide.active .b-list li:nth-child(3) { animation-delay: 1.2s; }
     .slide.active .b-list li:nth-child(4) { animation-delay: 1.3s; }
 
+    .slide.active .bcard { animation: riseIn .55s var(--ease-out) both; }
+    .slide.active .bcard.real { animation-delay: .35s; }
+    .slide.active .opts tbody tr { animation: riseIn .5s var(--ease-out) both; }
+    .slide.active .opts tbody tr:nth-child(1) { animation-delay: .7s; }
+    .slide.active .opts tbody tr:nth-child(2) { animation-delay: .85s; }
+    .slide.active .opts tbody tr:nth-child(3) { animation-delay: 1s; }
+    .slide.active .ask { animation: riseIn .55s var(--ease-out) 1.4s both; }
+
     @media (prefers-reduced-motion: reduce) {
       .slide.active *, .slide.active *::before, .slide.active *::after, .node.now::after { animation: none !important; }
     }
@@ -133,9 +182,13 @@
       <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Du POC à la production</div>
       <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>Trois tableaux de bord</div>
     </div>
+    <div class="nav-section">
+      <div class="nav-section-title">À décider</div>
+      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>Influence des campagnes</div>
+    </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/3</div>
+  <div class="slide-counter"><span class="current">1</span>/4</div>
 
   <main class="presentation">
 
@@ -211,7 +264,7 @@
 
     <!-- ========== 2 · TROIS TABLEAUX DE BORD ========== -->
     <section class="slide" data-chapter="avancement">
-      <div class="slide-inner insights">
+      <div class="slide-inner insights boards-slide">
         <h1 class="slide-title compact">Trois tableaux de bord, trois stades d'avancement</h1>
 
         <div class="boards">
@@ -251,6 +304,41 @@
                 <li><b>À répartir.</b> Reconstruire la préparation des données d'événements, la partie la plus lourde de la migration.</li>
               </ul></div>
           </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 3 · INFLUENCE DES CAMPAGNES ========== -->
+    <section class="slide" data-chapter="decision">
+      <div class="slide-inner insights tight">
+        <h1 class="slide-title compact">Le KR2 doit choisir jusqu'où compter l'influence des campagnes</h1>
+
+        <div class="belief">
+          <div class="bcard">
+            <span class="b-lbl">Campaign Influence 1.0, l'ancien modèle</span>
+            <p>Salesforce ne retenait que les campagnes rejointes <b>dans les 365 jours avant la création</b> de l'opportunité.</p>
+          </div>
+          <div class="bcard real">
+            <span class="b-lbl">Customizable Campaign Influence, le modèle actuel</span>
+            <p>Il ajoute aussi chaque campagne rejointe <b>pendant que l'opportunité est ouverte</b>, à toutes les étapes, jusqu'à la clôture. Un test en direct l'a confirmé le 28 septembre.</p>
+          </div>
+        </div>
+
+        <p class="fix">La solution existe. <b>La date d'inscription à la campagne</b>, demandée à l'équipe data, coupe l'influence à la borne choisie.</p>
+
+        <table class="opts">
+          <thead><tr><th></th><th>Borne</th><th>Ce que le KR2 mesure</th><th class="n">Opportunités</th><th class="n">TCV</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag">Option 1</span></td><td><span class="cut">Création de l'opportunité</span></td><td>Les campagnes qui ont précédé l'affaire</td><td class="n"><b>18,1 %</b></td><td class="n"><b>20,9 %</b></td></tr>
+            <tr><td><span class="tag">Option 2</span></td><td><span class="cut">Passage en P2</span></td><td>Ajoute celles qui ont nourri la proposition</td><td class="n"><b>19,5 %</b></td><td class="n"><b>22,9 %</b></td></tr>
+            <tr class="ref"><td><span class="tag">Aujourd'hui</span></td><td><span class="cut">Clôture</span></td><td>Le calcul de Salesforce tel quel, pour référence</td><td class="n"><b>21,3 %</b></td><td class="n"><b>24,8 %</b></td></tr>
+          </tbody>
+        </table>
+
+        <div class="ask">
+          <div class="q"><small>À décider en équipe</small>Le KR2 coupe-t-il à la création de l'opportunité ou au passage en P2 ?</div>
+          <p class="note">4 247 opportunités France créées depuis le 1er janvier 2026, mesurées dans Salesforce le 28 septembre 2026. Une opportunité compte si au moins un de ses contacts a rejoint une campagne de type Marketing, hors télémarketing et Business4all, avant la borne. Une opportunité jamais passée en P2 garde ses campagnes jusqu'à sa clôture.</p>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
