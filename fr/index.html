@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <link rel="alternate" hreflang="en" href="https://ayming-france.github.io/performance-marketing-0b585df4/">
+  <link rel="alternate" hreflang="fr" href="https://ayming-france.github.io/performance-marketing-0b585df4/fr/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment nous imaginons le marketing de performance · Ayming France · 2026-06</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ayming-france.github.io/assets/engine/slides.css">
+  <style>
+    :root {
+      --ay-primary: #11a9e6;
+      --ay-accent: #0da4e8;
+      --ay-dark: #00456d;
+      --ay-success: #0ab38c;
+      --ay-warning: #f59e0b;
+      --ay-danger: #ef4444;
+      --ay-text: #0f172a;
+      --ay-gray: #6b7280;
+      --ay-light: #9ca3af;
+      --ay-bg-subtle: #eef2f6;
+      --ay-bg-light: #f8fafc;
+    }
+
+    /* Predictable sizing: no engine zoom, design at true size */
+    .slide-inner.insights { transform: none; max-width: 1180px; padding: 40px 56px; }
+    .slide-inner.insights.wide { max-width: 1560px; padding: 36px 28px; }
+    .slide-title.compact { margin-bottom: 28px; font-size: 34px; }
+    .slide-eyebrow {
+      text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+      font-weight: 700; color: var(--ay-primary); margin-bottom: 10px;
+    }
+    .slide-subtitle { font-size: 17px; color: var(--ay-gray); font-weight: 500; margin: 0 0 30px 0; line-height: 1.5; max-width: 880px; }
+    .footnote { font-size: 12px; color: var(--ay-light); margin-top: 18px; line-height: 1.55; max-width: 940px; }
+    .cover-credit { margin-top: 22px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.3px; opacity: 0.9; }
+    .deck-credit { position: fixed; bottom: 16px; left: 28px; font-size: 11px; font-weight: 700; color: var(--ay-light); letter-spacing: 0.3px; z-index: 90; pointer-events: none; }
+
+    /* ===== Mission / bridge (big centered quote) ===== */
+    .mission-quote { font-size: 40px; font-weight: 700; color: var(--ay-dark); line-height: 1.3; max-width: 1000px; margin: 0 auto; }
+    .mission-quote b { color: var(--ay-primary); }
+    .mission-sub { font-size: 18px; color: var(--ay-gray); font-weight: 500; margin-top: 28px; max-width: 760px; margin-left:auto; margin-right:auto; }
+
+    /* proposal quote slide (white bg, blue highlights) */
+    .qquote { font-size: 34px; font-weight: 700; line-height: 1.5; color: var(--ay-dark); max-width: 1040px; margin: 0 auto; }
+    .qquote b { color: var(--ay-primary); font-weight: 800; }
+
+    /* ===== SLIDE: socle (single horizontal flow, light cards, no filled panel) ===== */
+    .socle-flow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 8px auto 0; width: 100%; max-width: 1500px; }
+    .sx { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 16px 18px; text-align: left; }
+    .sx.cap { width: 244px; }
+    .sx.enr { width: 250px; }
+    .sx-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--ay-primary); margin-bottom: 10px; }
+    .sx-grp { font-size: 9.5px; text-transform: uppercase; letter-spacing: .8px; color: var(--ay-gray); font-weight: 700; margin: 11px 0 5px; }
+    .sx-grp.first { margin-top: 0; }
+    .sx-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip2 { font-size: 10.5px; background: #eff6ff; color: var(--ay-dark); border-radius: 6px; padding: 3px 8px; font-weight: 600; }
+    .sx-rule { padding: 7px 0; border-bottom: 1px solid #f1f5f9; }
+    .sx-rule:last-child { border-bottom: none; padding-bottom: 0; }
+    .sx-rule:first-of-type { padding-top: 0; }
+    .sx-rule b { display: block; font-size: 12.5px; color: var(--ay-dark); }
+    .sx-rule span { font-size: 10.5px; color: var(--ay-gray); line-height: 1.3; }
+    .sx-node { border: 1px solid #e5e7eb; border-radius: 11px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.05); padding: 16px 16px; font-weight: 800; color: var(--ay-dark); font-size: 14px; text-align: center; min-width: 96px; }
+    .sx-node small { display: block; font-weight: 600; font-size: 10px; color: var(--ay-gray); margin-top: 3px; }
+    .sx-sf { border: 1.5px dashed var(--ay-primary); border-radius: 13px; background: #f7fcff; padding: 18px 16px 13px; position: relative; }
+    .sx-sf-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .sx-sf-inner { display: flex; align-items: center; gap: 9px; }
+    .sx-person { border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); background: #fff; border-radius: 9px; padding: 9px 13px; font-weight: 800; color: var(--ay-primary); font-size: 14px; text-align: center; width: 124px; min-height: 86px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; }
+    .sx-person small { display: block; font-weight: 600; font-size: 10px; color: var(--ay-gray); margin-top: 3px; line-height: 1.25; }
+    .sx-arrow { font-size: 22px; color: var(--ay-light); font-weight: 700; flex: none; }
+    .sx-mini { font-size: 15px; color: var(--ay-light); font-weight: 700; }
+    /* enrichissement: 3 boxes wrapped in the Salesforce-style dashed container */
+    .enr-wrap { display: flex; flex-direction: column; gap: 7px; width: 250px; padding-top: 18px; }
+    .eb { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.04); padding: 8px 11px; text-align: left; }
+    .eb b { display: block; font-size: 12px; color: var(--ay-dark); }
+    .eb span { font-size: 10px; color: var(--ay-gray); line-height: 1.3; }
+
+    /* ===== SLIDE: TCV problem (faults + distribution hero) ===== */
+    .faults { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 820px; margin: 0 auto 4px; width: 100%; }
+    .fault { background: #fff; border: 1px solid #fde2e2; border-left: 4px solid var(--ay-danger); border-radius: 12px; padding: 16px 20px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+    .fault .ft { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--ay-danger); margin-bottom: 6px; }
+    .fault .fb { font-size: 15px; color: var(--ay-text); font-weight: 500; line-height: 1.45; }
+    .fault .fb b { color: var(--ay-dark); font-weight: 800; }
+    /* three counts (TCV fails on 3 points) */
+    .counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100%; max-width: 1080px; margin: 10px auto 0; position: relative; }
+    .counts::before, .counts::after { content: ""; position: absolute; top: 12px; bottom: 12px; width: 1px; background: #e5e7eb; }
+    .counts::before { left: 33.333%; }
+    .counts::after { left: 66.667%; }
+    .count { padding: 4px 36px; text-align: left; }
+    .count:first-child { padding-left: 0; }
+    .count:last-child { padding-right: 0; }
+    .count .cnum-big { font-size: 92px; font-weight: 100; line-height: .82; letter-spacing: -4px; color: var(--ay-danger); margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+    .count .ct { font-size: 19px; font-weight: 800; color: var(--ay-dark); margin-bottom: 12px; line-height: 1.22; }
+    .count .cb { font-size: 13.5px; color: var(--ay-text); line-height: 1.55; }
+    .cycle-wrap { margin-top: 26px; width: 100%; max-width: 880px; margin-left:auto; margin-right:auto; }
+    .cycle-stats { display: flex; justify-content: center; gap: 56px; margin-bottom: 18px; }
+    .cs { text-align: center; }
+    .cs .csn { font-size: 46px; font-weight: 800; line-height: 1; color: var(--ay-dark); }
+    .cs .csn small { font-size: 18px; font-weight: 700; color: var(--ay-gray); }
+    .cs .csl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-gray); font-weight: 700; margin-top: 7px; }
+    .cs.hi .csn { color: var(--ay-primary); }
+    .cycle-bar { position: relative; height: 14px; border-radius: 8px; margin: 32px 6px 8px; background: linear-gradient(90deg,#0ab38c 0%,#11a9e6 22%,#f59e0b 55%,#ef4444 100%); }
+    .cmark { position: absolute; top: -7px; width: 2px; height: 28px; background: var(--ay-dark); transform: translateX(-1px); }
+    .cmark span { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; font-weight: 700; color: var(--ay-dark); }
+    .cmark.up span { bottom: 32px; }
+    .cmark.dn span { top: 32px; color: var(--ay-gray); }
+    .cycle-annot { font-size: 14px; font-style: italic; color: var(--ay-gray); text-align: center; margin-top: 44px; line-height: 1.5; }
+
+    /* ===== SLIDE: chaîne (pipeline nodes) ===== */
+    .chain-flow { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin-top: 18px; width: 100%; max-width: 1040px; margin-left:auto; margin-right:auto; }
+    .chain-node { flex: 0 0 auto; width: 132px; text-align: center; position: relative; z-index: 2; }
+    .chain-node .cn-num { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid var(--ay-primary); color: var(--ay-primary); font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-family: Georgia, serif; }
+    .chain-node .cn-name { font-size: 14px; font-weight: 800; color: var(--ay-dark); display: block; }
+    .chain-node .cn-sub { font-size: 11px; color: var(--ay-gray); margin-top: 3px; }
+    .chain-node.own .cn-num { background: linear-gradient(135deg,#11a9e6,#0ab38c); border: none; color: #fff; transform: scale(1.18); box-shadow: 0 6px 18px rgba(17,169,230,.35); }
+    .chain-node.own .cn-name { color: var(--ay-primary); }
+    .chain-node.later .cn-num { background: var(--ay-bg-light); border-color: var(--ay-light); color: var(--ay-light); border-style: dashed; }
+    .chain-node.later .cn-name { color: var(--ay-light); }
+    .chain-link { flex: 1; height: 2px; background: var(--ay-primary); margin-top: 25px; position: relative; }
+    .chain-link.dashed { background: repeating-linear-gradient(90deg,var(--ay-light) 0 5px,transparent 5px 11px); }
+    .chain-link::after { content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%); border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--ay-primary); }
+    .chain-link.dashed::after { border-left-color: var(--ay-light); }
+    /* coda: concluding statement under a thin rule (house idiom, NOT a box) */
+    .coda { margin: 38px auto 0; padding-top: 20px; border-top: 2px solid var(--ay-dark); max-width: 860px; font-size: 16px; line-height: 1.55; color: var(--ay-text); text-align: center; }
+    .coda b { color: var(--ay-dark); font-weight: 800; }
+    .coda em { color: var(--ay-primary); font-style: normal; font-weight: 800; }
+
+    /* slide: measurement chain (square boxes + ownership progress line) */
+    .relay { width: 100%; max-width: 1120px; margin: 0 auto; text-align: left; }
+    .relay-title { font-size: 40px; font-weight: 800; line-height: 1.16; margin: 0 0 42px; text-align: center; background: linear-gradient(90deg,#11a9e6,#0ab38c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .relay-row { display: flex; align-items: stretch; gap: 12px; width: 100%; margin: 0; }
+    .rbox { flex: 1; background: #f1f4f7; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 112px; }
+    .rbox .rt { font-weight: 800; color: var(--ay-dark); font-size: 16px; }
+    .rbox .rs { font-size: 11.5px; color: var(--ay-gray); margin-top: 6px; }
+    .rbox.own { background: var(--ay-primary); border-color: var(--ay-primary); }
+    .rbox.own .rt { color: #fff; }
+    .rbox.own .rs { color: rgba(255,255,255,.9); }
+    .rbox.later { background: #fff; border-style: dashed; border-color: #cbd5e1; }
+    .rbox.later .rt { color: var(--ay-light); }
+    .rbox.later .rs { color: var(--ay-light); }
+    .rarrow { display: flex; align-items: center; color: var(--ay-light); font-size: 20px; font-weight: 700; flex: none; }
+    .relay-zones { display: flex; gap: 14px; width: 100%; margin: 16px 0 0; min-height: 48px; }
+    .zmkt { flex: 4; }
+    .zsales { flex: 1; }
+    .zline { display: block; height: 3px; border-radius: 2px; background: var(--ay-primary); }
+    .zsales .zline { background: repeating-linear-gradient(90deg, #cbd5e1 0 6px, transparent 6px 12px); height: 2px; margin-top: .5px; }
+    .zlabel { display: block; margin-top: 11px; font-size: 11.5px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ay-dark); }
+    .zsales .zlabel { color: var(--ay-gray); text-align: right; }
+    .relay-foot { font-size: 15px; color: var(--ay-gray); line-height: 1.6; margin: 40px 0 0; max-width: 1000px; text-align: left; }
+    .relay-foot b { color: var(--ay-dark); font-weight: 800; }
+
+    /* slide: OKR (objectif vert + deux résultats clés bleus) */
+    .okr { width: 100%; max-width: 1060px; margin: 0 auto; }
+    .okr-obj { background: #e7f7ef; border-radius: 14px; padding: 24px 30px; text-align: left; margin-bottom: 22px; }
+    .okr-obj .ol { font-size: 12.5px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 800; color: var(--ay-success); margin-bottom: 8px; }
+    .okr-obj .ot { font-size: 21px; font-weight: 700; color: var(--ay-dark); line-height: 1.42; }
+    .okr-krs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .kr { background: #eaf3fc; border-radius: 14px; padding: 22px 26px; text-align: left; }
+    .kr .kl { font-size: 12.5px; color: var(--ay-primary); font-weight: 600; margin-bottom: 8px; letter-spacing: .3px; }
+    .kr .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .kr .kh { font-size: 22px; font-weight: 800; color: var(--ay-dark); margin-bottom: 6px; line-height: 1.2; }
+    .kr .kdef { font-size: 14.5px; color: var(--ay-dark); font-weight: 600; margin-bottom: 4px; }
+    .kr .ks { font-size: 13.5px; color: var(--ay-gray); line-height: 1.5; }
+    .okr-foot { margin-top: 24px; padding-top: 18px; border-top: 1px solid #e5e7eb; font-size: 14px; color: var(--ay-gray); text-align: left; }
+    .okr-foot b { color: var(--ay-dark); }
+
+    /* small KR badge top-left of a diagram slide (links the diagram to its key result) */
+    .kr-badge { position: absolute; top: 52px; left: 80px; background: #eaf3fc; border-radius: 12px; padding: 14px 18px; max-width: 380px; text-align: left; z-index: 6; }
+    .kr-badge .kl { font-size: 11px; color: var(--ay-primary); font-weight: 600; margin-bottom: 5px; letter-spacing: .3px; }
+    .kr-badge .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: .8px; }
+    .kr-badge .kh { font-size: 16px; font-weight: 800; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.2; }
+    .kr-badge .ks { font-size: 12px; color: var(--ay-gray); line-height: 1.4; }
+
+    /* ===== SLIDE: deux lentilles (compare floor/ceiling) ===== */
+    .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; max-width: 960px; margin: 0 auto; }
+    .lens { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 26px 28px; box-shadow: 0 4px 16px rgba(0,0,0,.06); text-align: left; position: relative; }
+    .lens.floor { border-top: 5px solid var(--ay-primary); }
+    .lens.ceiling { border-top: 5px solid var(--ay-success); }
+    .lens .lu { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+    .lens.floor .lu { color: var(--ay-primary); }
+    .lens.ceiling .lu { color: var(--ay-success); }
+    .lens .lt { font-size: 24px; font-weight: 800; color: var(--ay-dark); margin-bottom: 14px; }
+    .lens .lb { font-size: 14.5px; color: var(--ay-text); line-height: 1.55; }
+    .lens .lb b { color: var(--ay-dark); }
+    .lens .lpurpose { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #e5e7eb; font-size: 13.5px; color: var(--ay-text); }
+    .lens .lpurpose b { font-weight: 800; }
+    .lens.floor .lpurpose b { color: var(--ay-primary); }
+    .lens.ceiling .lpurpose b { color: var(--ay-success); }
+    .lens .ltag { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; }
+    .lens.floor .ltag { background: #e0f4fe; color: var(--ay-dark); }
+    .lens.ceiling .ltag { background: #e6f8f2; color: #076b54; }
+
+    /* ===== SLIDE: architectures (two tracks + warning note) ===== */
+    .track { display: flex; align-items: center; gap: 9px; margin: 0 auto 14px; flex-wrap: wrap; justify-content: center; max-width: 1000px; }
+    .track-label { min-width: 120px; text-align: right; font-size: 13px; font-weight: 800; padding-right: 6px; }
+    .track-label small { display: block; font-size: 10px; font-weight: 600; color: var(--ay-light); text-transform: uppercase; letter-spacing: 1px; }
+    .track-label.s { color: var(--ay-primary); }
+    .track-label.i { color: var(--ay-success); }
+    .astep { border: 1px solid #e5e7eb; border-radius: 9px; padding: 10px 13px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.04); font-size: 12.5px; font-weight: 600; color: var(--ay-dark); }
+    .astep.end-s { border: 2px solid var(--ay-primary); color: var(--ay-primary); font-weight: 800; }
+    .astep.end-i { border: 2px solid var(--ay-success); color: #076b54; font-weight: 800; }
+    .aarrow { font-size: 16px; color: var(--ay-light); }
+    /* ===== SLIDE: campaign influence (fan-in, membership) ===== */
+    .infl { display: flex; align-items: center; justify-content: center; margin: 44px auto 0; max-width: 1120px; }
+    .infl-node { border-radius: 13px; padding: 18px 22px; text-align: center; flex: none; }
+    .infl-person { border: 2px solid var(--ay-primary); background: #f7fcff; color: var(--ay-primary); font-weight: 800; font-size: 17px; min-width: 156px; }
+    .infl-person small { display: block; font-weight: 600; font-size: 11px; color: var(--ay-gray); margin-top: 4px; }
+    .infl-camps { border: 1.5px dashed var(--ay-primary); border-radius: 14px; background: #f7fcff; padding: 18px 16px 14px; position: relative; flex: none; }
+    .infl-camps-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .infl-camp { background: #eef7fd; border: 1px solid #cfe4f5; border-radius: 8px; padding: 9px 18px; font-weight: 700; color: var(--ay-dark); font-size: 13.5px; text-align: center; }
+    .infl-camp + .infl-camp { margin-top: 8px; }
+    .infl-opp { background: var(--ay-primary); color: #fff; font-weight: 800; font-size: 17px; min-width: 156px; }
+    .infl-opp small { display: block; font-weight: 600; font-size: 11px; color: rgba(255,255,255,.88); margin-top: 4px; }
+    .infl-conn { display: flex; flex-direction: column; align-items: center; padding: 0 16px; flex: none; }
+    .infl-conn .cl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-gray); font-weight: 700; margin-bottom: 5px; white-space: nowrap; }
+    .infl-conn .ca { font-size: 24px; color: var(--ay-light); font-weight: 700; }
+    /* influence variant: opportunity containing the campaigns as its influence */
+    .infl-oppbox { background: var(--ay-primary); border-radius: 14px; padding: 18px 16px 14px; position: relative; flex: none; }
+    .infl-oppbox-label { position: absolute; top: -9px; left: 14px; background: #fff; padding: 0 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-primary); font-weight: 800; }
+    .infl-oppcap { background: rgba(255,255,255,.18); color: #fff; border-radius: 7px; padding: 7px 16px; font-weight: 700; font-size: 13px; text-align: center; }
+    .infl-oppcap + .infl-oppcap { margin-top: 7px; }
+    .infl-opptag { color: #fff; font-size: 11.5px; font-weight: 700; text-align: center; margin-top: 10px; opacity: .9; }
+    /* influence: coverage accumulates across the lifecycle (cycle de vie) - slide-7 white-card idiom */
+    .lc { display: flex; align-items: center; justify-content: center; margin: 0 auto; max-width: 1120px; }
+    .lc-card { background: #fff; border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 16px 18px; text-align: left; width: 214px; flex: none; }
+    .lc-card.wide { width: 252px; }
+    .lc-card .lch-t { font-size: 17px; font-weight: 800; color: var(--ay-dark); }
+    .lc-card .lch-s { font-size: 11px; color: var(--ay-gray); margin: 2px 0 12px; }
+    .lc-arrow { display: flex; flex-direction: column; align-items: center; padding: 0 14px; flex: none; }
+    .lc-arrow .al { font-size: 10.5px; color: var(--ay-gray); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; text-align: center; white-space: nowrap; }
+    .lc-arrow .aa { font-size: 22px; color: var(--ay-light); font-weight: 700; }
+
+    /* ===== SLIDE: pyramide ===== */
+    .pyramid { display: flex; flex-direction: column; align-items: center; gap: 9px; margin: 6px auto 0; width: 100%; max-width: 760px; }
+    .tier { border-radius: 12px; padding: 16px 24px; text-align: center; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+    .tier .tlvl { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+    .tier .tcontent { font-size: 13px; font-weight: 600; line-height: 1.5; margin-top: 5px; }
+    .tier.okr { width: 50%; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; }
+    .tier.okr .tlvl { opacity: .85; }
+    .tier.okr .tcontent { font-size: 14px; font-weight: 800; }
+    /* POC closing slide */
+    .poc { text-align: center; max-width: 880px; margin: 0 auto; }
+    .poc p { font-size: 18px; color: var(--ay-gray); line-height: 1.6; margin: 0 auto 34px; max-width: 760px; }
+    .poc-cta { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; padding: 14px 30px; border-radius: 30px; box-shadow: 0 6px 18px rgba(17,169,230,.3); }
+    .tier.kpi { width: 76%; background: #eaf6fc; color: var(--ay-dark); border: 1px solid #cfe9f7; }
+    .tier.kpi .tlvl { color: var(--ay-primary); }
+    .tier.met { width: 100%; background: #f6f8fa; color: var(--ay-text); border: 1px solid #e5e7eb; }
+    .tier.met .tlvl { color: var(--ay-gray); }
+    .tier b { font-weight: 800; }
+    .tchips { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-top: 9px; }
+    .tchip { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 7px; padding: 5px 11px; font-size: 12.5px; font-weight: 600; color: var(--ay-dark); }
+    .tier.kpi .tchip { border-color: #cfe9f7; }
+    .park { font-size: 13px; color: var(--ay-gray); margin-top: 22px; max-width: 760px; margin-left:auto; margin-right:auto; line-height: 1.55; font-style: italic; }
+    .park b { color: var(--ay-dark); font-style: normal; }
+
+    /* ===== SLIDE: angles morts (blind spots fan into direct) ===== */
+    .bias-wrap { display: flex; align-items: center; justify-content: center; gap: 28px; max-width: 1080px; margin: 6px auto 0; }
+    .bias-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1; max-width: 660px; }
+    .bias { background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #94a3b8; border-radius: 12px; padding: 14px 18px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+    .bias .bt { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 800; color: var(--ay-gray); margin-bottom: 5px; }
+    .bias .bb { font-size: 13.5px; color: var(--ay-text); line-height: 1.45; }
+    .bias-conn { display: flex; flex-direction: column; align-items: center; flex: none; }
+    .bias-conn .cl { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--ay-gray); font-weight: 700; margin-bottom: 5px; white-space: nowrap; }
+    .bias-conn .ca { font-size: 26px; color: var(--ay-light); font-weight: 700; }
+    .bias-sink { background: var(--ay-dark); color: #fff; border-radius: 14px; padding: 28px 30px; text-align: center; flex: none; min-width: 212px; }
+    .bias-sink .st { font-size: 23px; font-weight: 800; letter-spacing: .3px; }
+    .bias-sink .ss { font-size: 12px; font-weight: 600; opacity: .85; margin-top: 7px; }
+
+    /* ===== SLIDE: direct signal (two ledger columns) ===== */
+    .direct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 1000px; margin: 4px auto 0; }
+    .dcol { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px 26px; text-align: left; box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+    .dcol.got { border-top: 5px solid var(--ay-primary); }
+    .dcol.rest { border-top: 5px solid var(--ay-dark); }
+    .dh { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .dcol.got .dh { color: var(--ay-primary); }
+    .dcol.rest .dh { color: var(--ay-dark); }
+    .di { padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+    .di:last-child { border-bottom: none; padding-bottom: 4px; }
+    .di b { display: block; font-size: 14.5px; color: var(--ay-dark); margin-bottom: 2px; }
+    .di span { font-size: 12.5px; color: var(--ay-gray); line-height: 1.45; }
+
+    /* ===== SLIDE: CRM hygiene (giant stat) ===== */
+    .big-stat { font-size: 150px; font-weight: 800; line-height: .9; letter-spacing: -4px; background: linear-gradient(135deg,#11a9e6,#0ab38c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 4px 0 6px; }
+    .big-sub { font-size: 18px; font-weight: 600; color: var(--ay-dark); max-width: 820px; margin: 0 auto; line-height: 1.5; }
+    .big-sub b { color: var(--ay-primary); }
+
+    /* ===== SLIDE: horizon (checklist) ===== */
+    .horizon { list-style: none; margin: 6px auto 0; max-width: 840px; text-align: left; }
+    .horizon li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--ay-bg-subtle); font-size: 17px; color: var(--ay-text); line-height: 1.45; }
+    .horizon li:last-child { border-bottom: none; }
+    .horizon li b { color: var(--ay-dark); }
+    .horizon .hz-icon { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .horizon .hz-icon svg { width: 16px; height: 16px; }
+
+    /* ===== SLIDE: ROI vs North Star (re-lecture de la chaîne de mesure) ===== */
+    .rbox.faded { opacity: .38; }
+    .rarrow.faded { opacity: .38; }
+    .rbox.roi { background: var(--ay-success); border-color: var(--ay-success); }
+    .rbox.roi .rt { color: #fff; }
+    .rbox.roi .rs { color: rgba(255,255,255,.92); }
+    .relay-zones .zmkt.ns .zlabel { text-align: center; color: var(--ay-dark); }
+    .relay-zones .zsales.roi .zline { background: repeating-linear-gradient(90deg,#0ab38c 0 6px,transparent 6px 12px); height: 3px; }
+    .relay-zones .zsales.roi .zlabel { color: #076b54; text-align: center; }
+    .relay-zones .zsub { display: block; font-size: 11px; font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--ay-gray); margin-top: 4px; line-height: 1.35; }
+    .relay-zones .zmkt.ns .zsub, .relay-zones .zsales.roi .zsub { text-align: center; }
+    .relay-zones .zmkt.ns .zcap { display: block; width: 25%; margin-left: auto; text-align: center; }
+    .relay-zones .zmkt.ns .zcap .zlabel { white-space: nowrap; }
+    /* Lead-sources native diagram (on-brand palette + Lucide line icons) */
+    .lead-src { display: grid; grid-template-columns: 1fr 168px; grid-template-rows: auto 1fr auto; gap: 8px 10px; width: 100%; max-width: 1140px; margin: 16px auto 0; color: #fff; text-align: left; }
+    .lead-src .ls-bar { grid-column: 1; grid-row: 1; background: #11a9e6; border-radius: 9px; text-align: center; font-size: 19px; font-weight: 600; padding: 11px; }
+    .lead-src .ls-out-hdr { grid-column: 2; grid-row: 1; background: #0ab38c; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; }
+    .lead-src .ls-cols { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+    .lead-src .ls-col { border-radius: 9px; padding: 13px 12px 15px; }
+    .lead-src .c-mkt { background: #11a9e6; }
+    .lead-src .c-ref { background: #0d90c8; }
+    .lead-src .c-par { background: #0977aa; }
+    .lead-src .c-sdr { background: #045e8b; }
+    .lead-src .c-sal { background: #00456d; }
+    .lead-src .ls-h { display: flex; align-items: center; gap: 7px; font-size: 20px; font-weight: 600; margin-bottom: 11px; line-height: 1; }
+    .lead-src .ls-h i { width: 19px; height: 19px; flex: 0 0 auto; stroke-width: 2.25; }
+    .lead-src .ls-col ul { list-style: none; margin: 0; padding: 0; }
+    .lead-src .ls-col li { position: relative; padding-left: 14px; font-size: 13.5px; line-height: 1.32; margin-bottom: 3px; }
+    .lead-src .ls-col li::before { content: "\2022"; position: absolute; left: 2px; top: 0; opacity: .75; }
+    .lead-src .ls-top { min-height: 105px; margin-bottom: 11px; }
+    .lead-src .ls-out-box { grid-column: 2; background: #0ab38c; border-radius: 9px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 11px; line-height: 1.42; }
+    .lead-src .ls-out-box.big { grid-row: 2; font-size: 13.5px; }
+    .lead-src .ls-out-box.small { grid-row: 3; font-size: 14px; }
+    .lead-src .ls-indirect { grid-column: 1; grid-row: 3; background: #64748b; display: flex; align-items: center; gap: 11px; padding: 12px 48px 12px 16px; clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%); }
+    .lead-src .ls-indirect i { width: 24px; height: 24px; flex: 0 0 auto; stroke-width: 2; }
+    .lead-src .ls-itxt { display: flex; flex-direction: column; }
+    .lead-src .ls-itxt b { font-size: 18px; font-weight: 600; line-height: 1.15; }
+    .lead-src .ls-itxt span { font-size: 13px; line-height: 1.24; opacity: .95; }
+    .lead-src .ls-glabel { font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; opacity: .6; margin: 0 0 4px; }
+    .lead-src .ls-out-box.big { flex-direction: column; gap: 9px; }
+    .lead-src .ob-label { font-size: 14.5px; font-weight: 700; line-height: 1.28; }
+    .lead-src .ob-label span { font-weight: 500; opacity: .85; }
+    .lead-src .ob-metrics { width: 100%; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.4); font-size: 11.5px; font-weight: 600; line-height: 1.45; }
+  </style>
+</head>
+<body>
+
+  <!-- Chapter Navigation -->
+  <nav class="chapter-nav">
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-header">
+      <div class="nav-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+      <span class="nav-subtitle">Marketing de performance · Juin 2026</span>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Ouverture</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Couverture</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Notre posture</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Le constat</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>Le TCV échoue</div>
+      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>La proposition</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Le cadre</div>
+      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>Les sources de leads</div>
+      <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>La chaîne de mesure</div>
+      <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>ROI vs North Star</div>
+      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Objectif &amp; résultats clés</div>
+      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Le socle : d'où vient chaque lead</div>
+      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>Pipeline à origine</div>
+      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>L'influence : cycle de vie</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>L'influence : comité d'achat</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>Campaign Influence</div>
+      <div class="nav-item" data-slide="13"><span class="nav-item-number">14</span>La pyramide</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">L'honnêteté</div>
+      <div class="nav-item" data-slide="14"><span class="nav-item-number">15</span>Les angles morts</div>
+      <div class="nav-item" data-slide="15"><span class="nav-item-number">16</span>Direct, le signal</div>
+      <div class="nav-item" data-slide="16"><span class="nav-item-number">17</span>Hygiène CRM</div>
+      <div class="nav-item" data-slide="17"><span class="nav-item-number">18</span>L'horizon</div>
+    </div>
+  </nav>
+
+  <div class="slide-counter"><span class="current">1</span>/18</div>
+
+  <main class="presentation">
+
+    <!-- ========== 0 · COVER ========== -->
+    <section class="slide cover active" data-chapter="ouverture">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <h1 class="cover-title">Mesurer la<br>contribution<br>marketing</h1>
+          <p class="cover-subtitle">Une vision pour piloter la valeur que nous créons</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-06</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80" alt="Tableau de bord analytique marketing">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1 · NOTRE POSTURE (conviction) ========== -->
+    <section class="slide" data-chapter="posture">
+      <div class="slide-inner insights">
+        <p class="mission-quote">Le TCV est un <b>résultat d'entreprise</b>, donc pas une métrique qu'une <b>seule équipe</b> possède.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 1 · LE TCV ÉCHOUE SUR TROIS POINTS ========== -->
+    <section class="slide" data-chapter="constat">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Une métrique de TCV échoue comme KPI marketing, sur trois points</h1>
+
+        <div class="counts">
+          <div class="count c1">
+            <div class="cnum-big">01</div>
+            <div class="ct">Lagging, pas Leading</div>
+            <div class="cb">Un indicateur <i>lagging</i> rapporte ce qui s'est déjà passé. Il ne peut pas être un KPI&nbsp;: quand il bouge, il n'y a plus rien à piloter.</div>
+          </div>
+          <div class="count c2">
+            <div class="cnum-big">02</div>
+            <div class="ct">Le dernier relais, pas le nôtre</div>
+            <div class="cb">Les ventes courent la dernière ligne droite et closent sur des conditions qu'on ne fixe pas. On ne peut pas optimiser un résultat qu'on ne contrôle pas.</div>
+          </div>
+          <div class="count c3">
+            <div class="cnum-big">03</div>
+            <div class="ct">Attribution, pas contribution</div>
+            <div class="cb">Quand chaque équipe court après le même chiffre de TCV, cela déclenche une guerre du crédit plutôt qu'un travail d'équipe. Ce qu'on veut vraiment, c'est de la collaboration, pas des silos, en mesurant chaque équipe sur l'étape qu'elle possède vraiment.</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 3 · LA PROPOSITION (quote) ========== -->
+    <section class="slide" data-chapter="constat">
+      <div class="slide-inner insights">
+        <p class="qquote">Nous devons mesurer le marketing là où il peut améliorer le système, en <b>possédant son étape</b> et en <b>identifiant ses leviers de progression</b>, pour <b>rendre tout le pipeline meilleur</b>.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 3b · LES SOURCES DE LEADS ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">Les sources de leads</h1>
+        <div class="lead-src">
+          <div class="ls-bar">Contributeurs directs</div>
+          <div class="ls-out-hdr">Résultats</div>
+          <div class="ls-cols">
+            <div class="ls-col c-mkt">
+              <div class="ls-h"><i data-lucide="target"></i>Marketing</div>
+              <div class="ls-glabel">Leviers</div>
+              <ul class="ls-top"><li>Stratégie GTM</li><li>Les campagnes se rattachent aux opportunités</li></ul>
+              <div class="ls-glabel">Leads</div>
+              <ul class="ls-bot"><li>Demandes via le site</li><li>Téléchargements</li><li>Webinaires</li><li>Emailings</li><li>Réseaux sociaux</li></ul>
+            </div>
+            <div class="ls-col c-ref">
+              <div class="ls-h"><i data-lucide="repeat"></i>Referrals</div>
+              <div class="ls-glabel">Leviers</div>
+              <ul class="ls-top"><li>Interne&nbsp;: ICS, B4All</li><li>Externe&nbsp;: clients, banques, etc.</li></ul>
+              <div class="ls-glabel">Leads</div>
+              <ul class="ls-bot"><li>Leads recommandés</li></ul>
+            </div>
+            <div class="ls-col c-par">
+              <div class="ls-h"><i data-lucide="link"></i>Partenaires</div>
+              <div class="ls-glabel">Leviers</div>
+              <ul class="ls-top"><li>CPAs</li><li>PEs, banques</li><li>Fédérations professionnelles</li><li>Clubs</li></ul>
+              <div class="ls-glabel">Leads</div>
+              <ul class="ls-bot"><li>Leads recommandés</li><li>Actions GTM</li></ul>
+            </div>
+            <div class="ls-col c-sdr">
+              <div class="ls-h"><i data-lucide="phone"></i>SDR/Télémkg</div>
+              <div class="ls-glabel">Leviers</div>
+              <ul class="ls-top"><li>Équipes SDR internes</li><li>SSC</li></ul>
+              <div class="ls-glabel">Leads</div>
+              <ul class="ls-bot"><li>Appels sortants, principalement</li><li>Messagerie (SMS, WhatsApp)</li><li>DMs, InMails</li><li>Emails individuels</li></ul>
+            </div>
+            <div class="ls-col c-sal">
+              <div class="ls-h"><i data-lucide="handshake"></i>Ventes</div>
+              <div class="ls-glabel">Leviers</div>
+              <ul class="ls-top"><li>Pipeline management</li><li>Networking</li><li>Account management</li></ul>
+              <div class="ls-glabel">Leads</div>
+              <ul class="ls-bot"><li>Cold calling</li><li>Messagerie</li><li>InMails</li><li>Emails individuels</li></ul>
+            </div>
+          </div>
+          <div class="ls-out-box big">
+            <div class="ob-label">À origine &amp; influencé</div>
+            <div class="ob-metrics">TCV · TCV GM · LTV · Pipeline</div>
+          </div>
+          <div class="ls-indirect">
+            <i data-lucide="settings"></i>
+            <div class="ls-itxt"><b>Contribution marketing indirecte</b><span>Notoriété, contenu, RP, propositions, supports commerciaux, base de données, études de marché, support commercial</span></div>
+          </div>
+          <div class="ls-out-box small">Pertinence marché, notoriété &amp; réassurance</div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 4 · LA CHAÎNE DE MESURE ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <div class="relay">
+        <h1 class="relay-title">Le marketing agit sur un système, sur les étapes qu'il peut piloter.</h1>
+
+        <div class="relay-row">
+          <div class="rbox"><div class="rt">Canaux</div><div class="rs">volume, qualité</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox"><div class="rt">Campagnes</div><div class="rs">points de contact</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox"><div class="rt">Leads &amp; Contacts</div><div class="rs">acquisition &amp; nurturing</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox"><div class="rt">Opportunité</div><div class="rs">à origine · influencé</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox later"><div class="rt">P4</div><div class="rs">à origine · influencé</div></div>
+        </div>
+
+        <div class="relay-zones">
+          <div class="zmkt"><span class="zline"></span><span class="zlabel">Le périmètre que le marketing peut piloter</span></div>
+          <div class="zsales"><span class="zline"></span><span class="zlabel">Le closing, aux ventes</span></div>
+        </div>
+
+        <p class="relay-foot">Le marketing se mesure tout au long du système : ses objectifs de <b>contribution</b> se fixent à l'<b>opportunité</b>, son <b>efficience</b> se lit au <b>P4</b>. Ce partage clair évite les conflits d'attribution.</p>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 4b · ROI vs NORTH STAR (re-lecture de la chaîne de mesure) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <div class="relay">
+        <h1 class="relay-title">Le marketing agit sur un système, sur les étapes qu'il peut piloter.</h1>
+
+        <div class="relay-row">
+          <div class="rbox faded"><div class="rt">Canaux</div><div class="rs">volume, qualité</div></div>
+          <div class="rarrow faded">&rarr;</div>
+          <div class="rbox faded"><div class="rt">Campagnes</div><div class="rs">points de contact</div></div>
+          <div class="rarrow faded">&rarr;</div>
+          <div class="rbox faded"><div class="rt">Leads &amp; Contacts</div><div class="rs">acquisition &amp; nurturing</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox own"><div class="rt">Opportunité</div><div class="rs">à origine · influencé</div></div>
+          <div class="rarrow">&rarr;</div>
+          <div class="rbox roi"><div class="rt">P4</div><div class="rs">à origine · influencé</div></div>
+        </div>
+
+        <div class="relay-zones">
+          <div class="zmkt ns"><span class="zline"></span><span class="zcap"><span class="zlabel">Performance (North Star)</span><span class="zsub">Leading</span></span></div>
+          <div class="zsales roi"><span class="zline"></span><span class="zlabel">Efficiency (ROI)</span><span class="zsub">Lagging</span></div>
+        </div>
+
+        <p class="relay-foot">Le marketing se mesure tout au long du système : ses objectifs de <b>contribution</b> se fixent à l'<b>opportunité</b>, son <b>efficience</b> se lit au <b>P4</b>. Ce partage clair évite les conflits d'attribution.</p>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 5 · DEUX LENTILLES ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Le marketing est responsable du pipeline qu'il génère, pas du TCV qu'il ne contrôle pas</h1>
+        <div class="okr">
+          <div class="okr-obj">
+            <div class="ol">Objectif</div>
+            <div class="ot">Faire croître la contribution du marketing au pipeline, au service de la croissance du chiffre d'affaires.</div>
+          </div>
+          <div class="okr-krs">
+            <div class="kr">
+              <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
+              <div class="kh">Pipeline à origine marketing</div>
+              <div class="kdef">Origine first-touch marketing</div>
+              <div class="ks">en valeur (€ TCV) et en nombre d'opportunités</div>
+            </div>
+            <div class="kr">
+              <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
+              <div class="kh">Couverture influencée par le marketing</div>
+              <div class="kdef">Tout point de contact marketing, via Campaign Influence</div>
+              <div class="ks">% du pipeline avec au moins un contact marketing</div>
+            </div>
+          </div>
+          <div class="okr-foot">Mesuré à partir de nos données first-party&nbsp;: <b>UTM</b> pour l'origine, <b>Campaign Influence</b> pour la couverture.</div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 6 · LE SOCLE : CAPTURE DU CANAL (preuve du chemin à origine) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
+        <div class="kh">Pipeline à origine marketing</div>
+        <div class="ks">comment on le rend possible</div>
+      </div>
+      <div class="slide-inner insights wide">
+
+        <div class="socle-flow">
+          <div class="sx-node" style="border-top:4px solid var(--ay-primary);">Visiteur<small>arrive sur un point de conversion</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx cap">
+            <div class="sx-tag">Capture</div>
+            <div class="sx-grp first">UTM</div>
+            <div class="sx-chips"><span class="chip2">source</span><span class="chip2">medium</span><span class="chip2">campaign</span><span class="chip2">term</span><span class="chip2">content</span></div>
+            <div class="sx-grp">Données publicitaires</div>
+            <div class="sx-chips"><span class="chip2">gclid</span><span class="chip2">msclkid</span><span class="chip2">fbclid</span><span class="chip2">li_fat_id</span></div>
+            <div class="sx-grp">Identité utilisateur</div>
+            <div class="sx-chips"><span class="chip2">GA Client ID</span></div>
+          </div>
+
+          <div class="sx-arrow">&rarr;</div>
+
+          <div class="sx-sf enr-wrap">
+            <div class="sx-sf-label">Traitement</div>
+            <div class="eb"><b>Stocker en first-party</b><span>nos données, pas un cookie tiers.</span></div>
+            <div class="eb"><b>Injection multi-pages</b><span>l'origine suit le visiteur jusqu'au formulaire.</span></div>
+            <div class="eb"><b>Récupérer le non-déclaré</b><span>source &amp; medium déduits du référent (LLM, organique, social).</span></div>
+            <div class="eb"><b>Normaliser</b><span>valeurs nettoyées et standardisées.</span></div>
+          </div>
+
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-node">Formulaire<small>UTM capturés</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-node">Pardot<small>first-touch posé</small></div>
+          <div class="sx-arrow">&rarr;</div>
+
+          <div class="sx-person">Lead<small>UTM origine + dynamique</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-person">Contact<small>UTM origine + dynamique</small></div>
+          <div class="sx-arrow">&rarr;</div>
+          <div class="sx-person">Opportunité<small>à origine marketing</small></div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== POC · PIPELINE À ORIGINE MARKETING (déplacé en position 9) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Pipeline à origine marketing</h1>
+        <div class="poc">
+          <a class="poc-cta" href="https://app.powerbi.com/groups/6149dc65-729a-499f-84b0-de9b596d31a2/reports/bde24fc6-7ea9-4760-a176-634e87b73452/conv0000000000000f01?experience=power-bi" target="_blank" rel="noopener">Voir le rapport &rarr;</a>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 7 · L'INFLUENCE : CYCLE DE VIE (la couverture s'accumule) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
+        <div class="kh">Couverture influencée par le marketing</div>
+        <div class="ks">comment elle se construit</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="lc">
+          <div class="lc-card">
+            <div class="lch-t">Lead</div>
+            <div class="lch-s">2 campagnes</div>
+            <div class="sx-chips">
+              <span class="chip2">Salon</span>
+              <span class="chip2">Livre blanc</span>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">conversion</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card">
+            <div class="lch-t">Contact</div>
+            <div class="lch-s">2 de plus</div>
+            <div class="sx-chips">
+              <span class="chip2">Conférence</span>
+              <span class="chip2">Table ronde</span>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">rôle de contact</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card wide">
+            <div class="lch-t">Opportunité</div>
+            <div class="lch-s">les deux phases réunies</div>
+            <div class="sx-grp first">Campagnes d'influence</div>
+            <div class="sx-chips">
+              <span class="chip2">Salon</span>
+              <span class="chip2">Livre blanc</span>
+              <span class="chip2">Conférence</span>
+              <span class="chip2">Table ronde</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 8 · L'INFLUENCE - COMITÉ D'ACHAT ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="kr-badge">
+        <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
+        <div class="kh">Couverture influencée par le marketing</div>
+        <div class="ks">à travers le comité d'achat</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="lc">
+          <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div class="lc-card">
+                <div class="lch-t">Lead</div>
+                <div class="lch-s">2 campagnes</div>
+                <div class="sx-chips">
+                  <span class="chip2">Salon</span>
+                  <span class="chip2">Atelier</span>
+                </div>
+              </div>
+              <div class="lc-arrow"><span class="al">conversion</span><span class="aa">&rarr;</span></div>
+              <div class="lc-card">
+                <div class="lch-t">Contact #1</div>
+                <div class="lch-s">2 de plus</div>
+                <div class="sx-chips">
+                  <span class="chip2">Table ronde</span>
+                  <span class="chip2">Conférence</span>
+                </div>
+              </div>
+            </div>
+            <div class="lc-card">
+              <div class="lch-t">Contact #2</div>
+              <div class="lch-s">ses campagnes</div>
+              <div class="sx-chips">
+                <span class="chip2">Livre blanc</span>
+                <span class="chip2">Conférence</span>
+              </div>
+            </div>
+          </div>
+          <div class="lc-arrow"><span class="al">rôles de contact</span><span class="aa">&rarr;</span></div>
+          <div class="lc-card wide">
+            <div class="lch-t">Opportunité</div>
+            <div class="lch-s">agrège les campagnes de tous les rôles</div>
+            <div class="sx-grp first">Campagnes d'influence</div>
+            <div class="sx-chips">
+              <span class="chip2">Salon &middot; Champion</span>
+              <span class="chip2">Atelier &middot; Champion</span>
+              <span class="chip2">Table ronde &middot; Champion</span>
+              <span class="chip2">Conférence &middot; Champion</span>
+              <span class="chip2">Livre blanc &middot; Décideur</span>
+              <span class="chip2">Conférence &middot; Décideur</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== CAMPAIGN INFLUENCE EN ACTION (exemple réel) ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Campaign Influence</h1>
+        <div class="poc">
+          <a class="poc-cta" href="https://ayming.my.salesforce.com/006aT00001s2bovQAA" target="_blank" rel="noopener">Voir l'exemple &rarr;</a>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 7 · LA PYRAMIDE ========== -->
+    <section class="slide" data-chapter="cadre">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Notre pyramide relie un cap, des indicateurs pour le piloter et des leviers pour l'actionner</h1>
+
+        <div class="pyramid">
+          <div class="tier okr"><div class="tlvl">OKR</div><div class="tcontent">Contribution du marketing au pipeline&nbsp;: à origine (€/#) et influencée (%)</div></div>
+          <div class="tier kpi"><div class="tlvl">KPI</div><div class="tchips"><span class="tchip">Conversion MQL &rarr; opportunité</span><span class="tchip">conversion par étape</span><span class="tchip">coût par lead qualifié*</span><span class="tchip">CAC*</span><span class="tchip">LTV:CAC*</span><span class="tchip">vélocité du pipeline*</span></div></div>
+          <div class="tier met"><div class="tlvl">Métriques</div><div class="tchips"><span class="tchip">Pages vues</span><span class="tchip">durée de session</span><span class="tchip">taux de rebond</span><span class="tchip">impressions</span><span class="tchip">interactions sociales</span><span class="tchip">taux d'ouverture</span><span class="tchip">CPC</span><span class="tchip">CTR</span><span class="tchip">dépense publicitaire</span><span class="tchip">inscriptions webinar</span><span class="tchip">téléchargements</span><span class="tchip">premiers rendez-vous</span></div></div>
+        </div>
+
+        <p class="park">* À venir, une fois les coûts consolidés et l'hygiène CRM assainie.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 10 · LES ANGLES MORTS (le modèle ne surcompte jamais) ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Le modèle ne peut pas surcompter, car chaque angle mort le fait sous-compter</h1>
+        <div class="bias-wrap">
+          <div class="bias-grid">
+            <div class="bias"><div class="bt">Bloqueurs de pub</div><div class="bb">La mesure ne se charge pas&nbsp;: la visite est invisible.</div></div>
+            <div class="bias"><div class="bt">Safari &middot; iOS</div><div class="bb">La mémoire first-party expire après 7&nbsp;jours sans visite.</div></div>
+            <div class="bias"><div class="bt">Multi-appareils</div><div class="bb">Premier contact sur mobile, formulaire sur desktop&nbsp;: le lien est rompu.</div></div>
+            <div class="bias"><div class="bt">Stockage effacé</div><div class="bb">Navigation privée, nettoyage du navigateur&nbsp;: l'historique disparaît.</div></div>
+          </div>
+          <div class="bias-conn"><span class="cl">dans tous les cas</span><span class="ca">&rarr;</span></div>
+          <div class="bias-sink"><div class="st">direct / (none)</div><div class="ss">origine non traçable</div></div>
+        </div>
+        <p class="coda">Quand nous annonçons <em>N&nbsp;%</em> de pipeline à origine marketing, la réalité est <b>au moins N&nbsp;%</b>. Un modèle de mesure meurt quand il surcompte&nbsp;: le nôtre ne le peut pas, par construction.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 11 · DIRECT, LE SIGNAL (vidé de l'explicable) ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Une fois vidé de l'explicable, direct n'est plus une boîte noire mais un signal</h1>
+        <div class="direct-grid">
+          <div class="dcol got">
+            <div class="dh">Ce que le dispositif explique déjà</div>
+            <div class="di"><b>Référent détecté</b><span>LLM, moteurs de recherche et réseaux sociaux reconnus même sans UTM.</span></div>
+            <div class="di"><b>Mémoire first-party</b><span>dernier contact 24&nbsp;h, premier contact 90&nbsp;jours.</span></div>
+            <div class="di"><b>Identifiants publicitaires</b><span>gclid, msclkid, li_fat_id convertis en source / medium.</span></div>
+            <div class="di"><b>Nos propres URLs, toutes taguées</b><span>ads auditées, e-mails et QR codes tagués&nbsp;: notre trafic ne retombe pas en direct.</span></div>
+          </div>
+          <div class="dcol rest">
+            <div class="dh">Ce qui reste vraiment dedans</div>
+            <div class="di"><b>La marque</b><span>URL tapée, favori, retour spontané&nbsp;: la récolte de nos campagnes de notoriété.</span></div>
+            <div class="di"><b>Le bouche-à-oreille</b><span>recommandations, notoriété construite hors ligne.</span></div>
+            <div class="di"><b>Le dark social</b><span>liens copiés dans WhatsApp, Teams, e-mails privés.</span></div>
+            <div class="di"><b>Les angles morts</b><span>sous-comptage du modèle, toujours au désavantage du marketing.</span></div>
+          </div>
+        </div>
+        <p class="coda">Direct traduit d'abord un <b>défaut de traçabilité du canal</b>, pas une absence de contact marketing. Ce qui nous échappe, c'est le canal. Dans certains cas, nous pouvons le rattacher à nos <b>effets de marque</b> ou à la <b>rétention</b>.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 12 · HYGIÈNE CRM (giant stat) ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Un cinquième des deals gagnés n'existe jamais comme pipeline</h1>
+        <div class="big-stat">20&nbsp;%</div>
+        <p class="big-sub">des opportunités gagnées sont ouvertes <b>et</b> gagnées le même jour. Invisibles à toute métrique d'entonnoir&nbsp;: pas d'origine, pas de points de contact, pas de signal de prévision.</p>
+        <p class="coda">L'entonnoir ne tient que si les opportunités sont ouvertes à <em>l'entrée</em>, pas à la signature. Une condition habilitante, copilotée avec les sales ops. Trou de prévision à l'échelle de l'entreprise, <b>pas un problème marketing</b>.</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== 9 · L'HORIZON ========== -->
+    <section class="slide" data-chapter="honnetete">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">La responsabilité replacée là où elle est pilotable</h1>
+
+        <ul class="horizon">
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>Le marketing mesuré sur ce qu'il pilote&nbsp;: <b>le pipeline à origine</b>.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>On prouve la corrélation <b>pipeline &rarr; TCV</b> au fil du temps, à mesure que la donnée mûrit.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span>L'influence passe de la couverture vers le <b>crédit</b>, si et quand un modèle validé est en place.</span></li>
+          <li><span class="hz-icon"><i data-lucide="check"></i></span><span><b>CAC / LTV:CAC</b> rejoignent la couche KPI une fois les coûts et la rétention intégrés.</span></li>
+        </ul>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+  </main>
+
+  <!-- Keyboard Hint -->
+  <div class="keyboard-hint">
+    <span><span class="key" id="key-prev">←</span><span class="key" id="key-next">→</span> Naviguer</span>
+    <span><span class="key" id="key-fullscreen">F</span> Plein écran</span>
+  </div>
+
+  <!-- Author credit -->
+  <div class="deck-credit">José J Encarnación Saiter | Marketing France · 2026-06</div>
+
+  <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+  <script>
+    (function () {
+      var cover = document.querySelector('.slide.cover');
+      var credit = document.querySelector('.deck-credit');
+      if (!cover || !credit) return;
+      var sync = function () {
+        credit.style.visibility = cover.classList.contains('active') ? 'hidden' : 'visible';
+      };
+      sync();
+      new MutationObserver(sync).observe(cover, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
+</body>
+</html>
