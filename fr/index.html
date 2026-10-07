@@ -870,6 +870,16 @@
     .bns-r.off .bns-n { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: transparent; }
     .slide.active[data-pm="bonus"] .bns-r.off .bns-n { animation: pm-strike .6s ease 5s forwards; }
     .slide.active[data-pm="bonus"] .bns-c.later .roi-m i { animation: pm-grow .6s ease-out var(--d, 0s) both; }
+
+    /* dividers: the OKR slide emptied of its title, its KR blocks fly to the badge of the slide that follows */
+    .okr-div .okr-fade { opacity: 0; }
+    .okr-div .kr.kr-dim { opacity: .5; }
+    .okr-div .kr { transform-origin: 0 0; }
+    .kr-ghost { position: absolute; margin: 0; z-index: 8; box-sizing: border-box; transform-origin: 0 0; pointer-events: none; }
+    .prc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; width: 100%; max-width: 1060px; margin: 0 auto; text-align: left; }
+    .prc .kr { height: 236px; box-sizing: border-box; }
+    .prc-ic { width: 38px; height: 38px; border-radius: 10px; background: #fff; color: var(--ay-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .prc-ic svg { width: 20px; height: 20px; }
   </style>
 </head>
 <body>
@@ -897,33 +907,39 @@
       <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>La chaîne de mesure</div>
       <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>ROI vs North Star</div>
       <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Objectif &amp; résultats clés</div>
-      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Le socle, d'où vient chaque lead</div>
-      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>Le socle, jusqu'au CRM</div>
-      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>Pipeline à origine</div>
-      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>L'influence, cycle de vie</div>
-      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>L'influence, comité d'achat</div>
-      <div class="nav-item" data-slide="13"><span class="nav-item-number">14</span>Campaign Influence</div>
-      <div class="nav-item" data-slide="14"><span class="nav-item-number">15</span>TCV influencée et coût</div>
-      <div class="nav-item" data-slide="15"><span class="nav-item-number">16</span>Un ratio qui monte</div>
-      <div class="nav-item" data-slide="16"><span class="nav-item-number">17</span>Dernier contact ou contribution</div>
-      <div class="nav-item" data-slide="17"><span class="nav-item-number">18</span>Influence figée, valeur client</div>
-      <div class="nav-item" data-slide="18"><span class="nav-item-number">19</span>La pyramide</div>
+      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Résultat clé 1</div>
+      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>Le socle, d'où vient chaque lead</div>
+      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>Le socle, jusqu'au CRM</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>Pipeline à origine</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>Résultat clé 2</div>
+      <div class="nav-item" data-slide="13"><span class="nav-item-number">14</span>L'influence, cycle de vie</div>
+      <div class="nav-item" data-slide="14"><span class="nav-item-number">15</span>L'influence, comité d'achat</div>
+      <div class="nav-item" data-slide="15"><span class="nav-item-number">16</span>Campaign Influence</div>
+      <div class="nav-item" data-slide="16"><span class="nav-item-number">17</span>TCV influencée et coût</div>
+      <div class="nav-item" data-slide="17"><span class="nav-item-number">18</span>Un ratio qui monte</div>
+      <div class="nav-item" data-slide="18"><span class="nav-item-number">19</span>Dernier contact ou contribution</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Précisions</div>
+      <div class="nav-item" data-slide="19"><span class="nav-item-number">20</span>Trois précisions</div>
+      <div class="nav-item" data-slide="20"><span class="nav-item-number">21</span>Influence figée, valeur client</div>
+      <div class="nav-item" data-slide="21"><span class="nav-item-number">22</span>Objectif et part du ROI</div>
+      <div class="nav-item" data-slide="22"><span class="nav-item-number">23</span>Prime à la première campagne</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Synthèse</div>
+      <div class="nav-item" data-slide="23"><span class="nav-item-number">24</span>La pyramide</div>
     </div>
     <div class="nav-section">
       <div class="nav-section-title">L'honnêteté</div>
-      <div class="nav-item" data-slide="19"><span class="nav-item-number">20</span>Les angles morts</div>
-      <div class="nav-item" data-slide="20"><span class="nav-item-number">21</span>Direct, le signal</div>
-      <div class="nav-item" data-slide="21"><span class="nav-item-number">22</span>Hygiène CRM</div>
-      <div class="nav-item" data-slide="22"><span class="nav-item-number">23</span>L'horizon</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Annexes</div>
-      <div class="nav-item" data-slide="23"><span class="nav-item-number">24</span>Objectif et part du ROI</div>
-      <div class="nav-item" data-slide="24"><span class="nav-item-number">25</span>Prime à la première campagne</div>
+      <div class="nav-item" data-slide="24"><span class="nav-item-number">25</span>Les angles morts</div>
+      <div class="nav-item" data-slide="25"><span class="nav-item-number">26</span>Direct, le signal</div>
+      <div class="nav-item" data-slide="26"><span class="nav-item-number">27</span>Hygiène CRM</div>
+      <div class="nav-item" data-slide="27"><span class="nav-item-number">28</span>L'horizon</div>
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/25</div>
+  <div class="slide-counter"><span class="current">1</span>/28</div>
 
   <main class="presentation">
 
@@ -1122,6 +1138,35 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
+    <!-- ========== DIVIDER KR1 (the OKR blocks without the title) ========== -->
+    <section class="slide okr-div" data-chapter="cadre" data-div="kr1">
+      <div class="slide-inner insights">
+        <div class="okr-fade" aria-hidden="true"><h1 class="slide-title compact">Le marketing est responsable du pipeline qu'il génère, pas du TCV qu'il ne contrôle pas</h1></div>
+        <div class="okr">
+          <div class="okr-obj" data-fly="-">
+            <div class="ol">Objectif</div>
+            <div class="ot">Faire croître la contribution du marketing au pipeline, au service de la croissance du chiffre d'affaires.</div>
+          </div>
+          <div class="okr-krs">
+            <div class="kr" data-fly="capture">
+              <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
+              <div class="kh">Pipeline à origine marketing</div>
+              <div class="kdef">Origine first-touch marketing</div>
+              <div class="ks">en valeur (€ TCV) et en nombre d'opportunités</div>
+            </div>
+            <div class="kr" data-fly="-">
+              <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
+              <div class="kh">Couverture influencée par le marketing</div>
+              <div class="kdef">Tout point de contact marketing, via Campaign Influence</div>
+              <div class="ks">% du pipeline avec au moins un contact marketing</div>
+            </div>
+          </div>
+          <div class="okr-foot okr-fade" aria-hidden="true">Mesuré à partir de nos données first-party&nbsp;: <b>UTM</b> pour l'origine, <b>Campaign Influence</b> pour la couverture.</div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
     <!-- ========== 6 · LE SOCLE : CAPTURE DU CANAL (preuve du chemin à origine) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="capture">
       <div class="kr-badge">
@@ -1264,6 +1309,35 @@
         </div>
         <div class="poc pbi-cta">
           <a class="poc-cta" href="https://app.powerbi.com/groups/6149dc65-729a-499f-84b0-de9b596d31a2/reports/bde24fc6-7ea9-4760-a176-634e87b73452/conv0000000000000f01?experience=power-bi" target="_blank" rel="noopener">Voir le rapport &rarr;</a>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== DIVIDER KR2 (the OKR blocks without the title) ========== -->
+    <section class="slide okr-div" data-chapter="cadre" data-div="kr2">
+      <div class="slide-inner insights">
+        <div class="okr-fade" aria-hidden="true"><h1 class="slide-title compact">Le marketing est responsable du pipeline qu'il génère, pas du TCV qu'il ne contrôle pas</h1></div>
+        <div class="okr">
+          <div class="okr-obj" data-fly="-">
+            <div class="ol">Objectif</div>
+            <div class="ot">Faire croître la contribution du marketing au pipeline, au service de la croissance du chiffre d'affaires.</div>
+          </div>
+          <div class="okr-krs">
+            <div class="kr kr-dim" data-fly="-" data-back>
+              <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
+              <div class="kh">Pipeline à origine marketing</div>
+              <div class="kdef">Origine first-touch marketing</div>
+              <div class="ks">en valeur (€ TCV) et en nombre d'opportunités</div>
+            </div>
+            <div class="kr" data-fly="infl1">
+              <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
+              <div class="kh">Couverture influencée par le marketing</div>
+              <div class="kdef">Tout point de contact marketing, via Campaign Influence</div>
+              <div class="ks">% du pipeline avec au moins un contact marketing</div>
+            </div>
+          </div>
+          <div class="okr-foot okr-fade" aria-hidden="true">Mesuré à partir de nos données first-party&nbsp;: <b>UTM</b> pour l'origine, <b>Campaign Influence</b> pour la couverture.</div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1496,10 +1570,25 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
-
-    <section class="slide" data-chapter="cadre" data-pm="ltv">
+    <!-- ========== DIVIDER PRÉCISIONS (three clarifications, the first flies to its badge) ========== -->
+    <section class="slide" data-chapter="precisions" data-div="prc">
       <div class="slide-inner insights">
-        <h1 class="slide-title compact">Une opportunité créée fige son influence</h1>
+        <h1 class="slide-title compact">Trois précisions</h1>
+        <div class="prc">
+          <div class="kr pm-in" style="--d:0.20s" data-fly="ltv"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Précision 1</b> · l'influence</div><div class="kh">Influence figée</div><div class="ks">Les campagnes d'une opportunité s'arrêtent à sa création, la suivante reprend les nouvelles.</div></div>
+          <div class="kr pm-in" style="--d:0.45s" data-fly="-"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Précision 2</b> · les objectifs</div><div class="kh">Objectif commercial</div><div class="ks">Le contrat entier compte pour l'objectif de vente, la part de chaque campagne sert au ROI.</div></div>
+          <div class="kr pm-in" style="--d:0.70s" data-fly="-"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Précision 3</b> · le crédit</div><div class="kh">Prime à la première campagne</div><div class="ks">La première campagne du contact pèse double tant qu'elle reste dans l'influence.</div></div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <section class="slide" data-chapter="precisions" data-pm="ltv">
+      <div class="kr-badge">
+        <div class="kl"><b>Précision 1</b> · l'influence</div>
+        <div class="kh">Une opportunité créée fige son influence</div>
+      </div>
+      <div class="slide-inner insights">
         <div class="lc ltv-lc">
           <div class="lc-card pm-host pm-in" style="--d:.1s">
             <div class="pm-mini pm-mbadge below" style="--d:0.4s"><span class="pm-mbh"></span><span class="pm-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pm-mev">Salon</span><i class="pm-mqr"></i><span class="pm-mscan" style="--d:0.70s"></span><span class="pm-mok pm-pop" style="--d:1.25s">✓</span></div>
@@ -1536,6 +1625,54 @@
           </div>
         </div>
         <div class="ltv-pill pm-pop" style="--d:9.5s"><span>Valeur client (LTV)</span><b data-pm-to="78000" data-pm-fmt="eur0" data-pm-delay="9.6" data-pm-dur=".8">78&nbsp;000&nbsp;€</b><small>48&nbsp;000&nbsp;€ + 30&nbsp;000&nbsp;€</small></div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== OBJECTIF COMMERCIAL ET PART DU ROI (le contrat entier compte pour l'objectif, la part mesure le ROI) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="obj">
+      <div class="kr-badge">
+        <div class="kl"><b>Précision 2</b> · les objectifs</div>
+        <div class="kh">Le contrat entier compte pour l'objectif, la part pour le ROI</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="obj">
+          <div class="obj-c pm-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">Objectif commercial</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
+            <div class="obj-big"><span>Compté dans son objectif</span><b data-pm-to="100000" data-pm-delay=".5" data-pm-dur="1" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
+            <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
+            <div class="obj-r"><span>Opportunité</span><b>Entreprise SA</b></div><div class="obj-r"><span>Étape</span><b>Signée (P4)</b></div><div class="obj-r"><span>Part comptée</span><b>100&nbsp;%</b></div><div class="obj-r"><span>Campagnes qui ont influencé</span><b>4</b></div>
+          </div>
+          <div class="obj-c pm-in" style="--d:1.2s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunité · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
+            <div class="obj-big"><span>Réparti entre les campagnes</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
+            <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
+            <div class="obj-r pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b>25&nbsp;000&nbsp;€</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== PRIME À LA PREMIÈRE CAMPAGNE (poids 2 tant qu'elle reste dans l'influence, partage égal ensuite) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="bonus">
+      <div class="kr-badge">
+        <div class="kl"><b>Précision 3</b> · le crédit</div>
+        <div class="kh">La première campagne du contact reçoit une prime</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="bns">
+          <div class="bns-c pm-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunité · signée 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>100&nbsp;000&nbsp;€</b></div></div>
+            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Prime ×2</span></div>
+            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">40&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1re campagne</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div>
+          </div>
+          <div class="bns-c later pm-in" style="--d:3.6s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renouvellement · deux ans plus tard</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>90&nbsp;000&nbsp;€</b></div></div>
+            <div class="bns-lh"><span>Campaign Influence (3)</span><span class="pm-ok pm-pop" style="--d:5.4s">Partage égal</span></div>
+            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Hors fenêtre de 365 jours</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar Absentéisme 2028</span><span class="pm-team">Marketing</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.45s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR 2028</span><span class="pm-team tel">Telepro</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.70s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2028</span><span class="pm-team sal">Sales</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.95s"></i></div><em>33&nbsp;%</em></div></div>
+          </div>
+        </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
@@ -1622,48 +1759,6 @@
           <li><span class="hz-icon"><i data-lucide="check"></i></span><span>L'influence passe de la couverture vers le <b>crédit</b>, si et quand un modèle validé est en place.</span></li>
           <li><span class="hz-icon"><i data-lucide="check"></i></span><span><b>CAC / LTV:CAC</b> rejoignent la couche KPI une fois les coûts et la rétention intégrés.</span></li>
         </ul>
-      </div>
-      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
-    </section>
-
-    <!-- ========== OBJECTIF COMMERCIAL ET PART DU ROI (le contrat entier compte pour l'objectif, la part mesure le ROI) ========== -->
-    <section class="slide" data-chapter="annexe" data-pm="obj">
-      <div class="slide-inner insights">
-        <h1 class="slide-title compact">Le contrat entier compte pour l'objectif, la part pour le ROI</h1>
-        <div class="obj">
-          <div class="obj-c pm-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">Objectif commercial</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
-            <div class="obj-big"><span>Compté dans son objectif</span><b data-pm-to="100000" data-pm-delay=".5" data-pm-dur="1" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
-            <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
-            <div class="obj-r"><span>Opportunité</span><b>Entreprise SA</b></div><div class="obj-r"><span>Étape</span><b>Signée (P4)</b></div><div class="obj-r"><span>Part comptée</span><b>100&nbsp;%</b></div><div class="obj-r"><span>Campagnes qui ont influencé</span><b>4</b></div>
-          </div>
-          <div class="obj-c pm-in" style="--d:1.2s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunité · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
-            <div class="obj-big"><span>Réparti entre les campagnes</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
-            <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
-            <div class="obj-r pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b>25&nbsp;000&nbsp;€</b></div>
-          </div>
-        </div>
-      </div>
-      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
-    </section>
-
-    <!-- ========== PRIME À LA PREMIÈRE CAMPAGNE (poids 2 tant qu'elle reste dans l'influence, partage égal ensuite) ========== -->
-    <section class="slide" data-chapter="annexe" data-pm="bonus">
-      <div class="slide-inner insights">
-        <h1 class="slide-title compact">La première campagne du contact reçoit une prime</h1>
-        <div class="bns">
-          <div class="bns-c pm-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunité · signée 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>100&nbsp;000&nbsp;€</b></div></div>
-            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Prime ×2</span></div>
-            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">40&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1re campagne</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div>
-          </div>
-          <div class="bns-c later pm-in" style="--d:3.6s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renouvellement · deux ans plus tard</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>90&nbsp;000&nbsp;€</b></div></div>
-            <div class="bns-lh"><span>Campaign Influence (3)</span><span class="pm-ok pm-pop" style="--d:5.4s">Partage égal</span></div>
-            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Hors fenêtre de 365 jours</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar Absentéisme 2028</span><span class="pm-team">Marketing</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.45s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR 2028</span><span class="pm-team tel">Telepro</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.70s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2028</span><span class="pm-team sal">Sales</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.95s"></i></div><em>33&nbsp;%</em></div></div>
-          </div>
-        </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
@@ -1895,6 +1990,99 @@
           was = now;
         }).observe(slide, { attributes: true, attributeFilter: ['class'] });
       });
+    })();
+  </script>
+
+  <script>
+    /* Dividers: on the slide after a divider, the divider's block flies into that slide's badge;
+       on the KR2 divider, KR1 flies back from its badge and settles at half opacity */
+    (function () {
+      var slides = [].slice.call(document.querySelectorAll('.slide'));
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var geo = new WeakMap();
+      var EASE = 'cubic-bezier(.5, 0, .3, 1)';
+      /* layout position inside the slide, free of any running transform */
+      function box(el) { var b = el.getBoundingClientRect(); return { x: b.left, y: b.top, w: b.width, h: b.height }; }
+      /* snapshot of the divider blocks on screen, taken once they have settled and again on the input that leaves */
+      function remember(div) {
+        geo.set(div, [].map.call(div.querySelectorAll('[data-fly]'), function (el) {
+          return { el: el, r: box(el), w: el.offsetWidth, h: el.offsetHeight, op: parseFloat(getComputedStyle(el).opacity) };
+        }));
+      }
+      ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(function (ev) {
+        window.addEventListener(ev, function () { if (cur && cur.hasAttribute('data-div')) remember(cur); }, true);
+      });
+      /* place a ghost at a screen rectangle, in the units of the slide it is appended to */
+      function ghost(s, it) {
+        var el = it.el, r = it.r;
+        var c = el.cloneNode(true);
+        c.classList.remove('pm-in', 'pm-fade');
+        c.classList.add('kr-ghost');
+        c.removeAttribute('data-fly'); c.removeAttribute('data-back'); c.removeAttribute('style');
+        c.setAttribute('aria-hidden', 'true');
+        c.style.cssText = 'left:0;top:0;width:' + it.w + 'px;height:' + it.h + 'px';
+        s.appendChild(c);
+        var o = box(c), k = o.w / it.w;
+        c.style.left = (r.x - o.x) / k + 'px'; c.style.top = (r.y - o.y) / k + 'px';
+        c.style.transform = 'scale(' + r.w / o.w + ')';
+        return { c: c, k: k, s0: r.w / o.w };
+      }
+      function forward(div, s) {
+        var g = geo.get(div), badge = s.querySelector('.kr-badge');
+        if (!g || !badge) return;
+        var b = box(badge);
+        g.forEach(function (it) {
+          var gh = ghost(s, it), c = gh.c, a;
+          var t0 = 'scale(' + gh.s0 + ')';
+          if (it.el.dataset.fly === s.dataset.pm) {
+            var t = 'translate(' + (b.x - it.r.x) / gh.k + 'px, ' + (b.y - it.r.y) / gh.k + 'px) scale(' + gh.s0 * b.w / it.r.w + ')';
+            a = c.animate([{ transform: t0, opacity: it.op }, { transform: t, opacity: 1, offset: .75 }, { transform: t, opacity: 0 }],
+              { duration: 900, easing: EASE, fill: 'both' });
+            badge.animate([{ opacity: 0 }, { opacity: 0, offset: .7 }, { opacity: 1 }], { duration: 900 });
+          } else {
+            a = c.animate([{ transform: t0, opacity: it.op }, { transform: t0, opacity: 0 }], { duration: 450, easing: 'ease', fill: 'both' });
+          }
+          a.onfinish = function () { c.remove(); };
+        });
+      }
+      /* KR1 returns from its badge: a hidden copy of the KR1 badge, measured on the divider */
+      function badgeBox(div) {
+        var p = document.querySelector('.slide[data-pm="capture"] .kr-badge').cloneNode(true);
+        p.className = 'kr-badge'; p.style.visibility = 'hidden';
+        div.appendChild(p);
+        var r = box(p); p.remove();
+        return r;
+      }
+      function enterDiv(div, fromPrev) {
+        setTimeout(function () { if (div === cur) remember(div); }, 1000);
+        if (reduce || !fromPrev) return;
+        if (div.dataset.div === 'kr1') {
+          div.querySelectorAll('.okr-fade').forEach(function (el) {
+            el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, easing: 'ease', fill: 'backwards' });
+          });
+        }
+        var back = div.querySelector('[data-back]');
+        if (back) {
+          var r = box(back), b = badgeBox(div), k = r.w / back.offsetWidth;
+          var t = 'translate(' + (b.x - r.x) / k + 'px, ' + (b.y - r.y) / k + 'px) scale(' + b.w / r.w + ')';
+          back.animate([{ transform: t, opacity: 1 }, { transform: 'none', opacity: .5 }], { duration: 900, easing: EASE, fill: 'backwards' });
+          div.querySelectorAll('.okr-obj, .kr:not([data-back])').forEach(function (el) {
+            el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 250, easing: 'ease', fill: 'backwards' });
+          });
+        }
+      }
+      var cur = document.querySelector('.slide.active');
+      var mo = new MutationObserver(function () {
+        var now = document.querySelector('.slide.active');
+        if (!now || now === cur) return;
+        var prev = cur; cur = now;
+        slides.forEach(function (s) { if (s !== now) s.querySelectorAll('.kr-ghost').forEach(function (g) { g.remove(); }); });
+        var i = slides.indexOf(now), j = slides.indexOf(prev);
+        if (!reduce && prev && prev.hasAttribute('data-div') && j === i - 1) forward(prev, now);
+        if (now.hasAttribute('data-div')) enterDiv(now, j === i - 1);
+      });
+      slides.forEach(function (s) { mo.observe(s, { attributes: true, attributeFilter: ['class'] }); });
+      if (cur && cur.hasAttribute('data-div')) enterDiv(cur, false);
     })();
   </script>
 </body>
