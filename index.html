@@ -1278,6 +1278,8 @@
       </div>
       <div class="slide-inner insights">
         <div class="lc">
+          <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
+            <div style="display:flex; align-items:center; gap:10px;">
           <div class="lc-card pm-host pm-in" style="--d:.1s">
             <div class="pm-mini pm-mbadge below" style="--d:0.5s"><span class="pm-mbh"></span><span class="pm-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pm-mev">Breakfast</span><i class="pm-mqr"></i><span class="pm-mscan" style="--d:0.80s"></span><span class="pm-mok pm-pop" style="--d:1.35s">✓</span></div>
             <div class="sfc-h"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sfo-k">Lead</div><div class="lch-t">Claire Martin</div></div></div>
@@ -1295,17 +1297,32 @@
               <span class="chip2 pm-pop" style="--d:4.05s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
             </div>
           </div>
-          <div class="lc-arrow pm-in" style="--d:4.3s"><span class="al">contact role</span><span class="aa pm-flash" style="--d:4.50s">&rarr;</span></div>
+            </div>
+            <div class="lc-card" style="visibility:hidden" aria-hidden="true">
+              <div class="pm-mini pm-mvideo left" style="--d:0.7s"><div class="pm-mv-top"><b>SDR call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · SDR</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+              <div class="pm-mini pm-mvideo left" style="--d:2.2s"><div class="pm-mv-top"><b>On call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · sales rep</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+              <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact #2</div><div class="lch-t">Marc Dubois</div></div></div>
+              <div class="lch-s">its campaigns</div>
+              <div class="sx-chips">
+                <span class="chip2 tel"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting</span>
+                <span class="chip2 sal"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts</span>
+              </div>
+            </div>
+          </div>
+          <div class="lc-arrow pm-in" style="--d:4.3s; width:150px"><span class="al">contact role</span><span class="aa pm-flash" style="--d:4.50s">&rarr;</span></div>
           <div class="sfo pm-in" style="--d:4.6s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">both phases combined</div></div></div>
             <div class="sfo-lh">Contact Roles (<span data-pm-start="0" data-pm-at="4.9">1</span>)</div>
             <div class="sfo-list">
                 <div class="sfo-r pm-row" style="--d:4.9s"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Claire Martin</span><em>Champion</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Marc Dubois</span><em>Decision-maker</em></div>
             </div>
             <div class="sfo-lh">Campaign Influence (<span data-pm-start="0" data-pm-at="5.2,5.5">2</span>)</div>
             <div class="sfo-list">
                 <div class="sfo-r pm-row" style="--d:5.2s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><em>Claire Martin</em></div>
                 <div class="sfo-r pm-row" style="--d:5.5s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><em>Claire Martin</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><em>Marc Dubois</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><em>Marc Dubois</em></div>
             </div>
           </div>
         </div>
@@ -1351,7 +1368,7 @@
               </div>
             </div>
           </div>
-          <div class="lc-arrow"><span class="al">contact roles</span><span class="aa pm-flash" style="--d:3.8s">&rarr;</span></div>
+          <div class="lc-arrow" style="width:150px"><span class="al">contact roles</span><span class="aa pm-flash" style="--d:3.8s">&rarr;</span></div>
           <div class="sfo">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">aggregates campaigns from all roles</div></div></div>
             <div class="sfo-lh">Contact Roles (<span data-pm-start="1" data-pm-at="4.0">2</span>)</div>
@@ -1444,7 +1461,7 @@
     <!-- ========== DU DERNIER CONTACT À LA CONTRIBUTION (le dernier contact prend tout, le partage égal montre les quatre sources) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="cmp">
       <div class="slide-inner insights">
-        <h1 class="slide-title compact">From last touch to contribution</h1>
+        <h1 class="slide-title compact">Every campaign that counted gets its share</h1>
         <div class="cmp">
           <div class="cmp-p">
             <span class="cmp-tag old">Today · last touch</span>
@@ -1621,7 +1638,7 @@
             <div class="obj-r"><span>Opportunity</span><b>Entreprise SA</b></div><div class="obj-r"><span>Stage</span><b>Signed (P4)</b></div><div class="obj-r"><span>Share counted</span><b>100%</b></div><div class="obj-r"><span>Influencing campaigns</span><b>4</b></div>
           </div>
           <div class="obj-c pm-in" style="--d:1.2s">
-            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">Campaign ROI</div><div class="sfo-n">Each campaign's share</div></div></div>
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
             <div class="obj-big"><span>Split across the campaigns</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">€100,000</b></div>
             <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
             <div class="obj-r pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b>€25,000</b></div>
@@ -1639,7 +1656,7 @@
           <div class="bns-c pm-in" style="--d:.1s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · signed 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div></div>
             <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Bonus ×2</span></div>
-            <div class="bns-r pm-row" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row first" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
+            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
           </div>
           <div class="bns-c later pm-in" style="--d:3.6s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renewal · two years later</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€90,000</b></div></div>
