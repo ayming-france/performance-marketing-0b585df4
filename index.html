@@ -340,52 +340,52 @@
     /* ===== Motion layer (pm-*). Every animation is scoped to .slide.active, so it replays on each
        visit; base styles are the END state, so reduced motion simply shows the finished slide.
        Per-element delay comes from --d. ===== */
-    @keyframes pm-in { from { opacity: 0; transform: translateY(12px); } }
-    @keyframes pm-fade { from { opacity: 0; } }
-    @keyframes pm-pop { 0% { opacity: 0; transform: scale(.6); } 70% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: none; } }
-    @keyframes pm-grow { from { transform: scaleX(0); } }
-    @keyframes pm-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-    @keyframes pm-flash { 0%, 100% { color: var(--ay-light); transform: none; } 45% { color: var(--ay-primary); transform: scale(1.3); } }
-    @keyframes pm-glow { 0% { box-shadow: 0 0 0 0 rgba(17,169,230,.55); } 100% { box-shadow: 0 0 0 18px rgba(17,169,230,0); } }
-    @keyframes pm-press { 0%, 100% { transform: none; } 50% { transform: scale(.93); filter: brightness(.9); } }
-    @keyframes pm-wire { 0% { left: 0; opacity: 0; } 15%, 85% { opacity: 1; } 100% { left: calc(100% - 10px); opacity: 0; } }
-    @keyframes pm-scan { 0% { top: 0; opacity: 0; } 10%, 90% { opacity: 1; } 100% { top: calc(100% - 2px); opacity: 0; } }
-    @keyframes pm-raw { 0% { opacity: 0; text-decoration-color: transparent; } 8%, 80% { opacity: 1; text-decoration-color: transparent; } 90% { opacity: 1; text-decoration-color: var(--ay-danger); } 100% { opacity: 0; text-decoration-color: var(--ay-danger); } }
-    @keyframes pm-row { from { opacity: 0; transform: translateX(-10px); background: #d9f2fc; } to { opacity: 1; transform: none; background: transparent; } }
-    @keyframes pm-rowf { from { opacity: 0; background: #d9f2fc; } to { opacity: 1; background: transparent; } }
-    @keyframes pm-light { from { opacity: .3; } }
-    @keyframes pm-dim { from { opacity: 1; } }
-    @keyframes pm-ring { from { box-shadow: 0 0 0 0 rgba(17,169,230,0); } to { box-shadow: 0 0 0 2.5px var(--ay-primary); border-color: var(--ay-primary); } }
-    @keyframes pm-toast { 0% { opacity: 0; transform: translate(-50%, 8px) scale(.9); } 15%, 70% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 44px) scale(.4); } }
-    @keyframes pm-toast-l { 0% { opacity: 0; transform: translate(-8px, -50%) scale(.9); } 15%, 70% { opacity: 1; transform: translate(0, -50%) scale(1); } 100% { opacity: 0; transform: translate(60px, -50%) scale(.4); } }
-    @keyframes pm-quote-mark { from { color: var(--ay-dark); background-size: 0% 100%; } }
+    @keyframes pmk-in { from { opacity: 0; transform: translateY(12px); } }
+    @keyframes pmk-fade { from { opacity: 0; } }
+    @keyframes pmk-pop { 0% { opacity: 0; transform: scale(.6); } 70% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: none; } }
+    @keyframes pmk-grow { from { transform: scaleX(0); } }
+    @keyframes pmk-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes pmk-flash { 0%, 100% { color: var(--ay-light); transform: none; } 45% { color: var(--ay-primary); transform: scale(1.3); } }
+    @keyframes pmk-glow { 0% { box-shadow: 0 0 0 0 rgba(17,169,230,.55); } 100% { box-shadow: 0 0 0 18px rgba(17,169,230,0); } }
+    @keyframes pmk-press { 0%, 100% { transform: none; } 50% { transform: scale(.93); filter: brightness(.9); } }
+    @keyframes pmk-wire { 0% { left: 0; opacity: 0; } 15%, 85% { opacity: 1; } 100% { left: calc(100% - 10px); opacity: 0; } }
+    @keyframes pmk-scan { 0% { top: 0; opacity: 0; } 10%, 90% { opacity: 1; } 100% { top: calc(100% - 2px); opacity: 0; } }
+    @keyframes pmk-raw { 0% { opacity: 0; text-decoration-color: transparent; } 8%, 80% { opacity: 1; text-decoration-color: transparent; } 90% { opacity: 1; text-decoration-color: var(--ay-danger); } 100% { opacity: 0; text-decoration-color: var(--ay-danger); } }
+    @keyframes pmk-row { from { opacity: 0; transform: translateX(-10px); background: #d9f2fc; } to { opacity: 1; transform: none; background: transparent; } }
+    @keyframes pmk-rowf { from { opacity: 0; background: #d9f2fc; } to { opacity: 1; background: transparent; } }
+    @keyframes pmk-light { from { opacity: .3; } }
+    @keyframes pmk-dim { from { opacity: 1; } }
+    @keyframes pmk-ring { from { box-shadow: 0 0 0 0 rgba(17,169,230,0); } to { box-shadow: 0 0 0 2.5px var(--ay-primary); border-color: var(--ay-primary); } }
+    @keyframes pmk-toast { 0% { opacity: 0; transform: translate(-50%, 8px) scale(.9); } 15%, 70% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 44px) scale(.4); } }
+    @keyframes pmk-toast-l { 0% { opacity: 0; transform: translate(-8px, -50%) scale(.9); } 15%, 70% { opacity: 1; transform: translate(0, -50%) scale(1); } 100% { opacity: 0; transform: translate(60px, -50%) scale(.4); } }
+    @keyframes pmk-quote-mark { from { color: var(--ay-dark); background-size: 0% 100%; } }
 
-    .slide.active .pm-in { animation: pm-in .55s ease-out var(--d, 0s) both; }
-    .slide.active .pm-fade { animation: pm-fade .45s ease var(--d, 0s) both; }
-    .slide.active .pm-pop { animation: pm-pop .45s ease-out var(--d, 0s) both; }
-    .slide.active .pm-type { animation: pm-type var(--t, .9s) steps(var(--n, 24)) var(--d, 0s) both; }
-    .slide.active .pm-press { animation: pm-press .35s ease var(--d, 0s) both; }
-    .slide.active .pm-flash { display: inline-block; animation: pm-flash .7s ease var(--d, 0s) both; }
-    .slide.active .pm-lit { animation: pm-light .5s ease var(--d, 0s) both, pm-glow 1s ease-out calc(var(--d, 0s) + .2s) both; }
-    .slide.active .pm-row { animation: pm-row .45s ease-out var(--d, 0s) both; }
-    .slide.active tr.pm-row { animation-name: pm-rowf; }
+    .slide.active .pmk-in { animation: pmk-in .55s ease-out var(--d, 0s) both; }
+    .slide.active .pmk-fade { animation: pmk-fade .45s ease var(--d, 0s) both; }
+    .slide.active .pmk-pop { animation: pmk-pop .45s ease-out var(--d, 0s) both; }
+    .slide.active .pmk-type { animation: pmk-type var(--t, .9s) steps(var(--n, 24)) var(--d, 0s) both; }
+    .slide.active .pmk-press { animation: pmk-press .35s ease var(--d, 0s) both; }
+    .slide.active .pmk-flash { display: inline-block; animation: pmk-flash .7s ease var(--d, 0s) both; }
+    .slide.active .pmk-lit { animation: pmk-light .5s ease var(--d, 0s) both, pmk-glow 1s ease-out calc(var(--d, 0s) + .2s) both; }
+    .slide.active .pmk-row { animation: pmk-row .45s ease-out var(--d, 0s) both; }
+    .slide.active tr.pmk-row { animation-name: pmk-rowf; }
 
     /* quotes (slides 2 and 4): the lead priority deck's highlighter, phrase by phrase */
     .mission-quote b, .qquote b { background: linear-gradient(transparent 64%, rgba(17,169,230,.16) 0) no-repeat left / 100% 100%; }
-    .slide.active .mission-quote, .slide.active .qquote { animation: pm-in .6s ease-out .1s both; }
-    .slide.active .mission-quote b, .slide.active .qquote b { animation: pm-quote-mark .6s ease both; }
+    .slide.active .mission-quote, .slide.active .qquote { animation: pmk-in .6s ease-out .1s both; }
+    .slide.active .mission-quote b, .slide.active .qquote b { animation: pmk-quote-mark .6s ease both; }
     .slide.active .mission-quote b:nth-of-type(1), .slide.active .qquote b:nth-of-type(1) { animation-delay: .8s; }
     .slide.active .mission-quote b:nth-of-type(2), .slide.active .qquote b:nth-of-type(2) { animation-delay: 1.4s; }
     .slide.active .mission-quote b:nth-of-type(3), .slide.active .qquote b:nth-of-type(3) { animation-delay: 2s; }
 
     /* slide 3: the three counts */
-    .slide.active .counts .count { animation: pm-in .6s ease-out both; }
+    .slide.active .counts .count { animation: pmk-in .6s ease-out both; }
     .slide.active .counts .count:nth-child(1) { animation-delay: .2s; }
     .slide.active .counts .count:nth-child(2) { animation-delay: .5s; }
     .slide.active .counts .count:nth-child(3) { animation-delay: .8s; }
 
     /* slide 6: the relay builds block by block, then the two perimeters draw */
-    .slide.active[data-pm="relay1"] .relay-row > * { animation: pm-in .5s ease-out both; }
+    .slide.active[data-pm="relay1"] .relay-row > * { animation: pmk-in .5s ease-out both; }
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(1) { animation-delay: .2s; }
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(2) { animation-delay: .45s; }
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(3) { animation-delay: .6s; }
@@ -395,106 +395,106 @@
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(7) { animation-delay: 1.4s; }
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(8) { animation-delay: 1.65s; }
     .slide.active[data-pm="relay1"] .relay-row > :nth-child(9) { animation-delay: 1.8s; }
-    .slide.active[data-pm="relay1"] .zline { transform-origin: left center; animation: pm-grow .8s ease-out 2.2s both; }
+    .slide.active[data-pm="relay1"] .zline { transform-origin: left center; animation: pmk-grow .8s ease-out 2.2s both; }
     .slide.active[data-pm="relay1"] .zsales .zline { animation-delay: 2.8s; }
-    .slide.active[data-pm="relay1"] .zmkt .zlabel { animation: pm-fade .5s ease 2.7s both; }
-    .slide.active[data-pm="relay1"] .zsales .zlabel { animation: pm-fade .5s ease 3.2s both; }
-    .slide.active[data-pm="relay1"] .relay-foot { animation: pm-in .6s ease-out 3.6s both; }
+    .slide.active[data-pm="relay1"] .zmkt .zlabel { animation: pmk-fade .5s ease 2.7s both; }
+    .slide.active[data-pm="relay1"] .zsales .zlabel { animation: pmk-fade .5s ease 3.2s both; }
+    .slide.active[data-pm="relay1"] .relay-foot { animation: pmk-in .6s ease-out 3.6s both; }
 
     /* slide 7: same row, the early stages dim, Opportunity and P4 take their colours, then the two lenses */
-    @keyframes pm-own { from { background: #f1f4f7; border-color: #e5e7eb; } }
-    @keyframes pm-own-t { from { color: var(--ay-dark); } }
-    @keyframes pm-own-s { from { color: var(--ay-gray); } }
-    @keyframes pm-roi { from { background: #fff; border-color: #cbd5e1; } }
-    @keyframes pm-roi-t { from { color: var(--ay-light); } }
-    .slide.active[data-pm="relay2"] .faded { animation: pm-dim .6s ease .3s both; }
-    .slide.active[data-pm="relay2"] .rbox.own { animation: pm-own .6s ease .9s both; }
-    .slide.active[data-pm="relay2"] .rbox.own .rt { animation: pm-own-t .6s ease .9s both; }
-    .slide.active[data-pm="relay2"] .rbox.own .rs { animation: pm-own-s .6s ease .9s both; }
-    .slide.active[data-pm="relay2"] .rbox.roi { animation: pm-roi .6s ease 1.5s both; }
-    .slide.active[data-pm="relay2"] .rbox.roi .rt, .slide.active[data-pm="relay2"] .rbox.roi .rs { animation: pm-roi-t .6s ease 1.5s both; }
-    .slide.active[data-pm="relay2"] .zcap { animation: pm-in .5s ease-out 1.2s both; }
-    .slide.active[data-pm="relay2"] .zsales .zlabel, .slide.active[data-pm="relay2"] .zsales .zsub { animation: pm-in .5s ease-out 1.8s both; }
+    @keyframes pmk-own { from { background: #f1f4f7; border-color: #e5e7eb; } }
+    @keyframes pmk-own-t { from { color: var(--ay-dark); } }
+    @keyframes pmk-own-s { from { color: var(--ay-gray); } }
+    @keyframes pmk-roi { from { background: #fff; border-color: #cbd5e1; } }
+    @keyframes pmk-roi-t { from { color: var(--ay-light); } }
+    .slide.active[data-pm="relay2"] .faded { animation: pmk-dim .6s ease .3s both; }
+    .slide.active[data-pm="relay2"] .rbox.own { animation: pmk-own .6s ease .9s both; }
+    .slide.active[data-pm="relay2"] .rbox.own .rt { animation: pmk-own-t .6s ease .9s both; }
+    .slide.active[data-pm="relay2"] .rbox.own .rs { animation: pmk-own-s .6s ease .9s both; }
+    .slide.active[data-pm="relay2"] .rbox.roi { animation: pmk-roi .6s ease 1.5s both; }
+    .slide.active[data-pm="relay2"] .rbox.roi .rt, .slide.active[data-pm="relay2"] .rbox.roi .rs { animation: pmk-roi-t .6s ease 1.5s both; }
+    .slide.active[data-pm="relay2"] .zcap { animation: pmk-in .5s ease-out 1.2s both; }
+    .slide.active[data-pm="relay2"] .zsales .zlabel, .slide.active[data-pm="relay2"] .zsales .zsub { animation: pmk-in .5s ease-out 1.8s both; }
 
     /* shared mockup parts: a wire with a travelling packet, ticks, pills */
-    .pm-wire { position: relative; width: 42px; height: 12px; flex: none; align-self: center; }
-    .pm-wire::before { content: ""; position: absolute; left: 0; right: 6px; top: 5px; height: 2px; background: #cbd5e1; }
-    .pm-wire::after { content: ""; position: absolute; right: 0; top: 1px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #cbd5e1; }
-    .pm-wire i { position: absolute; top: 1px; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--ay-primary); box-shadow: 0 0 0 4px rgba(17,169,230,.2); opacity: 0; }
-    .slide.active .pm-wire i { animation: pm-wire .7s ease-in-out var(--d, 0s) both; }
-    .pm-ok { font-size: 9.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 10px; padding: 2px 8px; white-space: nowrap; }
+    .pmk-wire { position: relative; width: 42px; height: 12px; flex: none; align-self: center; }
+    .pmk-wire::before { content: ""; position: absolute; left: 0; right: 6px; top: 5px; height: 2px; background: #cbd5e1; }
+    .pmk-wire::after { content: ""; position: absolute; right: 0; top: 1px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #cbd5e1; }
+    .pmk-wire i { position: absolute; top: 1px; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--ay-primary); box-shadow: 0 0 0 4px rgba(17,169,230,.2); opacity: 0; }
+    .slide.active .pmk-wire i { animation: pmk-wire .7s ease-in-out var(--d, 0s) both; }
+    .pmk-ok { font-size: 9.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 10px; padding: 2px 8px; white-space: nowrap; }
 
     /* slide 9a: the landing URL, the capture card that scans and normalises, the form */
     .cap-stage { width: 100%; max-width: 1000px; margin: 92px auto 0; display: flex; flex-direction: column; gap: 18px; }
-    .pm-who { font-size: 11px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ay-primary); text-align: left; margin-bottom: 7px; }
-    .pm-url { display: flex; align-items: center; gap: 12px; height: 40px; background: #f1f4f7; border: 1px solid #e5e7eb; border-radius: 10px; padding: 0 14px; }
-    .pm-url-dots { display: flex; gap: 5px; flex: none; }
-    .pm-url-dots i { width: 9px; height: 9px; border-radius: 50%; background: #cbd5e1; }
-    .pm-url-bar { flex: 1; min-width: 0; height: 26px; background: #fff; border-radius: 13px; display: flex; align-items: center; gap: 7px; padding: 0 12px; font-size: 12.5px; color: var(--ay-gray); overflow: hidden; white-space: nowrap; text-align: left; }
-    .pm-url-bar svg { width: 12px; height: 12px; flex: none; color: var(--ay-success); }
-    .pm-url-txt { display: inline-block; }
-    .pm-url-txt em { font-style: normal; font-weight: 800; color: var(--ay-dark); }
+    .pmk-who { font-size: 11px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ay-primary); text-align: left; margin-bottom: 7px; }
+    .pmk-url { display: flex; align-items: center; gap: 12px; height: 40px; background: #f1f4f7; border: 1px solid #e5e7eb; border-radius: 10px; padding: 0 14px; }
+    .pmk-url-dots { display: flex; gap: 5px; flex: none; }
+    .pmk-url-dots i { width: 9px; height: 9px; border-radius: 50%; background: #cbd5e1; }
+    .pmk-url-bar { flex: 1; min-width: 0; height: 26px; background: #fff; border-radius: 13px; display: flex; align-items: center; gap: 7px; padding: 0 12px; font-size: 12.5px; color: var(--ay-gray); overflow: hidden; white-space: nowrap; text-align: left; }
+    .pmk-url-bar svg { width: 12px; height: 12px; flex: none; color: var(--ay-success); }
+    .pmk-url-txt { display: inline-block; }
+    .pmk-url-txt em { font-style: normal; font-weight: 800; color: var(--ay-dark); }
     .cap-flow { display: flex; align-items: stretch; justify-content: center; gap: 8px; }
-    .pm-cap { width: 300px; flex: none; position: relative; overflow: hidden; }
-    .pm-grp { display: flex; justify-content: space-between; align-items: center; }
-    .pm-kv { display: flex; align-items: center; gap: 8px; height: 24px; margin-bottom: 4px; }
-    .pm-kv .k { width: 84px; flex: none; font-size: 11px; font-weight: 700; color: var(--ay-gray); text-align: left; }
-    .pm-kv .v { position: relative; flex: 1; min-width: 0; height: 22px; background: #eff6ff; border-radius: 6px; }
-    .pm-kv .v > * { position: absolute; left: 8px; right: 8px; top: 0; line-height: 22px; font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
-    .pm-kv .pm-raw { color: var(--ay-text); text-decoration: line-through; text-decoration-color: transparent; text-decoration-thickness: 2px; opacity: 0; }
-    .slide.active .pm-kv .pm-raw { animation: pm-raw var(--dur, 2.5s) linear var(--d, 0s) both; }
-    .pm-kv .pm-norm { color: var(--ay-primary); transform-origin: left center; }
-    .pm-kv .pm-val { color: var(--ay-dark); }
-    .pm-also { font-size: 10.5px; color: var(--ay-light); text-align: left; }
-    .pm-scan { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--ay-primary), transparent); box-shadow: 0 0 12px 3px rgba(17,169,230,.35); opacity: 0; pointer-events: none; }
-    .slide.active .pm-scan { animation: pm-scan 1.2s ease-in-out var(--d, 0s) both; }
-    .pm-proc { padding-top: 22px; justify-content: center; }
-    .pm-proc .eb { position: relative; padding-right: 30px; }
-    .pm-tick { position: absolute; right: 8px; top: 50%; margin-top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--ay-success); color: #fff; font-size: 10px; font-weight: 800; font-style: normal; line-height: 16px; text-align: center; }
-    .pm-form { width: 290px; flex: none; background: #fff; border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 14px 16px; text-align: left; display: flex; flex-direction: column; gap: 7px; box-sizing: border-box; }
-    .pm-form-h { font-size: 13.5px; font-weight: 800; color: var(--ay-dark); }
-    .pm-field { display: flex; flex-direction: column; gap: 2px; }
-    .pm-fl { font-size: 10px; font-weight: 700; color: var(--ay-gray); }
-    .pm-fi { display: block; height: 24px; border: 1px solid #d6dde5; border-radius: 6px; padding: 0 8px; font-size: 12px; line-height: 22px; color: var(--ay-text); white-space: nowrap; overflow: hidden; box-sizing: border-box; }
-    .pm-fi > span { display: inline-block; }
-    .pm-hidden { position: relative; border: 1.5px dashed #b7d9ef; border-radius: 9px; background: #f7fcff; padding: 13px 10px 7px; margin-top: 6px; }
-    .pm-hidden-l { position: absolute; top: -8px; left: 10px; background: #fff; padding: 0 6px; font-size: 9.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--ay-primary); }
-    .pm-hv { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 19px; font-size: 10.5px; }
-    .pm-hv span { color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
-    .pm-hv b { color: var(--ay-primary); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 128px; }
-    .pm-btn { position: relative; height: 30px; margin-top: 4px; border-radius: 16px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-    .pm-sent { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 16px; background: var(--ay-success); color: #fff; }
+    .pmk-cap { width: 300px; flex: none; position: relative; overflow: hidden; }
+    .pmk-grp { display: flex; justify-content: space-between; align-items: center; }
+    .pmk-kv { display: flex; align-items: center; gap: 8px; height: 24px; margin-bottom: 4px; }
+    .pmk-kv .k { width: 84px; flex: none; font-size: 11px; font-weight: 700; color: var(--ay-gray); text-align: left; }
+    .pmk-kv .v { position: relative; flex: 1; min-width: 0; height: 22px; background: #eff6ff; border-radius: 6px; }
+    .pmk-kv .v > * { position: absolute; left: 8px; right: 8px; top: 0; line-height: 22px; font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
+    .pmk-kv .pmk-raw { color: var(--ay-text); text-decoration: line-through; text-decoration-color: transparent; text-decoration-thickness: 2px; opacity: 0; }
+    .slide.active .pmk-kv .pmk-raw { animation: pmk-raw var(--dur, 2.5s) linear var(--d, 0s) both; }
+    .pmk-kv .pmk-norm { color: var(--ay-primary); transform-origin: left center; }
+    .pmk-kv .pmk-val { color: var(--ay-dark); }
+    .pmk-also { font-size: 10.5px; color: var(--ay-light); text-align: left; }
+    .pmk-scan { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--ay-primary), transparent); box-shadow: 0 0 12px 3px rgba(17,169,230,.35); opacity: 0; pointer-events: none; }
+    .slide.active .pmk-scan { animation: pmk-scan 1.2s ease-in-out var(--d, 0s) both; }
+    .pmk-proc { padding-top: 22px; justify-content: center; }
+    .pmk-proc .eb { position: relative; padding-right: 30px; }
+    .pmk-tick { position: absolute; right: 8px; top: 50%; margin-top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--ay-success); color: #fff; font-size: 10px; font-weight: 800; font-style: normal; line-height: 16px; text-align: center; }
+    .pmk-form { width: 290px; flex: none; background: #fff; border: 1px solid #e5e7eb; border-top: 4px solid var(--ay-primary); border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 14px 16px; text-align: left; display: flex; flex-direction: column; gap: 7px; box-sizing: border-box; }
+    .pmk-form-h { font-size: 13.5px; font-weight: 800; color: var(--ay-dark); }
+    .pmk-field { display: flex; flex-direction: column; gap: 2px; }
+    .pmk-fl { font-size: 10px; font-weight: 700; color: var(--ay-gray); }
+    .pmk-fi { display: block; height: 24px; border: 1px solid #d6dde5; border-radius: 6px; padding: 0 8px; font-size: 12px; line-height: 22px; color: var(--ay-text); white-space: nowrap; overflow: hidden; box-sizing: border-box; }
+    .pmk-fi > span { display: inline-block; }
+    .pmk-hidden { position: relative; border: 1.5px dashed #b7d9ef; border-radius: 9px; background: #f7fcff; padding: 13px 10px 7px; margin-top: 6px; }
+    .pmk-hidden-l { position: absolute; top: -8px; left: 10px; background: #fff; padding: 0 6px; font-size: 9.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--ay-primary); }
+    .pmk-hv { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 19px; font-size: 10.5px; }
+    .pmk-hv span { color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
+    .pmk-hv b { color: var(--ay-primary); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 128px; }
+    .pmk-btn { position: relative; height: 30px; margin-top: 4px; border-radius: 16px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .pmk-sent { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 16px; background: var(--ay-success); color: #fff; }
 
     /* slide 9b: form, Pardot prospect, then Lead, Contact, Opportunity */
     .crm-flow { display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%; margin-top: 60px; }
-    .pm-form.sm { width: 214px; padding: 12px 13px; gap: 6px; }
-    .pm-form.sm .pm-hv b { max-width: 92px; }
-    .pm-pardot { width: 232px; flex: none; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; text-align: left; }
-    .pm-pd-h { background: var(--ay-dark); color: #fff; padding: 10px 14px; }
-    .pm-pd-h small { display: block; font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; opacity: .75; }
-    .pm-pd-h b { font-size: 14px; font-weight: 800; }
-    .pm-pd-b { padding: 8px 14px 12px; display: flex; flex-direction: column; }
-    .pm-pd-r { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 25px; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
-    .pm-pd-r span { color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
-    .pm-pd-r b { color: var(--ay-dark); font-weight: 700; max-width: 118px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .pm-pd-pill { align-self: flex-start; margin-top: 9px; font-size: 10px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 10px; padding: 3px 9px; }
+    .pmk-form.sm { width: 214px; padding: 12px 13px; gap: 6px; }
+    .pmk-form.sm .pmk-hv b { max-width: 92px; }
+    .pmk-pardot { width: 232px; flex: none; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; text-align: left; }
+    .pmk-pd-h { background: var(--ay-dark); color: #fff; padding: 10px 14px; }
+    .pmk-pd-h small { display: block; font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; opacity: .75; }
+    .pmk-pd-h b { font-size: 14px; font-weight: 800; }
+    .pmk-pd-b { padding: 8px 14px 12px; display: flex; flex-direction: column; }
+    .pmk-pd-r { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 25px; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+    .pmk-pd-r span { color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
+    .pmk-pd-r b { color: var(--ay-dark); font-weight: 700; max-width: 118px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pmk-pd-pill { align-self: flex-start; margin-top: 9px; font-size: 10px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 10px; padding: 3px 9px; }
     .crm-flow .sx-person { width: 112px; padding: 9px 8px; }
-    .pm-stamp { display: block; margin-top: 7px; font-size: 10px; font-weight: 800; color: #fff; background: var(--ay-primary); border-radius: 10px; padding: 3px 8px; white-space: nowrap; }
+    .pmk-stamp { display: block; margin-top: 7px; font-size: 10px; font-weight: 800; color: #fff; background: var(--ay-primary); border-radius: 10px; padding: 3px 8px; white-space: nowrap; }
 
     /* slide 5: the lead sources build column by column, then the results and the indirect contribution */
-    @keyframes pm-slide-x { from { opacity: 0; transform: translateX(-60px); } }
-    .slide.active[data-pm="lsrc"] .ls-bar { transform-origin: left center; animation: pm-grow .7s ease-out .1s both; }
-    .slide.active[data-pm="lsrc"] .ls-col { animation: pm-in .55s ease-out var(--cd, 0s) both; }
-    .slide.active[data-pm="lsrc"] .ls-h i, .slide.active[data-pm="lsrc"] .ls-h svg { animation: pm-pop .45s ease-out calc(var(--cd, 0s) + .2s) both; }
-    .slide.active[data-pm="lsrc"] .ls-glabel { animation: pm-fade .4s ease calc(var(--cd, 0s) + .25s) both; }
-    .slide.active[data-pm="lsrc"] .ls-col li { animation: pm-in .4s ease-out calc(var(--cd, 0s) + .3s + var(--j, 0) * .07s) both; }
+    @keyframes pmk-slide-x { from { opacity: 0; transform: translateX(-60px); } }
+    .slide.active[data-pm="lsrc"] .ls-bar { transform-origin: left center; animation: pmk-grow .7s ease-out .1s both; }
+    .slide.active[data-pm="lsrc"] .ls-col { animation: pmk-in .55s ease-out var(--cd, 0s) both; }
+    .slide.active[data-pm="lsrc"] .ls-h i, .slide.active[data-pm="lsrc"] .ls-h svg { animation: pmk-pop .45s ease-out calc(var(--cd, 0s) + .2s) both; }
+    .slide.active[data-pm="lsrc"] .ls-glabel { animation: pmk-fade .4s ease calc(var(--cd, 0s) + .25s) both; }
+    .slide.active[data-pm="lsrc"] .ls-col li { animation: pmk-in .4s ease-out calc(var(--cd, 0s) + .3s + var(--j, 0) * .07s) both; }
     .ls-col li:nth-child(2) { --j: 1; } .ls-col li:nth-child(3) { --j: 2; } .ls-col li:nth-child(4) { --j: 3; } .ls-col li:nth-child(5) { --j: 4; }
     .ls-col .ls-bot li { --j: 3; } .ls-col .ls-bot li:nth-child(2) { --j: 4; } .ls-col .ls-bot li:nth-child(3) { --j: 5; } .ls-col .ls-bot li:nth-child(4) { --j: 6; } .ls-col .ls-bot li:nth-child(5) { --j: 7; }
-    .slide.active[data-pm="lsrc"] .ls-out-hdr { animation: pm-in .5s ease-out 2.2s both; }
-    .slide.active[data-pm="lsrc"] .ls-out-box.big { animation: pm-in .55s ease-out 2.4s both, pm-glow 1s ease-out 3s both; }
-    .slide.active[data-pm="lsrc"] .ob-metrics { animation: pm-fade .5s ease 2.9s both; }
-    .slide.active[data-pm="lsrc"] .ls-indirect { animation: pm-slide-x .7s ease-out 3.4s both; }
-    .slide.active[data-pm="lsrc"] .ls-out-box.small { animation: pm-in .5s ease-out 4s both, pm-glow 1s ease-out 4.4s both; }
+    .slide.active[data-pm="lsrc"] .ls-out-hdr { animation: pmk-in .5s ease-out 2.2s both; }
+    .slide.active[data-pm="lsrc"] .ls-out-box.big { animation: pmk-in .55s ease-out 2.4s both, pmk-glow 1s ease-out 3s both; }
+    .slide.active[data-pm="lsrc"] .ob-metrics { animation: pmk-fade .5s ease 2.9s both; }
+    .slide.active[data-pm="lsrc"] .ls-indirect { animation: pmk-slide-x .7s ease-out 3.4s both; }
+    .slide.active[data-pm="lsrc"] .ls-out-box.small { animation: pmk-in .5s ease-out 4s both, pmk-glow 1s ease-out 4.4s both; }
     /* slide 9b: Lead, Contact and Opportunity as Salesforce record cards */
     .crm-col { display: flex; flex-direction: column; align-items: stretch; gap: 3px; width: 286px; flex: none; }
     .sfm { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; text-align: left; }
@@ -506,24 +506,24 @@
     .sfm-r:last-child { border-bottom: 0; }
     .sfm-r span { color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
     .sfm-r b { color: var(--ay-dark); font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; }
-    .sfm-r .pm-stamp { display: inline-block; margin: 0; }
+    .sfm-r .pmk-stamp { display: inline-block; margin: 0; }
     .sfm-down { display: block; text-align: center; font-size: 15px; font-weight: 700; color: var(--ay-light); line-height: 15px; height: 15px; }
     .sfc-ic.opp { background: #fcb95b; }
     /* slide 12: the sales outreach video call that lands as a sales campaign */
-    .pm-mini.pm-mvideo { width: 184px; padding: 0; overflow: hidden; background: #0f172a; border-color: #0f172a; gap: 0; }
-    .pm-mv-top { display: flex; justify-content: space-between; align-items: center; height: 20px; padding: 0 8px; font-size: 8.5px; font-weight: 700; color: #cbd5e1; }
-    .pm-mv-top b { display: inline-flex; align-items: center; gap: 4px; color: #fff; font-weight: 800; }
-    .pm-mv-top b::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; }
-    .pm-mv-main { position: relative; flex: 1; margin: 0 6px; border-radius: 6px; background: linear-gradient(160deg,#1e3a5f,#0f2a44); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
-    .pm-mv-main .pm-mav { width: 36px; height: 36px; margin: 0; background: #cbd5e1; color: #475569; }
-    .pm-mv-main small { font-size: 8.5px; font-weight: 700; color: #fff; }
-    .pm-mv-self { position: absolute; right: 5px; top: 5px; width: 46px; height: 30px; border-radius: 4px; background: #334155; border: 1px solid #475569; display: flex; align-items: flex-end; justify-content: center; font-size: 6px; font-weight: 700; color: #e2e8f0; padding-bottom: 2px; box-sizing: border-box; white-space: nowrap; }
-    .pm-mv-bar { display: flex; justify-content: center; gap: 8px; height: 26px; align-items: center; }
-    .pm-mv-bar i { width: 18px; height: 18px; border-radius: 50%; background: #334155; color: #fff; display: flex; align-items: center; justify-content: center; }
-    .pm-mv-bar i.end { background: #ef4444; }
-    .pm-mv-bar svg { width: 10px; height: 10px; }
-    @keyframes pm-speak { 0%, 100% { box-shadow: 0 0 0 0 rgba(10,179,140,0); } 50% { box-shadow: 0 0 0 4px rgba(10,179,140,.7); } }
-    .slide.active .pm-mvideo .pm-mav { animation: pm-speak .6s ease calc(var(--d, 0s) + .3s) 2 both; }
+    .pmk-mini.pmk-mvideo { width: 184px; padding: 0; overflow: hidden; background: #0f172a; border-color: #0f172a; gap: 0; }
+    .pmk-mv-top { display: flex; justify-content: space-between; align-items: center; height: 20px; padding: 0 8px; font-size: 8.5px; font-weight: 700; color: #cbd5e1; }
+    .pmk-mv-top b { display: inline-flex; align-items: center; gap: 4px; color: #fff; font-weight: 800; }
+    .pmk-mv-top b::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; }
+    .pmk-mv-main { position: relative; flex: 1; margin: 0 6px; border-radius: 6px; background: linear-gradient(160deg,#1e3a5f,#0f2a44); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+    .pmk-mv-main .pmk-mav { width: 36px; height: 36px; margin: 0; background: #cbd5e1; color: #475569; }
+    .pmk-mv-main small { font-size: 8.5px; font-weight: 700; color: #fff; }
+    .pmk-mv-self { position: absolute; right: 5px; top: 5px; width: 46px; height: 30px; border-radius: 4px; background: #334155; border: 1px solid #475569; display: flex; align-items: flex-end; justify-content: center; font-size: 6px; font-weight: 700; color: #e2e8f0; padding-bottom: 2px; box-sizing: border-box; white-space: nowrap; }
+    .pmk-mv-bar { display: flex; justify-content: center; gap: 8px; height: 26px; align-items: center; }
+    .pmk-mv-bar i { width: 18px; height: 18px; border-radius: 50%; background: #334155; color: #fff; display: flex; align-items: center; justify-content: center; }
+    .pmk-mv-bar i.end { background: #ef4444; }
+    .pmk-mv-bar svg { width: 10px; height: 10px; }
+    @keyframes pmk-speak { 0%, 100% { box-shadow: 0 0 0 0 rgba(10,179,140,0); } 50% { box-shadow: 0 0 0 4px rgba(10,179,140,.7); } }
+    .slide.active .pmk-mvideo .pmk-mav { animation: pmk-speak .6s ease calc(var(--d, 0s) + .3s) 2 both; }
     .chip2.sal { background: #fdeadf; color: #b4521f; }
     /* slide 15: last-touch credit against Campaign Influence, side by side */
     .cmp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; width: 100%; max-width: 1080px; margin: 0 auto; text-align: left; }
@@ -539,28 +539,28 @@
     .cmp-lh { font-size: 11.5px; font-weight: 800; color: var(--ay-dark); padding: 6px 0 4px; }
     .cmp-r { display: grid; grid-template-columns: minmax(0, 1fr) 84px 124px; align-items: center; gap: 8px; height: 27px; border-top: 1px solid #f1f5f9; font-size: 12px; border-radius: 4px; }
     .cmp-r > span { color: #0b5cab; font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; }
-    .cmp-r > .pm-team { justify-self: center; }
+    .cmp-r > .pmk-team { justify-self: center; }
     .cmp-r em { justify-self: end; font-style: normal; font-size: 11.5px; font-weight: 700; color: var(--ay-gray); white-space: nowrap; }
     .cmp-r.off { opacity: .35; }
     .cmp-r.off > * { text-decoration: line-through; }
     .cmp-p:last-child .cmp-r em { color: #076b54; font-weight: 800; }
     .cmp-r.win { background: #fff7ed; padding: 0 6px; margin: 0 -6px; }
     .cmp-r.win em { color: #b45309; font-weight: 800; }
-    @keyframes pm-off { from { opacity: 1; } to { opacity: .35; } }
-    @keyframes pm-strike { from { text-decoration-color: transparent; } to { text-decoration-color: currentColor; } }
-    .slide.active[data-pm="cmp"] .cmp-r.off { animation: pm-row .45s ease-out var(--d, 0s) both, pm-off .6s ease 2.5s forwards; }
-    .slide.active[data-pm="cmp"] .cmp-r.off > * { animation: pm-strike .6s ease 2.5s both; }
-    @keyframes pm-win { from { background: transparent; } to { background: #fff7ed; } }
-    .slide.active[data-pm="cmp"] .cmp-r.win { animation: pm-row .45s ease-out var(--d, 0s) both, pm-win .6s ease 2.7s forwards; }
+    @keyframes pmk-off { from { opacity: 1; } to { opacity: .35; } }
+    @keyframes pmk-strike { from { text-decoration-color: transparent; } to { text-decoration-color: currentColor; } }
+    .slide.active[data-pm="cmp"] .cmp-r.off { animation: pmk-row .45s ease-out var(--d, 0s) both, pmk-off .6s ease 2.5s forwards; }
+    .slide.active[data-pm="cmp"] .cmp-r.off > * { animation: pmk-strike .6s ease 2.5s both; }
+    @keyframes pmk-win { from { background: transparent; } to { background: #fff7ed; } }
+    .slide.active[data-pm="cmp"] .cmp-r.win { animation: pmk-row .45s ease-out var(--d, 0s) both, pmk-win .6s ease 2.7s forwards; }
     .cmp-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 2px 14px 4px; transform-origin: left center; }
     .cmp-bar i { display: block; height: 100%; }
     .cmp-leg { display: flex; gap: 14px; padding: 0 14px 12px; font-size: 11px; font-weight: 700; color: var(--ay-gray); }
     .cmp-leg span { display: inline-flex; align-items: center; gap: 5px; }
     .cmp-leg i { width: 9px; height: 9px; border-radius: 50%; }
-    .slide.active[data-pm="cmp"] .cmp-bar { animation: pm-grow .8s ease-out 5.3s both; }
+    .slide.active[data-pm="cmp"] .cmp-bar { animation: pmk-grow .8s ease-out 5.3s both; }
     .cmp-cap { font-size: 13.5px; color: var(--ay-text); line-height: 1.5; padding: 0 2px; }
-    .slide.active[data-pm="cmp"] .cmp-cap.c1 { animation: pm-in .5s ease-out 3s both; }
-    .slide.active[data-pm="cmp"] .cmp-cap.c2 { animation: pm-in .5s ease-out 5.8s both; }
+    .slide.active[data-pm="cmp"] .cmp-cap.c1 { animation: pmk-in .5s ease-out 3s both; }
+    .slide.active[data-pm="cmp"] .cmp-cap.c2 { animation: pmk-in .5s ease-out 5.8s both; }
     /* slide 16: the contact collects campaigns, opportunity #1 freezes them, a late one is refused and feeds opportunity #2 */
     .ltv-lc { align-items: flex-start; margin-top: 18px; }
     .ltv-lc .lc-card { width: 214px; margin-top: 40px; }
@@ -608,7 +608,7 @@
     .pbi-st:nth-child(5) { background: #5b84dc; } .pbi-st:nth-child(6) { background: #1e3a6e; }
     .pbi-st b { font-size: 21px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
     .pbi-st span { font-size: 10.5px; font-weight: 600; }
-    .slide.active[data-pm="pbi"] .pbi-st { animation: pm-in .45s ease-out both; }
+    .slide.active[data-pm="pbi"] .pbi-st { animation: pmk-in .45s ease-out both; }
     .slide.active[data-pm="pbi"] .pbi-st:nth-child(2) { animation-delay: .1s; } .slide.active[data-pm="pbi"] .pbi-st:nth-child(3) { animation-delay: .2s; }
     .slide.active[data-pm="pbi"] .pbi-st:nth-child(4) { animation-delay: .3s; } .slide.active[data-pm="pbi"] .pbi-st:nth-child(5) { animation-delay: .4s; }
     .slide.active[data-pm="pbi"] .pbi-st:nth-child(6) { animation-delay: .5s; }
@@ -616,7 +616,7 @@
     .pbi-rates div { flex: 1; text-align: center; }
     .pbi-rates b { display: block; font-size: 12px; font-weight: 700; color: #252423; font-variant-numeric: tabular-nums; }
     .pbi-rates span { font-size: 9px; color: #605e5c; }
-    .slide.active[data-pm="pbi"] .pbi-rates { animation: pm-fade .5s ease 1.1s both; }
+    .slide.active[data-pm="pbi"] .pbi-rates { animation: pmk-fade .5s ease 1.1s both; }
     .pbi-cols { display: flex; align-items: flex-end; gap: 22px; height: 96px; padding: 0 10px; border-bottom: 1px solid #edebe9; }
     .pbi-col { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column-reverse; }
     .pbi-seg { width: 100%; height: 0; flex: none; transition: height .6s cubic-bezier(.2,.7,.2,1); }
@@ -626,11 +626,11 @@
     .pbi-leg span { display: flex; align-items: center; gap: 4px; }
     .pbi-leg i { width: 8px; height: 8px; border-radius: 50%; }
     /* slides 11 to 13: Salesforce record icons, and the short form and event badge that land as campaigns */
-    .pm-camp, .pm-ctc { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; background: #f49756; color: #fff; flex: none; vertical-align: -3px; margin-right: 5px; font-style: normal; }
-    .pm-ctc { background: #a094ed; }
-    .pm-camp svg, .pm-ctc svg { width: 10px; height: 10px; }
-    .chip2 .pm-camp { width: 13px; height: 13px; margin-right: 4px; vertical-align: -2px; }
-    .chip2 .pm-camp svg { width: 9px; height: 9px; }
+    .pmk-camp, .pmk-ctc { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; background: #f49756; color: #fff; flex: none; vertical-align: -3px; margin-right: 5px; font-style: normal; }
+    .pmk-ctc { background: #a094ed; }
+    .pmk-camp svg, .pmk-ctc svg { width: 10px; height: 10px; }
+    .chip2 .pmk-camp { width: 13px; height: 13px; margin-right: 4px; vertical-align: -2px; }
+    .chip2 .pmk-camp svg { width: 9px; height: 9px; }
     .slide[data-pm^="infl"] .lc-card { width: 232px; }
     .sfc-h { display: flex; align-items: center; gap: 9px; }
     .sfc-ic { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
@@ -640,52 +640,52 @@
     .sfc-h .lch-t { font-size: 15px; }
     .sfc-h + .lch-s { margin-top: 8px; }
     .sfo-who { display: inline-flex; align-items: center; color: #0b5cab; }
-    .pm-mini { position: absolute; left: 50%; top: -150px; width: 176px; height: 136px; box-sizing: border-box; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 10px 26px rgba(0,0,0,.18); padding: 9px 12px 10px; text-align: left; opacity: 0; pointer-events: none; z-index: 3; transform: translate(-50%, 120px) scale(.25); display: flex; flex-direction: column; gap: 5px; }
-    @keyframes pm-mini { 0% { opacity: 0; transform: translate(-50%, 10px) scale(.85); } 10%, 78% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 120px) scale(.25); } }
-    @keyframes pm-mini-l { 0% { opacity: 0; transform: translate(-10px, 0) scale(.85); } 10%, 78% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translate(120px, 0) scale(.25); } }
-    .slide.active .pm-mini { animation: pm-mini 1.5s ease var(--d, 0s) both; }
-    .pm-mini.left { left: auto; right: calc(100% + 16px); top: 50%; margin-top: -68px; transform: translate(120px, 0) scale(.25); }
-    .slide.active .pm-mini.left { animation-name: pm-mini-l; }
-    .pm-mini.below { top: calc(100% + 18px); transform: translate(-50%, -120px) scale(.25); }
-    @keyframes pm-mini-b { 0% { opacity: 0; transform: translate(-50%, -10px) scale(.85); } 10%, 78% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -120px) scale(.25); } }
-    .slide.active .pm-mini.below { animation-name: pm-mini-b; }
-    .pm-mh { font-size: 10.5px; font-weight: 800; color: var(--ay-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pm-mf { display: flex; flex-direction: column; gap: 1px; }
-    .pm-mf small { font-size: 7.5px; font-weight: 700; color: var(--ay-gray); line-height: 1.1; }
-    .pm-mf > span { display: block; height: 16px; border: 1px solid #d6dde5; border-radius: 3px; padding: 0 5px; font-size: 9px; line-height: 14px; color: var(--ay-text); overflow: hidden; white-space: nowrap; box-sizing: border-box; }
-    .pm-mf em { display: inline-block; font-style: normal; }
-    .pm-mck { display: flex; align-items: center; gap: 4px; font-size: 7.5px; color: var(--ay-gray); white-space: nowrap; }
-    .pm-mck i { position: relative; width: 9px; height: 9px; border: 1px solid #b6c2cf; border-radius: 2px; flex: none; }
-    .pm-mck i b { position: absolute; inset: 0; font-size: 8px; line-height: 9px; text-align: center; color: var(--ay-primary); font-weight: 800; }
-    .pm-mb { display: block; height: 17px; border-radius: 9px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 8.5px; font-weight: 800; line-height: 17px; text-align: center; margin-top: auto; }
-    .pm-mbadge { width: 132px; align-items: center; text-align: center; padding: 0 0 8px; gap: 1px; overflow: hidden; }
-    .pm-mbh { position: relative; display: block; align-self: stretch; height: 18px; flex: none; background: linear-gradient(135deg,#11a9e6,#0ab38c); margin-bottom: 5px; }
-    .pm-mbh::after { content: ""; position: absolute; left: 50%; top: 6px; width: 18px; height: 5px; margin-left: -9px; border-radius: 3px; background: #fff; }
-    .pm-mav { width: 34px; height: 34px; border-radius: 50%; background: #e2e8f0; color: #94a3b8; display: flex; align-items: center; justify-content: center; flex: none; margin-bottom: 3px; }
-    .pm-mav svg { width: 22px; height: 22px; }
-    .pm-mbadge b { font-size: 11px; font-weight: 800; color: var(--ay-dark); line-height: 1.2; }
-    .pm-mbadge small { font-size: 8.5px; color: var(--ay-gray); font-weight: 700; }
-    .pm-mev { margin-top: 3px; font-size: 8.5px; font-weight: 800; color: #0b5cab; background: #e0f4fe; border-radius: 8px; padding: 1px 7px; white-space: nowrap; }
-    .pm-mqr { position: absolute; left: 8px; bottom: 8px; width: 18px; height: 18px; border-radius: 2px; background: repeating-conic-gradient(#0f2a44 0 25%, #fff 0 50%) 0 0 / 6px 6px; }
-    .pm-mscan { position: absolute; left: 6px; bottom: 6px; width: 22px; height: 2px; background: var(--ay-success); box-shadow: 0 0 6px 1px rgba(10,179,140,.6); opacity: 0; }
-    @keyframes pm-mscan { 0% { opacity: 0; transform: translateY(0); } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px); } }
-    .slide.active .pm-mscan { animation: pm-mscan .5s ease-in-out var(--d, 0s) both; }
-    .pm-mok { position: absolute; right: 6px; bottom: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--ay-success); color: #fff; font-size: 9px; font-weight: 800; line-height: 16px; text-align: center; }
-    .pm-team { display: inline-block; font-size: 10.5px; font-weight: 800; border-radius: 9px; padding: 2px 8px; background: #e2f6fd; color: #0083b8; }
-    .pm-team.sal { background: #fdeadf; color: #b4521f; }
-    .pm-team.tel { background: #eee9fa; color: #5b3fb0; }
+    .pmk-mini { position: absolute; left: 50%; top: -150px; width: 176px; height: 136px; box-sizing: border-box; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 10px 26px rgba(0,0,0,.18); padding: 9px 12px 10px; text-align: left; opacity: 0; pointer-events: none; z-index: 3; transform: translate(-50%, 120px) scale(.25); display: flex; flex-direction: column; gap: 5px; }
+    @keyframes pmk-mini { 0% { opacity: 0; transform: translate(-50%, 10px) scale(.85); } 10%, 78% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 120px) scale(.25); } }
+    @keyframes pmk-mini-l { 0% { opacity: 0; transform: translate(-10px, 0) scale(.85); } 10%, 78% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translate(120px, 0) scale(.25); } }
+    .slide.active .pmk-mini { animation: pmk-mini 1.5s ease var(--d, 0s) both; }
+    .pmk-mini.left { left: auto; right: calc(100% + 16px); top: 50%; margin-top: -68px; transform: translate(120px, 0) scale(.25); }
+    .slide.active .pmk-mini.left { animation-name: pmk-mini-l; }
+    .pmk-mini.below { top: calc(100% + 18px); transform: translate(-50%, -120px) scale(.25); }
+    @keyframes pmk-mini-b { 0% { opacity: 0; transform: translate(-50%, -10px) scale(.85); } 10%, 78% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -120px) scale(.25); } }
+    .slide.active .pmk-mini.below { animation-name: pmk-mini-b; }
+    .pmk-mh { font-size: 10.5px; font-weight: 800; color: var(--ay-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pmk-mf { display: flex; flex-direction: column; gap: 1px; }
+    .pmk-mf small { font-size: 7.5px; font-weight: 700; color: var(--ay-gray); line-height: 1.1; }
+    .pmk-mf > span { display: block; height: 16px; border: 1px solid #d6dde5; border-radius: 3px; padding: 0 5px; font-size: 9px; line-height: 14px; color: var(--ay-text); overflow: hidden; white-space: nowrap; box-sizing: border-box; }
+    .pmk-mf em { display: inline-block; font-style: normal; }
+    .pmk-mck { display: flex; align-items: center; gap: 4px; font-size: 7.5px; color: var(--ay-gray); white-space: nowrap; }
+    .pmk-mck i { position: relative; width: 9px; height: 9px; border: 1px solid #b6c2cf; border-radius: 2px; flex: none; }
+    .pmk-mck i b { position: absolute; inset: 0; font-size: 8px; line-height: 9px; text-align: center; color: var(--ay-primary); font-weight: 800; }
+    .pmk-mb { display: block; height: 17px; border-radius: 9px; background: linear-gradient(135deg,#11a9e6,#0ab38c); color: #fff; font-size: 8.5px; font-weight: 800; line-height: 17px; text-align: center; margin-top: auto; }
+    .pmk-mbadge { width: 132px; align-items: center; text-align: center; padding: 0 0 8px; gap: 1px; overflow: hidden; }
+    .pmk-mbh { position: relative; display: block; align-self: stretch; height: 18px; flex: none; background: linear-gradient(135deg,#11a9e6,#0ab38c); margin-bottom: 5px; }
+    .pmk-mbh::after { content: ""; position: absolute; left: 50%; top: 6px; width: 18px; height: 5px; margin-left: -9px; border-radius: 3px; background: #fff; }
+    .pmk-mav { width: 34px; height: 34px; border-radius: 50%; background: #e2e8f0; color: #94a3b8; display: flex; align-items: center; justify-content: center; flex: none; margin-bottom: 3px; }
+    .pmk-mav svg { width: 22px; height: 22px; }
+    .pmk-mbadge b { font-size: 11px; font-weight: 800; color: var(--ay-dark); line-height: 1.2; }
+    .pmk-mbadge small { font-size: 8.5px; color: var(--ay-gray); font-weight: 700; }
+    .pmk-mev { margin-top: 3px; font-size: 8.5px; font-weight: 800; color: #0b5cab; background: #e0f4fe; border-radius: 8px; padding: 1px 7px; white-space: nowrap; }
+    .pmk-mqr { position: absolute; left: 8px; bottom: 8px; width: 18px; height: 18px; border-radius: 2px; background: repeating-conic-gradient(#0f2a44 0 25%, #fff 0 50%) 0 0 / 6px 6px; }
+    .pmk-mscan { position: absolute; left: 6px; bottom: 6px; width: 22px; height: 2px; background: var(--ay-success); box-shadow: 0 0 6px 1px rgba(10,179,140,.6); opacity: 0; }
+    @keyframes pmk-mscan { 0% { opacity: 0; transform: translateY(0); } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px); } }
+    .slide.active .pmk-mscan { animation: pmk-mscan .5s ease-in-out var(--d, 0s) both; }
+    .pmk-mok { position: absolute; right: 6px; bottom: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--ay-success); color: #fff; font-size: 9px; font-weight: 800; line-height: 16px; text-align: center; }
+    .pmk-team { display: inline-block; font-size: 10.5px; font-weight: 800; border-radius: 9px; padding: 2px 8px; background: #e2f6fd; color: #0083b8; }
+    .pmk-team.sal { background: #fdeadf; color: #b4521f; }
+    .pmk-team.tel { background: #eee9fa; color: #5b3fb0; }
     .sfr-t th.num, .sfr-t td.num { text-align: right; font-variant-numeric: tabular-nums; }
-    .sfr-t td .pm-camp { vertical-align: -1px; }
+    .sfr-t td .pmk-camp { vertical-align: -1px; }
     .pbi-cta { margin-top: 18px; }
-    .pm-note { font-size: 11.5px !important; color: var(--ay-light) !important; margin: 10px auto 0 !important; }
+    .pmk-note { font-size: 11.5px !important; color: var(--ay-light) !important; margin: 10px auto 0 !important; }
 
     /* slides 11 and 12: form toasts land as campaigns, the Salesforce opportunity fills */
-    .pm-host { position: relative; }
-    .pm-toast { position: absolute; left: 50%; top: -42px; display: flex; align-items: center; gap: 6px; white-space: nowrap; background: var(--ay-dark); color: #fff; font-size: 11px; font-weight: 700; padding: 6px 11px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,.15); opacity: 0; pointer-events: none; z-index: 3; transform: translate(-50%, 44px) scale(.4); }
-    .pm-toast svg { width: 13px; height: 13px; flex: none; }
-    .slide.active .pm-toast { animation: pm-toast 1s ease var(--d, 0s) both; }
-    .pm-toast.left { left: auto; right: calc(100% + 14px); top: 50%; transform: translate(60px, -50%) scale(.4); }
-    .slide.active .pm-toast.left { animation-name: pm-toast-l; }
+    .pmk-host { position: relative; }
+    .pmk-toast { position: absolute; left: 50%; top: -42px; display: flex; align-items: center; gap: 6px; white-space: nowrap; background: var(--ay-dark); color: #fff; font-size: 11px; font-weight: 700; padding: 6px 11px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,.15); opacity: 0; pointer-events: none; z-index: 3; transform: translate(-50%, 44px) scale(.4); }
+    .pmk-toast svg { width: 13px; height: 13px; flex: none; }
+    .slide.active .pmk-toast { animation: pmk-toast 1s ease var(--d, 0s) both; }
+    .pmk-toast.left { left: auto; right: calc(100% + 14px); top: 50%; transform: translate(60px, -50%) scale(.4); }
+    .slide.active .pmk-toast.left { animation-name: pmk-toast-l; }
     .sfo { width: 282px; flex: none; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; text-align: left; }
     .sfo-h { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid #eef2f6; background: #f8fafc; }
     .sfo-ic { width: 30px; height: 30px; border-radius: 7px; background: #fcb95b; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
@@ -714,58 +714,58 @@
 
     /* slide 14: metrics build, the chosen ones are circled and rise into KPI, KPI rise into the OKR */
     .slide[data-pm="pyr"] .pyramid { position: relative; }
-    .pm-ghost { position: absolute; margin: 0; z-index: 5; pointer-events: none; box-shadow: 0 0 0 2.5px var(--ay-primary), 0 6px 16px rgba(17,169,230,.35); background: #fff; }
-    .slide.active[data-pm="pyr"] .tier.met { animation: pm-in .55s ease-out .2s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip { animation: pm-pop .4s ease-out both; }
-    .slide.active[data-pm="pyr"] .tier.kpi { animation: pm-fade .5s ease 1.9s both; }
-    .slide.active[data-pm="pyr"] .tier.kpi .tchip { animation: pm-fade .4s ease 2.8s both; }
-    .slide.active[data-pm="pyr"] .tier.okr { animation: pm-fade .5s ease 3.7s both; }
-    .slide.active[data-pm="pyr"] .tier.okr .tcontent { animation: pm-fade .4s ease 4.5s both; }
-    .slide.active[data-pm="pyr"] .park { animation: pm-fade .5s ease 5s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(1) { animation: pm-pop .4s ease-out 0.35s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(2) { animation: pm-pop .4s ease-out 0.42s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(3) { animation: pm-pop .4s ease-out 0.49s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(4) { animation: pm-pop .4s ease-out 0.56s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(5) { animation: pm-pop .4s ease-out 0.63s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(6) { animation: pm-pop .4s ease-out 0.7s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(7) { animation: pm-pop .4s ease-out 0.77s both, pm-ring .4s ease 1.45s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(8) { animation: pm-pop .4s ease-out 0.84s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(9) { animation: pm-pop .4s ease-out 0.91s both, pm-ring .4s ease 1.45s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(10) { animation: pm-pop .4s ease-out 0.98s both, pm-ring .4s ease 1.45s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(11) { animation: pm-pop .4s ease-out 1.05s both, pm-ring .4s ease 1.45s both; }
-    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(12) { animation: pm-pop .4s ease-out 1.12s both, pm-ring .4s ease 1.45s both; }
-    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(1) { animation: pm-pop .45s ease-out 2.6s both, pm-ring .4s ease 3.3s both; }
-    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(2) { animation: pm-pop .45s ease-out 2.6s both, pm-ring .4s ease 3.3s both; }
-    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(3) { animation: pm-pop .45s ease-out 2.6s both, pm-ring .4s ease 3.3s both; }
-    .slide.active[data-pm="pyr"] .tier.okr { animation: pm-fade .5s ease 3.7s both, pm-glow 1s ease-out 4.5s both; }
+    .pmk-ghost { position: absolute; margin: 0; z-index: 5; pointer-events: none; box-shadow: 0 0 0 2.5px var(--ay-primary), 0 6px 16px rgba(17,169,230,.35); background: #fff; }
+    .slide.active[data-pm="pyr"] .tier.met { animation: pmk-in .55s ease-out .2s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip { animation: pmk-pop .4s ease-out both; }
+    .slide.active[data-pm="pyr"] .tier.kpi { animation: pmk-fade .5s ease 1.9s both; }
+    .slide.active[data-pm="pyr"] .tier.kpi .tchip { animation: pmk-fade .4s ease 2.8s both; }
+    .slide.active[data-pm="pyr"] .tier.okr { animation: pmk-fade .5s ease 3.7s both; }
+    .slide.active[data-pm="pyr"] .tier.okr .tcontent { animation: pmk-fade .4s ease 4.5s both; }
+    .slide.active[data-pm="pyr"] .park { animation: pmk-fade .5s ease 5s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(1) { animation: pmk-pop .4s ease-out 0.35s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(2) { animation: pmk-pop .4s ease-out 0.42s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(3) { animation: pmk-pop .4s ease-out 0.49s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(4) { animation: pmk-pop .4s ease-out 0.56s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(5) { animation: pmk-pop .4s ease-out 0.63s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(6) { animation: pmk-pop .4s ease-out 0.7s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(7) { animation: pmk-pop .4s ease-out 0.77s both, pmk-ring .4s ease 1.45s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(8) { animation: pmk-pop .4s ease-out 0.84s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(9) { animation: pmk-pop .4s ease-out 0.91s both, pmk-ring .4s ease 1.45s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(10) { animation: pmk-pop .4s ease-out 0.98s both, pmk-ring .4s ease 1.45s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(11) { animation: pmk-pop .4s ease-out 1.05s both, pmk-ring .4s ease 1.45s both; }
+    .slide.active[data-pm="pyr"] .tier.met .tchip:nth-child(12) { animation: pmk-pop .4s ease-out 1.12s both, pmk-ring .4s ease 1.45s both; }
+    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(1) { animation: pmk-pop .45s ease-out 2.6s both, pmk-ring .4s ease 3.3s both; }
+    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(2) { animation: pmk-pop .45s ease-out 2.6s both, pmk-ring .4s ease 3.3s both; }
+    .slide.active[data-pm="pyr"] .tier.kpi .tchip:nth-child(3) { animation: pmk-pop .45s ease-out 2.6s both, pmk-ring .4s ease 3.3s both; }
+    .slide.active[data-pm="pyr"] .tier.okr { animation: pmk-fade .5s ease 3.7s both, pmk-glow 1s ease-out 4.5s both; }
     /* slide 15: each blind spot drops a dot into direct */
-    .slide.active[data-pm="bias"] .bias { animation: pm-in .5s ease-out both; }
+    .slide.active[data-pm="bias"] .bias { animation: pmk-in .5s ease-out both; }
     .slide.active[data-pm="bias"] .bias:nth-child(1) { animation-delay: .2s; }
     .slide.active[data-pm="bias"] .bias:nth-child(2) { animation-delay: .4s; }
     .slide.active[data-pm="bias"] .bias:nth-child(3) { animation-delay: .6s; }
     .slide.active[data-pm="bias"] .bias:nth-child(4) { animation-delay: .8s; }
     .bias-conn { position: relative; }
-    .pm-dots { position: absolute; left: 4px; right: 4px; bottom: 15px; height: 10px; }
-    .pm-dots i { position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: #94a3b8; opacity: 0; }
-    .slide.active .pm-dots i { animation: pm-wire .6s ease-in var(--d, 0s) both; }
-    .slide.active[data-pm="bias"] .bias-sink { animation: pm-glow 1s ease-out 2.8s both; }
-    .slide.active[data-pm="bias"] .coda { animation: pm-in .6s ease-out 3.2s both; }
+    .pmk-dots { position: absolute; left: 4px; right: 4px; bottom: 15px; height: 10px; }
+    .pmk-dots i { position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: #94a3b8; opacity: 0; }
+    .slide.active .pmk-dots i { animation: pmk-wire .6s ease-in var(--d, 0s) both; }
+    .slide.active[data-pm="bias"] .bias-sink { animation: pmk-glow 1s ease-out 2.8s both; }
+    .slide.active[data-pm="bias"] .coda { animation: pmk-in .6s ease-out 3.2s both; }
 
     /* slide 16: what the system explains, then what truly remains */
-    .slide.active[data-pm="direct"] .dcol.got .di { animation: pm-in .5s ease-out both; }
+    .slide.active[data-pm="direct"] .dcol.got .di { animation: pmk-in .5s ease-out both; }
     .slide.active[data-pm="direct"] .dcol.got .di:nth-of-type(2) { animation-delay: .3s; }
     .slide.active[data-pm="direct"] .dcol.got .di:nth-of-type(3) { animation-delay: .55s; }
     .slide.active[data-pm="direct"] .dcol.got .di:nth-of-type(4) { animation-delay: .8s; }
     .slide.active[data-pm="direct"] .dcol.got .di:nth-of-type(5) { animation-delay: 1.05s; }
-    .slide.active[data-pm="direct"] .dcol.rest { animation: pm-in .6s ease-out 1.6s both, pm-glow 1s ease-out 2.1s both; }
-    .slide.active[data-pm="direct"] .coda { animation: pm-in .6s ease-out 2.8s both; }
+    .slide.active[data-pm="direct"] .dcol.rest { animation: pmk-in .6s ease-out 1.6s both, pmk-glow 1s ease-out 2.1s both; }
+    .slide.active[data-pm="direct"] .coda { animation: pmk-in .6s ease-out 2.8s both; }
 
     /* slide 17: the share counts up, then its reading */
-    .slide.active[data-pm="hyg"] .big-sub { animation: pm-in .6s ease-out 1.5s both; }
-    .slide.active[data-pm="hyg"] .coda { animation: pm-in .6s ease-out 2.2s both; }
+    .slide.active[data-pm="hyg"] .big-sub { animation: pmk-in .6s ease-out 1.5s both; }
+    .slide.active[data-pm="hyg"] .coda { animation: pmk-in .6s ease-out 2.2s both; }
 
     /* slide 18: the horizon, line by line */
-    .slide.active[data-pm="hz"] .horizon li { animation: pm-in .5s ease-out both; }
+    .slide.active[data-pm="hz"] .horizon li { animation: pmk-in .5s ease-out both; }
     .slide.active[data-pm="hz"] .horizon li:nth-child(1) { animation-delay: .2s; }
     .slide.active[data-pm="hz"] .horizon li:nth-child(2) { animation-delay: .5s; }
     .slide.active[data-pm="hz"] .horizon li:nth-child(3) { animation-delay: .8s; }
@@ -802,12 +802,12 @@
     .roi-x b { font-size: 19px; font-weight: 800; color: #076b54; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; }
     .roi-m { height: 8px; border-radius: 4px; background: #eef2f6; overflow: hidden; }
     .roi-m i { display: block; height: 100%; width: var(--w); background: var(--ay-success); border-radius: 4px; transform-origin: left center; }
-    .slide.active[data-pm="roi"] .roi-m i { animation: pm-grow .7s ease-out var(--d, 0s) both; }
+    .slide.active[data-pm="roi"] .roi-m i { animation: pmk-grow .7s ease-out var(--d, 0s) both; }
 
     /* the four sources share one colour each across the influence block: pills, chips, card borders, bars */
-    .pm-team.par, .chip2.par { background: #dde7ef; color: #004A76; }
+    .pmk-team.par, .chip2.par { background: #dde7ef; color: #004A76; }
     .chip2.tel { background: #eee9fa; color: #5b3fb0; }
-    .spl-c > .pm-team { align-self: flex-start; }
+    .spl-c > .pmk-team { align-self: flex-start; }
     .sfo-ic.camp { background: #f49756; }
     .cmp-bar.lab { height: 22px; border-radius: 6px; gap: 3px; }
     .cmp-bar.lab i { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10.5px; font-weight: 800; font-style: normal; border-radius: 4px; }
@@ -847,7 +847,7 @@
     .obj-bar i.par { background: #004A76; }
     .obj-bar i.tel { background: #5b3fb0; }
     .obj-bar i.sal { background: #b4521f; }
-    .slide.active[data-pm="obj"] .obj-bar i { animation: pm-grow .55s ease-out var(--d, 0s) both; }
+    .slide.active[data-pm="obj"] .obj-bar i { animation: pmk-grow .55s ease-out var(--d, 0s) both; }
     .obj-r { display: flex; justify-content: space-between; align-items: center; gap: 10px; height: 38px; padding: 0 18px; border-top: 1px solid #f1f5f9; font-size: 12.5px; color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
     .obj-r b { color: var(--ay-dark); font-weight: 800; font-variant-numeric: tabular-nums; }
     .obj-r .obj-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: #0b5cab; font-weight: 700; }
@@ -866,11 +866,11 @@
     .bns-b { display: inline-flex; align-items: center; gap: 3px; flex: none; font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 9px; padding: 2px 7px; }
     .bns-b svg { width: 10px; height: 10px; }
     .bns-x { font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #b91c1c; background: #fdecec; border-radius: 9px; padding: 2px 8px; white-space: nowrap; }
-    .slide.active[data-pm="bonus"] .bns-r.first { animation: pm-row .45s ease-out var(--d, 0s) both, pm-win .6s ease 2s forwards; }
-    .slide.active[data-pm="bonus"] .bns-r.off .bns-t { animation: pm-off .6s ease 5s forwards; }
+    .slide.active[data-pm="bonus"] .bns-r.first { animation: pmk-row .45s ease-out var(--d, 0s) both, pmk-win .6s ease 2s forwards; }
+    .slide.active[data-pm="bonus"] .bns-r.off .bns-t { animation: pmk-off .6s ease 5s forwards; }
     .bns-r.off .bns-n { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: transparent; }
-    .slide.active[data-pm="bonus"] .bns-r.off .bns-n { animation: pm-strike .6s ease 5s forwards; }
-    .slide.active[data-pm="bonus"] .bns-c.later .roi-m i { animation: pm-grow .6s ease-out var(--d, 0s) both; }
+    .slide.active[data-pm="bonus"] .bns-r.off .bns-n { animation: pmk-strike .6s ease 5s forwards; }
+    .slide.active[data-pm="bonus"] .bns-c.later .roi-m i { animation: pmk-grow .6s ease-out var(--d, 0s) both; }
 
     /* dividers: the OKR slide emptied of its title, its KR blocks fly to the badge of the slide that follows */
     .okr-div .okr-fade { opacity: 0; }
@@ -886,7 +886,7 @@
     .obj-roi .obj-h, .obj-roi .obj-r.roi { display: grid; grid-template-columns: minmax(0, 1fr) 76px 84px 84px 44px; gap: 8px; align-items: center; }
     .obj-roi .obj-h { height: 28px; padding: 0 18px; border-top: 1px solid #f1f5f9; background: #f8fafc; font-size: 10px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .6px; }
     .obj-roi .obj-h span:not(:first-child), .obj-roi .obj-r.roi > :not(.obj-n) { text-align: right; justify-self: end; }
-    .obj-roi .obj-r.roi > .pm-team { justify-self: start; }
+    .obj-roi .obj-r.roi > .pmk-team { justify-self: start; }
     .obj-roi .obj-r .cost { color: var(--ay-gray); font-weight: 700; font-variant-numeric: tabular-nums; }
     .obj-roi .obj-r .roi-v { color: #076b54; font-weight: 800; font-variant-numeric: tabular-nums; }
     /* bonus slide: every row keeps the same slot for the first-campaign flag, so all bar tracks match */
@@ -1194,46 +1194,46 @@
       </div></div>
       <div class="slide-inner insights wide">
         <div class="cap-stage">
-          <div class="pm-url-wrap pm-fade" style="--d:.1s">
-            <div class="pm-who">Visitor · lands on a conversion point</div>
-            <div class="pm-url"><span class="pm-url-dots"><i></i><i></i><i></i></span><span class="pm-url-bar"><i data-lucide="lock"></i><span class="pm-url-txt pm-type" style="--d:.4s; --t:1.2s; --n:60">ayming.fr/barometre?utm_source=<em>LinkedIn</em>&amp;utm_medium=<em>Paid_Social</em>&amp;utm_campaign=<em>barometre-2026</em>&amp;li_fat_id=<em>8f3a2c91</em></span></span></div>
+          <div class="pmk-url-wrap pmk-fade" style="--d:.1s">
+            <div class="pmk-who">Visitor · lands on a conversion point</div>
+            <div class="pmk-url"><span class="pmk-url-dots"><i></i><i></i><i></i></span><span class="pmk-url-bar"><i data-lucide="lock"></i><span class="pmk-url-txt pmk-type" style="--d:.4s; --t:1.2s; --n:60">ayming.fr/barometre?utm_source=<em>LinkedIn</em>&amp;utm_medium=<em>Paid_Social</em>&amp;utm_campaign=<em>barometre-2026</em>&amp;li_fat_id=<em>8f3a2c91</em></span></span></div>
           </div>
           <div class="cap-flow">
-            <div class="sx cap pm-cap">
-              <div class="pm-scan" style="--d:1.7s"></div>
+            <div class="sx cap pmk-cap">
+              <div class="pmk-scan" style="--d:1.7s"></div>
               <div class="sx-tag">Capture</div>
-              <div class="sx-grp first pm-grp">UTM<span class="pm-ok pm-pop" style="--d:4.6s">normalized</span></div>
-              <div class="pm-kv"><span class="k">source</span><span class="v"><s class="pm-raw" style="--d:1.85s; --dur:2.6s">LinkedIn</s><b class="pm-norm pm-pop" style="--d:4.45s">linkedin</b></span></div>
-              <div class="pm-kv"><span class="k">medium</span><span class="v"><s class="pm-raw" style="--d:2.05s; --dur:2.4s">Paid_Social</s><b class="pm-norm pm-pop" style="--d:4.45s">cpc</b></span></div>
-              <div class="pm-kv"><span class="k">campaign</span><span class="v"><b class="pm-val pm-fade" style="--d:2.25s">barometre-2026</b></span></div>
+              <div class="sx-grp first pmk-grp">UTM<span class="pmk-ok pmk-pop" style="--d:4.6s">normalized</span></div>
+              <div class="pmk-kv"><span class="k">source</span><span class="v"><s class="pmk-raw" style="--d:1.85s; --dur:2.6s">LinkedIn</s><b class="pmk-norm pmk-pop" style="--d:4.45s">linkedin</b></span></div>
+              <div class="pmk-kv"><span class="k">medium</span><span class="v"><s class="pmk-raw" style="--d:2.05s; --dur:2.4s">Paid_Social</s><b class="pmk-norm pmk-pop" style="--d:4.45s">cpc</b></span></div>
+              <div class="pmk-kv"><span class="k">campaign</span><span class="v"><b class="pmk-val pmk-fade" style="--d:2.25s">barometre-2026</b></span></div>
               <div class="sx-grp">Ad data</div>
-              <div class="pm-kv"><span class="k">li_fat_id</span><span class="v"><b class="pm-val pm-fade" style="--d:2.5s">8f3a2c91</b></span></div>
-              <div class="pm-also">also captured: gclid, msclkid, fbclid</div>
+              <div class="pmk-kv"><span class="k">li_fat_id</span><span class="v"><b class="pmk-val pmk-fade" style="--d:2.5s">8f3a2c91</b></span></div>
+              <div class="pmk-also">also captured: gclid, msclkid, fbclid</div>
               <div class="sx-grp">User identity</div>
-              <div class="pm-kv"><span class="k">GA Client ID</span><span class="v"><b class="pm-val pm-fade" style="--d:2.75s">1843920517.1759301</b></span></div>
+              <div class="pmk-kv"><span class="k">GA Client ID</span><span class="v"><b class="pmk-val pmk-fade" style="--d:2.75s">1843920517.1759301</b></span></div>
             </div>
-            <div class="pm-wire" style="--d:3.0s"><i></i></div>
-            <div class="sx-sf enr-wrap pm-proc">
+            <div class="pmk-wire" style="--d:3.0s"><i></i></div>
+            <div class="sx-sf enr-wrap pmk-proc">
               <div class="sx-sf-label">Processing</div>
-              <div class="eb"><b>Store as first-party</b><span>our data, not a third-party cookie.</span><i class="pm-tick pm-pop" style="--d:3.5s">✓</i></div>
-              <div class="eb"><b>Multi-page injection</b><span>the origin follows the visitor to the form.</span><i class="pm-tick pm-pop" style="--d:3.8s">✓</i></div>
-              <div class="eb"><b>Recover the undeclared</b><span>source &amp; medium inferred from the referrer (LLM, organic, social).</span><i class="pm-tick pm-pop" style="--d:4.1s">✓</i></div>
-              <div class="eb"><b>Normalize</b><span>cleaned and standardized values.</span><i class="pm-tick pm-pop" style="--d:4.4s">✓</i></div>
+              <div class="eb"><b>Store as first-party</b><span>our data, not a third-party cookie.</span><i class="pmk-tick pmk-pop" style="--d:3.5s">✓</i></div>
+              <div class="eb"><b>Multi-page injection</b><span>the origin follows the visitor to the form.</span><i class="pmk-tick pmk-pop" style="--d:3.8s">✓</i></div>
+              <div class="eb"><b>Recover the undeclared</b><span>source &amp; medium inferred from the referrer (LLM, organic, social).</span><i class="pmk-tick pmk-pop" style="--d:4.1s">✓</i></div>
+              <div class="eb"><b>Normalize</b><span>cleaned and standardized values.</span><i class="pmk-tick pmk-pop" style="--d:4.4s">✓</i></div>
             </div>
-            <div class="pm-wire" style="--d:4.8s"><i></i></div>
-            <div class="pm-form">
-              <div class="pm-form-h">Download the barometer</div>
-              <div class="pm-field"><span class="pm-fl">Name</span><span class="pm-fi"><span class="pm-type" style="--d:6.1s; --t:.5s; --n:13">Claire Martin</span></span></div>
-              <div class="pm-field"><span class="pm-fl">Email</span><span class="pm-fi"><span class="pm-type" style="--d:6.7s; --t:.7s; --n:22">c.martin@entreprise.fr</span></span></div>
-              <div class="pm-field"><span class="pm-fl">Company</span><span class="pm-fi"><span class="pm-type" style="--d:7.5s; --t:.5s; --n:13">Entreprise SA</span></span></div>
-              <div class="pm-hidden"><span class="pm-hidden-l">Hidden fields</span>
-                <div class="pm-hv"><span>UTM Source</span><b class="pm-fade" style="--d:5.2s">linkedin</b></div>
-                <div class="pm-hv"><span>UTM Medium</span><b class="pm-fade" style="--d:5.35s">cpc</b></div>
-                <div class="pm-hv"><span>UTM Campaign</span><b class="pm-fade" style="--d:5.5s">barometre-2026</b></div>
-                <div class="pm-hv"><span>LinkedIn Click ID</span><b class="pm-fade" style="--d:5.65s">8f3a2c91</b></div>
-                <div class="pm-hv"><span>GA Client ID</span><b class="pm-fade" style="--d:5.8s">1843920517.1759301</b></div>
+            <div class="pmk-wire" style="--d:4.8s"><i></i></div>
+            <div class="pmk-form">
+              <div class="pmk-form-h">Download the barometer</div>
+              <div class="pmk-field"><span class="pmk-fl">Name</span><span class="pmk-fi"><span class="pmk-type" style="--d:6.1s; --t:.5s; --n:13">Claire Martin</span></span></div>
+              <div class="pmk-field"><span class="pmk-fl">Email</span><span class="pmk-fi"><span class="pmk-type" style="--d:6.7s; --t:.7s; --n:22">c.martin@entreprise.fr</span></span></div>
+              <div class="pmk-field"><span class="pmk-fl">Company</span><span class="pmk-fi"><span class="pmk-type" style="--d:7.5s; --t:.5s; --n:13">Entreprise SA</span></span></div>
+              <div class="pmk-hidden"><span class="pmk-hidden-l">Hidden fields</span>
+                <div class="pmk-hv"><span>UTM Source</span><b class="pmk-fade" style="--d:5.2s">linkedin</b></div>
+                <div class="pmk-hv"><span>UTM Medium</span><b class="pmk-fade" style="--d:5.35s">cpc</b></div>
+                <div class="pmk-hv"><span>UTM Campaign</span><b class="pmk-fade" style="--d:5.5s">barometre-2026</b></div>
+                <div class="pmk-hv"><span>LinkedIn Click ID</span><b class="pmk-fade" style="--d:5.65s">8f3a2c91</b></div>
+                <div class="pmk-hv"><span>GA Client ID</span><b class="pmk-fade" style="--d:5.8s">1843920517.1759301</b></div>
               </div>
-              <div class="pm-btn pm-press" style="--d:8.1s">Download<span class="pm-sent pm-fade" style="--d:8.35s">Sent ✓</span></div>
+              <div class="pmk-btn pmk-press" style="--d:8.1s">Download<span class="pmk-sent pmk-fade" style="--d:8.35s">Sent ✓</span></div>
             </div>
           </div>
         </div>
@@ -1250,36 +1250,36 @@
       </div></div>
       <div class="slide-inner insights wide">
         <div class="crm-flow">
-          <div class="pm-form sm">
-            <div class="pm-form-h">Download the barometer</div>
-            <div class="pm-field"><span class="pm-fl">Name</span><span class="pm-fi">Claire Martin</span></div>
-            <div class="pm-field"><span class="pm-fl">Email</span><span class="pm-fi">c.martin@entreprise.fr</span></div>
-            <div class="pm-hidden"><span class="pm-hidden-l">Hidden fields</span>
-              <div class="pm-hv"><span>UTM Source</span><b>linkedin</b></div>
-              <div class="pm-hv"><span>UTM Medium</span><b>cpc</b></div>
-              <div class="pm-hv"><span>UTM Campaign</span><b>barometre-2026</b></div>
-              <div class="pm-hv"><span>GA Client ID</span><b>1843920517.1759301</b></div>
+          <div class="pmk-form sm">
+            <div class="pmk-form-h">Download the barometer</div>
+            <div class="pmk-field"><span class="pmk-fl">Name</span><span class="pmk-fi">Claire Martin</span></div>
+            <div class="pmk-field"><span class="pmk-fl">Email</span><span class="pmk-fi">c.martin@entreprise.fr</span></div>
+            <div class="pmk-hidden"><span class="pmk-hidden-l">Hidden fields</span>
+              <div class="pmk-hv"><span>UTM Source</span><b>linkedin</b></div>
+              <div class="pmk-hv"><span>UTM Medium</span><b>cpc</b></div>
+              <div class="pmk-hv"><span>UTM Campaign</span><b>barometre-2026</b></div>
+              <div class="pmk-hv"><span>GA Client ID</span><b>1843920517.1759301</b></div>
             </div>
-            <div class="pm-btn"><span class="pm-sent">Sent ✓</span></div>
+            <div class="pmk-btn"><span class="pmk-sent">Sent ✓</span></div>
           </div>
-          <div class="pm-wire" style="--d:.4s"><i></i></div>
-          <div class="pm-pardot">
-            <div class="pm-pd-h"><small>Pardot · prospect</small><b>Claire Martin</b></div>
-            <div class="pm-pd-b">
-              <div class="pm-pd-r"><span>Source</span><b class="pm-fade" style="--d:.9s">linkedin</b></div>
-              <div class="pm-pd-r"><span>Medium</span><b class="pm-fade" style="--d:1.05s">cpc</b></div>
-              <div class="pm-pd-r"><span>Campaign</span><b class="pm-fade" style="--d:1.2s">barometre-2026</b></div>
-              <div class="pm-pd-r"><span>GA Client ID</span><b class="pm-fade" style="--d:1.35s">1843920517.1759301</b></div>
-              <span class="pm-pd-pill pm-pop" style="--d:1.7s">First touch set</span>
+          <div class="pmk-wire" style="--d:.4s"><i></i></div>
+          <div class="pmk-pardot">
+            <div class="pmk-pd-h"><small>Pardot · prospect</small><b>Claire Martin</b></div>
+            <div class="pmk-pd-b">
+              <div class="pmk-pd-r"><span>Source</span><b class="pmk-fade" style="--d:.9s">linkedin</b></div>
+              <div class="pmk-pd-r"><span>Medium</span><b class="pmk-fade" style="--d:1.05s">cpc</b></div>
+              <div class="pmk-pd-r"><span>Campaign</span><b class="pmk-fade" style="--d:1.2s">barometre-2026</b></div>
+              <div class="pmk-pd-r"><span>GA Client ID</span><b class="pmk-fade" style="--d:1.35s">1843920517.1759301</b></div>
+              <span class="pmk-pd-pill pmk-pop" style="--d:1.7s">First touch set</span>
             </div>
           </div>
-          <div class="pm-wire" style="--d:2.0s"><i></i></div>
+          <div class="pmk-wire" style="--d:2.0s"><i></i></div>
           <div class="crm-col">
-            <div class="sfm pm-lit" style="--d:2.5s"><div class="sfm-h"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sfo-k">Lead</div><div class="sfm-n">Claire Martin</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin UTM</span><b class="pm-fade" style="--d:2.80s">linkedin / cpc</b></div><div class="sfm-r"><span>Dynamic UTM</span><b class="pm-fade" style="--d:2.95s">linkedin / cpc</b></div></div></div>
-            <span class="sfm-down pm-flash" style="--d:3.0s">&darr;</span>
-            <div class="sfm pm-lit" style="--d:3.2s"><div class="sfm-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact</div><div class="sfm-n">Claire Martin</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin UTM</span><b class="pm-fade" style="--d:3.50s">linkedin / cpc</b></div><div class="sfm-r"><span>Dynamic UTM</span><b class="pm-fade" style="--d:3.65s">google / organic</b></div></div></div>
-            <span class="sfm-down pm-flash" style="--d:3.8s">&darr;</span>
-            <div class="sfm pm-lit" style="--d:4.0s"><div class="sfm-h"><span class="sfc-ic opp"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfm-n">Entreprise SA</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin</span><b class="pm-fade" style="--d:4.30s"><span class="pm-stamp">Marketing · linkedin / cpc</span></b></div><div class="sfm-r"><span>Contact role</span><b class="pm-fade" style="--d:4.45s"><i class="pm-ctc"><i data-lucide="contact"></i></i>Claire Martin · Champion</b></div></div></div>
+            <div class="sfm pmk-lit" style="--d:2.5s"><div class="sfm-h"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sfo-k">Lead</div><div class="sfm-n">Claire Martin</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin UTM</span><b class="pmk-fade" style="--d:2.80s">linkedin / cpc</b></div><div class="sfm-r"><span>Dynamic UTM</span><b class="pmk-fade" style="--d:2.95s">linkedin / cpc</b></div></div></div>
+            <span class="sfm-down pmk-flash" style="--d:3.0s">&darr;</span>
+            <div class="sfm pmk-lit" style="--d:3.2s"><div class="sfm-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact</div><div class="sfm-n">Claire Martin</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin UTM</span><b class="pmk-fade" style="--d:3.50s">linkedin / cpc</b></div><div class="sfm-r"><span>Dynamic UTM</span><b class="pmk-fade" style="--d:3.65s">google / organic</b></div></div></div>
+            <span class="sfm-down pmk-flash" style="--d:3.8s">&darr;</span>
+            <div class="sfm pmk-lit" style="--d:4.0s"><div class="sfm-h"><span class="sfc-ic opp"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfm-n">Entreprise SA</div></div></div><div class="sfm-b"><div class="sfm-r"><span>Origin</span><b class="pmk-fade" style="--d:4.30s"><span class="pmk-stamp">Marketing · linkedin / cpc</span></b></div><div class="sfm-r"><span>Contact role</span><b class="pmk-fade" style="--d:4.45s"><i class="pmk-ctc"><i data-lucide="contact"></i></i>Claire Martin · Champion</b></div></div></div>
           </div>
         </div>
       </div>
@@ -1290,7 +1290,7 @@
     <section class="slide" data-pm="pbi" data-chapter="cadre">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Marketing-sourced pipeline</h1>
-        <div class="pbi pm-in" style="--d:.1s">
+        <div class="pbi pmk-in" style="--d:.1s">
           <div class="pbi-top">
             <img class="pbi-logo" src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"><span class="pbi-name">Marketing France Analytics</span>
             <div class="pbi-filt"><span class="pbi-fl">Période</span><span class="pbi-fr"><span class="pbi-box">1/2/2026</span><span class="pbi-box">7/19/2026</span></span></div>
@@ -1374,49 +1374,49 @@
         <div class="lc">
           <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
             <div style="display:flex; align-items:center; gap:10px;">
-          <div class="lc-card pm-host pm-in" style="--d:.1s">
-            <div class="pm-mini pm-mbadge below" style="--d:0.5s"><span class="pm-mbh"></span><span class="pm-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pm-mev">Breakfast</span><i class="pm-mqr"></i><span class="pm-mscan" style="--d:0.80s"></span><span class="pm-mok pm-pop" style="--d:1.35s">✓</span></div>
+          <div class="lc-card pmk-host pmk-in" style="--d:.1s">
+            <div class="pmk-mini pmk-mbadge below" style="--d:0.5s"><span class="pmk-mbh"></span><span class="pmk-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pmk-mev">Breakfast</span><i class="pmk-mqr"></i><span class="pmk-mscan" style="--d:0.80s"></span><span class="pmk-mok pmk-pop" style="--d:1.35s">✓</span></div>
             <div class="sfc-h"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sfo-k">Lead</div><div class="lch-t">Claire Martin</div></div></div>
             <div class="lch-s">1 campaign</div>
             <div class="sx-chips">
-              <span class="chip2 par pm-pop" style="--d:1.85s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Breakfast</span>
+              <span class="chip2 par pmk-pop" style="--d:1.85s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Breakfast</span>
             </div>
           </div>
-          <div class="lc-arrow pm-in" style="--d:2.1s"><span class="al">conversion</span><span class="aa pm-flash" style="--d:2.30s">&rarr;</span></div>
-          <div class="lc-card pm-host pm-in" style="--d:2.4s">
-            <div class="pm-mini pm-mform below" style="--d:2.7s"><b class="pm-mh">Whitepaper · Barometer</b><span class="pm-mf"><small>Name</small><span><em class="pm-type" style="--d:2.95s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pm-mf"><small>Email</small><span><em class="pm-type" style="--d:3.30s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pm-mck"><i><b class="pm-pop" style="--d:3.65s">✓</b></i>I agree to be contacted</span><span class="pm-mb pm-press" style="--d:3.75s">Download</span></div>
+          <div class="lc-arrow pmk-in" style="--d:2.1s"><span class="al">conversion</span><span class="aa pmk-flash" style="--d:2.30s">&rarr;</span></div>
+          <div class="lc-card pmk-host pmk-in" style="--d:2.4s">
+            <div class="pmk-mini pmk-mform below" style="--d:2.7s"><b class="pmk-mh">Whitepaper · Barometer</b><span class="pmk-mf"><small>Name</small><span><em class="pmk-type" style="--d:2.95s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pmk-mf"><small>Email</small><span><em class="pmk-type" style="--d:3.30s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pmk-mck"><i><b class="pmk-pop" style="--d:3.65s">✓</b></i>I agree to be contacted</span><span class="pmk-mb pmk-press" style="--d:3.75s">Download</span></div>
             <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact</div><div class="lch-t">Claire Martin</div></div></div>
             <div class="lch-s">1 more</div>
             <div class="sx-chips">
-              <span class="chip2 pm-pop" style="--d:4.05s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
+              <span class="chip2 pmk-pop" style="--d:4.05s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
             </div>
           </div>
             </div>
             <div class="lc-card" style="visibility:hidden" aria-hidden="true">
-              <div class="pm-mini pm-mvideo left" style="--d:0.7s"><div class="pm-mv-top"><b>SDR call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · SDR</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
-              <div class="pm-mini pm-mvideo left" style="--d:2.2s"><div class="pm-mv-top"><b>On call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · sales rep</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+              <div class="pmk-mini pmk-mvideo left" style="--d:0.7s"><div class="pmk-mv-top"><b>SDR call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pmk-mv-self">You · SDR</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+              <div class="pmk-mini pmk-mvideo left" style="--d:2.2s"><div class="pmk-mv-top"><b>On call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pmk-mv-self">You · sales rep</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
               <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact #2</div><div class="lch-t">Marc Dubois</div></div></div>
               <div class="lch-s">its campaigns</div>
               <div class="sx-chips">
-                <span class="chip2 tel"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting</span>
-                <span class="chip2 sal"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts</span>
+                <span class="chip2 tel"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting</span>
+                <span class="chip2 sal"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts</span>
               </div>
             </div>
           </div>
-          <div class="lc-arrow pm-in" style="--d:4.3s; width:150px"><span class="al">contact role</span><span class="aa pm-flash" style="--d:4.50s">&rarr;</span></div>
-          <div class="sfo pm-in" style="--d:4.6s">
+          <div class="lc-arrow pmk-in" style="--d:4.3s; width:150px"><span class="al">contact role</span><span class="aa pmk-flash" style="--d:4.50s">&rarr;</span></div>
+          <div class="sfo pmk-in" style="--d:4.6s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">both phases combined</div></div></div>
             <div class="sfo-lh">Contact Roles (<span data-pm-start="0" data-pm-at="4.9">1</span>)</div>
             <div class="sfo-list">
-                <div class="sfo-r pm-row" style="--d:4.9s"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Claire Martin</span><em>Champion</em></div>
-                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Marc Dubois</span><em>Decision-maker</em></div>
+                <div class="sfo-r pmk-row" style="--d:4.9s"><span class="sfo-who"><i class="pmk-ctc"><i data-lucide="contact"></i></i>Claire Martin</span><em>Champion</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span class="sfo-who"><i class="pmk-ctc"><i data-lucide="contact"></i></i>Marc Dubois</span><em>Decision-maker</em></div>
             </div>
             <div class="sfo-lh">Campaign Influence (<span data-pm-start="0" data-pm-at="5.2,5.5">2</span>)</div>
             <div class="sfo-list">
-                <div class="sfo-r pm-row" style="--d:5.2s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><em>Claire Martin</em></div>
-                <div class="sfo-r pm-row" style="--d:5.5s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><em>Claire Martin</em></div>
-                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><em>Marc Dubois</em></div>
-                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><em>Marc Dubois</em></div>
+                <div class="sfo-r pmk-row" style="--d:5.2s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row" style="--d:5.5s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><em>Claire Martin</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><em>Marc Dubois</em></div>
+                <div class="sfo-r" style="visibility:hidden" aria-hidden="true"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><em>Marc Dubois</em></div>
             </div>
           </div>
         </div>
@@ -1440,7 +1440,7 @@
                 <div class="sfc-h"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sfo-k">Lead</div><div class="lch-t">Claire Martin</div></div></div>
                 <div class="lch-s">1 campaign</div>
                 <div class="sx-chips">
-                  <span class="chip2 par"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Breakfast</span>
+                  <span class="chip2 par"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Breakfast</span>
                 </div>
               </div>
               <div class="lc-arrow"><span class="al">conversion</span><span class="aa">&rarr;</span></div>
@@ -1448,35 +1448,35 @@
                 <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact #1</div><div class="lch-t">Claire Martin</div></div></div>
                 <div class="lch-s">1 more</div>
                 <div class="sx-chips">
-                  <span class="chip2"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
+                  <span class="chip2"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
                 </div>
               </div>
             </div>
-            <div class="lc-card pm-host pm-in" style="--d:.3s">
-              <div class="pm-mini pm-mvideo left" style="--d:0.7s"><div class="pm-mv-top"><b>SDR call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · SDR</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
-              <div class="pm-mini pm-mvideo left" style="--d:2.2s"><div class="pm-mv-top"><b>On call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pm-mv-self">You · sales rep</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+            <div class="lc-card pmk-host pmk-in" style="--d:.3s">
+              <div class="pmk-mini pmk-mvideo left" style="--d:0.7s"><div class="pmk-mv-top"><b>SDR call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pmk-mv-self">You · SDR</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+              <div class="pmk-mini pmk-mvideo left" style="--d:2.2s"><div class="pmk-mv-top"><b>On call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Marc Dubois</small><span class="pmk-mv-self">You · sales rep</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
               <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact #2</div><div class="lch-t">Marc Dubois</div></div></div>
               <div class="lch-s">its campaigns</div>
               <div class="sx-chips">
-                <span class="chip2 tel pm-pop" style="--d:2.05s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting</span>
-                <span class="chip2 sal pm-pop" style="--d:3.55s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts</span>
+                <span class="chip2 tel pmk-pop" style="--d:2.05s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting</span>
+                <span class="chip2 sal pmk-pop" style="--d:3.55s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts</span>
               </div>
             </div>
           </div>
-          <div class="lc-arrow" style="width:150px"><span class="al">contact roles</span><span class="aa pm-flash" style="--d:3.8s">&rarr;</span></div>
+          <div class="lc-arrow" style="width:150px"><span class="al">contact roles</span><span class="aa pmk-flash" style="--d:3.8s">&rarr;</span></div>
           <div class="sfo">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">aggregates campaigns from all roles</div></div></div>
             <div class="sfo-lh">Contact Roles (<span data-pm-start="1" data-pm-at="4.0">2</span>)</div>
             <div class="sfo-list">
-                <div class="sfo-r"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Claire Martin</span><em>Champion</em></div>
-                <div class="sfo-r pm-row" style="--d:4.0s"><span class="sfo-who"><i class="pm-ctc"><i data-lucide="contact"></i></i>Marc Dubois</span><em>Decision-maker</em></div>
+                <div class="sfo-r"><span class="sfo-who"><i class="pmk-ctc"><i data-lucide="contact"></i></i>Claire Martin</span><em>Champion</em></div>
+                <div class="sfo-r pmk-row" style="--d:4.0s"><span class="sfo-who"><i class="pmk-ctc"><i data-lucide="contact"></i></i>Marc Dubois</span><em>Decision-maker</em></div>
             </div>
             <div class="sfo-lh">Campaign Influence (<span data-pm-start="2" data-pm-at="4.3,4.6">4</span>)</div>
             <div class="sfo-list">
-                <div class="sfo-r"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><em>Claire Martin</em></div>
-                <div class="sfo-r"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><em>Claire Martin</em></div>
-                <div class="sfo-r pm-row" style="--d:4.3s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><em>Marc Dubois</em></div>
-                <div class="sfo-r pm-row" style="--d:4.6s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><em>Marc Dubois</em></div>
+                <div class="sfo-r"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><em>Claire Martin</em></div>
+                <div class="sfo-r"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row" style="--d:4.3s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><em>Marc Dubois</em></div>
+                <div class="sfo-r pmk-row" style="--d:4.6s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><em>Marc Dubois</em></div>
             </div>
           </div>
         </div>
@@ -1488,7 +1488,7 @@
     <section class="slide" data-chapter="cadre" data-pm="ci">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Campaign Influence</h1>
-        <div class="sfr pm-in" style="--d:.1s">
+        <div class="sfr pmk-in" style="--d:.1s">
           <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfr-n">Entreprise SA · Absenteeism programme</div></div></div>
           <div class="sfr-fields">
             <div><span>Amount (TCV)</span><b>€100,000</b></div>
@@ -1499,10 +1499,10 @@
           <table class="sfr-t">
             <thead><tr><th style="width:32%">Campaign</th><th style="width:19%">Record type</th><th style="width:19%">Contact</th><th class="num" style="width:13%">Influence</th><th class="num">TCV share</th></tr></thead>
             <tbody>
-                <tr class="pm-row" style="--d:0.9s"><td><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</td><td><span class="pm-team">Marketing</span></td><td>Claire Martin</td><td class="num">25%</td><td class="num">€25,000</td></tr>
-                <tr class="pm-row" style="--d:1.2s"><td><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</td><td><span class="pm-team par">Partner</span></td><td>Claire Martin</td><td class="num">25%</td><td class="num">€25,000</td></tr>
-                <tr class="pm-row" style="--d:1.5s"><td><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</td><td><span class="pm-team tel">Telepro</span></td><td>Marc Dubois</td><td class="num">25%</td><td class="num">€25,000</td></tr>
-                <tr class="pm-row" style="--d:1.8s"><td><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</td><td><span class="pm-team sal">Sales</span></td><td>Marc Dubois</td><td class="num">25%</td><td class="num">€25,000</td></tr>
+                <tr class="pmk-row" style="--d:0.9s"><td><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</td><td><span class="pmk-team">Marketing</span></td><td>Claire Martin</td><td class="num">25%</td><td class="num">€25,000</td></tr>
+                <tr class="pmk-row" style="--d:1.2s"><td><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</td><td><span class="pmk-team par">Partner</span></td><td>Claire Martin</td><td class="num">25%</td><td class="num">€25,000</td></tr>
+                <tr class="pmk-row" style="--d:1.5s"><td><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</td><td><span class="pmk-team tel">Telepro</span></td><td>Marc Dubois</td><td class="num">25%</td><td class="num">€25,000</td></tr>
+                <tr class="pmk-row" style="--d:1.8s"><td><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</td><td><span class="pmk-team sal">Sales</span></td><td>Marc Dubois</td><td class="num">25%</td><td class="num">€25,000</td></tr>
             </tbody>
           </table>
         </div>
@@ -1515,14 +1515,14 @@
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Each source sets its influenced TCV against its cost</h1>
         <div class="spl">
-          <div class="spl-opp pm-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · signed (P4)</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div><div class="spl-f"><span>Campaign costs</span><b class="pm-pop" style="--d:4.3s">€48,750</b></div><div class="spl-f"><span>ROI</span><b class="roi-t pm-pop" style="--d:4.6s">×2.1</b></div></div>
+          <div class="spl-opp pmk-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · signed (P4)</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div><div class="spl-f"><span>Campaign costs</span><b class="pmk-pop" style="--d:4.3s">€48,750</b></div><div class="spl-f"><span>ROI</span><b class="roi-t pmk-pop" style="--d:4.6s">×2.1</b></div></div>
           </div>
           <div class="spl-grid">
-            <div class="spl-c tall pm-in" style="--d:0.4s"><span class="pm-team">Marketing</span><div class="spl-cn"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pm-pop" style="--d:1.9s"><i class="dv">÷</i>€12,500</b></div><div class="spl-r tot"><span>Ratio</span><b class="pm-pop" style="--d:3.3s">2</b></div><div class="roi-x"><span>ROI</span><b class="pm-pop" style="--d:3.6s">×2</b></div><div class="roi-m"><i style="--w:40%; --d:3.3s"></i></div></div>
-            <div class="spl-c tall pm-in" style="--d:0.6s"><span class="pm-team par">Partner</span><div class="spl-cn"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pm-pop" style="--d:1.6s"><i class="dv">÷</i>€5,000</b></div><div class="spl-r tot"><span>Ratio</span><b class="pm-pop" style="--d:3.0s">5</b></div><div class="roi-x"><span>ROI</span><b class="pm-pop" style="--d:3.3s">×5</b></div><div class="roi-m"><i style="--w:100%; --d:3.0s"></i></div></div>
-            <div class="spl-c tall pm-in" style="--d:0.8s"><span class="pm-team tel">Telepro</span><div class="spl-cn"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pm-pop" style="--d:2.2s"><i class="dv">÷</i>€6,250</b></div><div class="spl-r tot"><span>Ratio</span><b class="pm-pop" style="--d:3.6s">4</b></div><div class="roi-x"><span>ROI</span><b class="pm-pop" style="--d:3.9s">×4</b></div><div class="roi-m"><i style="--w:80%; --d:3.6s"></i></div></div>
-            <div class="spl-c tall pm-in" style="--d:1.0s"><span class="pm-team sal">Sales</span><div class="spl-cn"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pm-pop" style="--d:2.5s"><i class="dv">÷</i>€25,000</b></div><div class="spl-r tot"><span>Ratio</span><b class="pm-pop" style="--d:3.9s">1</b></div><div class="roi-x"><span>ROI</span><b class="pm-pop" style="--d:4.2s">×1</b></div><div class="roi-m"><i style="--w:20%; --d:3.9s"></i></div></div>
+            <div class="spl-c tall pmk-in" style="--d:0.4s"><span class="pmk-team">Marketing</span><div class="spl-cn"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pmk-pop" style="--d:1.9s"><i class="dv">÷</i>€12,500</b></div><div class="spl-r tot"><span>Ratio</span><b class="pmk-pop" style="--d:3.3s">2</b></div><div class="roi-x"><span>ROI</span><b class="pmk-pop" style="--d:3.6s">×2</b></div><div class="roi-m"><i style="--w:40%; --d:3.3s"></i></div></div>
+            <div class="spl-c tall pmk-in" style="--d:0.6s"><span class="pmk-team par">Partner</span><div class="spl-cn"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pmk-pop" style="--d:1.6s"><i class="dv">÷</i>€5,000</b></div><div class="spl-r tot"><span>Ratio</span><b class="pmk-pop" style="--d:3.0s">5</b></div><div class="roi-x"><span>ROI</span><b class="pmk-pop" style="--d:3.3s">×5</b></div><div class="roi-m"><i style="--w:100%; --d:3.0s"></i></div></div>
+            <div class="spl-c tall pmk-in" style="--d:0.8s"><span class="pmk-team tel">Telepro</span><div class="spl-cn"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pmk-pop" style="--d:2.2s"><i class="dv">÷</i>€6,250</b></div><div class="spl-r tot"><span>Ratio</span><b class="pmk-pop" style="--d:3.6s">4</b></div><div class="roi-x"><span>ROI</span><b class="pmk-pop" style="--d:3.9s">×4</b></div><div class="roi-m"><i style="--w:80%; --d:3.6s"></i></div></div>
+            <div class="spl-c tall pmk-in" style="--d:1.0s"><span class="pmk-team sal">Sales</span><div class="spl-cn"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</div><div class="spl-r"><span>TCV share</span><b>€25,000</b></div><div class="spl-r"><span>Campaign cost</span><b class="pmk-pop" style="--d:2.5s"><i class="dv">÷</i>€25,000</b></div><div class="spl-r tot"><span>Ratio</span><b class="pmk-pop" style="--d:3.9s">1</b></div><div class="roi-x"><span>ROI</span><b class="pmk-pop" style="--d:4.2s">×1</b></div><div class="roi-m"><i style="--w:20%; --d:3.9s"></i></div></div>
           </div>
         </div>
       </div>
@@ -1538,27 +1538,27 @@
             <span class="cmp-tag old">Today · last touch</span>
             <div class="cmp-card">
               <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA · €100,000</div></div></div>
-              <div class="cmp-f"><span>Primary Campaign Source</span><b class="pm-fade" style="--d:2.7s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</b></div>
+              <div class="cmp-f"><span>Primary Campaign Source</span><b class="pmk-fade" style="--d:2.7s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</b></div>
               <div class="cmp-list">
                 <div class="cmp-lh">Credit by campaign (4)</div>
-                <div class="cmp-r off" style="--d:0.3s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><em class="pm-fade" style="--d:2.5s">€0</em></div>
-                <div class="cmp-r off" style="--d:0.6s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><em class="pm-fade" style="--d:2.5s">€0</em></div>
-                <div class="cmp-r off" style="--d:0.9s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><em class="pm-fade" style="--d:2.5s">€0</em></div>
-                <div class="cmp-r win" style="--d:1.2s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><em class="pm-fade" style="--d:2.7s">100% · €100,000</em></div>
+                <div class="cmp-r off" style="--d:0.3s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><em class="pmk-fade" style="--d:2.5s">€0</em></div>
+                <div class="cmp-r off" style="--d:0.6s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pmk-team tel">Telepro</span><em class="pmk-fade" style="--d:2.5s">€0</em></div>
+                <div class="cmp-r off" style="--d:0.9s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pmk-team sal">Sales</span><em class="pmk-fade" style="--d:2.5s">€0</em></div>
+                <div class="cmp-r win" style="--d:1.2s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pmk-team">Marketing</span><em class="pmk-fade" style="--d:2.7s">100% · €100,000</em></div>
               </div>
             </div>
           </div>
-          <div class="cmp-p pm-in" style="--d:3.3s">
+          <div class="cmp-p pmk-in" style="--d:3.3s">
             <span class="cmp-tag new">With Campaign Influence</span>
             <div class="cmp-card">
               <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity</div><div class="sfo-n">Entreprise SA · €100,000</div></div></div>
-              <div class="cmp-f"><span>Influence model</span><b class="pm-fade" style="--d:3.5s">Even Distribution</b></div>
+              <div class="cmp-f"><span>Influence model</span><b class="pmk-fade" style="--d:3.5s">Even Distribution</b></div>
               <div class="cmp-list">
                 <div class="cmp-lh">Credit by campaign (4)</div>
-                <div class="cmp-r pm-row" style="--d:3.6s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><em class="pm-pop" style="--d:5.0s">25% · €25,000</em></div>
-                <div class="cmp-r pm-row" style="--d:3.9s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><em class="pm-pop" style="--d:5.0s">25% · €25,000</em></div>
-                <div class="cmp-r pm-row" style="--d:4.2s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><em class="pm-pop" style="--d:5.0s">25% · €25,000</em></div>
-                <div class="cmp-r pm-row" style="--d:4.5s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><em class="pm-pop" style="--d:5.0s">25% · €25,000</em></div>
+                <div class="cmp-r pmk-row" style="--d:3.6s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><em class="pmk-pop" style="--d:5.0s">25% · €25,000</em></div>
+                <div class="cmp-r pmk-row" style="--d:3.9s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pmk-team tel">Telepro</span><em class="pmk-pop" style="--d:5.0s">25% · €25,000</em></div>
+                <div class="cmp-r pmk-row" style="--d:4.2s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pmk-team sal">Sales</span><em class="pmk-pop" style="--d:5.0s">25% · €25,000</em></div>
+                <div class="cmp-r pmk-row" style="--d:4.5s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pmk-team">Marketing</span><em class="pmk-pop" style="--d:5.0s">25% · €25,000</em></div>
               </div>
             </div>
           </div>
@@ -1572,19 +1572,19 @@
       <div class="slide-inner insights">
         <h1 class="slide-title compact">A campaign's ratio rises with every signed contract</h1>
         <div class="rise">
-          <div class="rise-camp pm-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">Campaign</div><div class="sfo-n">Barometer whitepaper</div></div><span class="pm-team">Marketing</span></div>
+          <div class="rise-camp pmk-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">Campaign</div><div class="sfo-n">Barometer whitepaper</div></div><span class="pmk-team">Marketing</span></div>
             <div class="rise-f"><span>Influenced TCV</span><b data-rise="0,25000,55000,87500" data-rise-at="1.6,3.2,4.8" data-pm-fmt="eur0">€87,500</b></div>
             <div class="rise-f"><span>Campaign cost</span><b><i class="dv">÷</i>€12,500</b></div>
             <div class="rise-f tot"><span>Ratio</span><b data-rise="0,2,4.4,7" data-rise-at="1.6,3.2,4.8" data-pm-fmt="r1">7</b></div>
             <div class="rise-x"><span>ROI</span><b data-rise="0,2,4.4,7" data-rise-at="1.6,3.2,4.8" data-pm-fmt="coef">×7</b></div>
             <div class="roi-m rise-m"><i data-rise-bar data-rise="0,28.6,62.9,100" data-rise-at="1.6,3.2,4.8" style="width:100%"></i></div>
           </div>
-          <div class="rise-opps pm-in" style="--d:.3s">
+          <div class="rise-opps pmk-in" style="--d:.3s">
             <div class="spl-lh">Signed opportunities (<span data-pm-start="0" data-pm-at="1.0,2.6,4.2">3</span>)</div>
-              <div class="rise-r pm-row" style="--d:1.0s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Entreprise SA</b><small>€100,000 · 4 campaigns</small></div><span class="rise-p pm-pop" style="--d:1.5s">+€25,000</span></div>
-              <div class="rise-r pm-row" style="--d:2.6s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Nord Ltd</b><small>€90,000 · 3 campaigns</small></div><span class="rise-p pm-pop" style="--d:3.1s">+€30,000</span></div>
-              <div class="rise-r pm-row" style="--d:4.2s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Sud Group</b><small>€65,000 · 2 campaigns</small></div><span class="rise-p pm-pop" style="--d:4.7s">+€32,500</span></div>
+              <div class="rise-r pmk-row" style="--d:1.0s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Entreprise SA</b><small>€100,000 · 4 campaigns</small></div><span class="rise-p pmk-pop" style="--d:1.5s">+€25,000</span></div>
+              <div class="rise-r pmk-row" style="--d:2.6s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Nord Ltd</b><small>€90,000 · 3 campaigns</small></div><span class="rise-p pmk-pop" style="--d:3.1s">+€30,000</span></div>
+              <div class="rise-r pmk-row" style="--d:4.2s"><span class="sfo-ic"><i data-lucide="crown"></i></span><div class="rise-n"><b>Sud Group</b><small>€65,000 · 2 campaigns</small></div><span class="rise-p pmk-pop" style="--d:4.7s">+€32,500</span></div>
           </div>
         </div>
       </div>
@@ -1596,9 +1596,9 @@
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Three clarifications</h1>
         <div class="prc">
-          <div class="kr pm-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
-          <div class="kr pm-in" style="--d:0.45s"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
-          <div class="kr pm-in" style="--d:0.70s"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
+          <div class="kr pmk-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
+          <div class="kr pmk-in" style="--d:0.45s"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
+          <div class="kr pmk-in" style="--d:0.70s"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1612,41 +1612,41 @@
       </div>
       <div class="slide-inner insights">
         <div class="lc ltv-lc">
-          <div class="lc-card pm-host pm-in" style="--d:.1s">
-            <div class="pm-mini pm-mbadge below" style="--d:0.4s"><span class="pm-mbh"></span><span class="pm-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pm-mev">Trade show</span><i class="pm-mqr"></i><span class="pm-mscan" style="--d:0.70s"></span><span class="pm-mok pm-pop" style="--d:1.25s">✓</span></div>
-            <div class="pm-mini pm-mform below" style="--d:1.9s"><b class="pm-mh">Whitepaper · Barometer</b><span class="pm-mf"><small>Name</small><span><em class="pm-type" style="--d:2.15s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pm-mf"><small>Email</small><span><em class="pm-type" style="--d:2.50s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pm-mck"><i><b class="pm-pop" style="--d:2.85s">✓</b></i>I agree to be contacted</span><span class="pm-mb pm-press" style="--d:2.95s">Download</span></div>
-            <div class="pm-mini pm-mvideo below" style="--d:3.4s"><div class="pm-mv-top"><b>On call</b><span>08:42</span></div><div class="pm-mv-main"><span class="pm-mav"><i data-lucide="user-round"></i></span><small>Claire Martin</small><span class="pm-mv-self">You · sales rep</span></div><div class="pm-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
-            <div class="pm-mini pm-mform below" style="--d:6.7s"><b class="pm-mh">Sign-up · Webinar 2027</b><span class="pm-mf"><small>Name</small><span><em class="pm-type" style="--d:6.95s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pm-mf"><small>Email</small><span><em class="pm-type" style="--d:7.30s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pm-mck"><i><b class="pm-pop" style="--d:7.65s">✓</b></i>I agree to be contacted</span><span class="pm-mb pm-press" style="--d:7.75s">Register</span></div>
+          <div class="lc-card pmk-host pmk-in" style="--d:.1s">
+            <div class="pmk-mini pmk-mbadge below" style="--d:0.4s"><span class="pmk-mbh"></span><span class="pmk-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pmk-mev">Trade show</span><i class="pmk-mqr"></i><span class="pmk-mscan" style="--d:0.70s"></span><span class="pmk-mok pmk-pop" style="--d:1.25s">✓</span></div>
+            <div class="pmk-mini pmk-mform below" style="--d:1.9s"><b class="pmk-mh">Whitepaper · Barometer</b><span class="pmk-mf"><small>Name</small><span><em class="pmk-type" style="--d:2.15s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pmk-mf"><small>Email</small><span><em class="pmk-type" style="--d:2.50s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pmk-mck"><i><b class="pmk-pop" style="--d:2.85s">✓</b></i>I agree to be contacted</span><span class="pmk-mb pmk-press" style="--d:2.95s">Download</span></div>
+            <div class="pmk-mini pmk-mvideo below" style="--d:3.4s"><div class="pmk-mv-top"><b>On call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Claire Martin</small><span class="pmk-mv-self">You · sales rep</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
+            <div class="pmk-mini pmk-mform below" style="--d:6.7s"><b class="pmk-mh">Sign-up · Webinar 2027</b><span class="pmk-mf"><small>Name</small><span><em class="pmk-type" style="--d:6.95s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pmk-mf"><small>Email</small><span><em class="pmk-type" style="--d:7.30s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pmk-mck"><i><b class="pmk-pop" style="--d:7.65s">✓</b></i>I agree to be contacted</span><span class="pmk-mb pmk-press" style="--d:7.75s">Register</span></div>
             <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact</div><div class="lch-t">Claire Martin</div></div></div>
             <div class="lch-s">its campaigns</div>
             <div class="sx-chips">
-              <span class="chip2 pm-pop" style="--d:1.75s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Trade show</span>
-              <span class="chip2 pm-pop" style="--d:3.25s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
-              <span class="chip2 sal pm-pop" style="--d:4.75s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Video outreach</span>
-              <span class="chip2 pm-pop" style="--d:8.05s"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span>
+              <span class="chip2 pmk-pop" style="--d:1.75s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span>
+              <span class="chip2 pmk-pop" style="--d:3.25s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
+              <span class="chip2 sal pmk-pop" style="--d:4.75s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span>
+              <span class="chip2 pmk-pop" style="--d:8.05s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span>
             </div>
           </div>
-          <div class="lc-arrow pm-in" style="--d:4.95s"><span class="al">contact role</span><span class="aa pm-flash" style="--d:5.15s">&rarr;</span></div>
-          <div class="sfo pm-in" style="--d:5.2s">
+          <div class="lc-arrow pmk-in" style="--d:4.95s"><span class="al">contact role</span><span class="aa pmk-flash" style="--d:5.15s">&rarr;</span></div>
+          <div class="sfo pmk-in" style="--d:5.2s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #1</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">€48,000 · created</div></div></div>
-            <div class="sfo-lh ltv-lh"><span>Campaign Influence (<span data-pm-start="0" data-pm-at="5.5,5.8,6.1">3</span>)</span><span class="ltv-flock pm-pop" style="--d:6.4s"><i data-lucide="lock"></i>Influence frozen</span></div>
+            <div class="sfo-lh ltv-lh"><span>Campaign Influence (<span data-pm-start="0" data-pm-at="5.5,5.8,6.1">3</span>)</span><span class="ltv-flock pmk-pop" style="--d:6.4s"><i data-lucide="lock"></i>Influence frozen</span></div>
             <div class="sfo-list">
-                <div class="sfo-r pm-row" style="--d:5.5s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Trade show</span><em>Claire Martin</em></div>
-                <div class="sfo-r pm-row" style="--d:5.8s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span><em>Claire Martin</em></div>
-                <div class="sfo-r pm-row" style="--d:6.1s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Video outreach</span><em>Claire Martin</em></div>
-                <div class="sfo-r pm-row ltv-no" style="--d:8.3s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>not added</em></div>
+                <div class="sfo-r pmk-row" style="--d:5.5s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row" style="--d:5.8s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row" style="--d:6.1s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row ltv-no" style="--d:8.3s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>not added</em></div>
             </div>
           </div>
-          <div class="lc-arrow pm-in" style="--d:8.6s"><span class="al">next opportunity</span><span class="aa pm-flash" style="--d:8.80s">&rarr;</span></div>
-          <div class="sfo sm pm-in" style="--d:8.8s">
+          <div class="lc-arrow pmk-in" style="--d:8.6s"><span class="al">next opportunity</span><span class="aa pmk-flash" style="--d:8.80s">&rarr;</span></div>
+          <div class="sfo sm pmk-in" style="--d:8.8s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #2</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">upsell · €30,000</div></div></div>
             <div class="sfo-lh">Campaign Influence (<span data-pm-start="0" data-pm-at="9.1">1</span>)</div>
             <div class="sfo-list">
-                <div class="sfo-r pm-row" style="--d:9.1s"><span><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Claire Martin</em></div>
+                <div class="sfo-r pmk-row" style="--d:9.1s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Claire Martin</em></div>
             </div>
           </div>
         </div>
-        <div class="ltv-pill pm-pop" style="--d:9.5s"><span>Customer value (LTV)</span><b data-pm-to="78000" data-pm-fmt="eur0" data-pm-delay="9.6" data-pm-dur=".8">€78,000</b><small>€48,000 + €30,000</small></div>
+        <div class="ltv-pill pmk-pop" style="--d:9.5s"><span>Customer value (LTV)</span><b data-pm-to="78000" data-pm-fmt="eur0" data-pm-delay="9.6" data-pm-dur=".8">€78,000</b><small>€48,000 + €30,000</small></div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
@@ -1660,16 +1660,16 @@
       </div>
       <div class="slide-inner insights">
         <div class="obj">
-          <div class="obj-c pm-in" style="--d:.1s">
+          <div class="obj-c pmk-in" style="--d:.1s">
             <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">Sales target</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
             <div class="obj-big"><span>Counted toward her target</span><b data-pm-to="100000" data-pm-delay=".5" data-pm-dur="1" data-pm-fmt="eur0">€100,000</b></div>
             <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
             <div class="obj-r"><span>Opportunity</span><b>Entreprise SA</b></div><div class="obj-r"><span>Stage</span><b>Signed (P4)</b></div><div class="obj-r"><span>Share counted</span><b>100%</b></div><div class="obj-r"><span>Influencing campaigns</span><b>4</b></div>
           </div>
-          <div class="obj-c obj-roi pm-in" style="--d:1.2s">
+          <div class="obj-c obj-roi pmk-in" style="--d:1.2s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
             <div class="obj-big"><span>Split across the campaigns</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">€100,000</b></div>
-            <div class="obj-h"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div><div class="obj-r roi pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.2s">÷&nbsp;€12,500</span><b class="roi-v pm-pop" style="--d:3.4s">×2</b></div><div class="obj-r roi pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.4s">÷&nbsp;€5,000</span><b class="roi-v pm-pop" style="--d:3.6s">×5</b></div><div class="obj-r roi pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.6s">÷&nbsp;€6,250</span><b class="roi-v pm-pop" style="--d:3.8s">×4</b></div><div class="obj-r roi pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.8s">÷&nbsp;€25,000</span><b class="roi-v pm-pop" style="--d:4.0s">×1</b></div>
+            <div class="obj-h"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div><div class="obj-r roi pmk-row" style="--d:1.8s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pmk-team">Marketing</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.2s">÷&nbsp;€12,500</span><b class="roi-v pmk-pop" style="--d:3.4s">×2</b></div><div class="obj-r roi pmk-row" style="--d:2.1s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.4s">÷&nbsp;€5,000</span><b class="roi-v pmk-pop" style="--d:3.6s">×5</b></div><div class="obj-r roi pmk-row" style="--d:2.4s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pmk-team tel">Telepro</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.6s">÷&nbsp;€6,250</span><b class="roi-v pmk-pop" style="--d:3.8s">×4</b></div><div class="obj-r roi pmk-row" style="--d:2.7s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pmk-team sal">Sales</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.8s">÷&nbsp;€25,000</span><b class="roi-v pmk-pop" style="--d:4.0s">×1</b></div>
           </div>
         </div>
       </div>
@@ -1685,15 +1685,15 @@
       </div>
       <div class="slide-inner insights">
         <div class="bns">
-          <div class="bns-c pm-in" style="--d:.1s">
+          <div class="bns-c pmk-in" style="--d:.1s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · signed 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div></div>
-            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Bonus ×2</span></div>
-            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-slot"><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span></span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
+            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pmk-ok pmk-pop" style="--d:2.6s">Bonus ×2</span></div>
+            <div class="bns-r pmk-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-slot"><span class="bns-b pmk-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span></span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pmk-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pmk-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pmk-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pmk-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pmk-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pmk-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
           </div>
-          <div class="bns-c later pm-in" style="--d:3.6s">
+          <div class="bns-c later pmk-in" style="--d:3.6s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renewal · two years later</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div></div>
-            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:5.6s">Equal split</span></div>
-            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Outside the 365-day window</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Absenteeism webinar 2028</span><span class="pm-team">Marketing</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.45s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner trade show 2028</span><span class="pm-team par">Partner</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.70s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting 2028</span><span class="pm-team tel">Telepro</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.95s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:5.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2028</span><span class="pm-team sal">Sales</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:5.20s"></i></div><span class="bns-slot"></span><em>25%</em></div></div>
+            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pmk-ok pmk-pop" style="--d:5.6s">Equal split</span></div>
+            <div class="bns-r pmk-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pmk-pop" style="--d:5s">Outside the 365-day window</span></div></div><div class="bns-r pmk-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Absenteeism webinar 2028</span><span class="pmk-team">Marketing</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.45s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pmk-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner trade show 2028</span><span class="pmk-team par">Partner</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.70s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pmk-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting 2028</span><span class="pmk-team tel">Telepro</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.95s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pmk-row" style="--d:5.00s"><div class="bns-t"><span class="bns-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2028</span><span class="pmk-team sal">Sales</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:5.20s"></i></div><span class="bns-slot"></span><em>25%</em></div></div>
           </div>
         </div>
       </div>
@@ -1727,7 +1727,7 @@
             <div class="bias"><div class="bt">Cross-device</div><div class="bb">First touch on mobile, form on desktop: the link breaks.</div></div>
             <div class="bias"><div class="bt">Cleared storage</div><div class="bb">Private browsing, browser cleanups: the history disappears.</div></div>
           </div>
-          <div class="bias-conn"><span class="cl">in every case</span><span class="ca">&rarr;</span><span class="pm-dots"><i style="--d:1.3s"></i><i style="--d:1.6s"></i><i style="--d:1.9s"></i><i style="--d:2.2s"></i></span></div>
+          <div class="bias-conn"><span class="cl">in every case</span><span class="ca">&rarr;</span><span class="pmk-dots"><i style="--d:1.3s"></i><i style="--d:1.6s"></i><i style="--d:1.9s"></i><i style="--d:2.2s"></i></span></div>
           <div class="bias-sink"><div class="st">direct / (none)</div><div class="ss">untraceable origin</div></div>
         </div>
         <p class="coda">When we report <em>N%</em> marketing-sourced pipeline, the truth is <b>at least N%</b>. A measurement model dies when it overcounts: ours cannot, by construction.</p>
@@ -1842,7 +1842,7 @@
       function stop(slide) {
         (timers.get(slide) || []).forEach(clearTimeout);
         timers.set(slide, []);
-        slide.querySelectorAll('.pm-ghost').forEach(function (g) { g.remove(); });
+        slide.querySelectorAll('.pmk-ghost').forEach(function (g) { g.remove(); });
       }
       function countUp(el, from, to, delayS, durS, kind, slide) {
         if (reduce) { el.textContent = fmt(to, kind); el.dataset.cur = to; return; }
@@ -1958,7 +1958,7 @@
         var k = root.getBoundingClientRect().width / root.offsetWidth || 1;
         var r0 = root.getBoundingClientRect(), a = src.getBoundingClientRect(), b = dst.getBoundingClientRect();
         var g = src.cloneNode(true);
-        g.classList.add('pm-ghost');
+        g.classList.add('pmk-ghost');
         g.style.left = (a.left - r0.left) / k + 'px';
         g.style.top = (a.top - r0.top) / k + 'px';
         g.style.width = a.width / k + 'px';
