@@ -166,10 +166,11 @@
     .okr-foot b { color: var(--ay-dark); }
 
     /* small KR badge top-left of a diagram slide (links the diagram to its key result) */
-    .kr-badge { position: absolute; top: 52px; left: 80px; background: #eaf3fc; border-radius: 12px; padding: 14px 18px; max-width: 380px; text-align: left; z-index: 6; }
+    .kr-badge { position: absolute; top: 40px; left: 80px; background: #eaf3fc; border-radius: 12px; padding: 11px 16px; max-width: 380px; text-align: left; z-index: 6; }
     .kr-badge .kl { font-size: 11px; color: var(--ay-primary); font-weight: 600; margin-bottom: 5px; letter-spacing: .3px; }
     .kr-badge .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: .8px; }
     .kr-badge .kh { font-size: 16px; font-weight: 800; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.2; }
+    .kr-badge .kdef { font-size: 12.5px; font-weight: 600; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.35; }
     .kr-badge .ks { font-size: 12px; color: var(--ay-gray); line-height: 1.4; }
 
     /* ===== SLIDE: two lenses (compare floor/ceiling) ===== */
@@ -854,7 +855,7 @@
     .bns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; width: 100%; max-width: 940px; margin: 0 auto; text-align: left; align-items: start; }
     .bns-c .spl-f { margin-left: 12px; width: auto; }
     .bns-lh { display: flex; justify-content: space-between; align-items: center; height: 36px; padding: 0 18px; font-size: 12.5px; font-weight: 800; color: var(--ay-dark); background: #f8fafc; border-top: 1px solid #eef2f6; border-bottom: 1px solid #eef2f6; white-space: nowrap; }
-    .bns-r { height: 56px; box-sizing: border-box; padding: 9px 18px 0; border-bottom: 1px solid #f1f5f9; }
+    .bns-r { height: 48px; box-sizing: border-box; padding: 5px 18px 0; border-bottom: 1px solid #f1f5f9; }
     .bns-t { display: flex; align-items: center; gap: 8px; height: 20px; font-size: 12.5px; white-space: nowrap; }
     .bns-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: #0b5cab; font-weight: 700; }
     .bns-t > b { width: 78px; flex: none; text-align: right; font-weight: 800; color: var(--ay-dark); font-variant-numeric: tabular-nums; }
@@ -880,6 +881,18 @@
     .prc .kr { height: 236px; box-sizing: border-box; }
     .prc-ic { width: 38px; height: 38px; border-radius: 10px; background: #fff; color: var(--ay-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
     .prc-ic svg { width: 20px; height: 20px; }
+    /* target slide: each campaign's share set against its cost, the ROI view of every source */
+    .obj { grid-template-columns: 340px minmax(0, 1fr); }
+    .obj-roi .obj-h, .obj-roi .obj-r.roi { display: grid; grid-template-columns: minmax(0, 1fr) 76px 84px 84px 44px; gap: 8px; align-items: center; }
+    .obj-roi .obj-h { height: 28px; padding: 0 18px; border-top: 1px solid #f1f5f9; background: #f8fafc; font-size: 10px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .6px; }
+    .obj-roi .obj-h span:not(:first-child), .obj-roi .obj-r.roi > :not(.obj-n) { text-align: right; justify-self: end; }
+    .obj-roi .obj-r.roi > .pm-team { justify-self: start; }
+    .obj-roi .obj-r .cost { color: var(--ay-gray); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .obj-roi .obj-r .roi-v { color: #076b54; font-weight: 800; font-variant-numeric: tabular-nums; }
+    /* bonus slide: every row keeps the same slot for the first-campaign flag, so all bar tracks match */
+    .bns-slot { width: 112px; flex: none; display: flex; justify-content: flex-end; }
+    /* the clarification badges sit above the content, so these two slides start lower */
+    .slide[data-pm="obj"] .slide-inner, .slide[data-pm="bonus"] .slide-inner { padding-top: 84px; }
   </style>
 </head>
 <body>
@@ -1172,7 +1185,8 @@
       <div class="kr-badge">
         <div class="kl"><b>Key Result 1</b> · what we create</div>
         <div class="kh">Marketing-sourced pipeline</div>
-        <div class="ks">how we make it possible · capture</div>
+        <div class="kdef">Marketing first-touch origin</div>
+        <div class="ks">in value (€ TCV) and number of opportunities</div>
       </div>
       <div class="slide-inner insights wide">
         <div class="cap-stage">
@@ -1227,7 +1241,8 @@
       <div class="kr-badge">
         <div class="kl"><b>Key Result 1</b> · what we create</div>
         <div class="kh">Marketing-sourced pipeline</div>
-        <div class="ks">how we make it possible · into the CRM</div>
+        <div class="kdef">Marketing first-touch origin</div>
+        <div class="ks">in value (€ TCV) and number of opportunities</div>
       </div>
       <div class="slide-inner insights wide">
         <div class="crm-flow">
@@ -1348,7 +1363,8 @@
       <div class="kr-badge">
         <div class="kl"><b>Key Result 2</b> · what we touch</div>
         <div class="kh">Marketing-influenced coverage</div>
-        <div class="ks">how it builds up</div>
+        <div class="kdef">Any marketing touchpoint, via Campaign Influence</div>
+        <div class="ks">% of pipeline with at least one marketing touch</div>
       </div>
       <div class="slide-inner insights">
         <div class="lc">
@@ -1409,7 +1425,8 @@
       <div class="kr-badge">
         <div class="kl"><b>Key Result 2</b> · what we touch</div>
         <div class="kh">Marketing-influenced coverage</div>
-        <div class="ks">across the buying committee</div>
+        <div class="kdef">Any marketing touchpoint, via Campaign Influence</div>
+        <div class="ks">% of pipeline with at least one marketing touch</div>
       </div>
       <div class="slide-inner insights">
         <div class="lc">
@@ -1575,7 +1592,7 @@
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Three clarifications</h1>
         <div class="prc">
-          <div class="kr pm-in" style="--d:0.20s" data-fly="ltv"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">An opportunity's campaigns stop at its creation, the next one picks up the new ones.</div></div>
+          <div class="kr pm-in" style="--d:0.20s" data-fly="ltv"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
           <div class="kr pm-in" style="--d:0.45s" data-fly="-"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
           <div class="kr pm-in" style="--d:0.70s" data-fly="-"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
         </div>
@@ -1586,7 +1603,8 @@
     <section class="slide" data-chapter="precisions" data-pm="ltv">
       <div class="kr-badge">
         <div class="kl"><b>Clarification 1</b> · influence</div>
-        <div class="kh">A created opportunity freezes its influence</div>
+        <div class="kh">Frozen influence</div>
+        <div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div>
       </div>
       <div class="slide-inner insights">
         <div class="lc ltv-lc">
@@ -1633,7 +1651,8 @@
     <section class="slide" data-chapter="precisions" data-pm="obj">
       <div class="kr-badge">
         <div class="kl"><b>Clarification 2</b> · targets</div>
-        <div class="kh">Targets count the whole contract, ROI counts the share</div>
+        <div class="kh">Sales target</div>
+        <div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div>
       </div>
       <div class="slide-inner insights">
         <div class="obj">
@@ -1643,11 +1662,11 @@
             <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
             <div class="obj-r"><span>Opportunity</span><b>Entreprise SA</b></div><div class="obj-r"><span>Stage</span><b>Signed (P4)</b></div><div class="obj-r"><span>Share counted</span><b>100%</b></div><div class="obj-r"><span>Influencing campaigns</span><b>4</b></div>
           </div>
-          <div class="obj-c pm-in" style="--d:1.2s">
+          <div class="obj-c obj-roi pm-in" style="--d:1.2s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
             <div class="obj-big"><span>Split across the campaigns</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">€100,000</b></div>
             <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
-            <div class="obj-r pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b>€25,000</b></div><div class="obj-r pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b>€25,000</b></div>
+            <div class="obj-h"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div><div class="obj-r roi pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.2s">÷&nbsp;€12,500</span><b class="roi-v pm-pop" style="--d:3.4s">×2</b></div><div class="obj-r roi pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.4s">÷&nbsp;€5,000</span><b class="roi-v pm-pop" style="--d:3.6s">×5</b></div><div class="obj-r roi pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.6s">÷&nbsp;€6,250</span><b class="roi-v pm-pop" style="--d:3.8s">×4</b></div><div class="obj-r roi pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.8s">÷&nbsp;€25,000</span><b class="roi-v pm-pop" style="--d:4.0s">×1</b></div>
           </div>
         </div>
       </div>
@@ -1658,19 +1677,20 @@
     <section class="slide" data-chapter="precisions" data-pm="bonus">
       <div class="kr-badge">
         <div class="kl"><b>Clarification 3</b> · credit</div>
-        <div class="kh">The contact's first campaign earns a bonus</div>
+        <div class="kh">First-campaign bonus</div>
+        <div class="ks">The contact's first campaign counts double while it stays in the influence.</div>
       </div>
       <div class="slide-inner insights">
         <div class="bns">
           <div class="bns-c pm-in" style="--d:.1s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · signed 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div></div>
             <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Bonus ×2</span></div>
-            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
+            <div class="bns-r pm-row first" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">€40,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-slot"><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1st campaign</span></span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40%</em></div></div><div class="bns-r pm-row" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">€20,000</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><span class="bns-slot"></span><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20%</em></div></div>
           </div>
           <div class="bns-c later pm-in" style="--d:3.6s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renewal · two years later</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€90,000</b></div></div>
-            <div class="bns-lh"><span>Campaign Influence (3)</span><span class="pm-ok pm-pop" style="--d:5.4s">Equal split</span></div>
-            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Outside the 365-day window</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Absenteeism webinar 2028</span><span class="pm-team">Marketing</span><b>€30,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.45s"></i></div><em>33%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting 2028</span><span class="pm-team tel">Telepro</span><b>€30,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.70s"></i></div><em>33%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2028</span><span class="pm-team sal">Sales</span><b>€30,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.95s"></i></div><em>33%</em></div></div>
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renewal · two years later</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>€100,000</b></div></div>
+            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:5.6s">Equal split</span></div>
+            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Outside the 365-day window</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Absenteeism webinar 2028</span><span class="pm-team">Marketing</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.45s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner trade show 2028</span><span class="pm-team par">Partner</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.70s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting 2028</span><span class="pm-team tel">Telepro</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:4.95s"></i></div><span class="bns-slot"></span><em>25%</em></div></div><div class="bns-r pm-row" style="--d:5.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2028</span><span class="pm-team sal">Sales</span><b>€25,000</b></div><div class="bns-m"><div class="roi-m"><i style="width:50%; --d:5.20s"></i></div><span class="bns-slot"></span><em>25%</em></div></div>
           </div>
         </div>
       </div>
@@ -2056,11 +2076,6 @@
       function enterDiv(div, fromPrev) {
         setTimeout(function () { if (div === cur) remember(div); }, 1000);
         if (reduce || !fromPrev) return;
-        if (div.dataset.div === 'kr1') {
-          div.querySelectorAll('.okr-fade').forEach(function (el) {
-            el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, easing: 'ease', fill: 'backwards' });
-          });
-        }
         var back = div.querySelector('[data-back]');
         if (back) {
           var r = box(back), b = badgeBox(div), k = r.w / back.offsetWidth;
