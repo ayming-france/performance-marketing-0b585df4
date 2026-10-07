@@ -1588,13 +1588,13 @@
     </section>
 
     <!-- ========== DIVIDER PRÉCISIONS (three clarifications, the first flies to its badge) ========== -->
-    <section class="slide" data-chapter="precisions" data-div="prc">
+    <section class="slide" data-chapter="precisions">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Three clarifications</h1>
         <div class="prc">
-          <div class="kr pm-in" style="--d:0.20s" data-fly="ltv"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
-          <div class="kr pm-in" style="--d:0.45s" data-fly="-"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
-          <div class="kr pm-in" style="--d:0.70s" data-fly="-"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
+          <div class="kr pm-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
+          <div class="kr pm-in" style="--d:0.45s"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
+          <div class="kr pm-in" style="--d:0.70s"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1665,7 +1665,6 @@
           <div class="obj-c obj-roi pm-in" style="--d:1.2s">
             <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
             <div class="obj-big"><span>Split across the campaigns</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">€100,000</b></div>
-            <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
             <div class="obj-h"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div><div class="obj-r roi pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pm-team">Marketing</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.2s">÷&nbsp;€12,500</span><b class="roi-v pm-pop" style="--d:3.4s">×2</b></div><div class="obj-r roi pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pm-team par">Partner</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.4s">÷&nbsp;€5,000</span><b class="roi-v pm-pop" style="--d:3.6s">×5</b></div><div class="obj-r roi pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pm-team tel">Telepro</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.6s">÷&nbsp;€6,250</span><b class="roi-v pm-pop" style="--d:3.8s">×4</b></div><div class="obj-r roi pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pm-team sal">Sales</span><b>€25,000</b><span class="cost pm-pop" style="--d:3.8s">÷&nbsp;€25,000</span><b class="roi-v pm-pop" style="--d:4.0s">×1</b></div>
           </div>
         </div>
@@ -2026,61 +2025,91 @@
       /* snapshot of the divider blocks on screen, taken once they have settled and again on the input that leaves */
       function remember(div) {
         geo.set(div, [].map.call(div.querySelectorAll('[data-fly]'), function (el) {
-          return { el: el, r: box(el), w: el.offsetWidth, h: el.offsetHeight, op: parseFloat(getComputedStyle(el).opacity) };
+          return { el: el, look: look(el), op: parseFloat(getComputedStyle(el).opacity) };
         }));
       }
       ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(function (ev) {
         window.addEventListener(ev, function () { if (cur && cur.hasAttribute('data-div')) remember(cur); }, true);
       });
-      /* place a ghost at a screen rectangle, in the units of the slide it is appended to */
-      function ghost(s, it) {
-        var el = it.el, r = it.r;
-        var c = el.cloneNode(true);
-        c.classList.remove('pm-in', 'pm-fade');
-        c.classList.add('kr-ghost');
-        c.removeAttribute('data-fly'); c.removeAttribute('data-back'); c.removeAttribute('style');
+      /* the KR block and its badge share one markup, so a move animates each text size, spacing and the frame
+         from one to the other, and ends as the exact badge instead of a shrunken block */
+      var BOX = ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'borderTopLeftRadius'];
+      var TXT = ['fontSize', 'lineHeight', 'marginBottom'];
+      var KIDS = ['kl', 'kh', 'kdef', 'ks'];
+      function px(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      /* computed sizes of a block or badge, in screen pixels, read while it is laid out */
+      function look(el) {
+        var r = box(el), f = r.w / el.offsetWidth, cs = getComputedStyle(el), o = { r: r, box: {}, kids: {} };
+        BOX.forEach(function (p) { o.box[p] = px(cs[p]) * f; });
+        KIDS.forEach(function (c) {
+          var k = el.querySelector('.' + c); if (!k) return;
+          var ks = getComputedStyle(k), t = {};
+          TXT.forEach(function (p) { var v = px(ks[p]); if (v !== null) t[p] = v * f; });
+          /* a 'normal' line height reads as the line's own rendered height, every line here being a single one */
+          if (t.lineHeight == null) t.lineHeight = k.getBoundingClientRect().height;
+          o.kids[c] = t;
+        });
+        return o;
+      }
+      function ghost(s, src) {
+        var c = src.cloneNode(true);
+        c.className = 'kr kr-ghost';
+        ['data-fly', 'data-back', 'style'].forEach(function (a) { c.removeAttribute(a); });
         c.setAttribute('aria-hidden', 'true');
-        c.style.cssText = 'left:0;top:0;width:' + it.w + 'px;height:' + it.h + 'px';
+        c.style.cssText = 'left:0;top:0;width:100px;box-sizing:border-box;white-space:nowrap';
         s.appendChild(c);
-        var o = box(c), k = o.w / it.w;
-        c.style.left = (r.x - o.x) / k + 'px'; c.style.top = (r.y - o.y) / k + 'px';
-        c.style.transform = 'scale(' + r.w / o.w + ')';
-        return { c: c, k: k, s0: r.w / o.w };
+        var o = box(c);
+        return { c: c, o: o, k: o.w / 100 };
+      }
+      function frame(g, L) {
+        var fr = { left: (L.r.x - g.o.x) / g.k + 'px', top: (L.r.y - g.o.y) / g.k + 'px', width: L.r.w / g.k + 'px' };
+        BOX.forEach(function (p) { fr[p] = L.box[p] / g.k + 'px'; });
+        return fr;
+      }
+      function morph(s, src, A, B, opA, opB) {
+        var g = ghost(s, src), c = g.c, opt = { duration: 900, easing: EASE, fill: 'both' };
+        var fa = frame(g, A), fb = frame(g, B); fa.opacity = opA; fb.opacity = opB;
+        var main = c.animate([fa, fb], opt);
+        KIDS.forEach(function (k) {
+          var el = c.querySelector('.' + k), a = A.kids[k], b = B.kids[k];
+          if (!el || !a || !b) return;
+          var x = {}, y = {};
+          TXT.forEach(function (p) { if (a[p] != null && b[p] != null) { x[p] = a[p] / g.k + 'px'; y[p] = b[p] / g.k + 'px'; } });
+          el.animate([x, y], opt);
+        });
+        return { c: c, a: main };
+      }
+      function fade(s, it) {
+        var g = ghost(s, it.el), c = g.c, fr = frame(g, it.look); fr.opacity = it.op;
+        var to = Object.assign({}, fr, { opacity: 0 });
+        c.animate([fr, to], { duration: 450, easing: 'ease', fill: 'both' }).onfinish = function () { c.remove(); };
       }
       function forward(div, s) {
         var g = geo.get(div), badge = s.querySelector('.kr-badge');
         if (!g || !badge) return;
-        var b = box(badge);
         g.forEach(function (it) {
-          var gh = ghost(s, it), c = gh.c, a;
-          var t0 = 'scale(' + gh.s0 + ')';
-          if (it.el.dataset.fly === s.dataset.pm) {
-            var t = 'translate(' + (b.x - it.r.x) / gh.k + 'px, ' + (b.y - it.r.y) / gh.k + 'px) scale(' + gh.s0 * b.w / it.r.w + ')';
-            a = c.animate([{ transform: t0, opacity: it.op }, { transform: t, opacity: 1, offset: .75 }, { transform: t, opacity: 0 }],
-              { duration: 900, easing: EASE, fill: 'both' });
-            badge.animate([{ opacity: 0 }, { opacity: 0, offset: .7 }, { opacity: 1 }], { duration: 900 });
-          } else {
-            a = c.animate([{ transform: t0, opacity: it.op }, { transform: t0, opacity: 0 }], { duration: 450, easing: 'ease', fill: 'both' });
-          }
-          a.onfinish = function () { c.remove(); };
+          if (it.el.dataset.fly !== s.dataset.pm) { fade(s, it); return; }
+          var m = morph(s, it.el, it.look, look(badge), it.op, 1);
+          badge.animate([{ opacity: 0 }, { opacity: 0 }], { duration: 900 });
+          m.a.onfinish = function () { m.c.remove(); };
         });
       }
       /* KR1 returns from its badge: a hidden copy of the KR1 badge, measured on the divider */
-      function badgeBox(div) {
+      function badgeLook(div) {
         var p = document.querySelector('.slide[data-pm="capture"] .kr-badge').cloneNode(true);
         p.className = 'kr-badge'; p.style.visibility = 'hidden';
         div.appendChild(p);
-        var r = box(p); p.remove();
-        return r;
+        var L = look(p); p.remove();
+        return L;
       }
       function enterDiv(div, fromPrev) {
         setTimeout(function () { if (div === cur) remember(div); }, 1000);
         if (reduce || !fromPrev) return;
         var back = div.querySelector('[data-back]');
         if (back) {
-          var r = box(back), b = badgeBox(div), k = r.w / back.offsetWidth;
-          var t = 'translate(' + (b.x - r.x) / k + 'px, ' + (b.y - r.y) / k + 'px) scale(' + b.w / r.w + ')';
-          back.animate([{ transform: t, opacity: 1 }, { transform: 'none', opacity: .5 }], { duration: 900, easing: EASE, fill: 'backwards' });
+          var m = morph(div, back, badgeLook(div), look(back), 1, .5);
+          back.animate([{ opacity: 0 }, { opacity: 0 }], { duration: 900 });
+          m.a.onfinish = function () { m.c.remove(); };
           div.querySelectorAll('.okr-obj, .kr:not([data-back])').forEach(function (el) {
             el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 250, easing: 'ease', fill: 'backwards' });
           });
