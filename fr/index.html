@@ -167,11 +167,11 @@
 
     /* small KR badge top-left of a diagram slide (links the diagram to its key result) */
     .kr-badge { position: absolute; top: 40px; left: 80px; background: #eaf3fc; border-radius: 12px; padding: 11px 16px; max-width: 380px; text-align: left; z-index: 6; }
-    .kr-badge .kl { font-size: 11px; color: var(--ay-primary); font-weight: 600; margin-bottom: 5px; letter-spacing: .3px; }
-    .kr-badge .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: .8px; }
-    .kr-badge .kh { font-size: 16px; font-weight: 800; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.2; }
-    .kr-badge .kdef { font-size: 12.5px; font-weight: 600; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.35; }
-    .kr-badge .ks { font-size: 12px; color: var(--ay-gray); line-height: 1.4; }
+    .kr-badge:not(.kr-snap) .kl { font-size: 11px; color: var(--ay-primary); font-weight: 600; margin-bottom: 5px; letter-spacing: .3px; }
+    .kr-badge:not(.kr-snap) .kl b { font-weight: 800; text-transform: uppercase; letter-spacing: .8px; }
+    .kr-badge:not(.kr-snap) .kh { font-size: 16px; font-weight: 800; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.2; }
+    .kr-badge:not(.kr-snap) .kdef { font-size: 12.5px; font-weight: 600; color: var(--ay-dark); margin-bottom: 3px; line-height: 1.35; }
+    .kr-badge:not(.kr-snap) .ks { font-size: 12px; color: var(--ay-gray); line-height: 1.4; }
 
     /* ===== SLIDE: deux lentilles (compare floor/ceiling) ===== */
     .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; max-width: 960px; margin: 0 auto; }
@@ -893,6 +893,10 @@
     .bns-slot { width: 112px; flex: none; display: flex; justify-content: flex-end; }
     /* the clarification badges sit above the content, so these two slides start lower */
     .slide[data-pm="obj"] .slide-inner, .slide[data-pm="bonus"] .slide-inner { padding-top: 84px; }
+    /* a KR badge is its OKR block scaled down, so the move between them is a pure scale, like a screen grab */
+    .kr-badge.kr-snap { padding: 0; background: none; border-radius: 0; max-width: none; width: 0; height: 0; overflow: visible; }
+    .kr-snap > .kr { width: max-content; white-space: nowrap; transform: scale(.72); transform-origin: 0 0; }
+    .kr-ghost, .kr-ghost * { transition: none !important; }
   </style>
 </head>
 <body>
@@ -1182,12 +1186,12 @@
 
     <!-- ========== 6 · LE SOCLE : CAPTURE DU CANAL (preuve du chemin à origine) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="capture">
-      <div class="kr-badge">
+      <div class="kr-badge kr-snap"><div class="kr">
         <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
         <div class="kh">Pipeline à origine marketing</div>
         <div class="kdef">Origine first-touch marketing</div>
         <div class="ks">en valeur (€ TCV) et en nombre d'opportunités</div>
-      </div>
+      </div></div>
       <div class="slide-inner insights wide">
         <div class="cap-stage">
           <div class="pm-url-wrap pm-fade" style="--d:.1s">
@@ -1238,12 +1242,12 @@
     </section>
 
     <section class="slide" data-chapter="cadre" data-pm="crm-flow">
-      <div class="kr-badge">
+      <div class="kr-badge kr-snap"><div class="kr">
         <div class="kl"><b>Résultat clé 1</b> · ce que nous créons</div>
         <div class="kh">Pipeline à origine marketing</div>
         <div class="kdef">Origine first-touch marketing</div>
         <div class="ks">en valeur (€ TCV) et en nombre d'opportunités</div>
-      </div>
+      </div></div>
       <div class="slide-inner insights wide">
         <div class="crm-flow">
           <div class="pm-form sm">
@@ -1360,12 +1364,12 @@
 
     <!-- ========== L'INFLUENCE : CYCLE DE VIE (Claire, un partenaire puis un contenu) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="infl1">
-      <div class="kr-badge">
+      <div class="kr-badge kr-snap"><div class="kr">
         <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
         <div class="kh">Couverture influencée par le marketing</div>
         <div class="kdef">Tout point de contact marketing, via Campaign Influence</div>
         <div class="ks">% du pipeline avec au moins un contact marketing</div>
-      </div>
+      </div></div>
       <div class="slide-inner insights">
         <div class="lc">
           <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
@@ -1422,12 +1426,12 @@
 
     <!-- ========== L'INFLUENCE - COMITÉ D'ACHAT (Marc ajoute la prospection SDR et les comptes cibles) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="infl2">
-      <div class="kr-badge">
+      <div class="kr-badge kr-snap"><div class="kr">
         <div class="kl"><b>Résultat clé 2</b> · ce que nous touchons</div>
         <div class="kh">Couverture influencée par le marketing</div>
         <div class="kdef">Tout point de contact marketing, via Campaign Influence</div>
         <div class="ks">% du pipeline avec au moins un contact marketing</div>
-      </div>
+      </div></div>
       <div class="slide-inner insights">
         <div class="lc">
           <div style="display:flex; flex-direction:column; gap:22px; align-items:flex-end;">
@@ -2031,73 +2035,40 @@
       ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(function (ev) {
         window.addEventListener(ev, function () { if (cur && cur.hasAttribute('data-div')) remember(cur); }, true);
       });
-      /* the KR block and its badge share one markup, so a move animates each text size, spacing and the frame
-         from one to the other, and ends as the exact badge instead of a shrunken block */
-      var BOX = ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'borderTopLeftRadius'];
-      var TXT = ['fontSize', 'lineHeight', 'marginBottom'];
-      var KIDS = ['kl', 'kh', 'kdef', 'ks'];
-      function px(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
-      /* computed sizes of a block or badge, in screen pixels, read while it is laid out */
-      function look(el) {
-        var r = box(el), f = r.w / el.offsetWidth, cs = getComputedStyle(el), o = { r: r, box: {}, kids: {} };
-        BOX.forEach(function (p) { o.box[p] = px(cs[p]) * f; });
-        KIDS.forEach(function (c) {
-          var k = el.querySelector('.' + c); if (!k) return;
-          var ks = getComputedStyle(k), t = {};
-          TXT.forEach(function (p) { var v = px(ks[p]); if (v !== null) t[p] = v * f; });
-          /* a 'normal' line height reads as the line's own rendered height, every line here being a single one */
-          if (t.lineHeight == null) t.lineHeight = k.getBoundingClientRect().height;
-          o.kids[c] = t;
-        });
-        return o;
-      }
-      function ghost(s, src) {
+      /* a block or a badge on screen: its rectangle and its layout width, read while it is laid out */
+      function look(el) { var k = el.classList.contains('kr-snap') ? el.querySelector('.kr') : el; return { r: box(k), W: k.offsetWidth }; }
+      /* a copy of the block moves and scales as one picture; only its frame narrows to the badge's width */
+      function snap(s, src, A, B, opA, opB, dur) {
         var c = src.cloneNode(true);
-        c.className = 'kr kr-ghost';
+        c.className = (src.classList.contains('okr-obj') ? 'okr-obj' : 'kr') + ' kr-ghost';
         ['data-fly', 'data-back', 'style'].forEach(function (a) { c.removeAttribute(a); });
         c.setAttribute('aria-hidden', 'true');
-        c.style.cssText = 'left:0;top:0;width:100px;box-sizing:border-box;white-space:nowrap';
+        c.style.cssText = 'left:0;top:0;width:100px;white-space:nowrap';
         s.appendChild(c);
-        var o = box(c);
-        return { c: c, o: o, k: o.w / 100 };
-      }
-      function frame(g, L) {
-        var fr = { left: (L.r.x - g.o.x) / g.k + 'px', top: (L.r.y - g.o.y) / g.k + 'px', width: L.r.w / g.k + 'px' };
-        BOX.forEach(function (p) { fr[p] = L.box[p] / g.k + 'px'; });
-        return fr;
-      }
-      function morph(s, src, A, B, opA, opB) {
-        var g = ghost(s, src), c = g.c, opt = { duration: 900, easing: EASE, fill: 'both' };
-        var fa = frame(g, A), fb = frame(g, B); fa.opacity = opA; fb.opacity = opB;
-        var main = c.animate([fa, fb], opt);
-        KIDS.forEach(function (k) {
-          var el = c.querySelector('.' + k), a = A.kids[k], b = B.kids[k];
-          if (!el || !a || !b) return;
-          var x = {}, y = {};
-          TXT.forEach(function (p) { if (a[p] != null && b[p] != null) { x[p] = a[p] / g.k + 'px'; y[p] = b[p] / g.k + 'px'; } });
-          el.animate([x, y], opt);
-        });
-        return { c: c, a: main };
-      }
-      function fade(s, it) {
-        var g = ghost(s, it.el), c = g.c, fr = frame(g, it.look); fr.opacity = it.op;
-        var to = Object.assign({}, fr, { opacity: 0 });
-        c.animate([fr, to], { duration: 450, easing: 'ease', fill: 'both' }).onfinish = function () { c.remove(); };
+        var o = box(c), kg = o.w / 100;
+        c.style.left = (A.r.x - o.x) / kg + 'px'; c.style.top = (A.r.y - o.y) / kg + 'px';
+        var t0 = A.r.w / (A.W * kg), t1 = B.r.w / (B.W * kg);
+        var dx = (B.r.x - A.r.x) / kg, dy = (B.r.y - A.r.y) / kg;
+        var a = c.animate([
+          { width: A.W + 'px', transform: 'translate(0px, 0px) scale(' + t0 + ')', opacity: opA },
+          { width: B.W + 'px', transform: 'translate(' + dx + 'px, ' + dy + 'px) scale(' + t1 + ')', opacity: opB }
+        ], { duration: dur, easing: dur > 500 ? EASE : 'ease', fill: 'both' });
+        a.onfinish = function () { c.remove(); };
+        return a;
       }
       function forward(div, s) {
         var g = geo.get(div), badge = s.querySelector('.kr-badge');
         if (!g || !badge) return;
         g.forEach(function (it) {
-          if (it.el.dataset.fly !== s.dataset.pm) { fade(s, it); return; }
-          var m = morph(s, it.el, it.look, look(badge), it.op, 1);
+          if (it.el.dataset.fly !== s.dataset.pm) { snap(s, it.el, it.look, it.look, it.op, 0, 450); return; }
+          snap(s, it.el, it.look, look(badge), it.op, 1, 900);
           badge.animate([{ opacity: 0 }, { opacity: 0 }], { duration: 900 });
-          m.a.onfinish = function () { m.c.remove(); };
         });
       }
       /* KR1 returns from its badge: a hidden copy of the KR1 badge, measured on the divider */
       function badgeLook(div) {
         var p = document.querySelector('.slide[data-pm="capture"] .kr-badge').cloneNode(true);
-        p.className = 'kr-badge'; p.style.visibility = 'hidden';
+        p.style.visibility = 'hidden';
         div.appendChild(p);
         var L = look(p); p.remove();
         return L;
@@ -2107,9 +2078,8 @@
         if (reduce || !fromPrev) return;
         var back = div.querySelector('[data-back]');
         if (back) {
-          var m = morph(div, back, badgeLook(div), look(back), 1, .5);
+          snap(div, back, badgeLook(div), look(back), 1, .5, 900);
           back.animate([{ opacity: 0 }, { opacity: 0 }], { duration: 900 });
-          m.a.onfinish = function () { m.c.remove(); };
           div.querySelectorAll('.okr-obj, .kr:not([data-back])').forEach(function (el) {
             el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 250, easing: 'ease', fill: 'backwards' });
           });
