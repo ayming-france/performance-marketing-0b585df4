@@ -829,6 +829,47 @@
     .rise-n b { display: block; font-size: 14px; color: #0b5cab; font-weight: 800; }
     .rise-n small { font-size: 11.5px; color: var(--ay-gray); font-weight: 600; }
     .rise-p { font-size: 15px; font-weight: 800; color: #076b54; background: #e6f8f2; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    /* the sales target counts the whole contract, the campaign shares only measure ROI */
+    .obj { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; width: 100%; max-width: 940px; margin: 0 auto; text-align: left; align-items: start; }
+    .obj-c, .bns-c { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.06); overflow: hidden; }
+    .obj-c .sfo-h, .bns-c .sfo-h { padding: 12px 18px; }
+    .obj-c .sfo-h > div:nth-child(2), .bns-c .sfo-h > div:nth-child(2) { flex: 1; }
+    .sfo-ic.tgt { background: #0b5cab; }
+    .obj-big { padding: 16px 18px 12px; border-top: 1px solid #eef2f6; }
+    .obj-big span { display: block; font-size: 12.5px; color: var(--ay-gray); font-weight: 600; }
+    .obj-big b { display: block; font-size: 32px; font-weight: 800; color: var(--ay-dark); line-height: 1.2; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .obj-bar { display: flex; height: 14px; margin: 0 18px 16px; border-radius: 7px; background: #eef2f6; overflow: hidden; gap: 2px; }
+    .obj-bar i { display: block; height: 100%; flex: 1 1 0; transform-origin: left center; }
+    .obj-bar i.tgt { background: #0b5cab; }
+    .obj-bar i.mkt { background: #11a9e6; }
+    .obj-bar i.par { background: #004A76; }
+    .obj-bar i.tel { background: #5b3fb0; }
+    .obj-bar i.sal { background: #b4521f; }
+    .slide.active[data-pm="obj"] .obj-bar i { animation: pm-grow .55s ease-out var(--d, 0s) both; }
+    .obj-r { display: flex; justify-content: space-between; align-items: center; gap: 10px; height: 38px; padding: 0 18px; border-top: 1px solid #f1f5f9; font-size: 12.5px; color: var(--ay-gray); font-weight: 600; white-space: nowrap; }
+    .obj-r b { color: var(--ay-dark); font-weight: 800; font-variant-numeric: tabular-nums; }
+    .obj-r .obj-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: #0b5cab; font-weight: 700; }
+    /* the contact's first campaign earns a weight of 2 while it stays inside the influence window */
+    .bns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; width: 100%; max-width: 940px; margin: 0 auto; text-align: left; align-items: start; }
+    .bns-c .spl-f { margin-left: 12px; width: auto; }
+    .bns-lh { display: flex; justify-content: space-between; align-items: center; height: 36px; padding: 0 18px; font-size: 12.5px; font-weight: 800; color: var(--ay-dark); background: #f8fafc; border-top: 1px solid #eef2f6; border-bottom: 1px solid #eef2f6; white-space: nowrap; }
+    .bns-r { height: 56px; box-sizing: border-box; padding: 9px 18px 0; border-bottom: 1px solid #f1f5f9; }
+    .bns-t { display: flex; align-items: center; gap: 8px; height: 20px; font-size: 12.5px; white-space: nowrap; }
+    .bns-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: #0b5cab; font-weight: 700; }
+    .bns-t > b { width: 78px; flex: none; text-align: right; font-weight: 800; color: var(--ay-dark); font-variant-numeric: tabular-nums; }
+    .bns-m { display: flex; align-items: center; gap: 8px; height: 18px; margin-top: 4px; }
+    .bns-m .roi-m { flex: 1; height: 6px; }
+    .bns-m .roi-m i { background: var(--ay-primary); transition: width .7s ease-out; }
+    .bns-m em { width: 40px; flex: none; text-align: right; font-style: normal; font-size: 11px; font-weight: 700; color: var(--ay-gray); font-variant-numeric: tabular-nums; }
+    .bns-b { display: inline-flex; align-items: center; gap: 3px; flex: none; font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #076b54; background: #e6f8f2; border-radius: 9px; padding: 2px 7px; }
+    .bns-b svg { width: 10px; height: 10px; }
+    .bns-x { font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #b91c1c; background: #fdecec; border-radius: 9px; padding: 2px 8px; white-space: nowrap; }
+    .slide.active[data-pm="bonus"] .bns-r.first { animation: pm-row .45s ease-out var(--d, 0s) both, pm-win .6s ease 2s forwards; }
+    .slide.active[data-pm="bonus"] .bns-r.off .bns-t { animation: pm-off .6s ease 5s forwards; }
+    .bns-r.off .bns-n { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: transparent; }
+    .slide.active[data-pm="bonus"] .bns-r.off .bns-n { animation: pm-strike .6s ease 5s forwards; }
+    .slide.active[data-pm="bonus"] .bns-c.later .roi-m i { animation: pm-grow .6s ease-out var(--d, 0s) both; }
   </style>
 </head>
 <body>
@@ -877,7 +918,7 @@
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/23</div>
+  <div class="slide-counter"><span class="current">1</span>/25</div>
 
   <main class="presentation">
 
@@ -1398,6 +1439,50 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
+    <!-- ========== OBJECTIF COMMERCIAL ET PART DU ROI (le contrat entier compte pour l'objectif, la part mesure le ROI) ========== -->
+    <section class="slide" data-chapter="cadre" data-pm="obj">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Le contrat entier compte pour l'objectif, la part pour le ROI</h1>
+        <div class="obj">
+          <div class="obj-c pm-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">Objectif commercial</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
+            <div class="obj-big"><span>Compté dans son objectif</span><b data-pm-to="100000" data-pm-delay=".5" data-pm-dur="1" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
+            <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
+            <div class="obj-r"><span>Opportunité</span><b>Entreprise SA</b></div><div class="obj-r"><span>Étape</span><b>Signée (P4)</b></div><div class="obj-r"><span>Part comptée</span><b>100&nbsp;%</b></div><div class="obj-r"><span>Campagnes qui ont influencé</span><b>4</b></div>
+          </div>
+          <div class="obj-c pm-in" style="--d:1.2s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">ROI des campagnes</div><div class="sfo-n">Part de chaque campagne</div></div></div>
+            <div class="obj-big"><span>Réparti entre les campagnes</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">100&nbsp;000&nbsp;€</b></div>
+            <div class="obj-bar"><i class="mkt" style="--d:1.8s"></i><i class="par" style="--d:2.1s"></i><i class="tel" style="--d:2.4s"></i><i class="sal" style="--d:2.7s"></i></div>
+            <div class="obj-r pm-row" style="--d:1.8s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.1s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.4s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b>25&nbsp;000&nbsp;€</b></div><div class="obj-r pm-row" style="--d:2.7s"><span class="obj-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b>25&nbsp;000&nbsp;€</b></div>
+          </div>
+        </div>
+        <p class="pm-note pm-fade" style="--d:3.6s">Maquette, chiffres illustratifs</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== PRIME À LA PREMIÈRE CAMPAGNE (poids 2 tant qu'elle reste dans l'influence, partage égal ensuite) ========== -->
+    <section class="slide" data-chapter="cadre" data-pm="bonus">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">La première campagne du contact reçoit une prime</h1>
+        <div class="bns">
+          <div class="bns-c pm-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunité · signée 2026</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>100&nbsp;000&nbsp;€</b></div></div>
+            <div class="bns-lh"><span>Campaign Influence (4)</span><span class="pm-ok pm-pop" style="--d:2.6s">Prime ×2</span></div>
+            <div class="bns-r pm-row" style="--d:0.60s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Livre blanc Baromètre</span><span class="pm-team">Marketing</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row first" style="--d:0.85s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b data-rise="25000,40000" data-rise-at="2.6" data-pm-fmt="eur0">40&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,80" data-rise-at="2.6" style="width:80%"></i></div><span class="bns-b pm-pop" style="--d:2s"><i data-lucide="flag"></i>1re campagne</span><em data-rise="25,40" data-rise-at="2.6" data-pm-fmt="pct">40&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.10s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR T2</span><span class="pm-team tel">Telepro</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:1.35s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2026</span><span class="pm-team sal">Sales</span><b data-rise="25000,20000" data-rise-at="2.6" data-pm-fmt="eur0">20&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i data-rise-bar data-rise="50,40" data-rise-at="2.6" style="width:40%"></i></div><em data-rise="25,20" data-rise-at="2.6" data-pm-fmt="pct">20&nbsp;%</em></div></div>
+          </div>
+          <div class="bns-c later pm-in" style="--d:3.6s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Renouvellement · deux ans plus tard</div><div class="sfo-n">Entreprise SA</div></div><div class="spl-f"><span>TCV</span><b>90&nbsp;000&nbsp;€</b></div></div>
+            <div class="bns-lh"><span>Campaign Influence (3)</span><span class="pm-ok pm-pop" style="--d:5.4s">Partage égal</span></div>
+            <div class="bns-r pm-row off" style="--d:4.00s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Petit-déjeuner partenaire</span><span class="pm-team par">Partner</span><b></b></div><div class="bns-m"><span class="bns-x pm-pop" style="--d:5s">Hors fenêtre de 365 jours</span></div></div><div class="bns-r pm-row" style="--d:4.25s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Webinar Absentéisme 2028</span><span class="pm-team">Marketing</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.45s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.50s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Prospection SDR 2028</span><span class="pm-team tel">Telepro</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.70s"></i></div><em>33&nbsp;%</em></div></div><div class="bns-r pm-row" style="--d:4.75s"><div class="bns-t"><span class="bns-n"><i class="pm-camp"><i data-lucide="megaphone"></i></i>Comptes cibles 2028</span><span class="pm-team sal">Sales</span><b>30&nbsp;000&nbsp;€</b></div><div class="bns-m"><div class="roi-m"><i style="width:66.7%; --d:4.95s"></i></div><em>33&nbsp;%</em></div></div>
+          </div>
+        </div>
+        <p class="pm-note pm-fade" style="--d:6s">Maquette, contrats et chiffres illustratifs</p>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
     <!-- ========== DU DERNIER CONTACT À LA CONTRIBUTION (le dernier contact prend tout, le partage égal montre les quatre sources) ========== -->
     <section class="slide" data-chapter="cadre" data-pm="cmp">
       <div class="slide-inner insights">
@@ -1780,7 +1865,7 @@
           later(slide, 250, function () { pbiRender(slide, 'all', true); });
         }
         if (kind === 'pyr') pyramid(slide);
-        if (kind === 'rise') rise(slide);
+        if (kind === 'rise' || kind === 'obj' || kind === 'bonus') rise(slide);
       }
 
       document.querySelectorAll('.slide[data-pm]').forEach(function (slide) {
