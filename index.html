@@ -891,13 +891,333 @@
     .obj-roi .obj-r .roi-v { color: #076b54; font-weight: 800; font-variant-numeric: tabular-nums; }
     /* bonus slide: every row keeps the same slot for the first-campaign flag, so all bar tracks match */
     .bns-slot { width: 112px; flex: none; display: flex; justify-content: flex-end; }
-    /* the clarification badges sit above the content, so these two slides start lower */
+    /* the requirement badges sit above the content, so these two slides start lower */
     .slide[data-pm="obj"] .slide-inner, .slide[data-pm="bonus"] .slide-inner { padding-top: 84px; }
     /* a KR badge is its OKR block scaled down, so the move between them is a pure scale, like a screen grab */
     .kr-badge.kr-snap { padding: 0; background: none; border-radius: 0; max-width: none; width: 0; height: 0; overflow: visible; }
     .kr-snap > .kr { width: max-content; white-space: nowrap; transform: scale(.72); transform-origin: 0 0; }
     .kr-ghost, .kr-ghost * { transition: none !important; }
     .ltv-born { color: #076b54; background: #e6f8f2; border-radius: 8px; padding: 0 6px; font-weight: 700; white-space: nowrap; }
+    /* Salesforce Lightning kit for the requirement slides: record pages, path, modals, related lists, flow nodes */
+    .sl { font-size: 11.5px; color: #181818; text-align: left; }
+    .sl-win { background: #fff; border: 1px solid #dddbda; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,.08); overflow: hidden; }
+    .sl-page { background: #f3f3f3; border: 1px solid #dddbda; border-radius: 6px; padding: 6px; display: flex; flex-direction: column; gap: 6px; }
+    .sl-rh { display: flex; align-items: center; gap: 9px; padding: 8px 10px; background: #fff; border-bottom: 1px solid #dddbda; }
+    .sl-rh .sfc-ic { width: 26px; height: 26px; border-radius: 4px; }
+    .sl-rh .sfc-ic svg { width: 15px; height: 15px; }
+    .sl-ot { font-size: 9.5px; color: #444; line-height: 1.1; }
+    .sl-on { font-size: 14px; font-weight: 700; color: #181818; line-height: 1.2; white-space: nowrap; }
+    .sl-acts { margin-left: auto; display: flex; }
+    .sl-btn { display: inline-flex; align-items: center; height: 22px; padding: 0 10px; border: 1px solid #c9c9c9; background: #fff; color: #0176d3; font-size: 10.5px; font-weight: 700; white-space: nowrap; }
+    .sl-acts .sl-btn + .sl-btn { margin-left: -1px; }
+    .sl-acts .sl-btn:first-child { border-radius: 4px 0 0 4px; }
+    .sl-acts .sl-btn:last-child { border-radius: 0 4px 4px 0; }
+    .sl-acts .sl-btn:only-child { border-radius: 4px; }
+    .sl-btn.brand { background: #0176d3; border-color: #0176d3; color: #fff; border-radius: 4px; }
+    .sl-btn.neutral { border-radius: 4px; }
+    .sl-path { display: flex; gap: 3px; padding: 7px 10px; background: #fff; }
+    .sl-path span { flex: 1; height: 22px; display: flex; align-items: center; justify-content: center; gap: 3px; font-size: 9.5px; font-weight: 700; color: #444; background: #f3f3f3; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%, 7px 50%); white-space: nowrap; }
+    .sl-path span:first-child { clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%); border-radius: 11px 0 0 11px; }
+    .sl-path span.done { background: #3ba755; color: #fff; }
+    .sl-path span.cur { background: #014486; color: #fff; }
+    .sl-tabs { display: flex; gap: 16px; padding: 0 10px; height: 26px; align-items: flex-end; border-bottom: 1px solid #dddbda; background: #fff; }
+    .sl-tabs span { font-size: 11px; color: #444; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+    .sl-tabs span.on { color: #181818; font-weight: 700; border-bottom-color: #0176d3; }
+    .sl-sec { margin: 6px 8px 0; height: 20px; line-height: 20px; padding: 0 8px; border-radius: 4px; background: #f3f3f3; font-size: 11px; font-weight: 700; color: #181818; }
+    .sl-sec::before { content: "▾ "; color: #706e6b; }
+    .sl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; padding: 2px 16px 6px; }
+    .sl-f { padding: 4px 0 3px; border-bottom: 1px solid #e5e5e5; min-width: 0; }
+    .sl-f > span { display: block; font-size: 9.5px; color: #444; line-height: 1.3; }
+    .sl-f > b { display: block; height: 17px; line-height: 17px; font-size: 11.5px; font-weight: 400; color: #181818; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sl-f > b.empty { color: #ba0517; font-weight: 700; }
+    .sl-f > b.ok { color: #2e844a; font-weight: 700; }
+    .sl-in { display: block; height: 22px; line-height: 20px; box-sizing: border-box; border: 1px solid #c9c9c9; border-radius: 4px; padding: 0 7px; font-size: 11px; background: #fff; white-space: nowrap; overflow: hidden; }
+    .sl-pill { display: inline-flex; align-items: center; gap: 4px; height: 18px; padding: 0 6px 0 2px; border: 1px solid #c9c9c9; border-radius: 4px; background: #fff; font-size: 10.5px; vertical-align: middle; }
+    .sl-pill .sfc-ic { width: 14px; height: 14px; border-radius: 3px; }
+    .sl-pill .sfc-ic svg { width: 9px; height: 9px; }
+    .sl-modal { background: #fff; border-radius: 6px; box-shadow: 0 4px 18px rgba(0,0,0,.25); overflow: hidden; }
+    .sl-mh { height: 34px; line-height: 34px; text-align: center; font-size: 13.5px; font-weight: 700; border-bottom: 1px solid #dddbda; }
+    .sl-mb { padding: 8px 12px; background: #fff; }
+    .sl-mf { display: flex; justify-content: flex-end; gap: 6px; padding: 7px 12px; background: #f3f3f3; border-top: 1px solid #dddbda; }
+    .sl-backdrop { position: absolute; inset: 0; background: rgba(8,7,7,.45); border-radius: 6px; }
+    .sl-radio { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1px solid #c9c9c9; box-sizing: border-box; vertical-align: -1px; margin-right: 4px; background: #fff; }
+    .sl-radio.on { border: 3.5px solid #0176d3; }
+    .sl-chk { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; border: 1px solid #c9c9c9; border-radius: 2px; box-sizing: border-box; vertical-align: -2px; margin-right: 5px; background: #fff; font-size: 9px; color: #fff; font-style: normal; }
+    .sl-chk.on { background: #0176d3; border-color: #0176d3; }
+    .sl-rl { background: #fff; border: 1px solid #dddbda; border-radius: 4px; overflow: hidden; }
+    .sl-rlh { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 8px; font-size: 11.5px; font-weight: 700; background: #f3f3f3; border-bottom: 1px solid #dddbda; white-space: nowrap; }
+    .sl-rlh .sfc-ic { width: 18px; height: 18px; border-radius: 3px; }
+    .sl-rlh .sfc-ic svg { width: 11px; height: 11px; }
+    .sl-rlh .sl-btn { margin-left: auto; height: 20px; border-radius: 4px; }
+    .sl-tr { display: grid; grid-template-columns: var(--cols, 1fr 1fr); gap: 6px; align-items: center; height: 22px; padding: 0 8px; font-size: 10.5px; border-bottom: 1px solid #e5e5e5; white-space: nowrap; }
+    .sl-tr.th { font-size: 9.5px; color: #444; background: #fafaf9; font-weight: 700; }
+    .sl-tr a { color: #0176d3; text-decoration: none; overflow: hidden; text-overflow: ellipsis; }
+    .sl-empty { height: 30px; line-height: 30px; text-align: center; font-size: 10.5px; color: #ba0517; font-weight: 700; background: #fef1ee; }
+    .sl-node { display: flex; align-items: center; gap: 8px; width: max-content; min-width: 220px; margin: 0 auto; padding: 6px 10px; background: #fff; border: 1px solid #dddbda; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,.08); font-size: 10.5px; }
+    .sl-node .sl-ni { width: 22px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
+    .sl-node .sl-ni svg { width: 13px; height: 13px; }
+    .sl-node .sl-ni.start { background: #3ba755; border-radius: 50%; }
+    .sl-node .sl-ni.dec { background: #dd7a01; transform: rotate(45deg) scale(.85); }
+    .sl-node .sl-ni.dec svg { transform: rotate(-45deg); }
+    .sl-node .sl-ni.rec { background: #ff538a; }
+    .sl-node small { display: block; font-size: 9px; color: #444; }
+    .sl-node b { font-weight: 700; }
+    .sl-conn { width: 2px; height: 12px; margin: 0 auto; background: #9e9e9e; }
+    .sl-done { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 8px 10px; }
+    .sl-done > div { border: 1px solid #dddbda; border-radius: 4px; padding: 6px 7px; min-width: 0; }
+    .sl-done > div.no { border-color: #ea001e; background: #fef1ee; }
+    /* convert slide: the lead record, the Convert Lead modal over it, then the converted screen, as Salesforce draws them */
+    .slide[data-pm="rq-cv"] .slide-inner.insights { padding-top: 100px; }
+    .slide[data-pm="rq-cv"] .rq .rq-col { gap: 8px; }
+    .slide[data-pm="rq-cv"] .cv-stage { position: relative; height: 176px; flex: none; }
+    .slide[data-pm="rq-cv"] .cv-rec { position: absolute; inset: 0; }
+    .slide[data-pm="rq-cv"] .cv-layer { position: absolute; inset: 0; border-radius: 6px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; box-sizing: border-box; }
+    .slide[data-pm="rq-cv"] .cv-layer .sl-modal { width: 88%; }
+    .slide[data-pm="rq-cv"] .sl-mh { height: 26px; line-height: 26px; font-size: 12px; }
+    .slide[data-pm="rq-cv"] .sl-mb { padding: 4px 12px; }
+    .slide[data-pm="rq-cv"] .sl-mf { padding: 4px 12px; }
+    .slide[data-pm="rq-cv"] .sl-mf .sl-btn { height: 20px; }
+    .slide[data-pm="rq-cv"] .cv-row { display: grid; grid-template-columns: 74px minmax(0, 1fr); align-items: center; height: 22px; font-size: 10.5px; }
+    .slide[data-pm="rq-cv"] .cv-row > b { font-weight: 700; color: #181818; }
+    .slide[data-pm="rq-cv"] .cv-row > span { display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 0; }
+    .slide[data-pm="rq-cv"] .cv-row .sl-in { width: 150px; height: 20px; line-height: 18px; flex: none; }
+    .slide[data-pm="rq-cv"] .cv-ck { display: flex; align-items: center; height: 20px; padding-left: 74px; font-size: 10.5px; white-space: nowrap; text-decoration: line-through; text-decoration-thickness: 1.5px; text-decoration-color: transparent; }
+    .slide[data-pm="rq-cv"] .cv-ck .sl-chk b { font-size: 9px; color: #fff; font-weight: 700; }
+    .slide.active[data-pm="rq-cv"] .cv-ck.gone { animation: pmk-off .6s ease var(--d, 0s) forwards, pmk-strike .6s ease var(--d, 0s) forwards; }
+    .slide[data-pm="rq-cv"] .cv-res { flex: none; }
+    .slide[data-pm="rq-cv"] .cv-resh { display: flex; align-items: center; gap: 5px; height: 22px; padding: 0 10px; font-size: 11px; font-weight: 700; border-bottom: 1px solid #dddbda; background: #f3f3f3; }
+    .slide[data-pm="rq-cv"] .cv-resh svg { width: 12px; height: 12px; color: #2e844a; }
+    .slide[data-pm="rq-cv"] .sl-done { padding: 5px 10px; }
+    .slide[data-pm="rq-cv"] .sl-done > div { height: 40px; box-sizing: border-box; padding: 3px 7px; display: flex; flex-direction: column; justify-content: center; gap: 1px; }
+    .slide[data-pm="rq-cv"] .sl-done .sl-ot { line-height: 14px; }
+    .slide[data-pm="rq-cv"] .sl-done a { line-height: 16px; }
+    .slide[data-pm="rq-cv"] .sl-done .sl-ot { display: flex; align-items: center; gap: 4px; }
+    .slide[data-pm="rq-cv"] .sl-done .sfc-ic { width: 14px; height: 14px; border-radius: 3px; }
+    .slide[data-pm="rq-cv"] .sl-done .sfc-ic svg { width: 9px; height: 9px; }
+    .slide[data-pm="rq-cv"] .sl-done a { font-size: 11px; font-weight: 700; color: #0176d3; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .slide[data-pm="rq-cv"] .sl-done > div.no a { color: #ba0517; }
+    .slide[data-pm="rq-cv"] .sl-done > div.yes { border-color: #2e844a; background: #f1faf4; }
+    .slide[data-pm="rq-cv"] .sl-done > div.yes a { color: #2e844a; }
+    .slide[data-pm="rq-cv"] .cv-rec .sl-rh { padding: 6px 10px; }
+    .slide[data-pm="rq-cv"] .cv-rec .sl-path { padding: 5px 10px; }
+    .slide[data-pm="rq-cv"] .sl-rec-grid .sl-f { padding: 3px 0 2px; }
+    .slide[data-pm="rq-cv"] .cv-roles { flex: none; }
+    .slide[data-pm="rq-cv"] .cv-roles .sl-rlh { height: 26px; }
+    .slide[data-pm="rq-cv"] .cv-roles .sl-rlh .sfc-ic.opp { background: #fcb95b; }
+    .slide[data-pm="rq-cv"] .cv-roles .sl-tr { --cols: minmax(0, 1.3fr) minmax(0, 1fr) 54px; }
+    .slide[data-pm="rq-cv"] .cv-roles .sl-tr.new { background: #f1faf4; }
+    .slide[data-pm="rq-cv"] .sfc-ic.acct { background: #7f8de1; }
+    .slide[data-pm="rq-cv"] .cv-yes { color: #2e844a; font-weight: 700; }
+    /* budget slide: the same TCV claimed by every department, then the share the influence model expects */
+    .bud { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; flex: none; }
+    .bud-h { display: flex; align-items: baseline; justify-content: space-between; height: 34px; line-height: 34px; padding: 0 14px; font-size: 13px; font-weight: 800; color: var(--ay-dark); background: #f8fafc; border-bottom: 1px solid #eef2f6; }
+    .bud-h small { font-size: 10px; font-weight: 700; color: var(--ay-gray); }
+    .bud-r { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, .8fr)); align-items: center; gap: 6px; height: 31px; padding: 0 14px; border-bottom: 1px solid #f1f5f9; font-size: 12.5px; }
+    .fix .bud-r { grid-template-columns: minmax(0, 1.1fr) repeat(4, minmax(0, .8fr)); }
+    .bud-r > :not(:first-child) { justify-self: end; font-variant-numeric: tabular-nums; }
+    .bud-r.th { height: 28px; background: #f8fafc; font-size: 9.5px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .5px; line-height: 1.15; }
+    .bud-r.th span:not(:first-child) { text-align: right; }
+    .bud-r.tot { border-bottom: 0; background: #f8fafc; font-weight: 800; }
+    .bud-r b { font-weight: 800; color: var(--ay-dark); }
+    .bud-r em { font-style: normal; font-weight: 700; color: var(--ay-gray); }
+    .bud-d .pmk-team { font-style: normal; }
+    .bud-r.tot .bud-d .pmk-team { background: none; padding: 0; color: var(--ay-dark); font-weight: 800; }
+    .bud-r .bud-bad { color: #b91c1c; }
+    .bud-r .bud-ok { color: #076b54; }
+    .bud-r .bud-pct { background: #fff3a6; border-radius: 4px; padding: 1px 6px; color: var(--ay-dark); }
+    .bud-note { display: flex; align-items: center; gap: 7px; height: 20px; flex: none; font-size: 11.5px; font-weight: 600; color: var(--ay-gray); }
+    .bud-note i { width: 14px; height: 12px; border-radius: 3px; background: #fff3a6; border: 1px solid #e6d36a; flex: none; }
+    .slide[data-pm="rq-bud"] .slide-inner.insights { padding-top: 100px; }
+    /* one contract, three readings: the salesperson's target, the campaigns' ROI, the departments' share */
+    .ex3 { display: grid; grid-template-columns: minmax(0, 250px) 26px minmax(0, 1fr) 26px minmax(0, 250px); align-items: start; width: 100%; max-width: 1140px; margin: 0 auto; text-align: left; }
+    .ex-c { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06); overflow: hidden; min-width: 0; }
+    .ex-c .sfo-h { padding: 12px 16px; }
+    .ex-c .obj-big { padding: 12px 16px 10px; }
+    .ex-c .obj-big b { font-size: 28px; }
+    .ex-c .obj-bar { margin: 0 16px 12px; }
+    .ex-c .obj-r { padding: 0 16px; height: 34px; }
+    .ex-arrow { align-self: center; justify-self: center; font-size: 22px; font-weight: 700; color: var(--ay-light); }
+    .ex-r { display: grid; grid-template-columns: minmax(0, 1fr) 70px 58px 62px 34px; gap: 6px; align-items: center; height: 34px; padding: 0 16px; border-top: 1px solid #f1f5f9; font-size: 12px; white-space: nowrap; }
+    .ex-r.th { height: 26px; background: #f8fafc; font-size: 9.5px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .5px; }
+    .ex-r > :nth-child(n+3) { justify-self: end; font-variant-numeric: tabular-nums; }
+    .ex-r > .pmk-team { justify-self: start; }
+    .ex-n { overflow: hidden; text-overflow: ellipsis; color: #0b5cab; font-weight: 700; }
+    .ex-r b { font-weight: 800; color: var(--ay-dark); }
+    .ex-r em { font-style: normal; font-weight: 700; color: var(--ay-gray); }
+    .ex-r .ex-roi { color: #076b54; }
+    .ex-r.dep { grid-template-columns: minmax(0, 1fr) 80px 44px; }
+    .ex-r.dep .pmk-team { justify-self: start; }
+    .ex-r .ex-pct { color: var(--ay-primary); }
+    .ex-note { padding: 10px 16px 12px; border-top: 1px solid #f1f5f9; font-size: 11.5px; font-weight: 600; color: var(--ay-gray); line-height: 1.4; }
+    .ex-k { display: flex; justify-content: space-between; align-items: center; gap: 10px; height: 44px; padding: 0 16px; border-top: 1px solid #f1f5f9; font-size: 12.5px; font-weight: 600; color: var(--ay-gray); }
+    .ex-k span { line-height: 1.25; }
+    .ex-k small { display: block; font-size: 10.5px; font-weight: 600; color: var(--ay-light); }
+    .ex-k b { font-size: 15px; font-weight: 800; color: var(--ay-dark); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .ex-k.tot { background: #e6f8f2; }
+    .ex-k.tot span, .ex-k.tot b { color: #076b54; }
+    .slide.active[data-pm="ex3"] .ex-r.mk { animation: pmk-row .45s ease-out var(--d, 0s) both, pmk-win .6s ease 3.6s forwards; }
+    .slide[data-pm="ex3"] .slide-inner.insights { padding-top: 84px; max-width: 1200px; }
+    /* campaign cost slide: the Planning section of a campaign, then the ROI it makes possible */
+    .slide[data-pm="cost2"] .slide-inner.insights { padding-top: 100px; }
+    .cost2 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; width: 100%; max-width: 1140px; margin: 0 auto; text-align: left; align-items: start; }
+    .cost2 .ex-k { height: auto; min-height: 44px; padding: 7px 16px; }
+    .cost2 .ex-k b { font-size: 13.5px; }
+    .cost2 .c2-sub { padding: 10px 16px; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); }
+    .cost2 .ex-c.warn .sfo-ic { background: #b91c1c; }
+    .cost2 .bud-r { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, .8fr)); }
+    .cost2 .ex-c.warn .c2-sub b { color: #b91c1c; }
+    .cost2 .ex-c.warn .c2-sub b.ok { color: #076b54; }
+    .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
+    .slide[data-pm="rq-cost"] .sl-win { flex: none; }
+    .slide[data-pm="rq-cost"] .sl-f { display: flex; align-items: center; gap: 8px; }
+    .slide[data-pm="rq-cost"] .sl-f > span { width: 52%; flex: none; font-size: 10px; }
+    .slide[data-pm="rq-cost"] .sl-f > b { flex: 1; min-width: 0; }
+    .slide[data-pm="rq-cost"] .sl-f > b > i { display: inline-block; font-style: normal; font-weight: 700; border-radius: 3px; padding: 0 5px; line-height: 15px; }
+    .slide[data-pm="rq-cost"] .sl-f > b > i.no { color: #ba0517; background: #fef1ee; font-size: 10px; }
+    .slide[data-pm="rq-cost"] .sl-f > b > i.yes { color: #2e844a; background: #e6f8f2; }
+    .cost-roi { display: flex; align-items: center; gap: 8px; height: 44px; flex: none; padding: 0 14px; border-radius: 10px; background: #fff; border: 1px solid #e5e7eb; font-size: 13px; white-space: nowrap; }
+    .cost-roi span { flex: 1; font-weight: 700; color: var(--ay-gray); font-size: 12px; }
+    .cost-roi b { font-weight: 800; color: var(--ay-dark); font-variant-numeric: tabular-nums; }
+    .cost-roi em { font-style: normal; font-weight: 700; color: var(--ay-light); }
+    .cost-roi b.no { color: #b91c1c; }
+    .cost-roi b.ok { color: #076b54; }
+    .cost-teams { display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; height: 24px; flex: none; }
+    .cost-teams > span:first-child { font-size: 11.5px; font-weight: 700; color: var(--ay-gray); margin-right: 4px; white-space: nowrap; }
+    /* frozen influence as a requirement: today every later campaign lands on the open deal, then the influence freezes at creation */
+    .slide[data-pm="ltv"] .slide-inner.insights { padding-top: 100px; }
+    .rq .sfo { width: auto; flex: none; }
+    .slide[data-pm="ltv"] .sfo-h { padding: 8px 14px; }
+    .slide[data-pm="ltv"] .sfo-lh { padding: 7px 14px 4px; }
+    .slide[data-pm="ltv"] .sfo-list { padding: 0 14px 6px; }
+    .slide[data-pm="ltv"] .sfo-r { height: 23px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-s, .slide[data-pm="ltv"] .sfo.sm2 .sfo-k { display: inline; }
+    .slide[data-pm="ltv"] .sfm-down { margin: -6px 0; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-n { display: none; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-h { padding: 6px 14px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-ic { width: 24px; height: 24px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-ic svg { width: 14px; height: 14px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-h > div { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+    .slide[data-pm="ltv"] .rq-col.fix { gap: 6px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-lh { padding-top: 5px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-list { padding-bottom: 3px; }
+    .sfo-mk { position: relative; height: 15px; display: flex; align-items: center; justify-content: center; }
+    .sfo-mk::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; border-top: 1.5px dashed #0b5cab; opacity: .55; }
+    .sfo-mk span { position: relative; padding: 0 8px; background: #fff; font-size: 9.5px; font-weight: 800; letter-spacing: .3px; color: #0b5cab; text-transform: uppercase; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-r { height: 21px; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-lh { display: none; }
+    .slide[data-pm="ltv"] .sfo.sm2 .sfo-list { padding-top: 3px; }
+    .sfo-r.ltv-late { background: #fff4e5; border-radius: 4px; padding: 0 6px; margin: 0 -6px; }
+    .sfo-r.ltv-late em { color: #b45309; font-weight: 800; }
+    .ltv-open { display: inline-flex; align-items: center; font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #b45309; background: #fff4e5; border-radius: 10px; padding: 3px 8px; }
+    /* requirements divider: five cards, three then two centred */
+    .prc.five { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px 20px; max-width: 1100px; }
+    .prc.five .kr { grid-column: span 2; height: 194px; padding: 16px 20px; }
+    .prc.five .kr:nth-child(4) { grid-column: 2 / span 2; }
+    .prc.six .kr:nth-child(4) { grid-column: span 2; }
+    .prc.five .prc-ic { width: 32px; height: 32px; margin-bottom: 8px; }
+    .prc.five .prc-ic svg { width: 17px; height: 17px; }
+    .prc.five .kl { margin-bottom: 5px; }
+    .prc.five .kh { font-size: 20px; }
+    .prc.five .ks { font-size: 13px; line-height: 1.45; }
+    .prc.one { grid-template-columns: minmax(0, 1fr); max-width: 360px; }
+    .prc.one .kr { height: auto; }
+    /* requirement slides: the problem told through one person on the left, the requirement on the right */
+    .slide[data-pm^="rq-"] .slide-inner { padding-top: 132px; }
+    .rq { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); width: 100%; max-width: 1080px; margin: 0 auto; text-align: left; }
+    .rq-col { display: flex; flex-direction: column; gap: 10px; height: 412px; box-sizing: border-box; border-radius: 16px; padding: 14px 18px; min-width: 0; }
+    .rq-col.now { background: #fbf3f3; }
+    .rq-col.fix { background: #edf8f3; }
+    .rq-h { display: flex; align-items: center; gap: 7px; height: 18px; flex: none; font-size: 11px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; }
+    .rq-h svg { width: 15px; height: 15px; }
+    .now .rq-h { color: #b91c1c; }
+    .fix .rq-h { color: #076b54; }
+    .rq-story { flex: none; font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); }
+    .rq-tag { display: flex; width: max-content; align-items: center; gap: 4px; height: 18px; padding: 0 7px; margin-bottom: 4px; border-radius: 9px; font-size: 9.5px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+    .rq-tag svg { width: 11px; height: 11px; }
+    .rq-tag.now { color: #b91c1c; background: #fdecec; }
+    .rq-tag.fix { color: #076b54; background: #d5f2e6; }
+    .rq-mid { display: flex; align-items: center; justify-content: center; }
+    .rq-mid .aa { font-size: 24px; font-weight: 700; color: var(--ay-light); }
+    .rq .sfm, .rq .pmk-url { flex: none; }
+    .rq .sfm-down { margin: -6px 0; }
+    .rq .sfm-r b.rq-no, .rq .rq-no { color: #b91c1c; background: #fdecec; border-radius: 6px; padding: 0 6px; }
+    .rq .sfm-r b.rq-yes, .rq .rq-yes { color: #076b54; background: #e6f8f2; border-radius: 6px; padding: 0 6px; }
+    .rq-x { align-self: flex-start; flex: none; font-size: 9.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #b91c1c; background: #fdecec; border-radius: 9px; padding: 3px 9px; white-space: nowrap; }
+    .rq-fact { margin-top: auto; display: flex; align-items: center; gap: 12px; height: 48px; flex: none; box-sizing: border-box; padding: 0 16px; border-radius: 12px; background: var(--ay-dark); color: #fff; }
+    .rq-fact b { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .rq-fact span { font-size: 11.5px; font-weight: 600; line-height: 1.3; opacity: .85; }
+    .sfc-ic.camp { background: #f49756; }
+    .sfc-ic.evt { background: #eb7092; }
+    .sfc-ic.flow { background: var(--ay-primary); }
+    .sfm-h .pmk-ok { margin-left: auto; }
+    /* reference table: one row per UTM pair, the flow reads it */
+    /* L3 slide: a Lead record page in Lightning, the origin UTMs as one section and L3 as a distinct, outlined section */
+    .slide[data-pm="rq-l3"] .slide-inner { padding-top: 102px; }
+    .slide[data-pm="rq-l3"] .rq-col { gap: 9px; }
+    .slide[data-pm="rq-l3"] .sl-win { flex: none; }
+    .slide[data-pm="rq-l3"] .pmk-url { height: 34px; }
+    .slide[data-pm="rq-l3"] .sl-f > b > i { display: inline-block; font-style: normal; }
+    .slide[data-pm="rq-l3"] .sl-f > b > i.no { color: #ba0517; font-weight: 700; font-size: 10px; background: #fef1ee; border-radius: 3px; padding: 0 5px; line-height: 15px; }
+    .slide[data-pm="rq-l3"] .sl-f > b > i.yes { color: #2e844a; font-weight: 700; background: #e6f8f2; border-radius: 3px; padding: 0 5px; line-height: 15px; }
+    .slide[data-pm="rq-l3"] .rq-l3s { margin: 6px 8px 8px; border: 1px solid #b0c4df; border-left: 3px solid #0176d3; border-radius: 4px; background: #f4f8fd; overflow: hidden; }
+    .slide[data-pm="rq-l3"] .rq-l3s .sl-sec { display: flex; align-items: center; margin: 0; border-radius: 0; background: #e3edfa; color: #014486; }
+    .slide[data-pm="rq-l3"] .rq-l3s .sl-sec::before { color: #014486; }
+    .slide[data-pm="rq-l3"] .rq-l3s .sl-sec em { display: inline-block; margin-left: auto; font-style: normal; font-size: 9px; font-weight: 800; color: #ba0517; white-space: nowrap; }
+    .slide[data-pm="rq-l3"] .rq-l3s .sl-grid { padding: 0 10px 5px; }
+    .slide[data-pm="rq-l3"] .rq-l3s .sl-f { border-bottom-color: #d6e2f1; }
+    .slide[data-pm="rq-l3"] .sl-f { display: flex; align-items: center; gap: 8px; }
+    .slide[data-pm="rq-l3"] .sl-f > span { width: 46%; flex: none; font-size: 10px; }
+    .slide[data-pm="rq-l3"] .sl-f > b { flex: 1; min-width: 0; }
+    .slide[data-pm="rq-l3"] .sl-rl { flex: none; }
+    .slide[data-pm="rq-l3"] .sl-rlh .pmk-ok { margin-left: auto; }
+    .slide[data-pm="rq-l3"] .sl-tr { --cols: .8fr .6fr 1fr 1fr; }
+    .slide[data-pm="rq-l3"] .sl-tr:last-child { border-bottom: 0; }
+    .slide[data-pm="rq-l3"] .sl-tr .hit { display: inline-block; justify-self: start; color: #2e844a; font-weight: 700; background: #e6f8f2; border-radius: 3px; padding: 0 5px; }
+    /* event slide: the New Event modal, the campaign record, then the flow that adds the member */
+    .slide[data-pm="rq-ev"] .slide-inner { padding-top: 98px; }
+    .slide[data-pm="rq-ev"] .rq-col { gap: 6px; }
+    .slide[data-pm="rq-ev"] .rq-fact { height: 40px; }
+    .slide[data-pm="rq-ev"] .sl-mh { height: 28px; line-height: 28px; font-size: 12.5px; }
+    .slide[data-pm="rq-ev"] .sl-mf { padding: 4px 12px; }
+    .slide[data-pm="rq-ev"] .ev-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 10px; padding: 5px 12px 6px; }
+    .slide[data-pm="rq-ev"] .ev-f > span:first-child { display: block; height: 13px; font-size: 9.5px; color: #444; margin-bottom: 2px; white-space: nowrap; }
+    .slide[data-pm="rq-ev"] .ev-f .sl-in { display: flex; align-items: center; padding: 0 3px 0 6px; }
+    .slide[data-pm="rq-ev"] .ev-f .sl-in .sl-pill { margin-left: -3px; }
+    .slide[data-pm="rq-ev"] .ev-f.hl .sl-in { border-color: #0176d3; box-shadow: 0 0 0 1px #0176d3; }
+    .slide[data-pm="rq-ev"] .sl-page { padding: 5px; gap: 5px; }
+    .slide[data-pm="rq-ev"] .sl-rh { padding: 4px 10px; }
+    .slide[data-pm="rq-ev"] .sl-tabs { height: 20px; }
+    .slide[data-pm="rq-ev"] .ev-rls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+    .slide[data-pm="rq-ev"] .ev-rls .sl-rlh { height: 24px; font-size: 11px; }
+    .slide[data-pm="rq-ev"] .ev-rls .sl-tr { --cols: minmax(0, 1fr) auto; border-bottom: 0; }
+    .slide[data-pm="rq-ev"] .ev-rls .sl-empty { height: 22px; line-height: 22px; }
+    .slide[data-pm="rq-ev"] .ev-canvas { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; }
+    .slide[data-pm="rq-ev"] .ev-cvh { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; font-size: 11px; font-weight: 700; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; }
+    .slide[data-pm="rq-ev"] .ev-cvh svg { width: 13px; height: 13px; color: #0176d3; }
+    .slide[data-pm="rq-ev"] .ev-cvb { padding: 6px 10px; background-color: #fafaf9; background-image: radial-gradient(#d8d8d8 1px, transparent 1px); background-size: 12px 12px; }
+    .slide[data-pm="rq-ev"] .ev-cvb .sl-node { padding: 3px 10px; }
+    .slide[data-pm="rq-ev"] .ev-cvb .sl-conn { height: 9px; }
+    .slide[data-pm="rq-ev"] .ev-cvh { height: 24px; }
+    .slide[data-pm="rq-ev"] .ev-note { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; height: 22px; flex: none; padding: 0 9px; border-radius: 11px; background: #d5f2e6; color: #076b54; font-size: 10.5px; font-weight: 800; white-space: nowrap; }
+    .slide[data-pm="rq-ev"] .ev-note svg { width: 12px; height: 12px; }
+    .rq-tr { display: grid; grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1.25fr); align-items: center; gap: 6px; height: 23px; font-size: 11px; border-bottom: 1px solid #f1f5f9; }
+    .rq-tr:last-child { border-bottom: 0; }
+    .rq-tr.th { font-size: 9.5px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .5px; }
+    .rq-tr span { font-weight: 700; color: #0b5cab; white-space: nowrap; }
+    .rq-tr.th span { color: var(--ay-gray); }
+    .rq-tr i { font-style: normal; font-weight: 700; color: var(--ay-light); text-align: center; }
+    .rq-tr b { justify-self: start; font-weight: 700; color: var(--ay-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* convert dialog: the box that skips the opportunity, struck out on the requirement side */
+    .rq-ck { display: flex; align-items: center; gap: 7px; height: 25px; font-size: 11px; font-weight: 600; color: var(--ay-dark); white-space: nowrap; text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: transparent; }
+    .rq-ck > i { position: relative; width: 13px; height: 13px; flex: none; box-sizing: border-box; border: 1.5px solid #94a3b8; border-radius: 3px; font-style: normal; }
+    .rq-ck > i b { position: absolute; inset: -1.5px; display: flex; align-items: center; justify-content: center; border-radius: 3px; background: #0176d3; color: #fff; font-size: 9px; }
+    .slide.active .rq-ck.gone { animation: pmk-off .6s ease var(--d, 0s) forwards, pmk-strike .6s ease var(--d, 0s) forwards; }
+    .rq-cvb { display: flex; justify-content: flex-end; padding: 4px 0 6px; }
+    .rq-cvb span { display: inline-block; font-size: 11px; font-weight: 800; color: #fff; background: #0176d3; border-radius: 6px; padding: 4px 16px; }
+    .rq-res { display: flex; gap: 8px; height: 26px; flex: none; }
+    .rq-res > span { display: inline-flex; align-items: center; gap: 6px; height: 26px; box-sizing: border-box; padding: 0 10px 0 4px; border-radius: 8px; background: #fff; border: 1px solid #e5e7eb; font-size: 11px; font-weight: 700; color: var(--ay-dark); white-space: nowrap; }
+    .rq-res .sfc-ic { width: 18px; height: 18px; border-radius: 4px; }
+    .rq-res .sfc-ic svg { width: 11px; height: 11px; }
   </style>
 </head>
 <body>
@@ -938,26 +1258,36 @@
       <div class="nav-item" data-slide="18"><span class="nav-item-number">19</span>A ratio that rises</div>
     </div>
     <div class="nav-section">
-      <div class="nav-section-title">Clarifications</div>
-      <div class="nav-item" data-slide="19"><span class="nav-item-number">20</span>Three clarifications</div>
-      <div class="nav-item" data-slide="20"><span class="nav-item-number">21</span>Frozen influence, customer value</div>
-      <div class="nav-item" data-slide="21"><span class="nav-item-number">22</span>Target and ROI share</div>
-      <div class="nav-item" data-slide="22"><span class="nav-item-number">23</span>First-campaign bonus</div>
+      <div class="nav-section-title">Requirements</div>
+      <div class="nav-item" data-slide="19"><span class="nav-item-number">20</span>Requirements</div>
+      <div class="nav-item" data-slide="20"><span class="nav-item-number">21</span>Frozen influence</div>
+      <div class="nav-item" data-slide="21"><span class="nav-item-number">22</span>UTMs fill L3</div>
+      <div class="nav-item" data-slide="22"><span class="nav-item-number">23</span>Every conversion has an opportunity</div>
+      <div class="nav-item" data-slide="23"><span class="nav-item-number">24</span>An event joins its campaign</div>
+      <div class="nav-item" data-slide="24"><span class="nav-item-number">25</span>Every campaign carries its cost</div>
+      <div class="nav-item" data-slide="25"><span class="nav-item-number">26</span>Two levels of cost</div>
+      <div class="nav-item" data-slide="26"><span class="nav-item-number">27</span>Budgets on influenced TCV</div>
+      <div class="nav-item" data-slide="27"><span class="nav-item-number">28</span>One contract, three readings</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Bonus</div>
+      <div class="nav-item" data-slide="28"><span class="nav-item-number">29</span>Bonus</div>
+      <div class="nav-item" data-slide="29"><span class="nav-item-number">30</span>First-campaign bonus</div>
     </div>
     <div class="nav-section">
       <div class="nav-section-title">Summary</div>
-      <div class="nav-item" data-slide="23"><span class="nav-item-number">24</span>The pyramid</div>
+      <div class="nav-item" data-slide="30"><span class="nav-item-number">31</span>The pyramid</div>
     </div>
     <div class="nav-section">
       <div class="nav-section-title">Honesty</div>
-      <div class="nav-item" data-slide="24"><span class="nav-item-number">25</span>The blind spots</div>
-      <div class="nav-item" data-slide="25"><span class="nav-item-number">26</span>Direct as a signal</div>
-      <div class="nav-item" data-slide="26"><span class="nav-item-number">27</span>CRM hygiene</div>
-      <div class="nav-item" data-slide="27"><span class="nav-item-number">28</span>The horizon</div>
+      <div class="nav-item" data-slide="31"><span class="nav-item-number">32</span>The blind spots</div>
+      <div class="nav-item" data-slide="32"><span class="nav-item-number">33</span>Direct as a signal</div>
+      <div class="nav-item" data-slide="33"><span class="nav-item-number">34</span>CRM hygiene</div>
+      <div class="nav-item" data-slide="34"><span class="nav-item-number">35</span>The horizon</div>
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/28</div>
+  <div class="slide-counter"><span class="current">1</span>/35</div>
 
   <main class="presentation">
 
@@ -1592,14 +1922,17 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
-    <!-- ========== DIVIDER PRÉCISIONS (three clarifications, the first flies to its badge) ========== -->
+    <!-- ========== DIVIDER REQUIREMENTS (five requirements, the problem behind each on its own slide) ========== -->
     <section class="slide" data-chapter="precisions">
       <div class="slide-inner insights">
-        <h1 class="slide-title compact">Three clarifications</h1>
-        <div class="prc">
-          <div class="kr pmk-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Clarification 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div></div>
-          <div class="kr pmk-in" style="--d:0.45s"><div class="prc-ic"><i data-lucide="target"></i></div><div class="kl"><b>Clarification 2</b> · targets</div><div class="kh">Sales target</div><div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div></div>
-          <div class="kr pmk-in" style="--d:0.70s"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Clarification 3</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
+        <h1 class="slide-title compact">Requirements</h1>
+        <div class="prc five six">
+          <div class="kr pmk-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Requirement 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after the opportunity's creation is not added to its influence.</div></div>
+          <div class="kr pmk-in" style="--d:0.40s"><div class="prc-ic"><i data-lucide="merge"></i></div><div class="kl"><b>Requirement 2</b> · origin</div><div class="kh">UTMs fill L3</div><div class="ks">One reference table turns each UTM pair into L3, so we keep one process instead of two.</div></div>
+          <div class="kr pmk-in" style="--d:0.60s"><div class="prc-ic"><i data-lucide="circle-check"></i></div><div class="kl"><b>Requirement 3</b> · conversion</div><div class="kh">Every conversion has an opportunity</div><div class="ks">The “Don't create an opportunity” box goes, so every converted lead opens one.</div></div>
+          <div class="kr pmk-in" style="--d:0.80s"><div class="prc-ic"><i data-lucide="calendar-check"></i></div><div class="kl"><b>Requirement 4</b> · influence</div><div class="kh">An event joins its campaign</div><div class="ks">A flow adds the person to the event's campaign, so the campaign counts in the influence.</div></div>
+          <div class="kr pmk-in" style="--d:1.00s"><div class="prc-ic"><i data-lucide="receipt"></i></div><div class="kl"><b>Requirement 5</b> · costs</div><div class="kh">Every campaign carries its cost</div><div class="ks">Budgeted and actual cost go in the campaign's Planning section, the cost behind every ROI.</div></div>
+          <div class="kr pmk-in" style="--d:1.20s"><div class="prc-ic"><i data-lucide="wallet"></i></div><div class="kl"><b>Requirement 6</b> · budgets</div><div class="kh">Budgets on influenced TCV</div><div class="ks">From 1 January, each department under total S&amp;M computes its ROI on its influenced TCV, not the total TCV.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1607,74 +1940,242 @@
 
     <section class="slide" data-chapter="precisions" data-pm="ltv">
       <div class="kr-badge">
-        <div class="kl"><b>Clarification 1</b> · influence</div>
+        <div class="kl"><b>Requirement 1</b> · influence</div>
         <div class="kh">Frozen influence</div>
-        <div class="ks">A campaign that comes after creation is not added. Customer value (LTV) brings the opportunities together to cover the contact's total cost.</div>
+        <div class="ks">A campaign that comes after the opportunity's creation is not added to its influence.</div>
       </div>
       <div class="slide-inner insights">
-        <div class="lc ltv-lc">
-          <div class="lc-card pmk-host pmk-in" style="--d:.1s">
-            <div class="pmk-mini pmk-mbadge below" style="--d:0.4s"><span class="pmk-mbh"></span><span class="pmk-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pmk-mev">Trade show</span><i class="pmk-mqr"></i><span class="pmk-mscan" style="--d:0.70s"></span><span class="pmk-mok pmk-pop" style="--d:1.25s">✓</span></div>
-            <div class="pmk-mini pmk-mform below" style="--d:1.9s"><b class="pmk-mh">Whitepaper · Barometer</b><span class="pmk-mf"><small>Name</small><span><em class="pmk-type" style="--d:2.15s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pmk-mf"><small>Email</small><span><em class="pmk-type" style="--d:2.50s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pmk-mck"><i><b class="pmk-pop" style="--d:2.85s">✓</b></i>I agree to be contacted</span><span class="pmk-mb pmk-press" style="--d:2.95s">Download</span></div>
-            <div class="pmk-mini pmk-mvideo below" style="--d:3.4s"><div class="pmk-mv-top"><b>On call</b><span>08:42</span></div><div class="pmk-mv-main"><span class="pmk-mav"><i data-lucide="user-round"></i></span><small>Claire Martin</small><span class="pmk-mv-self">You · sales rep</span></div><div class="pmk-mv-bar"><i><i data-lucide="mic"></i></i><i><i data-lucide="video"></i></i><i class="end"><i data-lucide="phone-off"></i></i></div></div>
-            <div class="pmk-mini pmk-mform below" style="--d:6.7s"><b class="pmk-mh">Sign-up · Webinar 2027</b><span class="pmk-mf"><small>Name</small><span><em class="pmk-type" style="--d:6.95s; --t:.35s; --n:13">Claire Martin</em></span></span><span class="pmk-mf"><small>Email</small><span><em class="pmk-type" style="--d:7.30s; --t:.4s; --n:22">c.martin@entreprise.fr</em></span></span><span class="pmk-mck"><i><b class="pmk-pop" style="--d:7.65s">✓</b></i>I agree to be contacted</span><span class="pmk-mb pmk-press" style="--d:7.75s">Register</span></div>
-            <div class="pmk-mini pmk-mbadge below" style="--d:8.55s"><span class="pmk-mbh"></span><span class="pmk-mav"><i data-lucide="user-round"></i></span><b>Claire Martin</b><small>Entreprise SA</small><span class="pmk-mev">Breakfast</span><i class="pmk-mqr"></i><span class="pmk-mscan" style="--d:8.85s"></span><span class="pmk-mok pmk-pop" style="--d:9.40s">✓</span></div>
-            <div class="sfc-h"><span class="sfc-ic contact"><i data-lucide="contact"></i></span><div><div class="sfo-k">Contact</div><div class="lch-t">Claire Martin</div></div></div>
-            <div class="lch-s">its campaigns</div>
-            <div class="sx-chips">
-              <span class="chip2 pmk-pop" style="--d:1.75s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span>
-              <span class="chip2 pmk-pop" style="--d:3.25s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span>
-              <span class="chip2 sal pmk-pop" style="--d:4.75s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span>
-              <span class="chip2 pmk-pop" style="--d:8.05s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span>
-              <span class="chip2 pmk-pop" style="--d:9.6s"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span>
-            </div>
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Every campaign Claire Martin joins lands on the open opportunity, even after it was created.</div>
+            <div class="sfo  pmk-lit" style="--d:0.5s"><div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #1</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">€48,000 · <span class="ltv-born">created 14 March 2026</span></div></div></div><div class="sfo-lh ltv-lh"><span>Campaign Influence (5)</span><span class="ltv-open pmk-pop" style="--d:1.4s">Still open</span></div><div class="sfo-list"><div class="sfo-r pmk-row" style="--d:0.80s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span><em>Sep 2025</em></div><div class="sfo-r pmk-row" style="--d:1.00s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span><em>Nov 2025</em></div><div class="sfo-r pmk-row" style="--d:1.20s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span><em>Feb 2026</em></div><div class="sfo-mk pmk-fade" style="--d:1.3s"><span>Opportunity created · 14 March 2026</span></div><div class="sfo-r pmk-row ltv-late" style="--d:1.60s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Feb 2027 · after creation · counted</em></div><div class="sfo-r pmk-row ltv-late" style="--d:2.00s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span><em>Apr 2027 · after creation · counted</em></div></div></div>
+            <div class="rq-fact pmk-in" style="--d:2.8s"><b>1,030 of 3,719</b><span>influenced deals get a campaign after their creation, France opportunities since 2025</span></div>
           </div>
-          <div class="lc-arrow pmk-in" style="--d:4.95s"><span class="al">contact role</span><span class="aa pmk-flash" style="--d:5.15s">&rarr;</span></div>
-          <div class="sfo pmk-in" style="--d:5.2s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #1</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">€48,000 · <span class="ltv-born pmk-pop" style="--d:5.45s">created 14 March 2026</span></div></div></div>
-            <div class="sfo-lh ltv-lh"><span>Campaign Influence (<span data-pm-start="0" data-pm-at="5.5,5.8,6.1">3</span>)</span><span class="ltv-flock pmk-pop" style="--d:6.4s"><i data-lucide="lock"></i>Influence frozen</span></div>
-            <div class="sfo-list">
-                <div class="sfo-r pmk-row" style="--d:5.5s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span><em>Sep 2025</em></div>
-                <div class="sfo-r pmk-row" style="--d:5.8s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span><em>Nov 2025</em></div>
-                <div class="sfo-r pmk-row" style="--d:6.1s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span><em>Feb 2026</em></div>
-                <div class="sfo-r pmk-row ltv-no" style="--d:8.3s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Feb 2027 · not added</em></div>
-                <div class="sfo-r pmk-row ltv-no" style="--d:9.85s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span><em>Apr 2027 · not added</em></div>
-            </div>
-          </div>
-          <div class="lc-arrow pmk-in" style="--d:10.1s"><span class="al">next opportunity</span><span class="aa pmk-flash" style="--d:10.30s">&rarr;</span></div>
-          <div class="sfo sm pmk-in" style="--d:10.3s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #2</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">upsell · €30,000 · <span class="ltv-born pmk-pop" style="--d:10.45s">created 15 June 2027</span></div></div></div>
-            <div class="sfo-lh">Campaign Influence (<span data-pm-start="0" data-pm-at="10.6,10.9">2</span>)</div>
-            <div class="sfo-list">
-                <div class="sfo-r pmk-row" style="--d:10.6s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Feb 2027</em></div>
-                <div class="sfo-r pmk-row" style="--d:10.9s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span><em>Apr 2027</em></div>
-            </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The influence freezes at creation, later campaigns go to the next opportunity.</div>
+            <div class="sfo  pmk-lit" style="--d:4.6s"><div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #1</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">€48,000 · <span class="ltv-born">created 14 March 2026</span></div></div></div><div class="sfo-lh ltv-lh"><span>Campaign Influence (5)</span><span class="ltv-flock pmk-pop" style="--d:5.3s"><i data-lucide="lock"></i>Influence frozen</span></div><div class="sfo-list"><div class="sfo-r pmk-row" style="--d:4.90s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Trade show</span><em>Sep 2025</em></div><div class="sfo-r pmk-row" style="--d:5.05s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Whitepaper</span><em>Nov 2025</em></div><div class="sfo-r pmk-row" style="--d:5.20s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Video outreach</span><em>Feb 2026</em></div><div class="sfo-mk pmk-fade" style="--d:5.2s"><span>Opportunity created · 14 March 2026</span></div><div class="sfo-r pmk-row ltv-no" style="--d:5.60s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Feb 2027 · not added</em></div><div class="sfo-r pmk-row ltv-no" style="--d:5.80s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span><em>Apr 2027 · not added</em></div></div></div>
+            <span class="sfm-down pmk-fade" style="--d:6.2s">&darr;</span>
+            <div class="sfo sm2 pmk-lit" style="--d:6.3s"><div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity #2</div><div class="sfo-n">Entreprise SA</div><div class="sfo-s">upsell · €30,000 · <span class="ltv-born">created 15 June 2027</span></div></div></div><div class="sfo-lh ltv-lh"><span>Campaign Influence (2)</span></div><div class="sfo-list"><div class="sfo-r pmk-row" style="--d:6.60s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar 2027</span><em>Feb 2027</em></div><div class="sfo-r pmk-row" style="--d:6.80s"><span><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Client breakfast</span><em>Apr 2027</em></div></div></div>
           </div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
-    <!-- ========== SALES TARGET AND ROI SHARE (the whole contract counts toward the target, the share measures ROI) ========== -->
-    <section class="slide" data-chapter="precisions" data-pm="obj">
+    <!-- ========== REQUIREMENT 2 · UTMS FILL L3 (the problem, then the requirement) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-l3">
       <div class="kr-badge">
-        <div class="kl"><b>Clarification 2</b> · targets</div>
-        <div class="kh">Sales target</div>
-        <div class="ks">The whole contract counts toward the sales target, each campaign's share measures ROI.</div>
+        <div class="kl"><b>Requirement 2</b> · origin</div>
+        <div class="kh">UTMs fill L3</div>
+        <div class="ks">One reference table turns each UTM pair into L3, so we keep one process instead of two.</div>
       </div>
       <div class="slide-inner insights">
-        <div class="obj">
-          <div class="obj-c pmk-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">Sales target</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Élisabeth Roux finds Ayming through ChatGPT and downloads the barometer.</div>
+            <div class="pmk-url pmk-fade" style="--d:.5s"><span class="pmk-url-dots"><i></i><i></i><i></i></span><span class="pmk-url-bar"><i data-lucide="lock"></i><span class="pmk-url-txt pmk-type" style="--d:.7s; --t:.8s; --n:42">ayming.fr/barometre?utm_source=<em>chatgpt.com</em></span></span></div>
+            <div class="sl-win sl pmk-lit" style="--d:1.6s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Élisabeth Roux</div></div><div class="sl-acts"><span class="sl-btn">Follow</span><span class="sl-btn">Edit</span><span class="sl-btn">Convert</span></div></div><div class="sl-tabs"><span>Activity</span><span class="on">Details</span><span>Related</span></div><div class="sl-sec">UTM</div><div class="sl-grid"><div class="sl-f"><span>utm_source_origin</span><b class="pmk-fade" style="--d:2.0s">chatgpt</b></div><div class="sl-f"><span>utm_medium_origin</span><b class="pmk-fade" style="--d:2.15s">llm</b></div></div><div class="rq-l3s"><div class="sl-sec">Qualification<em class="pmk-pop" style="--d:3.0s">No row for llm in the 2024 table</em></div><div class="sl-grid"><div class="sl-f"><span>Origin</span><b><i class="no pmk-pop" style="--d:2.4s">empty</i></b></div><div class="sl-f"><span>Origin Details</span><b><i class="no pmk-pop" style="--d:2.6s">empty</i></b></div></div></div></div>
+            <div class="rq-fact pmk-in" style="--d:3.4s"><b>1,110</b><span>leads created in 2026 carry UTMs and no Origin, France and Ayming Digital</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>One reference table turns each UTM pair into L3, and the flow reads it.</div>
+            <div class="sl-rl sl pmk-lit" style="--d:4.5s"><div class="sl-rlh"><span class="sfc-ic flow"><i data-lucide="table-2"></i></span>Lead origin · reference table<span class="pmk-ok pmk-pop" style="--d:5.4s">Updated</span></div><div class="sl-tr th"><span>Source</span><span>Medium</span><span>Origin</span><span>Origin Details</span></div><div class="sl-tr pmk-row" style="--d:4.7s"><a>chatgpt</a><span>llm</span><span class="hit">AI search</span><span class="hit">ChatGPT</span></div><div class="sl-tr pmk-row" style="--d:4.9s"><a>google</a><span>organic</span><span>Organic search</span><span>Google</span></div><div class="sl-tr pmk-row" style="--d:5.1s"><a>linkedin</a><span>social</span><span>Organic social</span><span>LinkedIn</span></div></div>
+            <div class="sl-win sl pmk-lit" style="--d:5.8s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Élisabeth Roux</div></div><span class="pmk-ok pmk-pop" style="--d:6.5s">Filled by the flow</span></div><div class="sl-tabs"><span>Activity</span><span class="on">Details</span><span>Related</span></div><div class="sl-sec">UTM</div><div class="sl-grid"><div class="sl-f"><span>utm_source_origin</span><b>chatgpt</b></div><div class="sl-f"><span>utm_medium_origin</span><b>llm</b></div></div><div class="rq-l3s"><div class="sl-sec">Qualification</div><div class="sl-grid"><div class="sl-f"><span>Origin</span><b><i class="yes pmk-pop" style="--d:6.0s">AI search</i></b></div><div class="sl-f"><span>Origin Details</span><b><i class="yes pmk-pop" style="--d:6.2s">ChatGPT</i></b></div></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 3 · EVERY CONVERSION HAS AN OPPORTUNITY ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-cv">
+      <div class="kr-badge">
+        <div class="kl"><b>Requirement 3</b> · conversion</div>
+        <div class="kh">Every conversion has an opportunity</div>
+        <div class="ks">The “Don't create an opportunity” box goes, so every converted lead opens one.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Sales converts Claire Martin and ticks the box, kept for adding a person to an opportunity already open.</div>
+            <div class="cv-stage"><div class="sl-win cv-rec pmk-fade" style="--d:0.5s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Claire Martin</div></div><div class="sl-acts"><span class="sl-btn">Edit</span><span class="sl-btn pmk-press" style="--d:0.90s">Convert</span></div></div><div class="sl-path"><span class="done">3.Assigned</span><span class="done">4.Working</span><span class="cur">7.Qualified</span><span>8.Converted</span></div><div class="sl-tabs"><span>Activity</span><span class="on">Details</span></div><div class="sl-grid sl-rec-grid"><div class="sl-f"><span>Company</span><b>Entreprise SA</b></div><div class="sl-f"><span>Lead Status</span><b>7.Qualified</b></div><div class="sl-f"><span>Email</span><b>c.martin@entreprise.fr</b></div><div class="sl-f"><span>Lead Owner</span><b>Julie Bernard</b></div></div></div><div class="cv-layer pmk-fade" style="--d:1.2s"><div class="sl-backdrop"></div><div class="sl-modal pmk-pop" style="--d:1.25s; position: relative"><div class="sl-mh">Convert Lead</div><div class="sl-mb"><div class="cv-row"><b>Account</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Entreprise SA</i></span></div><div class="cv-row"><b>Contact</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Claire Martin</i></span></div><div class="cv-row"><b>Opportunity</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Entreprise SA -</i></span></div><div class="cv-ck"><i class="sl-chk on"><b class="pmk-pop" style="--d:2.00s">✓</b></i>Don't create an opportunity upon conversion</div></div><div class="sl-mf"><span class="sl-btn neutral">Cancel</span><span class="sl-btn brand pmk-press" style="--d:2.50s">Convert</span></div></div></div></div>
+            <div class="sl-win cv-res pmk-in" style="--d:2.9s"><div class="cv-resh"><i data-lucide="circle-check"></i>Your lead has been converted</div><div class="sl-done"><div class=" pmk-pop" style="--d:3.10s"><span class="sl-ot"><i class="sfc-ic acct"><i data-lucide="building-2"></i></i>Account</span><a>Entreprise SA</a></div><div class=" pmk-pop" style="--d:3.25s"><span class="sl-ot"><i class="sfc-ic contact"><i data-lucide="contact"></i></i>Contact</span><a>Claire Martin</a></div><div class="no pmk-pop" style="--d:3.40s"><span class="sl-ot"><i class="sfc-ic opp"><i data-lucide="crown"></i></i>Opportunity</span><a>No opportunity</a></div></div></div>
+            <div class="rq-fact pmk-in" style="--d:3.7s"><b>2,651 of 3,506</b><span>leads converted in 2026 have no opportunity, France</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The box goes, the open opportunity adds its own contacts.</div>
+            <div class="cv-stage"><div class="sl-win cv-rec pmk-fade" style="--d:4.5s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Claire Martin</div></div><div class="sl-acts"><span class="sl-btn">Edit</span><span class="sl-btn pmk-press" style="--d:4.90s">Convert</span></div></div><div class="sl-path"><span class="done">3.Assigned</span><span class="done">4.Working</span><span class="cur">7.Qualified</span><span>8.Converted</span></div><div class="sl-tabs"><span>Activity</span><span class="on">Details</span></div><div class="sl-grid sl-rec-grid"><div class="sl-f"><span>Company</span><b>Entreprise SA</b></div><div class="sl-f"><span>Lead Status</span><b>7.Qualified</b></div><div class="sl-f"><span>Email</span><b>c.martin@entreprise.fr</b></div><div class="sl-f"><span>Lead Owner</span><b>Julie Bernard</b></div></div></div><div class="cv-layer pmk-fade" style="--d:5.2s"><div class="sl-backdrop"></div><div class="sl-modal pmk-pop" style="--d:5.25s; position: relative"><div class="sl-mh">Convert Lead</div><div class="sl-mb"><div class="cv-row"><b>Account</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Entreprise SA</i></span></div><div class="cv-row"><b>Contact</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Claire Martin</i></span></div><div class="cv-row"><b>Opportunity</b><span><i class="sl-radio on"></i>Create New<i class="sl-in">Entreprise SA -</i></span></div><div class="cv-ck gone" style="--d:5.60s"><i class="sl-chk"></i>Don't create an opportunity upon conversion</div></div><div class="sl-mf"><span class="sl-btn neutral">Cancel</span><span class="sl-btn brand pmk-press" style="--d:6.50s">Convert</span></div></div></div></div>
+            <div class="sl-win cv-res pmk-in" style="--d:6.7s"><div class="cv-resh"><i data-lucide="circle-check"></i>Your lead has been converted</div><div class="sl-done"><div class=" pmk-pop" style="--d:6.90s"><span class="sl-ot"><i class="sfc-ic acct"><i data-lucide="building-2"></i></i>Account</span><a>Entreprise SA</a></div><div class=" pmk-pop" style="--d:7.05s"><span class="sl-ot"><i class="sfc-ic contact"><i data-lucide="contact"></i></i>Contact</span><a>Claire Martin</a></div><div class="yes pmk-pop" style="--d:7.20s"><span class="sl-ot"><i class="sfc-ic opp"><i data-lucide="crown"></i></i>Opportunity</span><a>Entreprise SA -</a></div></div></div>
+            <div class="sl-rl cv-roles pmk-in" style="--d:7.5s"><div class="sl-rlh"><span class="sfc-ic opp"><i data-lucide="crown"></i></span><span>Contact Roles (<span data-pm-start="1" data-pm-at="8.1">2</span>)</span><span class="sl-btn pmk-press" style="--d:7.8s">Add Contact Roles</span></div><div class="sl-tr"><a>Claire Martin</a><span>Decision Maker</span><span class="cv-yes">✓</span></div><div class="sl-tr new pmk-row" style="--d:8.1s"><a>Paul Lefèvre</a><span>Influencer</span><span></span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 4 · AN EVENT JOINS ITS CAMPAIGN ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-ev">
+      <div class="kr-badge">
+        <div class="kl"><b>Requirement 4</b> · influence</div>
+        <div class="kh">An event joins its campaign</div>
+        <div class="ks">A flow adds the person to the event's campaign, so the campaign counts in the influence.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>A telepro books a meeting with Claire Martin and picks the campaign as its primary source.</div>
+            <div class="sl sl-modal pmk-in" style="--d:.5s"><div class="sl-mh">New Event</div><div class="ev-grid"><div class="ev-f"><span>Subject</span><span class="sl-in"><span class="pmk-type" style="--d:.9s; --t:.35s; --n:7">Meeting</span></span></div><div class="ev-f"><span>Name</span><span class="sl-in"><span class="sl-pill pmk-pop" style="--d:1.3s"><i class="sfc-ic contact"><i data-lucide="contact"></i></i>Claire Martin</span></span></div><div class="ev-f"><span>Start</span><span class="sl-in"><span class="pmk-fade" style="--d:1.6s">12/03/2026 10:00</span></span></div><div class="ev-f hl"><span>Primary Campaign Source</span><span class="sl-in"><span class="sl-pill pmk-pop" style="--d:1.9s"><i class="sfc-ic camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span></span></div></div><div class="sl-mf"><span class="sl-btn neutral">Cancel</span><span class="sl-btn brand pmk-press" style="--d:2.4s">Save</span></div></div>
+            <div class="sl sl-page pmk-in" style="--d:2.7s"><div class="sl-win"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">SDR prospecting Q2</div></div></div><div class="sl-tabs"><span class="on">Related</span><span>Details</span></div></div><div class="ev-rls"><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic evt"><i data-lucide="calendar"></i></span>Activity History (1)</div><div class="sl-tr"><a>Meeting</a><span>Claire Martin</span></div></div><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic camp"><i data-lucide="users"></i></span>Campaign Members (0)</div><div class="sl-empty pmk-pop" style="--d:3.2s">No items to display</div></div></div></div>
+            <div class="rq-fact pmk-in" style="--d:3.5s"><b>3,259 of 10,007</b><span>events logged on a France campaign in 2026 belong to a person who is not a member</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>A flow adds the person to the campaign as soon as the event is saved.</div>
+            <div class="sl ev-canvas pmk-in" style="--d:4.5s"><div class="ev-cvh"><i data-lucide="workflow"></i>Flow · Event saved</div><div class="ev-cvb"><div class="sl-node pmk-pop" style="--d:4.7s"><span class="sl-ni start"><i data-lucide="play"></i></span><div><small>Start</small><b>Event created or updated</b></div></div><div class="sl-conn pmk-fade" style="--d:4.9s"></div><div class="sl-node pmk-pop" style="--d:5.0s"><span class="sl-ni dec"><i data-lucide="split"></i></span><div><small>Decision</small><b>Primary Campaign Source filled, person not a member</b></div></div><div class="sl-conn pmk-fade" style="--d:5.2s"></div><div class="sl-node pmk-pop" style="--d:5.3s"><span class="sl-ni rec"><i data-lucide="file-plus"></i></span><div><small>Create Records</small><b>Campaign Member</b></div></div></div></div>
+            <div class="sl sl-page pmk-in" style="--d:5.7s"><div class="sl-win"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">SDR prospecting Q2</div></div></div><div class="sl-tabs"><span class="on">Related</span><span>Details</span></div></div><div class="ev-rls"><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic evt"><i data-lucide="calendar"></i></span>Activity History (1)</div><div class="sl-tr"><a>Meeting</a><span>Claire Martin</span></div></div><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic camp"><i data-lucide="users"></i></span>Campaign Members (1)</div><div class="sl-tr pmk-row" style="--d:6.1s"><a>Claire Martin</a><span>Contact</span></div></div></div></div>
+            <span class="ev-note pmk-pop" style="--d:6.5s"><i data-lucide="circle-check"></i>Counts in Campaign Influence</span>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 5 · EVERY CAMPAIGN CARRIES ITS COST (the Planning section is empty on every France campaign of 2026) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-cost">
+      <div class="kr-badge">
+        <div class="kl"><b>Requirement 5</b> · costs</div>
+        <div class="kh">Every campaign carries its cost</div>
+        <div class="ks">Budgeted and actual cost go in the campaign's Planning section, the cost behind every ROI.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Marketing launches the barometer whitepaper and leaves its Planning section empty.</div>
+            <div class="sl-win sl pmk-lit" style="--d:0.5s"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">Barometer whitepaper 2026</div></div></div><div class="sl-tabs"><span>Related</span><span class="on">Details</span></div><div class="sl-sec">Planning</div><div class="sl-grid"><div class="sl-f"><span>Num Sent in Campaign</span><b>0</b></div><div class="sl-f"><span>Budgeted Cost in Campaign</span><b><i class="no pmk-pop" style="--d:1.3s">empty</i></b></div><div class="sl-f"><span>Expected Response (%)</span><b>0.00%</b></div><div class="sl-f"><span>Actual Cost in Campaign</span><b><i class="no pmk-pop" style="--d:1.5s">empty</i></b></div></div></div>
+            <div class="cost-roi pmk-in" style="--d:2.0s"><span>Campaign ROI</span><b>€20,000</b><em>÷</em><b class="no">?</b><em>=</em><b class="no">cannot be computed</b></div>
+            <div class="rq-fact pmk-in" style="--d:2.6s"><b>0 of 266</b><span>France campaigns created in 2026 carry an actual cost, 31 a budgeted cost</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The owner fills the budget when creating the campaign and the actual cost when it ends.</div>
+            <div class="sl-win sl pmk-lit" style="--d:4.6s"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">Barometer whitepaper 2026</div></div></div><div class="sl-tabs"><span>Related</span><span class="on">Details</span></div><div class="sl-sec">Planning</div><div class="sl-grid"><div class="sl-f"><span>Num Sent in Campaign</span><b>0</b></div><div class="sl-f"><span>Budgeted Cost in Campaign</span><b><i class="yes pmk-pop" style="--d:5.2s">€10,000</i></b></div><div class="sl-f"><span>Expected Response (%)</span><b>0.00%</b></div><div class="sl-f"><span>Actual Cost in Campaign</span><b><i class="yes pmk-pop" style="--d:5.6s">€10,000</i></b></div></div></div>
+            <div class="cost-roi pmk-in" style="--d:5.9s"><span>Campaign ROI</span><b>€20,000</b><em>÷</em><b class="ok">€10,000</b><em>=</em><b class="ok">×2</b></div>
+            <div class="cost-teams pmk-fade" style="--d:6.4s"><span>Every team that runs campaigns</span><span class="pmk-team  pmk-pop" style="--d:6.60s">Marketing</span><span class="pmk-team par pmk-pop" style="--d:6.75s">Partner</span><span class="pmk-team tel pmk-pop" style="--d:6.90s">Telepro</span><span class="pmk-team sal pmk-pop" style="--d:7.05s">Sales</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== TWO LEVELS OF COST (external cost per campaign, loaded salaries per department, no flat multiplier) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="cost2">
+      <div class="kr-badge">
+        <div class="kl"><b>Precision</b> · costs</div>
+        <div class="kh">Two levels of cost</div>
+        <div class="ks">External cost lives on the campaign, salaries on the department.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="cost2">
+          <div class="ex-c pmk-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">1 · The campaign</div><div class="sfo-n">Every month</div></div></div>
+            <div class="c2-sub">Actual cost carries only the campaign’s external spend.</div>
+            <div class="ex-k pmk-row" style="--d:0.4s"><span>Actual cost<small>media, event fees, agency, dedicated tool</small></span><b>Planning</b></div><div class="ex-k pmk-row" style="--d:0.7s"><span>CPL<small>cost ÷ first-touch leads</small></span><b>€ / lead</b></div><div class="ex-k pmk-row" style="--d:1.0s"><span>Cost per opportunity<small>cost ÷ opportunities touched</small></span><b>€ / opp.</b></div><div class="ex-k tot pmk-row" style="--d:1.3s"><span>Campaign ROI<small>its share of influenced TCV ÷ its cost</small></span><b>×2</b></div>
+          </div>
+          <div class="ex-c pmk-in" style="--d:1.8s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="users"></i></span><div><div class="sfo-k">2 · The department</div><div class="sfo-n">Every month, read over 12 months</div></div></div>
+            <div class="c2-sub">Salaries enter once, at department level.</div>
+            <div class="ex-k pmk-row" style="--d:2.1s"><span>Loaded salaries ÷ 12<small>or the month’s actual payroll</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.4s"><span>External spend of the month<small>campaigns, tools and agencies not tied to one</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.7s"><span>= Cost of the month</span><b>Σ</b></div><div class="ex-k tot pmk-row" style="--d:3.0s"><span>Influence ROI<small>signed influenced TCV ÷ 12 months of cost, offset by one sales cycle (about 3 months)</small></span><b>×4.04</b></div>
+          </div>
+          <div class="ex-c warn pmk-in" style="--d:4.0s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="circle-alert"></i></span><div><div class="sfo-k">3 · Why not ×3 per campaign</div><div class="sfo-n">Time does not follow spend</div></div></div>
+            <div class="bud-r th"><span>Campaign</span><span>External cost</span><span>With ×3</span><span>Team time</span></div><div class="bud-r pmk-row" style="--d:4.6s"><span>Webinar</span><b>€2,000</b><b class="bud-bad">€6,000</b><em>high</em></div><div class="bud-r pmk-row" style="--d:4.9s"><span>LinkedIn Ads</span><b>€20,000</b><b class="bud-bad">€60,000</b><em>low</em></div>
+            <div class="c2-sub pmk-fade" style="--d:5.4s">The ranking does not move, and the webinar stays <b>almost free</b> although it takes the most time. If salaries must be split, split them <b class="ok">by channel</b>, on a quarterly estimate of the team’s time.</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 6 · BUDGETS ON INFLUENCED TCV (the CEO's France example, every department divides the total TCV today) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-bud">
+      <div class="kr-badge">
+        <div class="kl"><b>Requirement 6</b> · budgets</div>
+        <div class="kh">Budgets on influenced TCV</div>
+        <div class="ks">From 1 January, each department under total S&amp;M computes its ROI on its influenced TCV, not the total TCV.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Each department divides the whole France new-business TCV by its own costs.</div>
+            <div class="bud pmk-lit" style="--d:.5s">
+              <div class="bud-h">ROI on total TCV<small>M€</small></div>
+              <div class="bud-r th"><span>Department</span><span>Total TCV</span><span>Costs</span><span>ROI</span></div>
+              <div class="bud-r pmk-row" style="--d:0.80s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b>70</b><em>13.5</em><b class="bud-bad pmk-pop" style="--d:1.00s">×5.2</b></div><div class="bud-r pmk-row" style="--d:1.05s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b>70</b><em>2.6</em><b class="bud-bad pmk-pop" style="--d:1.25s">×26.9</b></div><div class="bud-r pmk-row" style="--d:1.30s"><span class="bud-d"><i class="pmk-team par">Partnerships</i></span><b>70</b><em>0.9</em><b class="bud-bad pmk-pop" style="--d:1.50s">×77.8</b></div><div class="bud-r pmk-row" style="--d:1.55s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b>70</b><em>1.0</em><b class="bud-bad pmk-pop" style="--d:1.75s">×70.0</b></div><div class="bud-r pmk-row" style="--d:1.80s"><span class="bud-d"><i class="pmk-team ics">ICS</i></span><b>70</b><em>0.5</em><b class="bud-bad pmk-pop" style="--d:2.00s">×140.0</b></div>
+              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Claimed</i></span><b class="bud-bad pmk-pop" style="--d:2.4s">350</b><em>18.5</em><b></b></div>
+            </div>
+            <div class="rq-fact pmk-in" style="--d:2.8s"><b>350 for 70</b><span>the same TCV counted by five departments, every ROI inflated</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The budget gives each department the share of TCV the influence model expects.</div>
+            <div class="bud pmk-lit" style="--d:4.5s">
+              <div class="bud-h">ROI on influenced TCV<small>M€</small></div>
+              <div class="bud-r th"><span>Department</span><span>Expected %</span><span>Influenced TCV</span><span>Costs</span><span>Influence ROI</span></div>
+              <div class="bud-r pmk-row" style="--d:4.60s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b class="bud-pct pmk-pop" style="--d:4.80s">75%</b><b>52.5</b><em>13.5</em><b class="bud-ok">×3.89</b></div><div class="bud-r pmk-row" style="--d:4.85s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b class="bud-pct pmk-pop" style="--d:5.05s">15%</b><b>10.5</b><em>2.6</em><b class="bud-ok">×4.04</b></div><div class="bud-r pmk-row" style="--d:5.10s"><span class="bud-d"><i class="pmk-team par">Partnerships</i></span><b class="bud-pct pmk-pop" style="--d:5.30s">2%</b><b>1.4</b><em>0.9</em><b class="bud-ok">×1.56</b></div><div class="bud-r pmk-row" style="--d:5.35s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b class="bud-pct pmk-pop" style="--d:5.55s">5%</b><b>3.5</b><em>1.0</em><b class="bud-ok">×3.50</b></div><div class="bud-r pmk-row" style="--d:5.60s"><span class="bud-d"><i class="pmk-team ics">ICS</i></span><b class="bud-pct pmk-pop" style="--d:5.80s">3%</b><b>2.1</b><em>0.5</em><b class="bud-ok">×4.20</b></div>
+              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Total</i></span><b>100%</b><b>70.0</b><em>18.5</em><b class="bud-ok">×3.78</b></div>
+            </div>
+            <div class="bud-note pmk-fade" style="--d:6.4s"><i></i>Budget hypothesis, production will show the real split</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== ONE CONTRACT, THREE READINGS (explains the budget rule: the salesperson counts all of it, the campaigns and the departments share it) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="ex3">
+      <div class="kr-badge">
+        <div class="kl"><b>Example</b> · one contract</div>
+        <div class="kh">One contract, three readings</div>
+        <div class="ks">The salesperson counts all of it, the campaigns and the departments share it.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="ex3">
+          <div class="ex-c pmk-in" style="--d:.1s">
+            <div class="sfo-h"><span class="sfo-ic tgt"><i data-lucide="target"></i></span><div><div class="sfo-k">1 · Salesperson target</div><div class="sfo-n">Julie Bernard · Sales</div></div></div>
             <div class="obj-big"><span>Counted toward her target</span><b data-pm-to="100000" data-pm-delay=".5" data-pm-dur="1" data-pm-fmt="eur0">€100,000</b></div>
-            <div class="obj-bar"><i class="tgt" style="--d:.5s"></i></div>
-            <div class="obj-r"><span>Opportunity</span><b>Entreprise SA</b></div><div class="obj-r"><span>Stage</span><b>Signed (P4)</b></div><div class="obj-r"><span>Share counted</span><b>100%</b></div><div class="obj-r"><span>Influencing campaigns</span><b>4</b></div>
+            <div class="obj-bar"><i class="tgt"></i></div>
+            <div class="obj-r"><span>Opportunity</span><b>Entreprise SA</b></div><div class="obj-r"><span>Stage</span><b>Signed (P4)</b></div><div class="obj-r"><span>Share counted</span><b>100%</b></div>
           </div>
-          <div class="obj-c obj-roi pmk-in" style="--d:1.2s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">Opportunity · Campaign Influence (4)</div><div class="sfo-n">Entreprise SA</div></div></div>
-            <div class="obj-big"><span>Split across the campaigns</span><b data-rise="0,25000,50000,75000,100000" data-rise-at="1.8,2.1,2.4,2.7" data-pm-fmt="eur0">€100,000</b></div>
-            <div class="obj-h"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div><div class="obj-r roi pmk-row" style="--d:1.8s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer whitepaper</span><span class="pmk-team">Marketing</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.2s">÷&nbsp;€12,500</span><b class="roi-v pmk-pop" style="--d:3.4s">×2</b></div><div class="obj-r roi pmk-row" style="--d:2.1s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Partner breakfast</span><span class="pmk-team par">Partner</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.4s">÷&nbsp;€5,000</span><b class="roi-v pmk-pop" style="--d:3.6s">×5</b></div><div class="obj-r roi pmk-row" style="--d:2.4s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR prospecting Q2</span><span class="pmk-team tel">Telepro</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.6s">÷&nbsp;€6,250</span><b class="roi-v pmk-pop" style="--d:3.8s">×4</b></div><div class="obj-r roi pmk-row" style="--d:2.7s"><span class="obj-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Target accounts 2026</span><span class="pmk-team sal">Sales</span><b>€25,000</b><span class="cost pmk-pop" style="--d:3.8s">÷&nbsp;€25,000</span><b class="roi-v pmk-pop" style="--d:4.0s">×1</b></div>
+          <span class="ex-arrow pmk-fade" style="--d:1.4s">&rarr;</span>
+          <div class="ex-c pmk-in" style="--d:1.4s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="crown"></i></span><div><div class="sfo-k">2 · Campaign ROI · Campaign Influence (5)</div><div class="sfo-n">Entreprise SA</div></div></div>
+            <div class="obj-big"><span>Split across the campaigns</span><b>€100,000</b></div>
+            <div class="ex-r th"><span>Campaign</span><span></span><span>Share</span><span>Cost</span><span>ROI</span></div>
+            <div class="ex-r mk pmk-row" style="--d:1.9s"><span class="ex-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Barometer</span><span class="pmk-team ">Marketing</span><b>€20,000</b><em>÷&nbsp;€10,000</em><b class="ex-roi">×2</b></div><div class="ex-r mk pmk-row" style="--d:2.1s"><span class="ex-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Webinar</span><span class="pmk-team ">Marketing</span><b>€20,000</b><em>÷&nbsp;€5,000</em><b class="ex-roi">×4</b></div><div class="ex-r pmk-row" style="--d:2.3s"><span class="ex-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Breakfast</span><span class="pmk-team par">Partner</span><b>€20,000</b><em>÷&nbsp;€4,000</em><b class="ex-roi">×5</b></div><div class="ex-r pmk-row" style="--d:2.5s"><span class="ex-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>SDR Q2</span><span class="pmk-team tel">Telepro</span><b>€20,000</b><em>÷&nbsp;€5,000</em><b class="ex-roi">×4</b></div><div class="ex-r pmk-row" style="--d:2.7s"><span class="ex-n"><i class="pmk-camp"><i data-lucide="megaphone"></i></i>Key accounts</span><span class="pmk-team sal">Sales</span><b>€20,000</b><em>÷&nbsp;€20,000</em><b class="ex-roi">×1</b></div>
           </div>
+          <span class="ex-arrow pmk-fade" style="--d:3.4s">&rarr;</span>
+          <div class="ex-c pmk-in" style="--d:3.4s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="users"></i></span><div><div class="sfo-k">3 · Department ROI</div><div class="sfo-n">Marketing</div></div></div>
+            <div class="obj-big"><span>Its two campaigns on this contract</span><b>€40,000</b></div>
+            <div class="ex-k pmk-row" style="--d:4.0s"><span>Over the year<small>15% of the 70 M€ France TCV</small></span><b>10.5 M€</b></div>
+            <div class="ex-k pmk-row" style="--d:4.4s"><span>÷ Marketing costs</span><b>2.6 M€</b></div>
+            <div class="ex-k tot pmk-row" style="--d:4.8s"><span>= Influence ROI</span><b class="pmk-pop" style="--d:5.0s">×4.04</b></div>
+            <div class="ex-note pmk-fade" style="--d:5.4s">The Marketing row of the budget table, slide before.</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== DIVIDER BONUS ========== -->
+    <section class="slide" data-chapter="precisions">
+      <div class="slide-inner insights">
+        <h1 class="slide-title compact">Bonus</h1>
+        <div class="prc one">
+          <div class="kr pmk-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="flag"></i></div><div class="kl"><b>Bonus</b> · credit</div><div class="kh">First-campaign bonus</div><div class="ks">The contact's first campaign counts double while it stays in the influence.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1683,7 +2184,7 @@
     <!-- ========== FIRST-CAMPAIGN BONUS (weight 2 while it stays in the influence, equal split afterwards) ========== -->
     <section class="slide" data-chapter="precisions" data-pm="bonus">
       <div class="kr-badge">
-        <div class="kl"><b>Clarification 3</b> · credit</div>
+        <div class="kl"><b>Bonus</b> · credit</div>
         <div class="kh">First-campaign bonus</div>
         <div class="ks">The contact's first campaign counts double while it stays in the influence.</div>
       </div>
