@@ -1027,6 +1027,16 @@
     .bud-r .bud-pct { background: #fff3a6; border-radius: 4px; padding: 1px 6px; color: var(--ay-dark); }
     .bud-note { display: flex; align-items: center; gap: 7px; height: 20px; flex: none; font-size: 11.5px; font-weight: 600; color: var(--ay-gray); }
     .bud-note i { width: 14px; height: 12px; border-radius: 3px; background: #fff3a6; border: 1px solid #e6d36a; flex: none; }
+    .bud-r .bud-pct.ms { background: none; }
+    .bud-fn h6 { margin: 0 0 1px; font-size: 10px; font-weight: 800; color: var(--ay-dark); display: flex; align-items: center; gap: 6px; }
+    .bud-fn h6 i { width: 12px; height: 10px; border-radius: 3px; background: #fff3a6; border: 1px solid #e6d36a; flex: none; }
+    .bud-fn { display: grid; gap: 2px; flex: none; font-size: 10px; font-weight: 600; line-height: 1.35; color: var(--ay-gray); }
+    .bud-fn p { margin: 0; display: grid; grid-template-columns: 18px 1fr; }
+    .bud-fn b { color: var(--ay-dark); font-weight: 800; }
+    .bud-r .bud-pct { position: relative; }
+    .bud-pct sup { position: absolute; left: 100%; top: -1px; margin-left: 1px; font-size: 9px; font-weight: 800; color: var(--ay-gray); }
+    .slide[data-pm="rq-bud"] .bud-note { height: auto; align-items: flex-start; line-height: 1.35; }
+    .slide[data-pm="rq-bud"] .bud-note i { margin-top: 2px; }
     .slide[data-pm="rq-bud"] .slide-inner.insights { padding-top: 100px; }
     /* one contract, three readings: the salesperson's target, the campaigns' ROI, the departments' share */
     .ex3 { display: grid; grid-template-columns: minmax(0, 250px) 26px minmax(0, 1fr) 26px minmax(0, 250px); align-items: start; width: 100%; max-width: 1140px; margin: 0 auto; text-align: left; }
@@ -1154,6 +1164,15 @@
     /* L3 slide: a Lead record page in Lightning, the origin UTMs as one section and L3 as a distinct, outlined section */
     .slide[data-pm="rq-l3"] .slide-inner { padding-top: 102px; }
     .slide[data-pm="rq-l3"] .rq-col { gap: 9px; }
+    .slide[data-pm="rq-l3"] .ev-canvas { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; flex: none; }
+    .slide[data-pm="rq-l3"] .ev-cvh { display: flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; font-size: 11px; font-weight: 700; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; }
+    .slide[data-pm="rq-l3"] .ev-cvh svg { width: 13px; height: 13px; color: #0176d3; }
+    .slide[data-pm="rq-l3"] .ev-cvb { padding: 6px 10px; background-color: #fafaf9; background-image: radial-gradient(#d8d8d8 1px, transparent 1px); background-size: 12px 12px; }
+    .slide[data-pm="rq-l3"] .ev-cvb { display: flex; align-items: stretch; padding: 7px 8px; }
+    .slide[data-pm="rq-l3"] .ev-cvb .sl-node { flex: 1; min-width: 0; width: auto; margin: 0; padding: 4px 7px; gap: 6px; align-items: center; }
+    .slide[data-pm="rq-l3"] .ev-cvb .sl-node small { font-size: 8.5px; line-height: 1.15; }
+    .slide[data-pm="rq-l3"] .ev-cvb .sl-node b { display: block; font-size: 10px; line-height: 1.2; }
+    .slide[data-pm="rq-l3"] .ev-cvb .sl-conn { flex: none; width: 8px; height: 2px; margin: auto 0; }
     .slide[data-pm="rq-l3"] .sl-win { flex: none; }
     .slide[data-pm="rq-l3"] .pmk-url { height: 34px; }
     .slide[data-pm="rq-l3"] .sl-f > b > i { display: inline-block; font-style: normal; }
@@ -1218,6 +1237,231 @@
     .rq-res > span { display: inline-flex; align-items: center; gap: 6px; height: 26px; box-sizing: border-box; padding: 0 10px 0 4px; border-radius: 8px; background: #fff; border: 1px solid #e5e7eb; font-size: 11px; font-weight: 700; color: var(--ay-dark); white-space: nowrap; }
     .rq-res .sfc-ic { width: 18px; height: 18px; border-radius: 4px; }
     .rq-res .sfc-ic svg { width: 11px; height: 11px; }
+
+    /* ===== Où en est-on (progress chapter): gap board, timeline, UTM chain, Power BI placeholders ===== */
+    .slide[data-pm^="av-"] .slide-inner.insights.wide { width: 1220px; max-width: 1220px; }
+    .av-board { display: grid; grid-template-columns: minmax(0, 2.4fr) repeat(4, minmax(0, 1.05fr)); gap: 12px; width: 1160px; margin: 0 auto; text-align: left; }
+    .av-col { background: #f1f4f7; border-radius: 12px; padding: 8px 10px 10px; height: 326px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; }
+    .av-colh { display: flex; align-items: center; gap: 6px; height: 22px; font-size: 10.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: var(--ay-dark); white-space: nowrap; }
+    .av-colh .av-dot { display: none; }
+    .av-colh { color: var(--s); }
+    .av-colh .av-n { color: var(--s); background: color-mix(in srgb, var(--s) 14%, #fff); margin-left: auto; flex: none; min-width: 22px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 0; }
+    .av-cards { display: flex; flex-direction: column; gap: 6px; }
+    .av-col.open .av-cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5px 6px; }
+    .av-card { background: #fff; border-radius: 7px; box-shadow: 0 1px 2px rgba(15,23,42,.1);  padding: 5px 8px 5px 7px; font-size: 11px; line-height: 1.3; color: var(--ay-text); box-sizing: border-box; }
+    .av-col.open .av-card { display: flex; align-items: center; gap: 6px; height: 26px; padding-top: 0; padding-bottom: 0; }
+    .av-card b { font-size: 9.5px; font-weight: 800; color: var(--ay-gray); margin-right: 4px; }
+    .av-col.open .av-card .av-t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .av-col.open .av-card .av-a { flex: none; font-size: 9.5px; color: var(--ay-light); }
+    .av-d { display: block; margin-top: 3px; font-size: 9.5px; color: var(--ay-gray); white-space: nowrap; }
+    .av-d em { font-style: normal; font-weight: 800; color: var(--s, var(--ay-gray)); }
+    .av-col.out .av-card { opacity: .62; }
+    .av-col.out .av-d em { color: var(--ay-gray); }
+    .av-leg { display: flex; justify-content: center; gap: 18px; margin-top: 10px; font-size: 11px; color: var(--ay-gray); white-space: nowrap; }
+    .av-leg span { display: flex; align-items: center; gap: 6px; }
+    .av-leg i { width: 12px; height: 4px; border-radius: 2px; background: var(--c); }
+
+    /* calendar: four month grids, each with its events listed under it */
+    .av-months { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; width: 1140px; margin: 0 auto; text-align: left; }
+    .av-mon { min-width: 0; }
+    .av-mh { font-size: 13px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: var(--ay-dark); padding-bottom: 5px; border-bottom: 2px solid var(--ay-dark); margin-bottom: 5px; }
+    .av-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 1px; justify-items: center; }
+    .av-wd { font-size: 9.5px; font-weight: 800; color: var(--ay-light); height: 14px; }
+    .av-day { position: relative; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10.5px; color: #94a3b8; font-variant-numeric: tabular-nums; }
+    .av-day i { position: absolute; inset: 0; border-radius: 50%; background: var(--k); color: #fff; font-style: normal; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .av-day i.plan { background: #fff; color: var(--k); box-shadow: inset 0 0 0 1.5px var(--k); }
+    .av-day i.today { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--ay-primary); }
+    .av-evs { display: flex; flex-direction: column; gap: 5px; margin-top: 9px; }
+    .av-ev { display: flex; align-items: center; gap: 8px; min-height: 22px; }
+    .av-evd { flex: none; width: 22px; height: 22px; border-radius: 6px; background: var(--k); color: #fff; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .av-ev.plan .av-evd { background: #fff; color: var(--k); box-shadow: inset 0 0 0 1.5px var(--k); }
+    .av-ev > div { min-width: 0; font-size: 11.5px; line-height: 1.3; color: var(--ay-text); }
+    .av-ev b { display: block; font-weight: 800; color: var(--ay-dark); }
+    .av-ev > div > span { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
+    .av-ev em { font-style: normal; font-size: 10px; font-weight: 800; color: var(--k); background: color-mix(in srgb, var(--k) 12%, #fff); border-radius: 8px; padding: 1px 7px; white-space: nowrap; }
+    .av-ev i { font-style: italic; font-size: 10.5px; color: var(--ay-gray); }
+    .av-cleg { display: flex; justify-content: center; gap: 18px; margin-top: 10px; font-size: 11px; color: var(--ay-gray); white-space: nowrap; }
+    .av-cleg span { display: flex; align-items: center; gap: 6px; }
+    .av-cleg i { width: 10px; height: 10px; border-radius: 50%; background: var(--k); }
+
+    /* the Origin flow: Salesforce flow canvas and the v3 workbook */
+    .av-fl { display: grid; grid-template-columns: 560px 520px; gap: 26px; width: 1106px; margin: 0 auto; align-items: start; text-align: left; }
+    .av-canvas { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; }
+    .av-cvh { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; font-size: 11.5px; font-weight: 700; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; }
+    .av-cvh svg { width: 13px; height: 13px; color: #0176d3; }
+    .av-cvh span { margin-left: auto; font-size: 10px; color: #2e844a; background: #ebf7e6; border-radius: 10px; padding: 2px 8px; }
+    .av-cvb { padding: 8px 10px 8px; background-color: #fafaf9; background-image: radial-gradient(#d8d8d8 1px, transparent 1px); background-size: 12px 12px; }
+    .av-cvb > .sl-node { min-width: 270px; padding: 3px 10px; }
+    .av-cvb .sl-conn { height: 7px; }
+    .av-split { position: relative; width: 66.6%; height: 10px; margin: 0 auto; border: 2px solid #9e9e9e; border-bottom: 0; border-radius: 4px 4px 0 0; box-sizing: border-box; }
+    .av-split::after { content: ""; position: absolute; left: 50%; top: -10px; height: 20px; margin-left: -1px; border-left: 2px solid #9e9e9e; }
+    .av-fcs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .av-fc { display: flex; flex-direction: column; align-items: stretch; }
+    .av-fcl { align-self: center; margin: 3px 0 6px; font-size: 9.5px; font-weight: 800; color: #444; background: #fff; border: 1px solid #dddbda; border-radius: 9px; padding: 1px 8px; white-space: nowrap; }
+    .av-fn.sl-node { position: relative; width: 100%; min-width: 0; margin: 0; padding: 4px 8px; box-sizing: border-box; align-items: flex-start; }
+    .av-fn b { font-size: 10px; line-height: 1.2; }
+    .av-fn small { font-size: 8.5px; }
+    .av-fn .sl-ni.upd { background: #ff538a; }
+    .av-fn.chg { border-color: var(--ay-primary); box-shadow: 0 0 0 2px rgba(17,169,230,.22); }
+    .av-fn.dim { opacity: .55; }
+    .av-fn s { display: block; font-size: 9.5px; color: #ba0517; }
+    .av-fc .sl-conn { height: 6px; }
+    .av-bdg { position: absolute; top: -9px; right: -6px; display: flex; align-items: center; gap: 4px; height: 17px; padding: 0 7px 0 2px; border-radius: 9px; background: var(--ay-primary); color: #fff; font-size: 8.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; white-space: nowrap; }
+    .av-bdg b { width: 13px; height: 13px; border-radius: 50%; background: #fff; color: var(--ay-primary); display: flex; align-items: center; justify-content: center; font-size: 9px; line-height: 1; }
+    .av-mail { margin-top: 5px; display: flex; align-items: center; gap: 5px; font-size: 9.5px; color: #706e6b; }
+    .av-mail svg { width: 11px; height: 11px; flex: none; }
+    .av-xl { background: #fff; border: 1px solid #d6d6d6; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,.08); font-size: 10.5px; color: #1f2937; }
+    .av-xlh { display: flex; align-items: center; gap: 7px; height: 26px; padding: 0 10px; background: #217346; color: #fff; font-size: 11.5px; font-weight: 700; }
+    .av-xlh svg { width: 14px; height: 14px; }
+    .av-xlh span { margin-left: auto; font-size: 10px; background: rgba(255,255,255,.18); padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+    .av-xl .new { --c: #076b54; --b: #e6f8f2; } .av-xl .mod { --c: #9a5b00; --b: #fff1d6; }
+    .av-xl .del { --c: #ba0517; --b: #fef1ee; } .av-xl .same { --c: #6b7280; --b: #f1f4f7; }
+    .av-xcs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding: 6px 10px; border-bottom: 1px solid #e1e1e1; }
+    .av-xc { display: flex; align-items: baseline; gap: 5px; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; color: var(--c); background: var(--b); white-space: nowrap; }
+    .av-xc b { font-size: 17px; }
+    .av-xr { display: grid; grid-template-columns: 70px 72px minmax(0, 1fr) minmax(0, 1fr) 80px; gap: 6px; align-items: center; min-height: 26px; padding: 1px 10px; border-bottom: 1px solid #eef0f2; box-sizing: border-box; }
+    .av-xr.th { min-height: 24px; background: #f3f3f3; font-weight: 700; color: #444; font-size: 9.5px; }
+    .av-xr > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .av-xr s { display: block; font-size: 9px; color: #9ca3af; line-height: 1.1; }
+    .av-xr em { font-style: normal; font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 8px; color: var(--c); background: var(--b); }
+    .av-xr.del > span:nth-child(-n+2) { color: #9ca3af; }
+    .av-xt { display: flex; gap: 2px; padding: 0 6px; height: 24px; align-items: stretch; background: #f3f3f3; border-top: 1px solid #d6d6d6; font-size: 9.5px; }
+    .av-xt span { display: flex; align-items: center; padding: 0 9px; color: #444; white-space: nowrap; }
+    .av-xt span.on { background: #fff; color: #217346; font-weight: 800; box-shadow: inset 0 -2px 0 #217346; }
+
+    /* Power BI placeholders */
+    .av-pbi { width: 1080px; margin: 0 auto; text-align: left; }
+    .av-pbi .pbi-top { position: relative; }
+    .av-pub { position: absolute; left: 330px; top: 50%; margin-top: -11px; height: 22px; display: flex; align-items: center; gap: 6px; padding: 0 10px; border-radius: 11px; background: #e6f8f2; color: #076b54; font-size: 10.5px; font-weight: 800; white-space: nowrap; }
+    .av-pub svg { width: 12px; height: 12px; }
+    .av-illu { position: absolute; right: 12px; top: 50%; margin-top: -9px; font-size: 10px; font-weight: 700; color: #c8c6c4; font-style: italic; }
+    .av-blk { margin-top: 0; }
+    .av-bt { font-size: 10.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: #605e5c; margin: 0 0 5px 2px; }
+    .av-tiles { display: grid; gap: 8px; }
+    .av-tiles.t3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .av-tiles.t6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .av-tiles.t4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .av-tile { position: relative; background: #fff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.08); height: 52px; padding: 6px 10px; box-sizing: border-box; overflow: hidden; }
+    .av-tt { font-size: 10px; font-weight: 700; color: #605e5c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .av-tv { font-size: 19px; font-weight: 700; color: #252423; line-height: 1.25; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .av-ph { position: absolute; left: 6px; right: 6px; bottom: 5px; top: 20px; border: 1.5px dashed #c8c6c4; border-radius: 5px; background: #faf9f8; display: flex; flex-direction: column; justify-content: center; padding: 0 8px; box-sizing: border-box; }
+    .av-ph span { font-size: 9.5px; font-weight: 800; color: #605e5c; white-space: nowrap; }
+    .av-ph em { font-style: normal; font-size: 9.5px; color: #a19f9d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .av-tile .av-tv.later { position: absolute; left: 10px; top: 18px; }
+    .av-tabs { display: flex; gap: 2px; margin-top: 4px; background: #fff; border-top: 1px solid #edebe9; padding: 0 8px; height: 30px; align-items: stretch; }
+    .av-tab { position: relative; display: flex; align-items: center; gap: 6px; padding: 0 11px; font-size: 10.5px; font-weight: 600; color: #605e5c; white-space: nowrap; }
+    .av-tab.on { color: #252423; font-weight: 800; box-shadow: inset 0 -2px 0 #118dff; }
+    .av-tab i { width: 8px; height: 8px; border-radius: 50%; background: var(--s); flex: none; }
+    .av-tab i + i { position: absolute; left: 11px; top: 50%; margin-top: -4px; }
+    .av-tab .p { --s: #f59f00; } .av-tab .w { --s: #c8c6c4; } .av-tab .g { --s: #0ab38c; }
+    .av-key { display: flex; justify-content: center; gap: 18px; margin-top: 8px; font-size: 11px; color: var(--ay-gray); white-space: nowrap; }
+    .av-key span { display: flex; align-items: center; gap: 6px; }
+    .av-key i { width: 9px; height: 9px; border-radius: 50%; background: var(--s); }
+    /* the report stays with its empty slots until the presenter clicks the mockup */
+    .av-pbi { cursor: pointer; }
+    .av-tab .g, .av-pub { opacity: 0; }
+    .slide.active.av-go[data-pm="av-pbi"] .av-ph.go { animation: pmk-dim .4s ease var(--d, 0s) both; opacity: 0; }
+    .slide.active.av-go[data-pm="av-pbi"] .av-tab .g, .slide.active.av-go[data-pm="av-pbi"] .av-pub { animation: pmk-pop .45s ease-out var(--d, 0s) both; opacity: 1; }
+
+    /* the Origin issue as a workflow: five stages from the click to KR1 */
+    .av-iss { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 26px; width: 1140px; margin: 0 auto; text-align: left; align-items: start; }
+    .av-is { position: relative; min-width: 0; }
+    .av-is + .av-is::before { content: ""; position: absolute; left: -21px; top: 64px; width: 14px; height: 2px; background: #cbd5e1; }
+    .av-is + .av-is::after { content: ""; position: absolute; left: -9px; top: 60px; border: 5px solid transparent; border-left-color: #cbd5e1; }
+    .av-isn { display: flex; align-items: center; gap: 7px; height: 30px; font-size: 12.5px; font-weight: 800; color: var(--ay-dark); margin-bottom: 8px; line-height: 1.15; }
+    .av-isn b { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--ay-dark); color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+    .av-isb { display: flex; flex-direction: column; gap: 8px; }
+    .av-srch, .av-rec { background: #fff; border: 1px solid #dddbda; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,.06); overflow: hidden; font-size: 10.5px; }
+    .av-srch { padding: 9px 10px; display: flex; flex-direction: column; gap: 4px; }
+    .av-srh { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 800; color: #4285f4; }
+    .av-srh svg { width: 12px; height: 12px; }
+    .av-srch b { font-size: 12px; color: #1a0dab; font-weight: 700; line-height: 1.25; }
+    .av-srch span { font-size: 10px; color: #188038; word-break: break-all; line-height: 1.3; }
+    .av-srch em, .av-kv2 b { font-style: normal; font-weight: 800; }
+    .av-rech { display: flex; align-items: center; gap: 7px; height: 32px; padding: 0 9px; font-size: 11px; font-weight: 800; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; white-space: nowrap; }
+    .av-rech .sfc-ic { width: 20px; height: 20px; border-radius: 4px; }
+    .av-rech .sfc-ic svg { width: 12px; height: 12px; }
+    .av-sec { font-size: 9.5px; font-weight: 800; color: #444; padding: 6px 9px 2px; text-transform: uppercase; letter-spacing: .5px; }
+    .av-kv2 { display: flex; align-items: center; justify-content: space-between; gap: 6px; height: 24px; padding: 0 9px; border-bottom: 1px solid #f1f1f1; }
+    .av-kv2 span { color: #706e6b; font-size: 10px; white-space: nowrap; }
+    .av-kv2 i { font-style: normal; font-size: 9.5px; font-weight: 800; color: #ba0517; background: #fef1ee; border-radius: 8px; padding: 1px 8px; }
+    .av-tr2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; height: 20px; padding: 0 9px; border-bottom: 1px solid #f1f1f1; color: #706e6b; font-size: 10px; }
+    .av-tr2.miss { grid-template-columns: 1fr 1fr auto; gap: 4px; height: 26px; color: #ba0517; font-weight: 800; background: #fef1ee; }
+    .av-tr2 em { font-style: normal; font-size: 9px; white-space: nowrap; }
+    .av-ismail { display: flex; align-items: center; gap: 5px; padding: 6px 9px; font-size: 9.5px; color: #706e6b; }
+    .av-ismail svg { width: 11px; height: 11px; flex: none; }
+    .av-isfact { font-size: 11px; font-weight: 800; color: #ba0517; text-align: center; }
+    .av-kr { display: flex; flex-direction: column; gap: 4px; padding: 9px 10px; border-radius: 8px; background: var(--ay-dark); color: #fff; }
+    .av-kr span { font-size: 10.5px; font-weight: 700; opacity: .85; }
+    .av-kr b { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; color: #ff8a80; }
+    .av-kr b svg { width: 15px; height: 15px; }
+    .slide[data-pm="av-issue"] .slide-inner.insights.wide { padding-top: 150px; }
+    .slide[data-pm^="av-"] .slide-title.compact:has(+ .slide-subtitle) { margin-bottom: 10px; }
+    .slide[data-pm="av-cal"] .slide-subtitle { margin-bottom: 18px; }
+    .slide[data-pm="av-cal"] .av-evs { gap: 3px; }
+    .av-src { display: flex; align-items: center; gap: 8px; width: 1160px; margin: -6px auto 12px; font-size: 12px; font-weight: 700; color: var(--ay-dark); }
+    .av-src svg { width: 20px; height: 20px; flex: none; }
+    .av-src span { font-weight: 500; color: var(--ay-gray); }
+    .av-board.av-sfb { grid-template-columns: minmax(0, 3.3fr) repeat(2, minmax(0, 1fr)); }
+    .av-grps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; flex: 1; min-height: 0; }
+    .av-grp { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .av-grph { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800; color: var(--g); padding: 2px 2px 0; }
+    .av-grph span { margin-left: auto; min-width: 20px; height: 18px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 10.5px; background: color-mix(in srgb, var(--g) 14%, #fff); }
+    .av-sfb .av-card { padding: 7px 9px; }
+    .av-sfn { font-size: 12px !important; color: var(--ay-dark) !important; font-weight: 800; margin: 0 !important; }
+    .av-ex { display: block; margin-top: 3px; font-size: 10px; color: var(--ay-gray); line-height: 1.3; }
+    .av-none { margin: auto; font-size: 11px; color: var(--ay-light); }
+    .slide[data-pm="av-board"] .slide-inner.insights.wide, .slide[data-pm="av-sf"] .slide-inner.insights.wide, .slide[data-pm="av-cal"] .slide-inner.insights.wide, .slide[data-pm="av-pbi"] .slide-inner.insights.wide, .slide[data-pm="av-flow"] .slide-inner.insights.wide { height: 552px !important; min-height: 552px !important; max-height: 552px !important; box-sizing: border-box; justify-content: flex-start !important; padding-top: 58px; }
+    .slide.rq-step:not(.rq-go) .rq-col.fix, .slide.rq-step:not(.rq-go) .rq-mid { visibility: hidden; }
+    .slide.rq-step:not(.rq-go) .rq-col.fix, .slide.rq-step:not(.rq-go) .rq-col.fix *, .slide.rq-step:not(.rq-go) .rq-mid, .slide.rq-step:not(.rq-go) .rq-mid * { animation: none !important; }
+    .slide.active[data-pm="av-sf"] .slide-title { animation: none; opacity: 1; transform: none; }
+    .slide[data-pm="rq-src"] .rq-col { gap: 10px; }
+    .slide[data-pm="rq-src"] .sl-mh { height: 30px; line-height: 30px; font-size: 13px; }
+    .rs-pick { display: flex; gap: 14px; padding: 10px 16px 12px; }
+    .rs-lab { flex: none; font-size: 11px; color: #444; padding-top: 2px; }
+    .rs-rads { display: flex; flex-direction: column; gap: 6px; }
+    .rs-rad { display: flex; gap: 8px; align-items: flex-start; }
+    .rs-rad i { width: 13px; height: 13px; border-radius: 50%; border: 1px solid #939393; box-sizing: border-box; flex: none; margin-top: 2px; background: #fff; }
+    .rs-rad.on i { border: 4px solid #0176d3; }
+    .rs-rad b { display: block; font-size: 11.5px; font-weight: 600; color: #181818; }
+    .rs-rad span { display: block; font-size: 10px; color: #706e6b; }
+    .rs-dd { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; font-size: 11px; }
+    .rs-ddh { display: flex; align-items: center; gap: 10px; height: 28px; padding: 0 10px; border-bottom: 1px solid #dddbda; }
+    .rs-ddh span { color: #444; } .rs-ddh span::first-letter { color: #ba0517; }
+    .rs-ddh b { flex: 1; font-weight: 400; border: 1px solid #0176d3; border-radius: 4px; padding: 1px 8px; }
+    .rs-opt { display: flex; align-items: center; gap: 8px; height: 22px; padding: 0 22px; color: #181818; }
+    .rs-opt.bad { background: #fef1ee; color: #ba0517; font-weight: 700; }
+    .rs-opt em { margin-left: auto; font-style: normal; font-size: 9.5px; font-weight: 700; }
+    .rs-srcs { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #fff; border: 1px solid #dddbda; border-radius: 6px; }
+    .rs-srcs > div { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rs-srcs .pmk-team { font-size: 12.5px; padding: 3px 12px; }
+    .rs-kv { display: flex; align-items: center; justify-content: space-between; height: 30px; margin: 0 12px; border-bottom: 1px solid #f1f1f1; font-size: 11px; }
+    .rs-kv span { color: #706e6b; } .rs-kv b { font-weight: 700; } .rs-kv s { color: #9ca3af; font-weight: 500; }
+    .rs-kv:last-child { border-bottom: 0; margin-bottom: 4px; }
+    .prc.five.seven { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: 1160px; gap: 14px 16px; }
+    .prc.five.seven .kr { grid-column: span 2; height: 196px; padding: 14px 16px; }
+    .prc.five.seven .kr:nth-child(4) { grid-column: span 2; }
+    .prc.five.seven .kr:nth-child(5) { grid-column: 2 / span 2; }
+    .prc.five.seven .kh { font-size: 17px; }
+    .prc.five.seven .ks { font-size: 12px; }
+    .slide[data-pm="rq-src"] .slide-inner { padding-top: 98px; }
+    .slide[data-pm="rq-src"] .rq-col { height: 412px; gap: 8px; }
+    .slide[data-pm="rq-src"] .rs-pick { padding: 8px 16px 9px; }
+    .slide[data-pm="rq-src"] .rs-rads { gap: 3px; }
+    .rs-srcs .pmk-team, .rs-kv .pmk-team { font-style: normal; }
+    .rs-note { display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 14px; background: #e6f8f2; color: #2e844a; font-size: 11.5px; font-weight: 700; }
+    .rs-note svg { width: 14px; height: 14px; }
+    .rs-five { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .rs-five > div { gap: 10px 8px; }
+    .rs-p { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; }
+    .rs-p.bad .pmk-team { box-shadow: inset 0 0 0 1.5px #ba0517; }
+    .rs-p em { font-style: normal; font-size: 9.5px; font-weight: 700; color: #ba0517; white-space: nowrap; }
+    .slide[data-pm="rq-src"] .rs-opt { height: 24px; }
+    .rs-five > div { flex-wrap: nowrap; gap: 6px; }
+    .rs-five .pmk-team { font-size: 11.5px; padding: 3px 10px; }
+    .rs-five .pmk-team.ref { background: #eef0f3; color: #475569; }
+    .rs-paid { font-style: normal; margin-left: 6px; font-size: 9.5px; font-weight: 800; color: #2e844a; background: #e6f8f2; border-radius: 8px; padding: 1px 7px; }
+    .slide[data-pm="rq-src"] .rs-kv { height: 27px; }
   </style>
 </head>
 <body>
@@ -1230,67 +1474,19 @@
       <span class="nav-subtitle">Performance marketing · June 2026</span>
     </div>
     <div class="nav-section">
-      <div class="nav-section-title">Opening</div>
-      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Cover</div>
-      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Our stance</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">The diagnosis</div>
-      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>TCV fails</div>
-      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>The proposal</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">The framework</div>
-      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>Lead sources</div>
-      <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>The measurement chain</div>
-      <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>ROI vs North Star</div>
-      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Objective &amp; key results</div>
-      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Key result 1</div>
-      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>The foundation, where each lead comes from</div>
-      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>The foundation, into the CRM</div>
-      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>Marketing-sourced pipeline</div>
-      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>Key result 2</div>
-      <div class="nav-item" data-slide="13"><span class="nav-item-number">14</span>Influence, lifecycle</div>
-      <div class="nav-item" data-slide="14"><span class="nav-item-number">15</span>Influence, buying committee</div>
-      <div class="nav-item" data-slide="15"><span class="nav-item-number">16</span>Campaign Influence</div>
-      <div class="nav-item" data-slide="16"><span class="nav-item-number">17</span>Influenced TCV and cost</div>
-      <div class="nav-item" data-slide="17"><span class="nav-item-number">18</span>Last touch vs contribution</div>
-      <div class="nav-item" data-slide="18"><span class="nav-item-number">19</span>A ratio that rises</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Requirements</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Opening</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>The diagnosis</div>
+      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>The framework</div>
       <div class="nav-item" data-slide="19"><span class="nav-item-number">20</span>Requirements</div>
-      <div class="nav-item" data-slide="20"><span class="nav-item-number">21</span>Frozen influence</div>
-      <div class="nav-item" data-slide="21"><span class="nav-item-number">22</span>UTMs fill the Origin</div>
-      <div class="nav-item" data-slide="22"><span class="nav-item-number">23</span>Every conversion has an opportunity</div>
-      <div class="nav-item" data-slide="23"><span class="nav-item-number">24</span>An event joins its campaign</div>
-      <div class="nav-item" data-slide="24"><span class="nav-item-number">25</span>Every campaign carries its cost</div>
-      <div class="nav-item" data-slide="25"><span class="nav-item-number">26</span>Budgets on influenced TCV</div>
-      <div class="nav-item" data-slide="26"><span class="nav-item-number">27</span>One contract, three readings</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Bonus</div>
-      <div class="nav-item" data-slide="27"><span class="nav-item-number">28</span>Bonus</div>
-      <div class="nav-item" data-slide="28"><span class="nav-item-number">29</span>First-campaign bonus</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Summary</div>
-      <div class="nav-item" data-slide="29"><span class="nav-item-number">30</span>The pyramid</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Honesty</div>
-      <div class="nav-item" data-slide="30"><span class="nav-item-number">31</span>The blind spots</div>
-      <div class="nav-item" data-slide="31"><span class="nav-item-number">32</span>Direct as a signal</div>
-      <div class="nav-item" data-slide="32"><span class="nav-item-number">33</span>CRM hygiene</div>
-      <div class="nav-item" data-slide="33"><span class="nav-item-number">34</span>The horizon</div>
-    </div>
-    <div class="nav-section">
-      <div class="nav-section-title">Appendix</div>
-      <div class="nav-item" data-slide="34"><span class="nav-item-number">35</span>Two levels of cost</div>
+      <div class="nav-item" data-slide="30"><span class="nav-item-number">31</span>Progress</div>
+      <div class="nav-item" data-slide="36"><span class="nav-item-number">37</span>Bonus</div>
+      <div class="nav-item" data-slide="38"><span class="nav-item-number">39</span>Summary</div>
+      <div class="nav-item" data-slide="39"><span class="nav-item-number">40</span>Honesty</div>
+      <div class="nav-item" data-slide="43"><span class="nav-item-number">44</span>Appendix</div>
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/35</div>
+  <div class="slide-counter"><span class="current">1</span>/44</div>
 
   <main class="presentation">
 
@@ -1925,17 +2121,33 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
+    <!-- ========== COVER REQUIREMENTS ========== -->
+    <section class="slide cover" data-chapter="precisions">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <h1 class="cover-title">Requirements</h1>
+          <p class="cover-subtitle">Seven decisions to measure marketing's contribution</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-10</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&q=80" alt="Specifications">
+        </div>
+      </div>
+    </section>
+
     <!-- ========== DIVIDER REQUIREMENTS (five requirements, the problem behind each on its own slide) ========== -->
     <section class="slide" data-chapter="precisions">
       <div class="slide-inner insights">
         <h1 class="slide-title compact">Requirements</h1>
-        <div class="prc five six">
+        <div class="prc five seven">
           <div class="kr pmk-in" style="--d:0.20s"><div class="prc-ic"><i data-lucide="lock"></i></div><div class="kl"><b>Requirement 1</b> · influence</div><div class="kh">Frozen influence</div><div class="ks">A campaign that comes after the opportunity's creation is not added to its influence.</div></div>
           <div class="kr pmk-in" style="--d:0.40s"><div class="prc-ic"><i data-lucide="merge"></i></div><div class="kl"><b>Requirement 2</b> · origin</div><div class="kh">UTMs fill the Origin</div><div class="ks">One reference table turns each UTM pair into an Origin, so we keep one process instead of two.</div></div>
           <div class="kr pmk-in" style="--d:0.60s"><div class="prc-ic"><i data-lucide="circle-check"></i></div><div class="kl"><b>Requirement 3</b> · conversion</div><div class="kh">Every conversion has an opportunity</div><div class="ks">The “Don't create an opportunity” box goes, so every converted lead opens one.</div></div>
           <div class="kr pmk-in" style="--d:0.80s"><div class="prc-ic"><i data-lucide="calendar-check"></i></div><div class="kl"><b>Requirement 4</b> · influence</div><div class="kh">An event joins its campaign</div><div class="ks">A flow adds the person to the event's campaign, so the campaign counts in the influence.</div></div>
           <div class="kr pmk-in" style="--d:1.00s"><div class="prc-ic"><i data-lucide="receipt"></i></div><div class="kl"><b>Requirement 5</b> · costs</div><div class="kh">Every campaign carries its cost</div><div class="ks">Budgeted and actual cost go in the campaign's Planning section, the cost behind every ROI.</div></div>
-          <div class="kr pmk-in" style="--d:1.20s"><div class="prc-ic"><i data-lucide="wallet"></i></div><div class="kl"><b>Requirement 6</b> · budgets</div><div class="kh">Budgets on influenced TCV</div><div class="ks">From 1 January, each department under total S&amp;M computes its ROI on its influenced TCV, not the total TCV.</div></div>
+          <div class="kr pmk-in" style="--d:1.20s"><div class="prc-ic"><i data-lucide="layers"></i></div><div class="kl"><b>Requirement 6</b> · sources</div><div class="kh">Four lead sources</div><div class="ks">Each campaign picks Marketing, Partner, Sales or Telepro, and the channel stays in the UTMs.</div></div>
+          <div class="kr pmk-in" style="--d:1.40s"><div class="prc-ic"><i data-lucide="wallet"></i></div><div class="kl"><b>Requirement 7</b> · budgets</div><div class="kh">Budgets on influenced TCV</div><div class="ks">From 1 January, each department under total S&amp;M computes its ROI on its influenced TCV, not the total TCV.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -1984,10 +2196,24 @@
           <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
           <div class="rq-col fix pmk-in" style="--d:4.2s">
             <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>One reference table turns each UTM pair into an Origin, and the flow reads it.</div>
-            <div class="sl-rl sl pmk-lit" style="--d:4.5s"><div class="sl-rlh"><span class="sfc-ic flow"><i data-lucide="table-2"></i></span>Lead origin · reference table<span class="pmk-ok pmk-pop" style="--d:5.4s">Updated</span></div><div class="sl-tr th"><span>Source</span><span>Medium</span><span>Origin</span><span>Origin Details</span></div><div class="sl-tr pmk-row" style="--d:4.7s"><a>chatgpt</a><span>llm</span><span class="hit">AI search</span><span class="hit">ChatGPT</span></div><div class="sl-tr pmk-row" style="--d:4.9s"><a>google</a><span>organic</span><span>Organic search</span><span>Google</span></div><div class="sl-tr pmk-row" style="--d:5.1s"><a>linkedin</a><span>social</span><span>Organic social</span><span>LinkedIn</span></div></div>
-            <div class="sl-win sl pmk-lit" style="--d:5.8s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Élisabeth Roux</div></div><span class="pmk-ok pmk-pop" style="--d:6.5s">Filled by the flow</span></div><div class="sl-tabs"><span>Activity</span><span class="on">Details</span><span>Related</span></div><div class="sl-sec">UTM</div><div class="sl-grid"><div class="sl-f"><span>utm_source_origin</span><b>chatgpt</b></div><div class="sl-f"><span>utm_medium_origin</span><b>llm</b></div></div><div class="rq-l3s"><div class="sl-sec">Qualification</div><div class="sl-grid"><div class="sl-f"><span>Origin</span><b><i class="yes pmk-pop" style="--d:6.0s">AI search</i></b></div><div class="sl-f"><span>Origin Details</span><b><i class="yes pmk-pop" style="--d:6.2s">ChatGPT</i></b></div></div></div></div>
+            <div class="sl ev-canvas pmk-in" style="--d:4.4s"><div class="ev-cvh"><i data-lucide="workflow"></i>Flow · [LEAD] UTM Pardot</div><div class="ev-cvb"><div class="sl-node pmk-pop" style="--d:4.5s"><span class="sl-ni start"><i data-lucide="play"></i></span><div><small>Start</small><b>Lead created by Pardot</b></div></div><div class="sl-conn pmk-fade" style="--d:4.9s"></div><div class="sl-node pmk-pop" style="--d:4.8s"><span class="sl-ni dec"><i data-lucide="search"></i></span><div><small>Get Records</small><b>Source / medium pair in Lead origin</b></div></div><div class="sl-conn pmk-fade" style="--d:5.2s"></div><div class="sl-node pmk-pop" style="--d:5.1s"><span class="sl-ni rec"><i data-lucide="pencil"></i></span><div><small>Update Records</small><b>Origin and Origin Details of the lead</b></div></div></div></div>
+            <div class="sl-rl sl pmk-lit" style="--d:5.4s"><div class="sl-rlh"><span class="sfc-ic flow"><i data-lucide="table-2"></i></span>Lead origin · reference table<span class="pmk-ok pmk-pop" style="--d:6.0s">Updated</span></div><div class="sl-tr th"><span>Source</span><span>Medium</span><span>Origin</span><span>Origin Details</span></div><div class="sl-tr pmk-row" style="--d:5.6s"><a>chatgpt</a><span>llm</span><span class="hit">AI search</span><span class="hit">ChatGPT</span></div><div class="sl-tr pmk-row" style="--d:5.8s"><a>google</a><span>organic</span><span>Organic search</span><span>Google</span></div></div>
+            <div class="sl-win sl pmk-lit" style="--d:5.8s"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Élisabeth Roux</div></div><span class="pmk-ok pmk-pop" style="--d:6.5s">Filled by the flow</span></div><div class="rq-l3s"><div class="sl-sec">Qualification</div><div class="sl-grid"><div class="sl-f"><span>Origin</span><b><i class="yes pmk-pop" style="--d:6.0s">AI search</i></b></div><div class="sl-f"><span>Origin Details</span><b><i class="yes pmk-pop" style="--d:6.2s">ChatGPT</i></b></div></div></div></div>
           </div>
         </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== EXAMPLE, ONE LEAD THE ORIGIN FLOW LOSES ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="av-issue">
+      <div class="kr-badge">
+        <div class="kl"><b>Example</b> · one lead</div>
+        <div class="kh">A lead the flow does not recognise</div>
+        <div class="ks">It arrives with its UTMs, the Origin stays empty and KR1 loses it.</div>
+      </div>
+      <div class="slide-inner insights wide">
+        <div class="av-iss"><div class="av-is pmk-in" style="--d:0.20s"><div class="av-isn"><b>1</b>The prospect arrives</div><div class="av-isb"><div class="av-srch"><div class="av-srh"><i data-lucide="search"></i>Google</div><b>Ayming · Research tax credit</b><span>ayming.fr/?utm_source=<em>google</em>&amp;utm_medium=<em>organic</em></span></div></div></div><div class="av-is pmk-in" style="--d:1.10s"><div class="av-isn"><b>2</b>Pardot creates the lead</div><div class="av-isb"><div class="av-rec"><div class="av-rech"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span>New lead</div><div class="av-sec">UTM</div><div class="av-kv2"><span>utm_source_origin</span><b class="pmk-fade" style="--d:1.5s">google</b></div><div class="av-kv2"><span>utm_medium_origin</span><b class="pmk-fade" style="--d:1.6s">organic</b></div></div></div></div><div class="av-is pmk-in" style="--d:2.00s"><div class="av-isn"><b>3</b>The flow looks up the pair</div><div class="av-isb"><div class="av-rec"><div class="av-rech"><span class="sfc-ic" style="background:#0176d3"><i data-lucide="table-2"></i></span>Lead origin table · 2024</div><div class="av-tr2 pmk-row" style="--d:2.10s"><span>google</span><span>ppc</span></div><div class="av-tr2 pmk-row" style="--d:2.22s"><span>bing</span><span>ppc</span></div><div class="av-tr2 pmk-row" style="--d:2.34s"><span>facebook</span><span>paid</span></div><div class="av-tr2 pmk-row" style="--d:2.46s"><span>linkedin</span><span>social</span></div><div class="av-tr2 pmk-row" style="--d:2.58s"><span>google</span><span>retargeting</span></div><div class="av-tr2 miss pmk-pop" style="--d:2.9s"><span>google</span><span>organic</span><em>no row</em></div><div class="av-ismail pmk-fade" style="--d:3.2s"><i data-lucide="mail"></i>Email alert, nothing written</div></div><div class="av-isfact pmk-fade" style="--d:3.4s">google / organic, 397 leads in 2026</div></div></div><div class="av-is pmk-in" style="--d:2.90s"><div class="av-isn"><b>4</b>The Origin stays empty</div><div class="av-isb"><div class="av-rec"><div class="av-rech"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span>New lead</div><div class="av-sec">Qualification</div><div class="av-kv2"><span>Origin</span><i class="pmk-pop" style="--d:3.9s">empty</i></div><div class="av-kv2"><span>Origin Details</span><i class="pmk-pop" style="--d:4.05s">empty</i></div></div></div></div><div class="av-is pmk-in" style="--d:3.80s"><div class="av-isn"><b>5</b>KR1 does not count it</div><div class="av-isb"><div class="av-rec"><div class="av-rech"><span class="sfc-ic opp"><i data-lucide="crown"></i></span>Opportunity</div><div class="av-sec">Converted lead</div><div class="av-kv2"><span>Origin</span><i class="pmk-pop" style="--d:4.6s">empty</i></div></div><div class="av-kr pmk-pop" style="--d:5.0s"><span>KR1 · marketing origin</span><b><i data-lucide="x"></i>Not counted</b></div></div></div></div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
@@ -2066,7 +2292,36 @@
             <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The owner fills the budget when creating the campaign and the actual cost when it ends.</div>
             <div class="sl-win sl pmk-lit" style="--d:4.6s"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">Barometer whitepaper 2026</div></div></div><div class="sl-tabs"><span>Related</span><span class="on">Details</span></div><div class="sl-sec">Planning</div><div class="sl-grid"><div class="sl-f"><span>Num Sent in Campaign</span><b>0</b></div><div class="sl-f"><span>Budgeted Cost in Campaign</span><b><i class="yes pmk-pop" style="--d:5.2s">€10,000</i></b></div><div class="sl-f"><span>Expected Response (%)</span><b>0.00%</b></div><div class="sl-f"><span>Actual Cost in Campaign</span><b><i class="yes pmk-pop" style="--d:5.6s">€10,000</i></b></div></div></div>
             <div class="cost-roi pmk-in" style="--d:5.9s"><span>Campaign ROI</span><b>€20,000</b><em>÷</em><b class="ok">€10,000</b><em>=</em><b class="ok">×2</b></div>
-            <div class="cost-teams pmk-fade" style="--d:6.4s"><span>Every team that runs campaigns</span><span class="pmk-team  pmk-pop" style="--d:6.60s">Marketing</span><span class="pmk-team par pmk-pop" style="--d:6.75s">Partner</span><span class="pmk-team tel pmk-pop" style="--d:6.90s">Telepro</span><span class="pmk-team sal pmk-pop" style="--d:7.05s">Sales</span></div>
+            <div class="cost-teams pmk-fade" style="--d:6.4s"><span>All lead sources</span><span class="pmk-team  pmk-pop" style="--d:6.60s">Marketing</span><span class="pmk-team par pmk-pop" style="--d:6.75s">Partner</span><span class="pmk-team tel pmk-pop" style="--d:6.90s">Telepro</span><span class="pmk-team sal pmk-pop" style="--d:7.05s">Sales</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 6 · FOUR LEAD SOURCES (the campaign record types; the channel stays in the UTMs) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-src">
+      <div class="kr-badge">
+        <div class="kl"><b>Requirement 6</b> · sources</div>
+        <div class="kh">Four lead sources</div>
+        <div class="ks">Each campaign picks Marketing, Partner, Sales or Telepro, and the channel stays in the UTMs.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Five lead sources instead of four cause confusion, and the campaign Types are starting to change.</div>
+            <div class="rs-srcs rs-five pmk-in" style="--d:.6s"><span class="rs-lab">Proposed lead sources</span><div><span class="rs-p"><i class="pmk-team sal">Sales</i></span><span class="rs-p"><i class="pmk-team ">Marketing</i></span><span class="rs-p"><i class="pmk-team par">Partnerships</i></span><span class="rs-p"><i class="pmk-team tel">Telepro</i></span><span class="rs-p bad"><i class="pmk-team ref">Referral</i><em class="pmk-pop" style="--d:1.4s">a channel, not a source</em></span></div></div>
+            <div class="sl rs-dd pmk-in" style="--d:1.8s"><div class="rs-ddh"><span>* Campaign Type</span><b>--None--</b></div><div class="rs-opt">Offline</div><div class="rs-opt bad pmk-pop" style="--d:2.4s">Paid Partnership<em>to remove, Partner and the cost already say it</em></div><div class="rs-opt">Renewal</div><div class="rs-opt">Webinar</div></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>Salesforce already has the four sources, the channel goes in the UTMs.</div>
+            <div class="sl sl-modal pmk-in" style="--d:4.5s"><div class="sl-mh">New Campaign</div><div class="rs-pick"><span class="rs-lab">Record type</span><div class="rs-rads"><div class="rs-rad"><i></i><div><b>Marketing</b><span>Connected campaign to Pardot</span></div></div><div class="rs-rad on"><i></i><div><b>Partner</b><span>Partner campaign</span></div></div><div class="rs-rad"><i></i><div><b>Sales</b><span>Sales campaign</span></div></div><div class="rs-rad"><i></i><div><b>Telepro</b><span>Call center, tele-prospection</span></div></div></div></div></div>
+            <div class="sl sl-win pmk-lit" style="--d:5.4s"><div class="sl-rh"><span class="sfc-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sl-ot">Campaign</div><div class="sl-on">Partner operation 2026</div></div></div>
+              <div class="rs-kv"><span>Record type</span><b class="pmk-pop" style="--d:5.8s"><i class="pmk-team par">Partner</i></b></div>
+              <div class="rs-kv"><span>utm_medium</span><b class="pmk-pop" style="--d:6.2s">affiliate</b></div>
+              <div class="rs-kv"><span>Budgeted cost</span><b class="pmk-pop" style="--d:6.4s">5 000 € <i class="rs-paid">paid</i></b></div></div>
+            <span class="rs-note pmk-pop" style="--d:6.8s"><i data-lucide="circle-check"></i>TCV splits across four sources, with no double count</span>
           </div>
         </div>
       </div>
@@ -2076,7 +2331,7 @@
     <!-- ========== REQUIREMENT 6 · BUDGETS ON INFLUENCED TCV (the CEO's France example, every department divides the total TCV today) ========== -->
     <section class="slide" data-chapter="precisions" data-pm="rq-bud">
       <div class="kr-badge">
-        <div class="kl"><b>Requirement 6</b> · budgets</div>
+        <div class="kl"><b>Requirement 7</b> · budgets</div>
         <div class="kh">Budgets on influenced TCV</div>
         <div class="ks">From 1 January, each department under total S&amp;M computes its ROI on its influenced TCV, not the total TCV.</div>
       </div>
@@ -2086,22 +2341,22 @@
             <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Today</span>Each department divides the whole France new-business TCV by its own costs.</div>
             <div class="bud pmk-lit" style="--d:.5s">
               <div class="bud-h">ROI on total TCV<small>M€</small></div>
-              <div class="bud-r th"><span>Department</span><span>Total TCV</span><span>Costs</span><span>ROI</span></div>
-              <div class="bud-r pmk-row" style="--d:0.80s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b>70</b><em>13.5</em><b class="bud-bad pmk-pop" style="--d:1.00s">×5.2</b></div><div class="bud-r pmk-row" style="--d:1.05s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b>70</b><em>2.6</em><b class="bud-bad pmk-pop" style="--d:1.25s">×26.9</b></div><div class="bud-r pmk-row" style="--d:1.30s"><span class="bud-d"><i class="pmk-team par">Partnerships</i></span><b>70</b><em>0.9</em><b class="bud-bad pmk-pop" style="--d:1.50s">×77.8</b></div><div class="bud-r pmk-row" style="--d:1.55s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b>70</b><em>1.0</em><b class="bud-bad pmk-pop" style="--d:1.75s">×70.0</b></div><div class="bud-r pmk-row" style="--d:1.80s"><span class="bud-d"><i class="pmk-team ics">ICS</i></span><b>70</b><em>0.5</em><b class="bud-bad pmk-pop" style="--d:2.00s">×140.0</b></div>
-              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Claimed</i></span><b class="bud-bad pmk-pop" style="--d:2.4s">350</b><em>18.5</em><b></b></div>
+              <div class="bud-r th"><span>Lead source</span><span>Total TCV</span><span>Costs</span><span>ROI</span></div>
+              <div class="bud-r pmk-row" style="--d:0.80s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b>70</b><em>13.5</em><b class="bud-bad pmk-pop" style="--d:1.00s">×5.2</b></div><div class="bud-r pmk-row" style="--d:1.05s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b>70</b><em>2.6</em><b class="bud-bad pmk-pop" style="--d:1.25s">×26.9</b></div><div class="bud-r pmk-row" style="--d:1.30s"><span class="bud-d"><i class="pmk-team par">Partner</i></span><b>70</b><em>0.9</em><b class="bud-bad pmk-pop" style="--d:1.50s">×77.8</b></div><div class="bud-r pmk-row" style="--d:1.55s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b>70</b><em>1.0</em><b class="bud-bad pmk-pop" style="--d:1.75s">×70.0</b></div>
+              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Claimed</i></span><b class="bud-bad pmk-pop" style="--d:2.4s">280</b><em>18.0</em><b></b></div>
             </div>
-            <div class="rq-fact pmk-in" style="--d:2.8s"><b>350 for 70</b><span>the same TCV counted by five departments, every ROI inflated</span></div>
+            <div class="rq-fact pmk-in" style="--d:2.8s"><b>280 for 70</b><span>the same TCV counted by four lead sources, every ROI inflated</span></div>
           </div>
           <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
           <div class="rq-col fix pmk-in" style="--d:4.2s">
             <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Requirement</span>The budget gives each department the share of TCV the influence model expects.</div>
             <div class="bud pmk-lit" style="--d:4.5s">
               <div class="bud-h">ROI on influenced TCV<small>M€</small></div>
-              <div class="bud-r th"><span>Department</span><span>Expected %</span><span>Influenced TCV</span><span>Costs</span><span>Influence ROI</span></div>
-              <div class="bud-r pmk-row" style="--d:4.60s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b class="bud-pct pmk-pop" style="--d:4.80s">75%</b><b>52.5</b><em>13.5</em><b class="bud-ok">×3.89</b></div><div class="bud-r pmk-row" style="--d:4.85s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b class="bud-pct pmk-pop" style="--d:5.05s">15%</b><b>10.5</b><em>2.6</em><b class="bud-ok">×4.04</b></div><div class="bud-r pmk-row" style="--d:5.10s"><span class="bud-d"><i class="pmk-team par">Partnerships</i></span><b class="bud-pct pmk-pop" style="--d:5.30s">2%</b><b>1.4</b><em>0.9</em><b class="bud-ok">×1.56</b></div><div class="bud-r pmk-row" style="--d:5.35s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b class="bud-pct pmk-pop" style="--d:5.55s">5%</b><b>3.5</b><em>1.0</em><b class="bud-ok">×3.50</b></div><div class="bud-r pmk-row" style="--d:5.60s"><span class="bud-d"><i class="pmk-team ics">ICS</i></span><b class="bud-pct pmk-pop" style="--d:5.80s">3%</b><b>2.1</b><em>0.5</em><b class="bud-ok">×4.20</b></div>
-              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Total</i></span><b>100%</b><b>70.0</b><em>18.5</em><b class="bud-ok">×3.78</b></div>
+              <div class="bud-r th"><span>Lead source</span><span>Expected %</span><span>Influenced TCV</span><span>Costs</span><span>Influence ROI</span></div>
+              <div class="bud-r pmk-row" style="--d:4.60s"><span class="bud-d"><i class="pmk-team sal">Sales</i></span><b class="bud-pct pmk-pop" style="--d:4.80s">77.3%<sup>†</sup></b><b>54.1</b><em>13.5</em><b class="bud-ok">×4.01</b></div><div class="bud-r pmk-row" style="--d:4.85s"><span class="bud-d"><i class="pmk-team ">Marketing</i></span><b class="bud-pct pmk-pop" style="--d:5.05s">15.5%<sup>*</sup></b><b>10.8</b><em>2.6</em><b class="bud-ok">×4.16</b></div><div class="bud-r pmk-row" style="--d:5.10s"><span class="bud-d"><i class="pmk-team par">Partner</i></span><b class="bud-pct pmk-pop" style="--d:5.30s">2.1%<sup>**</sup></b><b>1.5</b><em>0.9</em><b class="bud-ok">×1.60</b></div><div class="bud-r pmk-row" style="--d:5.35s"><span class="bud-d"><i class="pmk-team tel">Telepro</i></span><b class="bud-pct pmk-pop" style="--d:5.55s">5.1%<sup>*</sup></b><b>3.6</b><em>1.0</em><b class="bud-ok">×3.61</b></div>
+              <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Total</i></span><b>100%</b><b>70.0</b><em>18.0</em><b class="bud-ok">×3.89</b></div>
             </div>
-            <div class="bud-note pmk-fade" style="--d:6.4s"><i></i>Budget hypothesis, production will show the real split</div>
+            <div class="bud-fn pmk-fade" style="--d:6.4s"><h6><i></i>Proposal, and how it measures on deals won in 2026</h6><p><b>*</b>Campaign influence: Marketing 14.6%, Telepro 4.5%</p><p><b>**</b>REF campaigns filed under Marketing: 1.6%</p><p><b>†</b>Deals with no influence at all: 71.1%</p></div>
           </div>
         </div>
       </div>
@@ -2134,12 +2389,152 @@
           <div class="ex-c pmk-in" style="--d:3.4s">
             <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="users"></i></span><div><div class="sfo-k">3 · Department ROI</div><div class="sfo-n">Marketing</div></div></div>
             <div class="obj-big"><span>Its two campaigns on this contract</span><b>€40,000</b></div>
-            <div class="ex-k pmk-row" style="--d:4.0s"><span>Over the year<small>15% of the 70 M€ France TCV</small></span><b>10.5 M€</b></div>
+            <div class="ex-k pmk-row" style="--d:4.0s"><span>All the year&#39;s contracts<small>15.5% of the 70 M€ France TCV</small></span><b>10.8 M€</b></div>
             <div class="ex-k pmk-row" style="--d:4.4s"><span>÷ Marketing costs</span><b>2.6 M€</b></div>
-            <div class="ex-k tot pmk-row" style="--d:4.8s"><span>= Influence ROI</span><b class="pmk-pop" style="--d:5.0s">×4.04</b></div>
+            <div class="ex-k tot pmk-row" style="--d:4.8s"><span>= Influence ROI</span><b class="pmk-pop" style="--d:5.0s">×4.16</b></div>
             <div class="ex-note pmk-fade" style="--d:5.4s">The Marketing row of the budget table, slide before.</div>
           </div>
         </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== WHERE WE STAND (progress chapter, cover then its slides) ========== -->
+    <section class="slide cover" data-chapter="avancement">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <h1 class="cover-title">Where we<br>stand</h1>
+          <p class="cover-subtitle">Progress as of 13 October 2026</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-10</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80" alt="Project tracking board">
+        </div>
+      </div>
+    </section>
+    <section class="slide" data-chapter="avancement" data-pm="av-board">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">The requests and fixes that make the model possible</h1>
+        <div class="av-src pmk-fade"><svg fill="#FF3621" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>Databricks<span>· 29 requests to the data platform team, as of 14 October 2026</span></div>
+        <div class="av-board">
+          <div class="av-col open pmk-in" style="--d:0.10s; --s:#64748b">
+            <div class="av-colh"><span class="av-dot"></span>Open<span class="av-n">16</span></div>
+            <div class="av-cards">
+              <div class="av-card pmk-pop" style="--d:0.35s"><span class="av-t"><b>G10</b>Business line</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.39s"><span class="av-t"><b>G11</b>Campaign Influence</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.43s"><span class="av-t"><b>G12</b>Lead affiliate</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.51s"><span class="av-t"><b>G14</b>MQL and SQL</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.55s"><span class="av-t"><b>G16</b>SEO · clicks</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.59s"><span class="av-t"><b>G25</b>SEO · impressions</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.63s"><span class="av-t"><b>G26</b>SEO · CTR</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.67s"><span class="av-t"><b>G27</b>SEO · position</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.71s"><span class="av-t"><b>G28</b>SEO · date filter</span><span class="av-a">16/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.75s"><span class="av-t"><b>G30</b>Lead status order</span><span class="av-a">16/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.79s"><span class="av-t"><b>G31</b>AI search data</span><span class="av-a">25/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.83s"><span class="av-t"><b>G33</b>Marketing touches</span><span class="av-a">28/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.87s"><span class="av-t"><b>G38</b>Opportunity Origin</span><span class="av-a">12/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.91s"><span class="av-t"><b>G39</b>New members</span><span class="av-a">13/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.95s"><span class="av-t"><b>G40</b>Email campaigns</span><span class="av-a">13/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.99s"><span class="av-t"><b>G41</b>Campaign types</span><span class="av-a">13/10</span></div>
+            </div>
+          </div>
+          <div class="av-col pmk-in" style="--d:0.18s; --s:#e8590c">
+            <div class="av-colh"><span class="av-dot"></span>To fix<span class="av-n">1</span></div>
+            <div class="av-cards">
+              <div class="av-card pmk-pop" style="--d:1.03s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G03</b>Campaign cost</span><span class="av-d">Asked 7 Sep</span></div>
+            </div>
+          </div>
+          <div class="av-col lit pmk-in" style="--d:0.26s; --s:#11a9e6">
+            <div class="av-colh"><span class="av-dot"></span>Ready for prod<span class="av-n">6</span></div>
+            <div class="av-cards">
+              <div class="av-card pmk-pop" style="--d:1.09s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G02</b>Campaign join date</span><span class="av-d">7 Sep &rarr; <em>validated 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.15s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G04</b>Origin UTMs</span><span class="av-d">7 Sep &rarr; <em>validated 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.21s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G05</b>Member UTMs</span><span class="av-d">7 Sep &rarr; <em>validated 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.27s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G08</b>Contact roles</span><span class="av-d">7 Sep &rarr; <em>validated 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.33s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G36</b>Lead stage dates</span><span class="av-d">2 Oct &rarr; <em>validated 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.39s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G35</b>Contact Origin</span><span class="av-d">2 Oct &rarr; <em>validated 13 Oct</em></span></div>
+            </div>
+          </div>
+          <div class="av-col pmk-in" style="--d:0.34s; --s:#0ab38c">
+            <div class="av-colh"><span class="av-dot"></span>Delivered<span class="av-n">2</span></div>
+            <div class="av-cards">
+              <div class="av-card pmk-pop" style="--d:1.45s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G15</b>Table access</span><span class="av-d">7 Sep &rarr; <em>delivered 5 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.48s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G13</b>Duplicated leads</span><span class="av-d">7 Sep &rarr; <em>delivered 14 Oct</em></span></div>
+            </div>
+          </div>
+          <div class="av-col out pmk-in" style="--d:0.42s; --s:#9ca3af">
+            <div class="av-colh"><span class="av-dot"></span>Withdrawn<span class="av-n">4</span></div>
+            <div class="av-cards">
+              <div class="av-card pmk-pop" style="--d:1.51s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G06</b>UTM cleaning</span><span class="av-d">7 Sep &rarr; <em>withdrawn 12 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.57s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G07</b>Lead channel</span><span class="av-d">7 Sep &rarr; <em>withdrawn 12 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.63s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G09</b>Opportunity channel</span><span class="av-d">7 Sep &rarr; <em>withdrawn 12 Oct</em></span></div>
+              <div class="av-card pmk-pop" style="--d:1.69s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G01</b>Campaign tables</span><span class="av-d">7 Sep &rarr; <em>withdrawn 13 Oct</em></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+    <section class="slide" data-chapter="avancement" data-pm="av-sf">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">The requests and fixes that make the model possible</h1>
+        <div class="av-src pmk-fade"><svg fill="#00A1E0" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375A4.314 4.314 0 018.88 20.4a4.302 4.302 0 01-4.05-2.82c-.27.062-.54.076-.825.076-2.204 0-4.005-1.8-4.005-4.05 0-1.5.811-2.805 2.01-3.51-.255-.57-.39-1.2-.39-1.846 0-2.58 2.1-4.65 4.65-4.65 1.53 0 2.85.705 3.72 1.8"/></svg>Salesforce<span>· 8 requests to the Salesforce admin on 8 October, correspondances_utm_origin_v3 file, as of 14 October 2026</span></div>
+        <div class="av-board av-sfb">
+          <div class="av-col pmk-in" style="--d:.10s; --s:#64748b">
+            <div class="av-colh">Open<span class="av-n">8</span></div>
+            <div class="av-grps"><div class="av-grp" style="--g:#0ab38c"><div class="av-grph">New<span>4</span></div><div class="av-cards"><div class="av-card pmk-pop" style="--d:0.40s"><span class="av-t"><b class="av-sfn">198 list values</b></span><span class="av-ex">AI search, Audio, Event, ChatGPT…</span></div><div class="av-card pmk-pop" style="--d:0.46s"><span class="av-t"><b class="av-sfn">68 table rows</b></span><span class="av-ex">chatgpt / llm → AI search</span></div><div class="av-card pmk-pop" style="--d:0.52s"><span class="av-t"><b class="av-sfn">A * row per medium</b></span><span class="av-ex">unknown source → Other</span></div><div class="av-card pmk-pop" style="--d:0.58s"><span class="av-t"><b class="av-sfn">Source copied</b></span><span class="av-ex">into Origin Description</span></div></div></div><div class="av-grp" style="--g:#f59e0b"><div class="av-grph">Changed<span>2</span></div><div class="av-cards"><div class="av-card pmk-pop" style="--d:0.64s"><span class="av-t"><b class="av-sfn">33 table rows</b></span><span class="av-ex">spotify / audio, Organic social → Audio</span></div><div class="av-card pmk-pop" style="--d:0.70s"><span class="av-t"><b class="av-sfn">Lead without UTMs</b></span><span class="av-ex">Organic search → Direct / None</span></div></div></div><div class="av-grp" style="--g:#ef4444"><div class="av-grph">Deleted<span>2</span></div><div class="av-cards"><div class="av-card pmk-pop" style="--d:0.76s"><span class="av-t"><b class="av-sfn">10 table rows</b></span><span class="av-ex">google / retargeting</span></div><div class="av-card pmk-pop" style="--d:0.82s"><span class="av-t"><b class="av-sfn">12 list values</b></span><span class="av-ex">Trade Show → Event, Twitter → X</span></div></div></div></div>
+          </div>
+          <div class="av-col pmk-in" style="--d:0.18s; --s:#11a9e6">
+            <div class="av-colh">Applied<span class="av-n">0</span></div>
+            <div class="av-none">Nothing yet</div>
+          </div>
+          <div class="av-col pmk-in" style="--d:0.26s; --s:#0ab38c">
+            <div class="av-colh">Checked<span class="av-n">0</span></div>
+            <div class="av-none">Nothing yet</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+    <section class="slide" data-chapter="avancement" data-pm="av-cal">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">From the POC to production, a longer road than planned</h1>
+        <p class="slide-subtitle">From the end of the holidays to today, two deliveries in dev and nothing in production yet.</p>
+        <div class="av-months">
+<div class="av-mon pmk-in" style="--d:0.10s"><div class="av-mh">July 2026</div><div class="av-grid"><span class="av-wd">M</span><span class="av-wd">T</span><span class="av-wd">W</span><span class="av-wd">T</span><span class="av-wd">F</span><span class="av-wd">S</span><span class="av-wd">S</span><span></span><span></span><span class="av-day">1</span><span class="av-day">2</span><span class="av-day">3</span><span class="av-day">4</span><span class="av-day">5</span><span class="av-day">6</span><span class="av-day">7</span><span class="av-day">8</span><span class="av-day">9</span><span class="av-day">10</span><span class="av-day">11</span><span class="av-day">12</span><span class="av-day">13</span><span class="av-day">14</span><span class="av-day">15</span><span class="av-day">16</span><span class="av-day">17</span><span class="av-day">18</span><span class="av-day">19</span><span class="av-day">20</span><span class="av-day">21</span><span class="av-day">22</span><span class="av-day">23<i class="ms pmk-pop" style="--d:0.50s; --k:#1e3a6e">23</i></span><span class="av-day">24</span><span class="av-day">25</span><span class="av-day">26</span><span class="av-day">27</span><span class="av-day">28</span><span class="av-day">29</span><span class="av-day">30</span><span class="av-day">31</span></div><div class="av-evs"><div class="av-ev pmk-in" style="--d:0.60s"><span class="av-evd" style="--k:#1e3a6e">23</span><div><b>POC cut from Power BI at 6 pm, before it was finished</b></div></div></div></div>
+<div class="av-mon pmk-in" style="--d:0.18s"><div class="av-mh">August 2026</div><div class="av-grid"><span class="av-wd">M</span><span class="av-wd">T</span><span class="av-wd">W</span><span class="av-wd">T</span><span class="av-wd">F</span><span class="av-wd">S</span><span class="av-wd">S</span><span></span><span></span><span></span><span></span><span></span><span class="av-day">1</span><span class="av-day">2</span><span class="av-day">3</span><span class="av-day">4</span><span class="av-day">5</span><span class="av-day">6</span><span class="av-day">7</span><span class="av-day">8</span><span class="av-day">9</span><span class="av-day">10</span><span class="av-day">11</span><span class="av-day">12</span><span class="av-day">13</span><span class="av-day">14</span><span class="av-day">15</span><span class="av-day">16</span><span class="av-day">17<i class="ask pmk-pop" style="--d:0.82s; --k:#64748b">17</i></span><span class="av-day">18</span><span class="av-day">19</span><span class="av-day">20</span><span class="av-day">21</span><span class="av-day">22</span><span class="av-day">23</span><span class="av-day">24<i class="key pmk-pop" style="--d:1.14s; --k:#0ab38c">24</i></span><span class="av-day">25</span><span class="av-day">26</span><span class="av-day">27</span><span class="av-day">28</span><span class="av-day">29</span><span class="av-day">30</span><span class="av-day">31</span></div><div class="av-evs"><div class="av-ev pmk-in" style="--d:0.92s"><span class="av-evd" style="--k:#64748b">17</span><div><b>Week of 17 August, back from holidays, first request document and a new way of working</b></div></div><div class="av-ev pmk-in" style="--d:1.24s"><span class="av-evd" style="--k:#0ab38c">24</span><div><b>Power BI skeleton built, linked to the request document</b></div></div></div></div>
+<div class="av-mon pmk-in" style="--d:0.26s"><div class="av-mh">September 2026</div><div class="av-grid"><span class="av-wd">M</span><span class="av-wd">T</span><span class="av-wd">W</span><span class="av-wd">T</span><span class="av-wd">F</span><span class="av-wd">S</span><span class="av-wd">S</span><span></span><span class="av-day">1</span><span class="av-day">2</span><span class="av-day">3</span><span class="av-day">4</span><span class="av-day">5</span><span class="av-day">6</span><span class="av-day">7<i class="ask pmk-pop" style="--d:1.46s; --k:#64748b">7</i></span><span class="av-day">8</span><span class="av-day">9</span><span class="av-day">10</span><span class="av-day">11</span><span class="av-day">12</span><span class="av-day">13</span><span class="av-day">14</span><span class="av-day">15</span><span class="av-day">16</span><span class="av-day">17</span><span class="av-day">18</span><span class="av-day">19</span><span class="av-day">20</span><span class="av-day">21</span><span class="av-day">22</span><span class="av-day">23</span><span class="av-day">24</span><span class="av-day">25</span><span class="av-day">26</span><span class="av-day">27</span><span class="av-day">28</span><span class="av-day">29</span><span class="av-day">30</span></div><div class="av-evs"><div class="av-ev pmk-in" style="--d:1.56s"><span class="av-evd" style="--k:#64748b">7</span><div><b>Requests move into the Excel to track progress better</b><span><em style="--k:#64748b">27 asked</em></span></div></div></div></div>
+<div class="av-mon pmk-in" style="--d:0.34s"><div class="av-mh">October 2026</div><div class="av-grid"><span class="av-wd">M</span><span class="av-wd">T</span><span class="av-wd">W</span><span class="av-wd">T</span><span class="av-wd">F</span><span class="av-wd">S</span><span class="av-wd">S</span><span></span><span></span><span></span><span class="av-day">1</span><span class="av-day">2</span><span class="av-day">3</span><span class="av-day">4</span><span class="av-day">5<i class="ok pmk-pop" style="--d:1.78s; --k:#11a9e6">5</i></span><span class="av-day">6</span><span class="av-day">7</span><span class="av-day">8<i class="ask pmk-pop" style="--d:2.10s; --k:#64748b">8</i></span><span class="av-day">9</span><span class="av-day">10</span><span class="av-day">11</span><span class="av-day">12<i class="out pmk-pop" style="--d:2.42s; --k:#9ca3af">12</i></span><span class="av-day">13<i class="ok today pmk-pop" style="--d:2.74s; --k:#11a9e6">13</i></span><span class="av-day">14<i class="plan pmk-pop" style="--d:3.06s; --k:#1e3a6e">14</i></span><span class="av-day">15</span><span class="av-day">16</span><span class="av-day">17</span><span class="av-day">18</span><span class="av-day">19</span><span class="av-day">20</span><span class="av-day">21</span><span class="av-day">22</span><span class="av-day">23</span><span class="av-day">24</span><span class="av-day">25</span><span class="av-day">26</span><span class="av-day">27</span><span class="av-day">28</span><span class="av-day">29</span><span class="av-day">30</span><span class="av-day">31<i class="go pmk-pop" style="--d:3.38s; --k:#f59e0b">31</i></span></div><div class="av-evs"><div class="av-ev pmk-in" style="--d:1.88s"><span class="av-evd" style="--k:#11a9e6">5</span><div><b>First requests delivered in dev, not yet usable in Power BI</b><span><em style="--k:#11a9e6">5 requests</em></span></div></div><div class="av-ev pmk-in" style="--d:2.20s"><span class="av-evd" style="--k:#64748b">8</span><div><b>Requests sent to the Salesforce admin</b><span><em style="--k:#64748b">8 requests</em></span></div></div><div class="av-ev pmk-in" style="--d:2.52s"><span class="av-evd" style="--k:#9ca3af">12</span><div><b>Requests prioritised, some withdrawn to move the rest forward</b><span><em style="--k:#9ca3af">3 withdrawn</em></span></div></div><div class="av-ev pmk-in" style="--d:2.84s"><span class="av-evd" style="--k:#11a9e6">13</span><div><b>Second requests delivered in dev, still not usable in Power BI</b><span><em style="--k:#11a9e6">1 request</em></span></div></div><div class="av-ev plan pmk-in" style="--d:3.16s"><span class="av-evd" style="--k:#1e3a6e">14</span><div><b>Origin flow fixed in Salesforce</b><i>Planned</i></div></div><div class="av-ev pmk-in" style="--d:3.48s"><span class="av-evd" style="--k:#f59e0b">31</span><div><b>The France report goes live</b><i>Planned</i></div></div></div></div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+    <section class="slide" data-chapter="avancement" data-pm="av-pbi">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">Power BI, every empty tile waits for a named data source</h1>
+        <div class="pbi av-pbi pmk-in" style="--d:.1s" role="button" tabindex="0">
+          <div class="pbi-top">
+            <img class="pbi-logo" src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"><span class="pbi-name">Marketing France Analytics</span>
+            <div class="pbi-filt"><span class="pbi-fl">Period</span><span class="pbi-fr"><span class="pbi-box">1/1/2026</span><span class="pbi-box">10/13/2026</span></span></div>
+            <span class="av-pub" style="--d:2.9s"><i data-lucide="users"></i>Published for the team</span>
+          </div>
+          <div class="pbi-body">
+            <div class="av-blk"><div class="av-bt">OKR targets</div><div class="av-tiles t3"><div class="av-tile pmk-in" style="--d:0.30s"><div class="av-tt">KR1 · marketing-origin opportunities</div><div class="av-tv later">412</div><div class="av-ph go" style="--d:0.2s"><span>Waiting for data</span><em>G38 · opportunity Origin</em></div></div><div class="av-tile pmk-in" style="--d:0.35s"><div class="av-tt">KR1 · marketing-origin TCV</div><div class="av-tv later">€3.1M</div><div class="av-ph go" style="--d:0.2s"><span>Waiting for data</span><em>G38 · opportunity Origin</em></div></div><div class="av-tile pmk-in" style="--d:0.40s"><div class="av-tt">KR2 · influenced pipeline</div><div class="av-tv later">24%</div><div class="av-ph go" style="--d:1.8s"><span>Waiting for data</span><em>G33 · opportunities touched</em></div></div></div></div>
+            <div class="av-blk"><div class="av-bt">From lead to opportunity</div><div class="av-tiles t6"><div class="av-tile pmk-in" style="--d:0.50s"><div class="av-tt">Leads</div><div class="av-tv">6,000</div></div><div class="av-tile pmk-in" style="--d:0.55s"><div class="av-tt">MQL</div><div class="av-tv later">4,100</div><div class="av-ph go" style="--d:0.8s"><span>Waiting for data</span><em>G14 · lead stages</em></div></div><div class="av-tile pmk-in" style="--d:0.60s"><div class="av-tt">SQL</div><div class="av-tv later">1,900</div><div class="av-ph go" style="--d:0.8s"><span>Waiting for data</span><em>G14 · lead stages</em></div></div><div class="av-tile pmk-in" style="--d:0.65s"><div class="av-tt">Converted leads</div><div class="av-tv">2,400</div></div><div class="av-tile pmk-in" style="--d:0.70s"><div class="av-tt">Opportunities from leads</div><div class="av-tv">1,700</div></div><div class="av-tile pmk-in" style="--d:0.75s"><div class="av-tt">Converted, no opportunity</div><div class="av-tv">700</div></div></div></div>
+            <div class="av-blk"><div class="av-bt">Cost and value</div><div class="av-tiles t4"><div class="av-tile pmk-in" style="--d:0.70s"><div class="av-tt">CPL · media spend</div><div class="av-tv later">€180</div><div class="av-ph go" style="--d:1.3s"><span>Waiting for data</span><em>G03 · campaign cost</em></div></div><div class="av-tile pmk-in" style="--d:0.75s"><div class="av-tt">Cost per opportunity</div><div class="av-tv later">€950</div><div class="av-ph go" style="--d:1.3s"><span>Waiting for data</span><em>G03 · campaign cost</em></div></div><div class="av-tile pmk-in" style="--d:0.80s"><div class="av-tt">Customer LTV</div><div class="av-tv later">€85k</div><div class="av-ph go" style="--d:0.2s"><span>Waiting for data</span><em>G38 · opportunity Origin</em></div></div><div class="av-tile pmk-in" style="--d:0.85s"><div class="av-tt">Influence ROI</div><div class="av-tv later">6.2</div><div class="av-ph go" style="--d:1.8s"><span>Waiting for data</span><em>G33 and G03</em></div></div></div></div>
+          </div>
+          <div class="av-tabs"><div class="av-tab on"><i class="p"></i><i class="g" style="--d:2.30s"></i>Synthèse</div><div class="av-tab"><i class="p"></i><i class="g" style="--d:2.37s"></i>SEO & LLM</div><div class="av-tab"><i class="w"></i><i class="g" style="--d:2.44s"></i>Engagement</div><div class="av-tab"><i class="p"></i><i class="g" style="--d:2.51s"></i>Conversions</div><div class="av-tab"><i class="p"></i><i class="g" style="--d:2.58s"></i>Campagnes</div><div class="av-tab"><i class="w"></i><i class="g" style="--d:2.65s"></i>Origine marketing (KR1)</div><div class="av-tab"><i class="w"></i><i class="g" style="--d:2.72s"></i>Influence marketing (KR2)</div></div>
+        </div>
+        <div class="av-key pmk-fade" style="--d:1.2s"><span style="--s:#0ab38c"><i></i>Data in place</span><span style="--s:#f59f00"><i></i>Partly</span><span style="--s:#c8c6c4"><i></i>Waiting</span><span style="--s:transparent">Illustrative values</span></div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+    <section class="slide" data-chapter="avancement" data-pm="av-flow">
+      <div class="slide-inner insights wide">
+        <h1 class="slide-title compact">The Origin flow changes in three places, its table gains 68 rows</h1>
+        <p class="slide-subtitle">Reports read the Origin since 12 October. Version 3 of the table is with the Salesforce admin.</p>
+        <div class="av-fl"><div class="sl av-canvas pmk-in" style="--d:.1s"><div class="av-cvh"><i data-lucide="workflow"></i>Flow · [LEAD] UTM Pardot<span>Active version, 2024</span></div><div class="av-cvb"><div class="sl-node av-fn pmk-pop" style="--d:0.3s"><span class="sl-ni start"><i data-lucide="play"></i></span><div><small>Start</small><b>Lead created by Pardot, France and Ayming Digital</b></div></div><div class="sl-conn pmk-fade" style="--d:0.45s"></div><div class="sl-node av-fn pmk-pop" style="--d:0.6s"><span class="sl-ni dec"><i data-lucide="split"></i></span><div><small>Decision</small><b>What does the lead carry?</b></div></div><div class="av-split pmk-fade" style="--d:.8s"></div><div class="av-fcs"><div class="av-fc"><span class="av-fcl pmk-fade" style="--d:.85s">Origin UTMs</span><div class="sl-node av-fn pmk-pop" style="--d:1.0s"><span class="sl-ni rec"><i data-lucide="search"></i></span><div><small>Get Records</small><b>Source / medium row in Lead origin</b></div></div><div class="sl-conn pmk-fade" style="--d:1.15s"></div><div class="sl-node av-fn chg pmk-pop" style="--d:2.9s"><span class="sl-ni rec"><i data-lucide="search"></i></span><div><small>If no row</small><b>The medium's * row, its Origin with Other</b></div><span class="av-bdg pmk-pop" style="--d:3.05s"><b>B</b>New</span></div><div class="sl-conn pmk-fade" style="--d:2.9s"></div><div class="sl-node av-fn chg pmk-pop" style="--d:3.2s"><span class="sl-ni rec"><i data-lucide="pencil"></i></span><div><small>If Other</small><b>The source goes to Origin Description</b></div><span class="av-bdg pmk-pop" style="--d:3.35s"><b>C</b>New</span></div><div class="sl-conn pmk-fade" style="--d:3.2s"></div><div class="sl-node av-fn pmk-pop" style="--d:1.9s"><span class="sl-ni upd"><i data-lucide="save"></i></span><div><small>Update Records</small><b>Origin and Origin Details</b></div></div><div class="av-mail pmk-fade" style="--d:2.1s"><i data-lucide="mail"></i>Unknown or empty medium, email alert</div></div><div class="av-fc"><span class="av-fcl pmk-fade" style="--d:.85s">Nothing</span><div class="sl-node av-fn chg pmk-pop" style="--d:1.0s"><span class="sl-ni upd"><i data-lucide="save"></i></span><div><small>Update Records</small><b>Direct / None</b><s>Organic search / None</s></div><span class="av-bdg pmk-pop" style="--d:2.7s"><b>A</b>Changed</span></div></div><div class="av-fc"><span class="av-fcl pmk-fade" style="--d:.85s">Origin only</span><div class="sl-node av-fn dim pmk-pop" style="--d:1.0s"><span class="sl-ni rec"><i data-lucide="search"></i></span><div><small>Unchanged</small><b>UTMs taken from the Utm origin table</b></div></div></div></div></div></div><div class="av-xl pmk-in" style="--d:3.0s"><div class="av-xlh"><i data-lucide="sheet"></i>correspondances_utm_origin_v3.xlsx<span>With the Salesforce admin</span></div><div class="av-xcs"><span class="av-xc new pmk-pop" style="--d:3.30s"><b>68</b>New</span><span class="av-xc mod pmk-pop" style="--d:3.40s"><b>33</b>Changed</span><span class="av-xc del pmk-pop" style="--d:3.50s"><b>10</b>To delete</span><span class="av-xc same pmk-pop" style="--d:3.60s"><b>64</b>Unchanged</span></div><div class="av-xr th"><span>Source</span><span>Medium</span><span>Origin</span><span>Origin Details</span><span>Status</span></div><div class="av-xr new pmk-row" style="--d:3.60s"><span>chatgpt</span><span>llm</span><span>AI search</span><span>ChatGPT</span><span><em class="new">New</em></span></div><div class="av-xr new pmk-row" style="--d:3.78s"><span>*</span><span>llm</span><span>AI search</span><span>Other</span><span><em class="new">New</em></span></div><div class="av-xr new pmk-row" style="--d:3.96s"><span>*</span><span>affiliate</span><span>Affiliate</span><span>Other</span><span><em class="new">New</em></span></div><div class="av-xr mod pmk-row" style="--d:4.14s"><span>spotify</span><span>audio</span><span><s>Organic social</s>Audio</span><span>Spotify</span><span><em class="mod">Changed</em></span></div><div class="av-xr mod pmk-row" style="--d:4.32s"><span>""</span><span>""</span><span><s>Organic search</s>Direct</span><span>None</span><span><em class="mod">Changed</em></span></div><div class="av-xr mod pmk-row" style="--d:4.50s"><span>myrhline</span><span>affiliate</span><span><s>Business contributor</s>Affiliate</span><span><s>Partner</s>MyRHline</span><span><em class="mod">Changed</em></span></div><div class="av-xr del pmk-row" style="--d:4.68s"><span>google</span><span>retargeting</span><span><s>Paid Search</s></span><span><s>Google</s></span><span><em class="del">To delete</em></span></div><div class="av-xr same pmk-row" style="--d:4.86s"><span>twitter</span><span>sm</span><span>Organic social</span><span>X</span><span><em class="same">Unchanged</em></span></div><div class="av-xt"><span class="">Read me</span><span class="on">Feuil1</span><span class="">Values to add · 198</span><span class="">Values to delete · 12</span></div></div></div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
@@ -2310,14 +2705,14 @@
   <script>lucide.createIcons();</script>
   <script>
     (function () {
-      var cover = document.querySelector('.slide.cover');
+      var covers = document.querySelectorAll('.slide.cover');
       var credit = document.querySelector('.deck-credit');
-      if (!cover || !credit) return;
+      if (!covers.length || !credit) return;
       var sync = function () {
-        credit.style.visibility = cover.classList.contains('active') ? 'hidden' : 'visible';
+        credit.style.visibility = document.querySelector('.slide.cover.active') ? 'hidden' : 'visible';
       };
       sync();
-      new MutationObserver(sync).observe(cover, { attributes: true, attributeFilter: ['class'] });
+      covers.forEach(function (c) { new MutationObserver(sync).observe(c, { attributes: true, attributeFilter: ['class'] }); });
     })();
   </script>
   <script>
@@ -2605,6 +3000,35 @@
       });
       slides.forEach(function (s) { mo.observe(s, { attributes: true, attributeFilter: ['class'] }); });
       if (cur && cur.hasAttribute('data-div')) enterDiv(cur, false);
+    })();
+  </script>
+  <script>
+    /* Two-step slides: the first click, → or Space plays the second half (an Exigence panel, the Power BI fill), the next one moves on. Leaving the slide resets it. */
+    (function () {
+      var steps = [];
+      document.querySelectorAll('.slide .rq-col.fix').forEach(function (fix) {
+        var s = fix.closest('.slide');
+        s.classList.add('rq-step'); s.dataset.go = 'rq-go';
+        var els = [].slice.call(s.querySelectorAll('.rq-mid, .rq-mid *, .rq-col.fix, .rq-col.fix *')).filter(function (e) { return /--d/.test(e.getAttribute('style') || ''); });
+        els.forEach(function (e) { e.dataset.d0 = e.style.getPropertyValue('--d'); });
+        var off = Math.min.apply(null, els.map(function (e) { return parseFloat(e.dataset.d0) || 0; }));
+        els.forEach(function (e) { e.style.setProperty('--d', Math.max(0, (parseFloat(e.dataset.d0) || 0) - off + .1).toFixed(2) + 's'); });
+        steps.push(s);
+      });
+      document.querySelectorAll('.slide[data-pm="av-pbi"]').forEach(function (s) { s.dataset.go = 'av-go'; steps.push(s); });
+      if (!steps.length) return;
+      var pending = function () { var s = document.querySelector('.slide.active[data-go]'); return s && !s.classList.contains(s.dataset.go) ? s : null; };
+      var reveal = function (e) { var s = pending(); if (!s) return; s.classList.add(s.dataset.go); e.preventDefault(); e.stopImmediatePropagation(); };
+      document.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') reveal(e); }, true);
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('a, .chapter-nav, .nav-item, [data-act]:not([data-act="next"])')) return;
+        if (e.target.closest('.slide.active[data-go], [data-act="next"], #key-next')) reveal(e);
+      }, true);
+      steps.forEach(function (s) {
+        new MutationObserver(function () {
+          if (!s.classList.contains('active') && s.classList.contains(s.dataset.go)) s.classList.remove(s.dataset.go);
+        }).observe(s, { attributes: true, attributeFilter: ['class'] });
+      });
     })();
   </script>
 </body>
