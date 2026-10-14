@@ -1077,6 +1077,12 @@
     .cost2 .bud-r { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, .8fr)); }
     .cost2 .ex-c.warn .c2-sub b { color: #b91c1c; }
     .cost2 .ex-c.warn .c2-sub b.ok { color: #076b54; }
+    .cost2.chain { grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr); gap: 8px; }
+    .cost2 .c2-arrow { align-self: center; display: flex; justify-content: center; color: #94a3b8; }
+    .cost2 .c2-arrow svg { width: 20px; height: 20px; }
+    .cost2 .sfo-ic.real { background: #0ab38c; }
+    .c2-note { max-width: 1140px; margin: 16px auto 0; padding: 10px 16px; border-radius: 10px; background: #f8fafc; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); text-align: left; }
+    .c2-note b { color: #b91c1c; } .c2-note b.ok { color: #076b54; }
     .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
     .slide[data-pm="rq-cost"] .sl-win { flex: none; }
     .slide[data-pm="rq-cost"] .sl-f { display: flex; align-items: center; gap: 8px; }
@@ -2663,26 +2669,29 @@
       <div class="kr-badge">
         <div class="kl"><b>Annexe</b> · les coûts</div>
         <div class="kh">Deux niveaux de coût</div>
-        <div class="ks">Le coût externe vit sur la campagne, les salaires sur le département.</div>
+        <div class="ks">La campagne porte ses dépenses externes, tout le reste devient un coût fixe mensuel.</div>
       </div>
       <div class="slide-inner insights">
-        <div class="cost2">
-          <div class="ex-c pmk-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">1 · La campagne</div><div class="sfo-n">Chaque mois</div></div></div>
-            <div class="c2-sub">Le coût réel ne porte que les frais externes de la campagne.</div>
-            <div class="ex-k pmk-row" style="--d:0.4s"><span>Coût réel<small>média, salon, agence, outil dédié</small></span><b>Planning</b></div><div class="ex-k pmk-row" style="--d:0.7s"><span>CPL<small>coût ÷ leads au premier contact</small></span><b>€ / lead</b></div><div class="ex-k pmk-row" style="--d:1.0s"><span>Coût par opportunité<small>coût ÷ opportunités touchées</small></span><b>€ / opp.</b></div><div class="ex-k tot pmk-row" style="--d:1.3s"><span>ROI de la campagne<small>sa part du TCV influencé ÷ son coût</small></span><b>×2</b></div>
+        <div class="cost2 chain">
+          <div class="ex-c pmk-in" style="--d:0.1s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">1 · La campagne</div><div class="sfo-n">ROI de la campagne</div></div></div>
+            <div class="c2-sub">Seules les dépenses externes de la campagne comptent.</div>
+            <div class="ex-k pmk-row" style="--d:0.4s"><span>Dépenses externes<small>média, salon, agence, outil dédié</small></span><b>Planning</b></div><div class="ex-k pmk-row" style="--d:0.7s"><span>CPL<small>dépenses ÷ leads au premier contact</small></span><b>€ / lead</b></div><div class="ex-k pmk-row" style="--d:1.0s"><span>Coût par opportunité<small>dépenses ÷ opportunités touchées</small></span><b>€ / opp.</b></div><div class="ex-k tot pmk-row" style="--d:1.3s"><span>ROI de la campagne<small>sa part du TCV influencé ÷ ses dépenses externes · exemple, une campagne</small></span><b>×2</b></div>
           </div>
-          <div class="ex-c pmk-in" style="--d:1.8s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="users"></i></span><div><div class="sfo-k">2 · Le département</div><div class="sfo-n">Chaque mois, lu sur 12 mois</div></div></div>
-            <div class="c2-sub">Les salaires entrent une seule fois, au niveau du département.</div>
-            <div class="ex-k pmk-row" style="--d:2.1s"><span>Salaires chargés ÷ 12<small>ou la masse salariale réelle du mois</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.4s"><span>Dépenses externes du mois<small>campagnes, outils et agences non rattachés</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.7s"><span>= Coût du mois</span><b>Σ</b></div><div class="ex-k tot pmk-row" style="--d:3.0s"><span>ROI influence<small>TCV influencé signé ÷ coûts des 12 mois, décalés d’un cycle de vente (environ 3 mois)</small></span><b>×4,04</b></div>
+          <div class="c2-arrow pmk-in" style="--d:1.5s"><i data-lucide="arrow-right"></i></div>
+          <div class="ex-c pmk-in" style="--d:1.7s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="calendar-range"></i></span><div><div class="sfo-k">2 · Tout le reste</div><div class="sfo-n">Coût fixe du mois</div></div></div>
+            <div class="c2-sub">Ce qui n’est rattaché à aucune campagne, sur l’année, divisé par 12.</div>
+            <div class="ex-k pmk-row" style="--d:2.0s"><span>Salaires chargés de l’année<small>l’équipe marketing</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.3s"><span>Outils et agences non rattachés<small>abonnements, prestataires transverses</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.6s"><span>= Total de l’année ÷ 12<small>le même montant chaque mois</small></span><b>÷ 12</b></div><div class="ex-k tot pmk-row" style="--d:2.9s"><span>Coût fixe du mois<small>ajouté à chaque mois, quelles que soient les campagnes</small></span><b>€ / mois</b></div>
           </div>
-          <div class="ex-c warn pmk-in" style="--d:4.0s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="circle-alert"></i></span><div><div class="sfo-k">3 · Pourquoi pas ×3 par campagne</div><div class="sfo-n">Le temps ne suit pas la dépense</div></div></div>
-            <div class="bud-r th"><span>Campagne</span><span>Coût externe</span><span>Avec ×3</span><span>Temps équipe</span></div><div class="bud-r pmk-row" style="--d:4.6s"><span>Webinar</span><b>2 000 €</b><b class="bud-bad">6 000 €</b><em>élevé</em></div><div class="bud-r pmk-row" style="--d:4.9s"><span>LinkedIn Ads</span><b>20 000 €</b><b class="bud-bad">60 000 €</b><em>faible</em></div>
-            <div class="c2-sub pmk-fade" style="--d:5.4s">Le classement ne change pas, et le webinar reste <b>presque gratuit</b> alors qu’il prend le plus de temps. Si un partage des salaires est demandé, il se fait <b class="ok">par canal</b>, sur une estimation trimestrielle du temps de l’équipe.</div>
+          <div class="c2-arrow pmk-in" style="--d:3.1s"><i data-lucide="arrow-right"></i></div>
+          <div class="ex-c pmk-in" style="--d:3.3s">
+            <div class="sfo-h"><span class="sfo-ic real"><i data-lucide="trending-up"></i></span><div><div class="sfo-k">3 · Le vrai ROI</div><div class="sfo-n">ROI réel</div></div></div>
+            <div class="c2-sub">Le TCV influencé face à tous les coûts du marketing.</div>
+            <div class="ex-k pmk-row" style="--d:3.6s"><span>Dépenses des campagnes<small>12 mois d’étape 1</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:3.9s"><span>Coût fixe × 12<small>12 mois d’étape 2</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:4.2s"><span>= Coût complet</span><b>Σ</b></div><div class="ex-k tot pmk-row" style="--d:4.5s"><span>ROI réel<small>TCV influencé signé ÷ coût complet, décalé d’un cycle de vente (environ 3 mois) · tout le marketing, l’exemple d’un contrat</small></span><b>×4,04</b></div>
           </div>
         </div>
+        <div class="c2-note pmk-fade" style="--d:5.0s"><b>Pourquoi pas ×3 sur chaque campagne&nbsp;?</b> Le temps ne suit pas la dépense. Un webinar à 2 000 € prend plus de temps que 20 000 € de LinkedIn Ads, donc un partage des salaires, si on le demande, se fait <b class="ok">par canal</b>.</div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>

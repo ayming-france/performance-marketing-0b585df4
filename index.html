@@ -1077,6 +1077,12 @@
     .cost2 .bud-r { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, .8fr)); }
     .cost2 .ex-c.warn .c2-sub b { color: #b91c1c; }
     .cost2 .ex-c.warn .c2-sub b.ok { color: #076b54; }
+    .cost2.chain { grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr); gap: 8px; }
+    .cost2 .c2-arrow { align-self: center; display: flex; justify-content: center; color: #94a3b8; }
+    .cost2 .c2-arrow svg { width: 20px; height: 20px; }
+    .cost2 .sfo-ic.real { background: #0ab38c; }
+    .c2-note { max-width: 1140px; margin: 16px auto 0; padding: 10px 16px; border-radius: 10px; background: #f8fafc; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); text-align: left; }
+    .c2-note b { color: #b91c1c; } .c2-note b.ok { color: #076b54; }
     .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
     .slide[data-pm="rq-cost"] .sl-win { flex: none; }
     .slide[data-pm="rq-cost"] .sl-f { display: flex; align-items: center; gap: 8px; }
@@ -2663,26 +2669,29 @@
       <div class="kr-badge">
         <div class="kl"><b>Appendix</b> · costs</div>
         <div class="kh">Two levels of cost</div>
-        <div class="ks">External cost lives on the campaign, salaries on the department.</div>
+        <div class="ks">The campaign carries its external spend, everything else becomes a fixed monthly cost.</div>
       </div>
       <div class="slide-inner insights">
-        <div class="cost2">
-          <div class="ex-c pmk-in" style="--d:.1s">
-            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">1 · The campaign</div><div class="sfo-n">Every month</div></div></div>
-            <div class="c2-sub">Actual cost carries only the campaign’s external spend.</div>
-            <div class="ex-k pmk-row" style="--d:0.4s"><span>Actual cost<small>media, event fees, agency, dedicated tool</small></span><b>Planning</b></div><div class="ex-k pmk-row" style="--d:0.7s"><span>CPL<small>cost ÷ first-touch leads</small></span><b>€ / lead</b></div><div class="ex-k pmk-row" style="--d:1.0s"><span>Cost per opportunity<small>cost ÷ opportunities touched</small></span><b>€ / opp.</b></div><div class="ex-k tot pmk-row" style="--d:1.3s"><span>Campaign ROI<small>its share of influenced TCV ÷ its cost</small></span><b>×2</b></div>
+        <div class="cost2 chain">
+          <div class="ex-c pmk-in" style="--d:0.1s">
+            <div class="sfo-h"><span class="sfo-ic camp"><i data-lucide="megaphone"></i></span><div><div class="sfo-k">1 · The campaign</div><div class="sfo-n">Campaign ROI</div></div></div>
+            <div class="c2-sub">Only the campaign’s external spend counts.</div>
+            <div class="ex-k pmk-row" style="--d:0.4s"><span>External spend<small>media, event fees, agency, dedicated tool</small></span><b>Planning</b></div><div class="ex-k pmk-row" style="--d:0.7s"><span>CPL<small>spend ÷ first-touch leads</small></span><b>€ / lead</b></div><div class="ex-k pmk-row" style="--d:1.0s"><span>Cost per opportunity<small>spend ÷ opportunities touched</small></span><b>€ / opp.</b></div><div class="ex-k tot pmk-row" style="--d:1.3s"><span>Campaign ROI<small>its share of influenced TCV ÷ its external spend · example, one campaign</small></span><b>×2</b></div>
           </div>
-          <div class="ex-c pmk-in" style="--d:1.8s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="users"></i></span><div><div class="sfo-k">2 · The department</div><div class="sfo-n">Every month, read over 12 months</div></div></div>
-            <div class="c2-sub">Salaries enter once, at department level.</div>
-            <div class="ex-k pmk-row" style="--d:2.1s"><span>Loaded salaries ÷ 12<small>or the month’s actual payroll</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.4s"><span>External spend of the month<small>campaigns, tools and agencies not tied to one</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.7s"><span>= Cost of the month</span><b>Σ</b></div><div class="ex-k tot pmk-row" style="--d:3.0s"><span>Influence ROI<small>signed influenced TCV ÷ 12 months of cost, offset by one sales cycle (about 3 months)</small></span><b>×4.04</b></div>
+          <div class="c2-arrow pmk-in" style="--d:1.5s"><i data-lucide="arrow-right"></i></div>
+          <div class="ex-c pmk-in" style="--d:1.7s">
+            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="calendar-range"></i></span><div><div class="sfo-k">2 · Everything else</div><div class="sfo-n">Fixed cost of the month</div></div></div>
+            <div class="c2-sub">What no campaign carries, over the year, divided by 12.</div>
+            <div class="ex-k pmk-row" style="--d:2.0s"><span>Loaded salaries of the year<small>the marketing team</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.3s"><span>Tools and agencies not tied to one<small>subscriptions, shared providers</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:2.6s"><span>= Year total ÷ 12<small>the same amount every month</small></span><b>÷ 12</b></div><div class="ex-k tot pmk-row" style="--d:2.9s"><span>Fixed cost of the month<small>added to every month, whatever the campaigns</small></span><b>€ / month</b></div>
           </div>
-          <div class="ex-c warn pmk-in" style="--d:4.0s">
-            <div class="sfo-h"><span class="sfo-ic"><i data-lucide="circle-alert"></i></span><div><div class="sfo-k">3 · Why not ×3 per campaign</div><div class="sfo-n">Time does not follow spend</div></div></div>
-            <div class="bud-r th"><span>Campaign</span><span>External cost</span><span>With ×3</span><span>Team time</span></div><div class="bud-r pmk-row" style="--d:4.6s"><span>Webinar</span><b>€2,000</b><b class="bud-bad">€6,000</b><em>high</em></div><div class="bud-r pmk-row" style="--d:4.9s"><span>LinkedIn Ads</span><b>€20,000</b><b class="bud-bad">€60,000</b><em>low</em></div>
-            <div class="c2-sub pmk-fade" style="--d:5.4s">The ranking does not move, and the webinar stays <b>almost free</b> although it takes the most time. If salaries must be split, split them <b class="ok">by channel</b>, on a quarterly estimate of the team’s time.</div>
+          <div class="c2-arrow pmk-in" style="--d:3.1s"><i data-lucide="arrow-right"></i></div>
+          <div class="ex-c pmk-in" style="--d:3.3s">
+            <div class="sfo-h"><span class="sfo-ic real"><i data-lucide="trending-up"></i></span><div><div class="sfo-k">3 · The real ROI</div><div class="sfo-n">Real ROI</div></div></div>
+            <div class="c2-sub">Influenced TCV against every marketing cost.</div>
+            <div class="ex-k pmk-row" style="--d:3.6s"><span>Campaign spend<small>12 months of step 1</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:3.9s"><span>Fixed cost × 12<small>12 months of step 2</small></span><b>+</b></div><div class="ex-k pmk-row" style="--d:4.2s"><span>= Full cost</span><b>Σ</b></div><div class="ex-k tot pmk-row" style="--d:4.5s"><span>Real ROI<small>signed influenced TCV ÷ full cost, offset by one sales cycle (about 3 months) · all of marketing, the one-contract example</small></span><b>×4.04</b></div>
           </div>
         </div>
+        <div class="c2-note pmk-fade" style="--d:5.0s"><b>Why not ×3 on each campaign?</b> Time does not follow spend. A €2,000 webinar takes more team time than €20,000 of LinkedIn Ads, so a salary split, if asked for, goes <b class="ok">by channel</b>.</div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
