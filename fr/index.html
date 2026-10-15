@@ -1488,7 +1488,22 @@
     .rs-five .pmk-team.ref { background: #eef0f3; color: #475569; }
     .rs-paid { font-style: normal; margin-left: 6px; font-size: 9.5px; font-weight: 800; color: #2e844a; background: #e6f8f2; border-radius: 8px; padding: 1px 7px; }
     .slide[data-pm="rq-src"] .rs-kv { height: 27px; }
-  </style>
+      /* Thank-you slide, the engine components.css Gracias layout (this deck does not load components.css) */
+    .slide[data-chapter="gracias"] .slide-inner { max-width: none; width: min(42%, 620px); margin: 0 auto 0 max(0px, calc(25% - min(21%, 310px) - 40px)); }
+    .gracias-left { text-align: left; }
+    .gracias-logos { display: flex; align-items: center; gap: var(--space-16); margin-bottom: var(--space-34); }
+    .gracias-logos img { height: 40px; width: auto; display: block; }
+    .gracias-logos .gl-sep { font-size: var(--font-18); color: #c3ced6; }
+    .gracias-lead { font-size: 22px; font-weight: var(--weight-bold); color: var(--blue-dark); margin: 0 0 var(--space-22); }
+    .gc-row { display: flex; align-items: center; gap: var(--space-16); margin-bottom: var(--space-16); }
+    .gc-row:last-child { margin-bottom: 0; }
+    .gc-ic { width: 44px; height: 44px; border-radius: var(--radius-circle); flex-shrink: 0; background: var(--blue-primary); display: flex; align-items: center; justify-content: center; }
+    .gc-ic svg { width: 20px; height: 20px; color: var(--bg-white); }
+    .gc-text { font-size: var(--font-14); color: var(--blue-dark); font-weight: var(--weight-semibold); line-height: 1.35; }
+    .gc-sub { font-size: 12.5px; color: #5a6b78; font-weight: 400; margin-top: 2px; }
+    .gracias-photo { position: absolute; top: 0; right: 0; bottom: var(--banner-h); width: 50%; overflow: hidden; }
+    .gracias-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+</style>
 </head>
 <body>
 
@@ -2618,19 +2633,30 @@
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
-    <!-- ========== FIN (cover) ========== -->
-    <section class="slide cover" data-chapter="fin">
-      <div class="cover-layout">
-        <div class="cover-left">
-          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
-          <h1 class="cover-title">Merci</h1>
-          <p class="cover-subtitle">Questions et échanges</p>
-          <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-10</p>
-        </div>
-        <div class="cover-right">
-          <img class="cover-image" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80" alt="Poignée de main">
+    <!-- ========== THANK YOU (engine Gracias layout) ========== -->
+    <section class="slide" data-chapter="gracias">
+      <div class="slide-inner">
+        <div class="gracias-left">
+          <div class="gracias-logos"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <p class="gracias-lead">Merci.</p>
+          <div class="gc-row">
+            <div class="gc-ic"><i data-lucide="mail"></i></div>
+            <div class="gc-text">José J Encarnación Saiter<div class="gc-sub">jencarnacion@ayming.com</div></div>
+          </div>
+          <div class="gc-row">
+            <div class="gc-ic"><i data-lucide="globe"></i></div>
+            <div class="gc-text">www.ayming.fr</div>
+          </div>
+          <div class="gc-row">
+            <div class="gc-ic"><i data-lucide="map-pin"></i></div>
+            <div class="gc-text">Ayming<div class="gc-sub">114 rue Chaptal, 92300 Levallois-Perret, France</div></div>
+          </div>
         </div>
       </div>
+      <div class="gracias-photo">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80" alt="Poignée de main">
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
 
     <!-- ========== ANNEXE (cover) ========== -->
