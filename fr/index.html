@@ -1082,8 +1082,11 @@
     .cost2 .c2-arrow svg { width: 20px; height: 20px; }
     .cost2 .sfo-ic.real { background: #0ab38c; }
     .cost2 .ex-k.op { justify-content: flex-start; }
-    .cost2 .c2-op { flex: none; width: 16px; font-style: normal; font-size: 15px; font-weight: 800; color: var(--ay-dark); text-align: center; }
+    .cost2 .c2-op { flex: none; width: 24px; font-style: normal; font-size: 15px; font-weight: 800; color: var(--ay-dark); text-align: center; }
     .cost2 .ex-k.tot .c2-op { color: #076b54; }
+    .cost2.chain { align-items: stretch; }
+    .cost2.chain .ex-c { display: flex; flex-direction: column; }
+    .cost2.chain .ex-k.tot { margin-top: auto; }
     .c2-note { max-width: 1140px; margin: 16px auto 0; padding: 10px 16px; border-radius: 10px; background: #f8fafc; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); text-align: left; }
     .c2-note b { color: #b91c1c; } .c2-note b.ok { color: #076b54; }
     .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
@@ -2696,7 +2699,7 @@
           <div class="ex-c pmk-in" style="--d:3.3s">
             <div class="sfo-h"><span class="sfo-ic real"><i data-lucide="trending-up"></i></span><div><div class="sfo-k">3 · Le vrai ROI</div><div class="sfo-n">ROI réel</div></div></div>
             <div class="c2-sub">Le TCV influencé face à tous les coûts du marketing.</div>
-            <div class="ex-k op pmk-row" style="--d:3.6s"><i class="c2-op"></i><span>TCV influencé signé<small>décalé d’un cycle de vente, environ 3 mois</small></span></div><div class="ex-k op pmk-row" style="--d:3.9s"><i class="c2-op">÷</i><span>Dépenses des campagnes<small>12 mois d’étape 1</small></span></div><div class="ex-k op pmk-row" style="--d:4.2s"><i class="c2-op">+</i><span>Coût fixe × 12<small>12 mois d’étape 2</small></span></div><div class="ex-k op tot pmk-row" style="--d:4.5s"><i class="c2-op">=</i><span>ROI réel<small>TCV influencé signé ÷ (dépenses des campagnes + coût fixe × 12)</small></span></div>
+            <div class="ex-k op pmk-row" style="--d:3.6s"><i class="c2-op"></i><span>TCV influencé signé<small>décalé d’un cycle de vente, environ 3 mois</small></span></div><div class="ex-k op pmk-row" style="--d:3.9s"><i class="c2-op">÷ (</i><span>Dépenses des campagnes<small>12 mois d’étape 1</small></span></div><div class="ex-k op pmk-row" style="--d:4.2s"><i class="c2-op">+</i><span>Coût fixe × 12 )<small>12 mois d’étape 2</small></span></div><div class="ex-k op tot pmk-row" style="--d:4.5s"><i class="c2-op">=</i><span>ROI réel<small>tout le marketing, sur 12 mois</small></span></div>
           </div>
         </div>
         <div class="c2-note pmk-fade" style="--d:5.0s"><b>Pourquoi pas ×3 sur chaque campagne&nbsp;?</b> Le temps ne suit pas la dépense. Un webinar à 2 000 € prend plus de temps que 20 000 € de LinkedIn Ads, donc un partage des salaires, si on le demande, se fait <b class="ok">par canal</b>.</div>
