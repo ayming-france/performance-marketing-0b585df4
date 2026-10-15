@@ -1087,6 +1087,8 @@
     .cost2.chain { align-items: stretch; }
     .cost2.chain .ex-c { display: flex; flex-direction: column; }
     .cost2.chain .ex-k.tot { margin-top: auto; }
+    .c2-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 1140px; margin: 14px auto 0; }
+    .c2-notes .c2-note { margin: 0; padding: 7px 12px; font-size: 11px; }
     .c2-note { max-width: 1140px; margin: 16px auto 0; padding: 10px 16px; border-radius: 10px; background: #f8fafc; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); text-align: left; }
     .c2-note b { color: #b91c1c; } .c2-note b.ok { color: #076b54; }
     .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
@@ -2699,8 +2701,7 @@
             <div class="ex-k op pmk-row" style="--d:3.6s"><i class="c2-op"></i><span>Signed influenced TCV<small>offset by one sales cycle, about 3 months</small></span></div><div class="ex-k op pmk-row" style="--d:3.9s"><i class="c2-op">÷</i><span>(Campaign spend + Fixed cost × 12)<small>steps 1 and 2, over 12 months</small></span></div><div class="ex-k op tot pmk-row" style="--d:4.2s"><i class="c2-op">=</i><span>Real ROI<small>all of marketing, rolling 12 months, published every quarter</small></span></div>
           </div>
         </div>
-        <div class="c2-note pmk-fade" style="--d:5.0s"><b>Why are salaries not split across campaigns?</b> Team time does not follow budget. A €2,000 webinar takes more work than €20,000 of LinkedIn Ads, so splitting them in proportion to spend would inflate the cost of one and understate the other. Salaries therefore stay in the fixed cost, and if they ever need splitting, it will be <b class="ok">by channel</b>, by time spent.</div>
-        <div class="c2-note pmk-fade" style="--d:5.3s; margin-top: 8px"><b class="ok">Why a real ROI every quarter?</b> From the first meeting to signature takes 3.3 months at the median and 4.2 months weighted by TCV, on New&nbsp;logo contracts signed since January 2025. Over a single month, one contract would swing the ROI. The calculation therefore covers a rolling 12 months, published every quarter.</div>
+        <div class="c2-notes pmk-fade" style="--d:5.0s"><div class="c2-note"><b>Salaries stay out of campaigns.</b> Time does not follow budget, a €2,000 webinar takes more than €20,000 of LinkedIn Ads.</div><div class="c2-note"><b class="ok">Every quarter.</b> First meeting to signature takes 3.3 months at the median. Over one month, a single contract would swing the ROI.</div></div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>

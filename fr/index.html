@@ -1087,6 +1087,8 @@
     .cost2.chain { align-items: stretch; }
     .cost2.chain .ex-c { display: flex; flex-direction: column; }
     .cost2.chain .ex-k.tot { margin-top: auto; }
+    .c2-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 1140px; margin: 14px auto 0; }
+    .c2-notes .c2-note { margin: 0; padding: 7px 12px; font-size: 11px; }
     .c2-note { max-width: 1140px; margin: 16px auto 0; padding: 10px 16px; border-radius: 10px; background: #f8fafc; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--ay-dark); text-align: left; }
     .c2-note b { color: #b91c1c; } .c2-note b.ok { color: #076b54; }
     .slide[data-pm="rq-cost"] .slide-inner.insights { padding-top: 100px; }
@@ -2699,8 +2701,7 @@
             <div class="ex-k op pmk-row" style="--d:3.6s"><i class="c2-op"></i><span>TCV influencé signé<small>décalé d’un cycle de vente, environ 3 mois</small></span></div><div class="ex-k op pmk-row" style="--d:3.9s"><i class="c2-op">÷</i><span>(Dépenses des campagnes + Coût fixe × 12)<small>étapes 1 et 2, sur 12 mois</small></span></div><div class="ex-k op tot pmk-row" style="--d:4.2s"><i class="c2-op">=</i><span>ROI réel<small>tout le marketing, 12 mois glissants, publié chaque trimestre</small></span></div>
           </div>
         </div>
-        <div class="c2-note pmk-fade" style="--d:5.0s"><b>Pourquoi les salaires ne sont-ils pas répartis sur chaque campagne&nbsp;?</b> Le temps de l’équipe ne suit pas le budget. Un webinar à 2&nbsp;000&nbsp;€ demande plus de travail que 20&nbsp;000&nbsp;€ de LinkedIn Ads, alors les répartir au prorata des dépenses gonflerait le coût de l’un et sous-estimerait celui de l’autre. Les salaires restent donc dans le coût fixe, et s’il faut un jour les répartir, ce sera <b class="ok">par canal</b>, selon le temps passé.</div>
-        <div class="c2-note pmk-fade" style="--d:5.3s; margin-top: 8px"><b class="ok">Pourquoi un ROI réel chaque trimestre&nbsp;?</b> Entre le premier rendez-vous et la signature, il se passe 3,3&nbsp;mois en médiane et 4,2&nbsp;mois pondéré par le TCV, sur les contrats New&nbsp;logo signés depuis janvier 2025. Sur un mois, un seul contrat ferait basculer le ROI. Le calcul porte donc sur 12&nbsp;mois glissants, publié chaque trimestre.</div>
+        <div class="c2-notes pmk-fade" style="--d:5.0s"><div class="c2-note"><b>Salaires hors campagnes.</b> Le temps ne suit pas le budget, un webinar à 2&nbsp;000&nbsp;€ en demande plus que 20&nbsp;000&nbsp;€ de LinkedIn Ads.</div><div class="c2-note"><b class="ok">Chaque trimestre.</b> Du premier rendez-vous à la signature, 3,3&nbsp;mois en médiane. Sur un mois, un seul contrat ferait basculer le ROI.</div></div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
     </section>
