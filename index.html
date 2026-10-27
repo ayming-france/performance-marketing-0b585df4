@@ -1254,19 +1254,19 @@
 
     /* ===== Où en est-on (progress chapter): gap board, timeline, UTM chain, Power BI placeholders ===== */
     .slide[data-pm^="av-"] .slide-inner.insights.wide { width: 1220px; max-width: 1220px; }
-    .av-board { display: grid; grid-template-columns: minmax(0, 2.4fr) repeat(4, minmax(0, 1.05fr)); gap: 12px; width: 1160px; margin: 0 auto; text-align: left; }
+    .av-board { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1.05fr); gap: 12px; width: 1160px; margin: 0 auto; text-align: left; }
     .av-col { background: #f1f4f7; border-radius: 12px; padding: 8px 10px 10px; height: 354px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; }
     .av-colh { display: flex; align-items: center; gap: 6px; height: 22px; font-size: 10.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: var(--ay-dark); white-space: nowrap; }
     .av-colh .av-dot { display: none; }
     .av-colh { color: var(--s); }
     .av-colh .av-n { color: var(--s); background: color-mix(in srgb, var(--s) 14%, #fff); margin-left: auto; flex: none; min-width: 22px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 0; }
     .av-cards { display: flex; flex-direction: column; gap: 6px; }
-    .av-col.open .av-cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5px 6px; }
+    .av-col.open .av-cards, .av-col.wide .av-cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5px 6px; }
     .av-card { background: #fff; border-radius: 7px; box-shadow: 0 1px 2px rgba(15,23,42,.1);  padding: 5px 8px 5px 7px; font-size: 11px; line-height: 1.3; color: var(--ay-text); box-sizing: border-box; }
-    .av-col.open .av-card { display: flex; align-items: center; gap: 6px; height: 26px; padding-top: 0; padding-bottom: 0; }
+    .av-col.open .av-card, .av-col.line .av-card { display: flex; align-items: center; gap: 6px; height: 26px; padding-top: 0; padding-bottom: 0; }
     .av-card b { font-size: 9.5px; font-weight: 800; color: var(--ay-gray); margin-right: 4px; }
-    .av-col.open .av-card .av-t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .av-col.open .av-card .av-a { flex: none; font-size: 9.5px; color: var(--ay-light); }
+    .av-col.open .av-card .av-t, .av-col.line .av-card .av-t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .av-col.open .av-card .av-a, .av-col.line .av-card .av-a { flex: none; font-size: 9.5px; color: var(--ay-light); }
     .av-col.done .av-card { display: flex; align-items: center; gap: 6px; height: 26px; padding-top: 0; padding-bottom: 0; }
     .av-col.done .av-card .av-t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .av-col.done .av-card .av-a { flex: none; font-size: 9.5px; font-weight: 700; color: var(--s); }
@@ -2460,51 +2460,50 @@
     <section class="slide" data-chapter="avancement" data-pm="av-board">
       <div class="slide-inner insights wide">
         <h1 class="slide-title compact">The requests and fixes that make the model possible</h1>
-        <div class="av-src pmk-fade"><svg fill="#FF3621" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>Databricks<span>· 29 requests to the data platform team, as of 19 October 2026</span></div>
+        <div class="av-src pmk-fade"><svg fill="#FF3621" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>Databricks<span>· 28 requests to the data platform team, as of 27 October 2026</span></div>
         <div class="av-board">
-          <div class="av-col open pmk-in" style="--d:0.10s; --s:#64748b">
-            <div class="av-colh"><span class="av-dot"></span>Open<span class="av-n">9</span></div>
+          <div class="av-col line pmk-in" style="--d:0.10s; --s:#64748b">
+            <div class="av-colh"><span class="av-dot"></span>Open<span class="av-n">2</span></div>
             <div class="av-cards">
-              <div class="av-card pmk-pop" style="--d:0.35s"><span class="av-t"><b>G10</b>Business line</span><span class="av-a">07/09</span></div>
-              <div class="av-card pmk-pop" style="--d:0.39s"><span class="av-t"><b>G28</b>SEO · date filter</span><span class="av-a">16/09</span></div>
-              <div class="av-card pmk-pop" style="--d:0.43s"><span class="av-t"><b>G30</b>Lead status order</span><span class="av-a">16/09</span></div>
-              <div class="av-card pmk-pop" style="--d:0.47s"><span class="av-t"><b>G31</b>AI search data</span><span class="av-a">25/09</span></div>
-              <div class="av-card pmk-pop" style="--d:0.51s"><span class="av-t"><b>G33</b>Marketing touches</span><span class="av-a">28/09</span></div>
-              <div class="av-card pmk-pop" style="--d:0.55s"><span class="av-t"><b>G38</b>Opportunity Origin</span><span class="av-a">12/10</span></div>
-              <div class="av-card pmk-pop" style="--d:0.59s"><span class="av-t"><b>G39</b>New members</span><span class="av-a">13/10</span></div>
-              <div class="av-card pmk-pop" style="--d:0.63s"><span class="av-t"><b>G40</b>Email campaigns</span><span class="av-a">13/10</span></div>
-              <div class="av-card pmk-pop" style="--d:0.67s"><span class="av-t"><b>G41</b>Campaign types</span><span class="av-a">13/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.35s"><span class="av-t"><b>G31</b>AI search data</span><span class="av-a">25/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.39s"><span class="av-t"><b>G33</b>Marketing touches</span><span class="av-a">28/09</span></div>
             </div>
           </div>
-          <div class="av-col pmk-in" style="--d:0.18s; --s:#e8590c">
-            <div class="av-colh"><span class="av-dot"></span>To fix<span class="av-n">5</span></div>
+          <div class="av-col line pmk-in" style="--d:0.18s; --s:#e8590c">
+            <div class="av-colh"><span class="av-dot"></span>To fix<span class="av-n">8</span></div>
             <div class="av-cards">
-              <div class="av-card pmk-pop" style="--d:0.75s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G03</b>Campaign cost</span><span class="av-d">Asked 7 Sep</span></div>
-              <div class="av-card pmk-pop" style="--d:0.79s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G04</b>Origin UTMs</span><span class="av-d">Asked 7 Sep</span></div>
-              <div class="av-card pmk-pop" style="--d:0.83s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G08</b>Contact roles</span><span class="av-d">Asked 7 Sep</span></div>
-              <div class="av-card pmk-pop" style="--d:0.87s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G12</b>Lead affiliate</span><span class="av-d">Asked 7 Sep</span></div>
-              <div class="av-card pmk-pop" style="--d:0.91s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G35</b>Contact Origin</span><span class="av-d">Asked 2 Oct</span></div>
+              <div class="av-card pmk-pop" style="--d:0.43s"><span class="av-t"><b>G04</b>Origin UTMs</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.47s"><span class="av-t"><b>G05</b>Member UTMs</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.51s"><span class="av-t"><b>G08</b>Contact roles</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.55s"><span class="av-t"><b>G12</b>Lead affiliate</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.59s"><span class="av-t"><b>G14</b>MQL and SQL</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.63s"><span class="av-t"><b>G27</b>SEO · position</span><span class="av-a">07/09</span></div>
+              <div class="av-card pmk-pop" style="--d:0.67s"><span class="av-t"><b>G36</b>Lead stage dates</span><span class="av-a">02/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.71s"><span class="av-t"><b>G38</b>Opportunity Origin</span><span class="av-a">12/10</span></div>
             </div>
           </div>
           <div class="av-col lit pmk-in" style="--d:0.26s; --s:#11a9e6">
-            <div class="av-colh"><span class="av-dot"></span>Ready for prod<span class="av-n">3</span></div>
+            <div class="av-colh"><span class="av-dot"></span>Ready for prod<span class="av-n">0</span></div>
             <div class="av-cards">
-              <div class="av-card pmk-pop" style="--d:0.95s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G05</b>Member UTMs</span><span class="av-d">7 Sep &rarr; <em>validated 5 Oct</em></span></div>
-              <div class="av-card pmk-pop" style="--d:0.99s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G36</b>Lead stage dates</span><span class="av-d">2 Oct &rarr; <em>validated 5 Oct</em></span></div>
-              <div class="av-card pmk-pop" style="--d:1.03s"><span class="av-t" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>G14</b>MQL and SQL</span><span class="av-d">7 Sep &rarr; <em>validated 15 Oct</em></span></div>
             </div>
           </div>
-          <div class="av-col done pmk-in" style="--d:0.34s; --s:#0ab38c">
-            <div class="av-colh"><span class="av-dot"></span>Delivered<span class="av-n">8</span></div>
+          <div class="av-col done wide pmk-in" style="--d:0.34s; --s:#0ab38c">
+            <div class="av-colh"><span class="av-dot"></span>Delivered<span class="av-n">14</span></div>
             <div class="av-cards">
-              <div class="av-card pmk-pop" style="--d:1.07s"><span class="av-t"><b>G15</b>Table access</span><span class="av-a">05/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.11s"><span class="av-t"><b>G13</b>Duplicated leads</span><span class="av-a">14/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.15s"><span class="av-t"><b>G11</b>Campaign Influence</span><span class="av-a">16/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.19s"><span class="av-t"><b>G02</b>Campaign join date</span><span class="av-a">19/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.23s"><span class="av-t"><b>G16</b>SEO · clicks</span><span class="av-a">19/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.27s"><span class="av-t"><b>G25</b>SEO · impressions</span><span class="av-a">19/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.31s"><span class="av-t"><b>G26</b>SEO · CTR</span><span class="av-a">19/10</span></div>
-              <div class="av-card pmk-pop" style="--d:1.35s"><span class="av-t"><b>G27</b>SEO · position</span><span class="av-a">19/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.75s"><span class="av-t"><b>G15</b>Table access</span><span class="av-a">05/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.79s"><span class="av-t"><b>G13</b>Duplicated leads</span><span class="av-a">14/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.83s"><span class="av-t"><b>G11</b>Campaign Influence</span><span class="av-a">16/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.87s"><span class="av-t"><b>G02</b>Campaign join date</span><span class="av-a">19/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.91s"><span class="av-t"><b>G16</b>SEO · clicks</span><span class="av-a">19/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.95s"><span class="av-t"><b>G25</b>SEO · impressions</span><span class="av-a">19/10</span></div>
+              <div class="av-card pmk-pop" style="--d:0.99s"><span class="av-t"><b>G26</b>SEO · CTR</span><span class="av-a">19/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.03s"><span class="av-t"><b>G03</b>Campaign cost</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.07s"><span class="av-t"><b>G10</b>Business line</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.11s"><span class="av-t"><b>G28</b>SEO · date filter</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.15s"><span class="av-t"><b>G30</b>Lead status order</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.19s"><span class="av-t"><b>G35</b>Contact Origin</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.23s"><span class="av-t"><b>G39</b>New members</span><span class="av-a">27/10</span></div>
+              <div class="av-card pmk-pop" style="--d:1.27s"><span class="av-t"><b>G41</b>Campaign types</span><span class="av-a">27/10</span></div>
             </div>
           </div>
           <div class="av-col out pmk-in" style="--d:0.42s; --s:#9ca3af">
