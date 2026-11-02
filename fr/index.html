@@ -1207,32 +1207,33 @@
     .slide[data-pm="rq-l3"] .sl-tr:last-child { border-bottom: 0; }
     .slide[data-pm="rq-l3"] .sl-tr .hit { display: inline-block; justify-self: start; color: #2e844a; font-weight: 700; background: #e6f8f2; border-radius: 3px; padding: 0 5px; }
     /* event slide: the New Event modal, the campaign record, then the flow that adds the member */
-    .slide[data-pm="rq-ev"] .slide-inner { padding-top: 98px; }
-    .slide[data-pm="rq-ev"] .rq-col { gap: 6px; }
-    .slide[data-pm="rq-ev"] .rq-fact { height: 40px; }
-    .slide[data-pm="rq-ev"] .sl-mh { height: 28px; line-height: 28px; font-size: 12.5px; }
-    .slide[data-pm="rq-ev"] .sl-mf { padding: 4px 12px; }
-    .slide[data-pm="rq-ev"] .ev-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 10px; padding: 5px 12px 6px; }
-    .slide[data-pm="rq-ev"] .ev-f > span:first-child { display: block; height: 13px; font-size: 9.5px; color: #444; margin-bottom: 2px; white-space: nowrap; }
-    .slide[data-pm="rq-ev"] .ev-f .sl-in { display: flex; align-items: center; padding: 0 3px 0 6px; }
-    .slide[data-pm="rq-ev"] .ev-f .sl-in .sl-pill { margin-left: -3px; }
-    .slide[data-pm="rq-ev"] .ev-f.hl .sl-in { border-color: #0176d3; box-shadow: 0 0 0 1px #0176d3; }
-    .slide[data-pm="rq-ev"] .sl-page { padding: 5px; gap: 5px; }
-    .slide[data-pm="rq-ev"] .sl-rh { padding: 4px 10px; }
-    .slide[data-pm="rq-ev"] .sl-tabs { height: 20px; }
-    .slide[data-pm="rq-ev"] .ev-rls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
-    .slide[data-pm="rq-ev"] .ev-rls .sl-rlh { height: 24px; font-size: 11px; }
-    .slide[data-pm="rq-ev"] .ev-rls .sl-tr { --cols: minmax(0, 1fr) auto; border-bottom: 0; }
-    .slide[data-pm="rq-ev"] .ev-rls .sl-empty { height: 22px; line-height: 22px; }
-    .slide[data-pm="rq-ev"] .ev-canvas { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; }
-    .slide[data-pm="rq-ev"] .ev-cvh { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; font-size: 11px; font-weight: 700; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; }
-    .slide[data-pm="rq-ev"] .ev-cvh svg { width: 13px; height: 13px; color: #0176d3; }
-    .slide[data-pm="rq-ev"] .ev-cvb { padding: 6px 10px; background-color: #fafaf9; background-image: radial-gradient(#d8d8d8 1px, transparent 1px); background-size: 12px 12px; }
-    .slide[data-pm="rq-ev"] .ev-cvb .sl-node { padding: 3px 10px; }
-    .slide[data-pm="rq-ev"] .ev-cvb .sl-conn { height: 9px; }
-    .slide[data-pm="rq-ev"] .ev-cvh { height: 24px; }
-    .slide[data-pm="rq-ev"] .ev-note { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; height: 22px; flex: none; padding: 0 9px; border-radius: 11px; background: #d5f2e6; color: #076b54; font-size: 10.5px; font-weight: 800; white-space: nowrap; }
-    .slide[data-pm="rq-ev"] .ev-note svg { width: 12px; height: 12px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .slide-inner { padding-top: 98px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .rq-col { gap: 6px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .rq-fact { height: 40px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .sl-mh { height: 28px; line-height: 28px; font-size: 12.5px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .sl-mf { padding: 4px 12px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 10px; padding: 5px 12px 6px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-f > span:first-child { display: block; height: 13px; font-size: 9.5px; color: #444; margin-bottom: 2px; white-space: nowrap; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-f .sl-in { display: flex; align-items: center; padding: 0 3px 0 6px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-f .sl-in .sl-pill { margin-left: -3px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-f.hl .sl-in { border-color: #0176d3; box-shadow: 0 0 0 1px #0176d3; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .sl-page { padding: 5px; gap: 5px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .sl-rh { padding: 4px 10px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .sl-tabs { height: 20px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-rls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-rls .sl-rlh { height: 24px; font-size: 11px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-rls .sl-tr { --cols: minmax(0, 1fr) auto; border-bottom: 0; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-rls .sl-empty { height: 22px; line-height: 22px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-canvas { background: #fff; border: 1px solid #dddbda; border-radius: 6px; overflow: hidden; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvh { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; font-size: 11px; font-weight: 700; color: #181818; background: #f3f3f3; border-bottom: 1px solid #dddbda; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvh svg { width: 13px; height: 13px; color: #0176d3; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvb { padding: 6px 10px; background-color: #fafaf9; background-image: radial-gradient(#d8d8d8 1px, transparent 1px); background-size: 12px 12px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvb .sl-node { padding: 3px 10px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvb .sl-conn { height: 9px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-cvh { height: 24px; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-note { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; height: 22px; flex: none; padding: 0 9px; border-radius: 11px; background: #d5f2e6; color: #076b54; font-size: 10.5px; font-weight: 800; white-space: nowrap; }
+    .slide:is([data-pm="rq-ev"], [data-pm="rq-act"]) .ev-note svg { width: 12px; height: 12px; }
+    .slide[data-pm="rq-act"] .sfc-ic.acct { background: #7f8de1; }
     .rq-tr { display: grid; grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1.25fr); align-items: center; gap: 6px; height: 23px; font-size: 11px; border-bottom: 1px solid #f1f5f9; }
     .rq-tr:last-child { border-bottom: 0; }
     .rq-tr.th { font-size: 9.5px; font-weight: 700; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .5px; }
@@ -1470,7 +1471,6 @@
     .prc.five.seven { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: 1160px; gap: 14px 16px; }
     .prc.five.seven .kr { grid-column: span 2; height: 196px; padding: 14px 16px; }
     .prc.five.seven .kr:nth-child(4) { grid-column: span 2; }
-    .prc.five.seven .kr:nth-child(5) { grid-column: 2 / span 2; }
     .prc.five.seven .kh { font-size: 17px; }
     .prc.five.seven .ks { font-size: 12px; }
     .slide[data-pm="rq-src"] .slide-inner { padding-top: 98px; }
@@ -2171,7 +2171,7 @@
         <div class="cover-left">
           <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
           <h1 class="cover-title">Exigences</h1>
-          <p class="cover-subtitle">Sept décisions pour mesurer la contribution marketing</p>
+          <p class="cover-subtitle">Huit décisions pour mesurer la contribution marketing</p>
           <p class="cover-credit">José J Encarnación Saiter | Marketing France · 2026-10</p>
         </div>
         <div class="cover-right">
@@ -2192,6 +2192,7 @@
           <div class="kr pmk-in" style="--d:1.00s"><div class="prc-ic"><i data-lucide="receipt"></i></div><div class="kl"><b>Exigence 5</b> · les coûts</div><div class="kh">Chaque campagne porte son coût</div><div class="ks">Coût budgété et coût réel vont dans la section Planning de la campagne, le coût derrière chaque ROI.</div></div>
           <div class="kr pmk-in" style="--d:1.20s"><div class="prc-ic"><i data-lucide="layers"></i></div><div class="kl"><b>Exigence 6</b> · les sources</div><div class="kh">Quatre sources de lead</div><div class="ks">Chaque campagne choisit Marketing, Partenaire, Sales ou Telepro, le canal reste dans les UTM.</div></div>
           <div class="kr pmk-in" style="--d:1.40s"><div class="prc-ic"><i data-lucide="wallet"></i></div><div class="kl"><b>Exigence 7</b> · les budgets</div><div class="kh">Budgets sur le TCV influencé</div><div class="ks">Dès le 1er janvier, chaque département sous le total S&amp;M calcule son ROI sur son TCV influencé, plus sur le TCV total.</div></div>
+          <div class="kr pmk-in" style="--d:1.60s"><div class="prc-ic"><i data-lucide="history"></i></div><div class="kl"><b>Exigence 8</b> · l'activité</div><div class="kh">L'activité d'un lead remonte au compte</div><div class="ks">Les événements d'un lead rattaché à un compte s'affichent dans l'historique du compte, sans conversion.</div></div>
         </div>
       </div>
       <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
@@ -2401,6 +2402,33 @@
               <div class="bud-r tot"><span class="bud-d"><i class="pmk-team ">Total</i></span><b>100 %</b><b>70,0</b><em>18,0</em><b class="bud-ok">×3,89</b></div>
             </div>
             <div class="bud-fn pmk-fade" style="--d:6.4s"><h6><i></i>Proposition, et sa mesure sur les contrats gagnés en 2026</h6><p><b>*</b>Influence des campagnes : Marketing 14,6 %, Telepro 4,5 %</p><p><b>**</b>Campagnes « REF » classées en Marketing : 1,6 %</p><p><b>†</b>Contrats sans aucune influence : 71,1 %</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+    </section>
+
+    <!-- ========== REQUIREMENT 8 · A LEAD'S ACTIVITY REACHES ITS ACCOUNT (sales convert leads early only to see their events on the account) ========== -->
+    <section class="slide" data-chapter="precisions" data-pm="rq-act">
+      <div class="kr-badge">
+        <div class="kl"><b>Exigence 8</b> · l'activité</div>
+        <div class="kh">L'activité d'un lead remonte au compte</div>
+        <div class="ks">Les événements d'un lead rattaché à un compte s'affichent dans l'historique du compte, sans conversion.</div>
+      </div>
+      <div class="slide-inner insights">
+        <div class="rq">
+          <div class="rq-col now pmk-in" style="--d:.1s">
+            <div class="rq-story pmk-fade" style="--d:.3s"><span class="rq-tag now"><i data-lucide="circle-alert"></i>Aujourd'hui</span>Un commercial voit Paul Durand, lead rattaché à Durand Industrie. Rien n'apparaît sur le compte, alors il convertit le lead.</div>
+            <div class="sl sl-modal pmk-in" style="--d:.5s"><div class="sl-mh">Nouvel événement</div><div class="ev-grid"><div class="ev-f"><span>Objet</span><span class="sl-in"><span class="pmk-type" style="--d:.9s; --t:.35s; --n:11">Rendez-vous</span></span></div><div class="ev-f hl"><span>Nom</span><span class="sl-in"><span class="sl-pill pmk-pop" style="--d:1.3s"><i class="sfc-ic lead"><i data-lucide="user-plus"></i></i>Paul Durand</span></span></div><div class="ev-f"><span>Début</span><span class="sl-in"><span class="pmk-fade" style="--d:1.6s">12/03/2026 10:00</span></span></div><div class="ev-f"><span>Lieu</span><span class="sl-in"><span class="pmk-fade" style="--d:1.9s">Visio</span></span></div></div><div class="sl-mf"><span class="sl-btn neutral">Annuler</span><span class="sl-btn brand pmk-press" style="--d:2.4s">Enregistrer</span></div></div>
+            <div class="sl sl-page pmk-in" style="--d:2.7s"><div class="sl-win"><div class="sl-rh"><span class="sfc-ic acct"><i data-lucide="building-2"></i></span><div><div class="sl-ot">Compte</div><div class="sl-on">Durand Industrie</div></div></div><div class="sl-tabs"><span class="on">Associé</span><span>Détails</span></div></div><div class="ev-rls"><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span>Leads (1)</div><div class="sl-tr"><a>Paul Durand</a><span>Ouvert</span></div></div><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic evt"><i data-lucide="calendar"></i></span>Historique des activités (0)</div><div class="sl-empty pmk-pop" style="--d:3.2s">Aucun élément à afficher</div></div></div></div>
+            <div class="rq-fact pmk-in" style="--d:3.5s"><b>339 contre 18 307</b><span>événements posés en 2026 sur des leads France, contre des contacts France</span></div>
+          </div>
+          <div class="rq-mid"><span class="aa pmk-fade" style="--d:4.2s">&rarr;</span></div>
+          <div class="rq-col fix pmk-in" style="--d:4.2s">
+            <div class="rq-story pmk-fade" style="--d:4.4s"><span class="rq-tag fix"><i data-lucide="circle-check"></i>Exigence</span>Les événements des leads rattachés au compte s'affichent dans son historique. Le lead reste un lead jusqu'à sa qualification.</div>
+            <div class="sl sl-page pmk-in" style="--d:4.5s"><div class="sl-win"><div class="sl-rh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span><div><div class="sl-ot">Lead</div><div class="sl-on">Paul Durand</div></div></div><div class="sl-tabs"><span class="on">Associé</span><span>Détails</span></div></div><div class="ev-rls"><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic acct"><i data-lucide="building-2"></i></span>Compte associé</div><div class="sl-tr"><a>Durand Industrie</a><span>Compte</span></div></div><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic evt"><i data-lucide="calendar"></i></span>Historique des activités (1)</div><div class="sl-tr"><a>Rendez-vous</a><span>12/03/2026</span></div></div></div></div>
+            <div class="sl sl-page pmk-in" style="--d:5.2s"><div class="sl-win"><div class="sl-rh"><span class="sfc-ic acct"><i data-lucide="building-2"></i></span><div><div class="sl-ot">Compte</div><div class="sl-on">Durand Industrie</div></div></div><div class="sl-tabs"><span class="on">Associé</span><span>Détails</span></div></div><div class="ev-rls"><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic lead"><i data-lucide="user-plus"></i></span>Leads (1)</div><div class="sl-tr"><a>Paul Durand</a><span>Ouvert</span></div></div><div class="sl-rl"><div class="sl-rlh"><span class="sfc-ic evt"><i data-lucide="calendar"></i></span>Historique des activités (1)</div><div class="sl-tr pmk-row" style="--d:5.7s"><a>Rendez-vous</a><span>Paul Durand</span></div></div></div></div>
+            <span class="ev-note pmk-pop" style="--d:6.2s"><i data-lucide="circle-check"></i>Converti quand il est qualifié, pas pour être vu</span>
           </div>
         </div>
       </div>
