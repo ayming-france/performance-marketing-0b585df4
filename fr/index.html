@@ -3114,6 +3114,8 @@
       });
       document.querySelectorAll('.slide[data-pm="av-pbi"]').forEach(function (s) { s.dataset.go = 'av-go'; steps.push(s); });
       if (!steps.length) return;
+      /* The PDF and PowerPoint export copies the page into a hidden frame and captures every slide there: show each slide's second step in that copy. */
+      if (window.frameElement && window.frameElement.hasAttribute('data-pm-offscreen')) { steps.forEach(function (s) { s.classList.add(s.dataset.go); }); return; }
       var pending = function () { var s = document.querySelector('.slide.active[data-go]'); return s && !s.classList.contains(s.dataset.go) ? s : null; };
       var reveal = function (e) { var s = pending(); if (!s) return; s.classList.add(s.dataset.go); e.preventDefault(); e.stopImmediatePropagation(); };
       document.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') reveal(e); }, true);
